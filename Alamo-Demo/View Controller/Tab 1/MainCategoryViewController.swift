@@ -42,15 +42,16 @@ class MainCategoryViewController: UIViewController, UICollectionViewDelegate, UI
                     }
                 })
             }
+        cell.mainCategoryView.layer.shadowColor = UIColor.gray.cgColor
+        cell.mainCategoryView.layer.shadowOpacity = 1
+        cell.mainCategoryView.layer.shadowOffset = CGSize.zero
+        cell.mainCategoryView.layer.shadowRadius = 5
             cell.lblMainCategoryName.text = objectList.productName
             return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        itemIndex = indexPath.row
-//        performSegue(withIdentifier: "DetailsViewController", sender: self)
         itemIndex = indexPath.row
         let cocktailDetail:DetailsViewController = self.storyboard?.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
-        
         self.navigationController?.pushViewController(cocktailDetail, animated: true)
     }
     

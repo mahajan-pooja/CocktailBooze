@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		652D7F33F934513D25FD49E6 /* Pods_Alamo_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AE278007A5C48BA6AAB04CC /* Pods_Alamo_Demo.framework */; };
-		7A4E54B221B9E53400942346 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4E54B121B9E53400942346 /* TableViewController.swift */; };
-		7A4E54B421B9F41300942346 /* TableViewCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4E54B321B9F41300942346 /* TableViewCellController.swift */; };
+		7A04BC052232F21400F2C464 /* VideoCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A04BC042232F21400F2C464 /* VideoCategoryModel.swift */; };
+		7A04BC072232F54000F2C464 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A04BC062232F54000F2C464 /* VideoTableViewCell.swift */; };
+		7A04BC092232F5BF00F2C464 /* VideoCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A04BC082232F5BF00F2C464 /* VideoCategoryViewController.swift */; };
+		7A04BC0B2232F82B00F2C464 /* MainVideoCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A04BC0A2232F82B00F2C464 /* MainVideoCategoryModel.swift */; };
 		7A929FAC219CEF170001B7D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A929FAB219CEF170001B7D7 /* AppDelegate.swift */; };
-		7A929FAE219CEF170001B7D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A929FAD219CEF170001B7D7 /* ViewController.swift */; };
 		7A929FB1219CEF170001B7D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A929FAF219CEF170001B7D7 /* Main.storyboard */; };
 		7A929FB3219CEF180001B7D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A929FB2219CEF180001B7D7 /* Assets.xcassets */; };
-		7AB822D121CC632100F91D62 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB822D021CC632100F91D62 /* CollectionViewCell.swift */; };
 		7ABB0E39221E2E25004649E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ABB0E38221E2E25004649E8 /* LaunchScreen.storyboard */; };
 		BA21385F22152ECD0082FB68 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA21385E22152ECD0082FB68 /* DetailsViewController.swift */; };
 		BA413982221E443000E74B98 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA413981221E443000E74B98 /* CategoryCollectionViewCell.swift */; };
@@ -29,15 +29,15 @@
 /* Begin PBXFileReference section */
 		02E18FA7310AEDE068283A41 /* Pods-Alamo-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alamo-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Alamo-Demo/Pods-Alamo-Demo.release.xcconfig"; sourceTree = "<group>"; };
 		6AE278007A5C48BA6AAB04CC /* Pods_Alamo_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Alamo_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7A4E54B121B9E53400942346 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		7A4E54B321B9F41300942346 /* TableViewCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellController.swift; sourceTree = "<group>"; };
+		7A04BC042232F21400F2C464 /* VideoCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCategoryModel.swift; sourceTree = "<group>"; };
+		7A04BC062232F54000F2C464 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
+		7A04BC082232F5BF00F2C464 /* VideoCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCategoryViewController.swift; sourceTree = "<group>"; };
+		7A04BC0A2232F82B00F2C464 /* MainVideoCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVideoCategoryModel.swift; sourceTree = "<group>"; };
 		7A929FA8219CEF170001B7D7 /* Alamo-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Alamo-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A929FAB219CEF170001B7D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7A929FAD219CEF170001B7D7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7A929FB0219CEF170001B7D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7A929FB2219CEF180001B7D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A929FB7219CEF180001B7D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7AB822D021CC632100F91D62 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		7ABB0E38221E2E25004649E8 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA21385E22152ECD0082FB68 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		BA413981221E443000E74B98 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -70,6 +70,46 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7A04BC0C2233252100F2C464 /* Tab 1 */ = {
+			isa = PBXGroup;
+			children = (
+				BAD9328622129780008EDFBC /* MainCategoryViewController.swift */,
+				BAD93284221295EA008EDFBC /* MainCategoryCollectionViewCell.swift */,
+				BA21385E22152ECD0082FB68 /* DetailsViewController.swift */,
+				BA413981221E443000E74B98 /* CategoryCollectionViewCell.swift */,
+				BABB762E221F94C100E2C0D4 /* RecipeViewController.swift */,
+				BABB7630221F967200E2C0D4 /* IngredientsTableViewCell.swift */,
+			);
+			path = "Tab 1";
+			sourceTree = "<group>";
+		};
+		7A04BC0D2233254000F2C464 /* Tab 2 */ = {
+			isa = PBXGroup;
+			children = (
+				7A04BC062232F54000F2C464 /* VideoTableViewCell.swift */,
+				7A04BC082232F5BF00F2C464 /* VideoCategoryViewController.swift */,
+			);
+			path = "Tab 2";
+			sourceTree = "<group>";
+		};
+		7A04BC0E2233256300F2C464 /* Tab 1 */ = {
+			isa = PBXGroup;
+			children = (
+				BAD9328F2212A10F008EDFBC /* MainModelCategory.swift */,
+				BAD9328222128EDD008EDFBC /* SubCategoryModel.swift */,
+			);
+			path = "Tab 1";
+			sourceTree = "<group>";
+		};
+		7A04BC0F2233256B00F2C464 /* Tab 2 */ = {
+			isa = PBXGroup;
+			children = (
+				7A04BC0A2232F82B00F2C464 /* MainVideoCategoryModel.swift */,
+				7A04BC042232F21400F2C464 /* VideoCategoryModel.swift */,
+			);
+			path = "Tab 2";
+			sourceTree = "<group>";
+		};
 		7A929F9F219CEF170001B7D7 = {
 			isa = PBXGroup;
 			children = (
@@ -96,10 +136,6 @@
 				7ABB0E38221E2E25004649E8 /* LaunchScreen.storyboard */,
 				BAD93281221289AD008EDFBC /* View Controller */,
 				BAD932802212899F008EDFBC /* Model */,
-				7A929FAD219CEF170001B7D7 /* ViewController.swift */,
-				7A4E54B121B9E53400942346 /* TableViewController.swift */,
-				7A4E54B321B9F41300942346 /* TableViewCellController.swift */,
-				7AB822D021CC632100F91D62 /* CollectionViewCell.swift */,
 				7A929FB2219CEF180001B7D7 /* Assets.xcassets */,
 				7A929FB7219CEF180001B7D7 /* Info.plist */,
 			);
@@ -109,8 +145,8 @@
 		BAD932802212899F008EDFBC /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				BAD9328F2212A10F008EDFBC /* MainModelCategory.swift */,
-				BAD9328222128EDD008EDFBC /* SubCategoryModel.swift */,
+				7A04BC0E2233256300F2C464 /* Tab 1 */,
+				7A04BC0F2233256B00F2C464 /* Tab 2 */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -118,12 +154,8 @@
 		BAD93281221289AD008EDFBC /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				BAD9328622129780008EDFBC /* MainCategoryViewController.swift */,
-				BAD93284221295EA008EDFBC /* MainCategoryCollectionViewCell.swift */,
-				BA21385E22152ECD0082FB68 /* DetailsViewController.swift */,
-				BA413981221E443000E74B98 /* CategoryCollectionViewCell.swift */,
-				BABB762E221F94C100E2C0D4 /* RecipeViewController.swift */,
-				BABB7630221F967200E2C0D4 /* IngredientsTableViewCell.swift */,
+				7A04BC0C2233252100F2C464 /* Tab 1 */,
+				7A04BC0D2233254000F2C464 /* Tab 2 */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -261,19 +293,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A04BC092232F5BF00F2C464 /* VideoCategoryViewController.swift in Sources */,
 				BAD93285221295EA008EDFBC /* MainCategoryCollectionViewCell.swift in Sources */,
-				7AB822D121CC632100F91D62 /* CollectionViewCell.swift in Sources */,
 				BAD9328722129780008EDFBC /* MainCategoryViewController.swift in Sources */,
+				7A04BC052232F21400F2C464 /* VideoCategoryModel.swift in Sources */,
 				BA21385F22152ECD0082FB68 /* DetailsViewController.swift in Sources */,
+				7A04BC0B2232F82B00F2C464 /* MainVideoCategoryModel.swift in Sources */,
 				BAD932902212A10F008EDFBC /* MainModelCategory.swift in Sources */,
-				7A4E54B421B9F41300942346 /* TableViewCellController.swift in Sources */,
-				7A929FAE219CEF170001B7D7 /* ViewController.swift in Sources */,
 				BABB7631221F967200E2C0D4 /* IngredientsTableViewCell.swift in Sources */,
-				7A4E54B221B9E53400942346 /* TableViewController.swift in Sources */,
 				BABB762F221F94C100E2C0D4 /* RecipeViewController.swift in Sources */,
 				BA413982221E443000E74B98 /* CategoryCollectionViewCell.swift in Sources */,
 				BAD9328322128EDD008EDFBC /* SubCategoryModel.swift in Sources */,
 				7A929FAC219CEF170001B7D7 /* AppDelegate.swift in Sources */,
+				7A04BC072232F54000F2C464 /* VideoTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
