@@ -10,15 +10,17 @@ import UIKit
 class DetailsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     
+   
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     @IBOutlet weak var lblDetailsTitle: UILabel!
     @IBOutlet weak var imgDetailView: UIImageView!
     @IBOutlet weak var lblDetailsDesc: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationController?.setNavigationBarHidden(false, animated: true)
+
         lblDetailsTitle.text = arrayAllProductList[itemIndex].productName
-        lblDetailsDesc.text = "Here goes category description!!"
+        lblDetailsDesc.text = "Somewhere in Oprah's mantra is making time for yourself…with an adult beverage.!!"
         let url: URL = URL(string: arrayAllProductList[itemIndex].image)!
         imgDetailView.kf.setImage(with: url, placeholder: UIImage(named:""),  options: nil, progressBlock: nil, completionHandler: {
             ( image, error, cacheType, imageUrl) in
@@ -40,10 +42,6 @@ class DetailsViewController: UIViewController, UICollectionViewDelegate, UIColle
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell:CategoryCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCollectionViewCell", for: indexPath) as! CategoryCollectionViewCell
-        cell.categoryCellView.layer.masksToBounds = true
-        cell.categoryCellView.layer.cornerRadius = 20
-        cell.categoryItemName.text = "Kir"
-        cell.categoryItemType.text = "Strong"
         let url: URL = URL(string: "https://images.cocktailflow.com/v1/collection/w_300,h_270/collection_valentines_day.png")!
         cell.categoryItemImage.kf.setImage(with: url, placeholder: UIImage(named:""),  options: nil, progressBlock: nil, completionHandler: {
             ( image, error, cacheType, imageUrl) in
@@ -52,13 +50,12 @@ class DetailsViewController: UIViewController, UICollectionViewDelegate, UIColle
                 cell.categoryItemImage.backgroundColor = .white
             }
         })
+        cell.categoryCellView.layer.masksToBounds = true
+        cell.categoryCellView.layer.cornerRadius = 20
+        cell.categoryItemName.text = "Kir"
+        cell.categoryItemType.text = "Strong"
         cell.categoryCellView.layer.borderWidth = 1
         cell.categoryCellView.layer.borderColor = UIColor(red:222/255, green:225/255, blue:227/255, alpha: 1).cgColor
-        cell.categoryCellView.layer.shadowColor = UIColor.gray.cgColor
-        cell.categoryCellView.layer.shadowOpacity = 1
-        cell.categoryCellView.layer.shadowOffset = CGSize.zero
-        cell.categoryCellView.layer.shadowRadius = 5
-
         return cell
     }
 }

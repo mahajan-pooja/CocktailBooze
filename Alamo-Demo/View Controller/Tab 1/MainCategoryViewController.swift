@@ -13,7 +13,7 @@ import Kingfisher
 var itemIndex = 0
 var arrayAllProductList: [SubCategoryModel] = [SubCategoryModel]()
 
-class MainCategoryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class MainCategoryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     
     @IBOutlet weak var MainCategoryCollectionView: UICollectionView!
@@ -23,11 +23,15 @@ class MainCategoryViewController: UIViewController, UICollectionViewDelegate, UI
         fetchUserData()
 
     }
+    override func viewWillLayoutSubviews() {
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         print("arrayAllProductList.count \(arrayAllProductList.count)")
 
             return arrayAllProductList.count
     }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
            let cell:MainCategoryCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainCategoryCollectionViewCell", for: indexPath) as! MainCategoryCollectionViewCell
             
@@ -49,6 +53,13 @@ class MainCategoryViewController: UIViewController, UICollectionViewDelegate, UI
             cell.lblMainCategoryName.text = objectList.productName
             return cell
     }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let yourWidth = collectionView.bounds.width/2.0
+        let yourHeight = yourWidth
+        
+        return CGSize(width: yourWidth, height: yourHeight)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         itemIndex = indexPath.row
         let cocktailDetail:DetailsViewController = self.storyboard?.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController

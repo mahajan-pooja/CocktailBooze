@@ -18,6 +18,7 @@
 		7ABB0E39221E2E25004649E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ABB0E38221E2E25004649E8 /* LaunchScreen.storyboard */; };
 		BA21385F22152ECD0082FB68 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA21385E22152ECD0082FB68 /* DetailsViewController.swift */; };
 		BA413982221E443000E74B98 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA413981221E443000E74B98 /* CategoryCollectionViewCell.swift */; };
+		BA43B4C7227299A200349C95 /* welcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43B4C6227299A200349C95 /* welcomeVC.swift */; };
 		BABB762F221F94C100E2C0D4 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABB762E221F94C100E2C0D4 /* RecipeViewController.swift */; };
 		BABB7631221F967200E2C0D4 /* IngredientsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABB7630221F967200E2C0D4 /* IngredientsTableViewCell.swift */; };
 		BAD9328322128EDD008EDFBC /* SubCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD9328222128EDD008EDFBC /* SubCategoryModel.swift */; };
@@ -41,6 +42,7 @@
 		7ABB0E38221E2E25004649E8 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA21385E22152ECD0082FB68 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		BA413981221E443000E74B98 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		BA43B4C6227299A200349C95 /* welcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = welcomeVC.swift; sourceTree = "<group>"; };
 		BABB762E221F94C100E2C0D4 /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
 		BABB7630221F967200E2C0D4 /* IngredientsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsTableViewCell.swift; sourceTree = "<group>"; };
 		BAD9328222128EDD008EDFBC /* SubCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategoryModel.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 			children = (
 				7A04BC0C2233252100F2C464 /* Tab 1 */,
 				7A04BC0D2233254000F2C464 /* Tab 2 */,
+				BA43B4C6227299A200349C95 /* welcomeVC.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				BABB762F221F94C100E2C0D4 /* RecipeViewController.swift in Sources */,
 				BA413982221E443000E74B98 /* CategoryCollectionViewCell.swift in Sources */,
 				BAD9328322128EDD008EDFBC /* SubCategoryModel.swift in Sources */,
+				BA43B4C7227299A200349C95 /* welcomeVC.swift in Sources */,
 				7A929FAC219CEF170001B7D7 /* AppDelegate.swift in Sources */,
 				7A04BC072232F54000F2C464 /* VideoTableViewCell.swift in Sources */,
 			);
@@ -445,7 +449,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9P93MKY8RJ;
+				DEVELOPMENT_TEAM = 4N4URRN245;
 				INFOPLIST_FILE = "Alamo-Demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -464,7 +468,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9P93MKY8RJ;
+				DEVELOPMENT_TEAM = 4N4URRN245;
 				INFOPLIST_FILE = "Alamo-Demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

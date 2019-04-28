@@ -10,38 +10,54 @@ import UIKit
 
 class RecipeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var ingredientsTableView: UITableView!
-    @IBOutlet weak var lblIngredients: UILabel!
     @IBOutlet weak var recipeImgView: UIImageView!
     @IBOutlet weak var lblRecipeType: UILabel!
     @IBOutlet weak var lblRecipeName: UILabel!
+    let section = ["Ingredients", "Recipe"]
     
+    let items = [["Gin", "Lemon Juice", "Raspberry", "Blueberry","Mint Leaves","Ice"], ["add raspberry, mint leaves, lemon", "crush raspberrymint leaveslemon, lemon", "add sugar syrup, ice, gin","shake well","strain into the old fashioned glass","garnish with lemon spiral"]]
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
+        
         lblRecipeName.text = "Singapore Sling"
         lblRecipeType.text = "Medium (18%)"
-        lblIngredients.text = "Ingredients"
-        recipeImgView.image = UIImage(named: "food_img")
+        recipeImgView.image = UIImage(named: "cocktail")
         
     }
-    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return self.section.count
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return self.items[section].count
     }
     
-     //Set the spacing between sections
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 20
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
         return 50
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
+        return 70
+    }
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let headerText = UILabel()
+       
+        headerText.textAlignment = .center
+        headerText.text = self.section[section]
+        headerText.textColor = UIColor(red: 198/255, green: 23/255, blue: 55/255, alpha: 1)
+        headerText.font = UIFont.init(name: "Noteworthy-bold", size: 25)
+        
+        
+        return headerText
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "IngredientsTableViewCell", for: indexPath) as! IngredientsTableViewCell
-        cell.lblIngredients.text = "3oz Ginger Beer"
+        cell.lblIngredients.text = self.items[indexPath.section][indexPath.row]
         return cell
     }
+   
     
 }
