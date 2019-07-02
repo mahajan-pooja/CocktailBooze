@@ -21,6 +21,8 @@
 		BA43B4C7227299A200349C95 /* welcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43B4C6227299A200349C95 /* welcomeVC.swift */; };
 		BABB762F221F94C100E2C0D4 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABB762E221F94C100E2C0D4 /* RecipeViewController.swift */; };
 		BABB7631221F967200E2C0D4 /* IngredientsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABB7630221F967200E2C0D4 /* IngredientsTableViewCell.swift */; };
+		BACC83FC227653520012158C /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACC83FB227653520012158C /* SignInViewController.swift */; };
+		BACC83FE227653600012158C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACC83FD227653600012158C /* SignUpViewController.swift */; };
 		BAD9328322128EDD008EDFBC /* SubCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD9328222128EDD008EDFBC /* SubCategoryModel.swift */; };
 		BAD93285221295EA008EDFBC /* MainCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD93284221295EA008EDFBC /* MainCategoryCollectionViewCell.swift */; };
 		BAD9328722129780008EDFBC /* MainCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD9328622129780008EDFBC /* MainCategoryViewController.swift */; };
@@ -45,6 +47,8 @@
 		BA43B4C6227299A200349C95 /* welcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = welcomeVC.swift; sourceTree = "<group>"; };
 		BABB762E221F94C100E2C0D4 /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
 		BABB7630221F967200E2C0D4 /* IngredientsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsTableViewCell.swift; sourceTree = "<group>"; };
+		BACC83FB227653520012158C /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		BACC83FD227653600012158C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		BAD9328222128EDD008EDFBC /* SubCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategoryModel.swift; sourceTree = "<group>"; };
 		BAD93284221295EA008EDFBC /* MainCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		BAD9328622129780008EDFBC /* MainCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCategoryViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +148,15 @@
 			path = "Alamo-Demo";
 			sourceTree = "<group>";
 		};
+		BACC83FA227653280012158C /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				BACC83FB227653520012158C /* SignInViewController.swift */,
+				BACC83FD227653600012158C /* SignUpViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		BAD932802212899F008EDFBC /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +169,7 @@
 		BAD93281221289AD008EDFBC /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				BACC83FA227653280012158C /* Login */,
 				7A04BC0C2233252100F2C464 /* Tab 1 */,
 				7A04BC0D2233254000F2C464 /* Tab 2 */,
 				BA43B4C6227299A200349C95 /* welcomeVC.swift */,
@@ -304,7 +318,9 @@
 				7A04BC0B2232F82B00F2C464 /* MainVideoCategoryModel.swift in Sources */,
 				BAD932902212A10F008EDFBC /* MainModelCategory.swift in Sources */,
 				BABB7631221F967200E2C0D4 /* IngredientsTableViewCell.swift in Sources */,
+				BACC83FC227653520012158C /* SignInViewController.swift in Sources */,
 				BABB762F221F94C100E2C0D4 /* RecipeViewController.swift in Sources */,
+				BACC83FE227653600012158C /* SignUpViewController.swift in Sources */,
 				BA413982221E443000E74B98 /* CategoryCollectionViewCell.swift in Sources */,
 				BAD9328322128EDD008EDFBC /* SubCategoryModel.swift in Sources */,
 				BA43B4C7227299A200349C95 /* welcomeVC.swift in Sources */,
