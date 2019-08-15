@@ -34,7 +34,7 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
     
             let cell:ProcedureTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ProcedureTableViewCell", for: indexPath) as! ProcedureTableViewCell
     
-          //  cell.txtFieldIngredient.tag = indexPath.row+1
+            cell.txtFieldProcedure.tag = indexPath.row+1+50
     
             return cell
         }
@@ -89,14 +89,17 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
     }
     
     @IBAction func btAddProcedureAction(_ sender: Any) {
-        addProcedureUIView.frame.size.height = addProcedureUIView.frame.size.height + 40
-        let txtField: UITextField = UITextField(frame: CGRect(x: 10, y: addProcedureUIView.frame.size.height-40, width: 300.00, height: 30.00))
-        txtField.backgroundColor = UIColor.white
-        txtField.font =  UIFont(name: txtField.font!.fontName, size: 15)
-        txtField.layer.cornerRadius = 5
-        txtField.placeholder = " Procedure"
-        self.addProcedureUIView.addSubview(txtField)
-        addRecipeSection.frame.origin.y = addRecipeSection.frame.origin.y + 40
+        procedureCount = procedureCount + 1
+        print("procedureCount \(procedureCount)")
+        tblViewAddProcedure.reloadData()
+//        addProcedureUIView.frame.size.height = addProcedureUIView.frame.size.height + 40
+//        let txtField: UITextField = UITextField(frame: CGRect(x: 10, y: addProcedureUIView.frame.size.height-40, width: 300.00, height: 30.00))
+//        txtField.backgroundColor = UIColor.white
+//        txtField.font =  UIFont(name: txtField.font!.fontName, size: 15)
+//        txtField.layer.cornerRadius = 5
+//        txtField.placeholder = " Procedure"
+//        self.addProcedureUIView.addSubview(txtField)
+//        addRecipeSection.frame.origin.y = addRecipeSection.frame.origin.y + 40
     }
     
     @IBAction func selectImageAction(_ sender: Any) {
@@ -123,37 +126,37 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
             print("email - \(email!)")
         }
         
-//        var ingredientsArray: [String] = []
-//        for i in 1...ingredientCount{
-//            if let theTextField = self.view.viewWithTag(i) as? UITextField {
-//                ingredientsArray.append(theTextField.text!)
-//                print(theTextField.text!)
-//            }
-//        }
+        var ingredientsArray: [String] = []
+        for i in 1...ingredientCount{
+            if let theTextField = self.view.viewWithTag(i) as? UITextField {
+                ingredientsArray.append(theTextField.text!)
+                print(theTextField.text!)
+            }
+        }
+
+        var procedureArray: [String] = []
+        for i in 1...procedureCount{
+            if let theTextField = self.view.viewWithTag(i+50) as? UITextField {
+                procedureArray.append(theTextField.text!)
+                print(theTextField.text!)
+            }
+        }
+        
+//                var ingredientsArray: [String] = []
+//                for i in 1...ingredientCount{
+//                    let indexPath = IndexPath.init(row: i-1, section: 0) // Obviously with the correct row/sec
+//                    let itemCell = tblViewAddIngredient.cellForRow(at: indexPath) as! IngredientsAddTableViewCell  // your tableview must be an IBOutlet on your view controller
+//                    ingredientsArray.append(itemCell.txtFieldIngredient.text!)
+//                }
 //
-//        var procedureArray: [String] = []
-//        for i in 1...procedureCount{
-//            if let theTextField = self.view.viewWithTag(i) as? UITextField {
-//                procedureArray.append(theTextField.text!)
-//                print(theTextField.text!)
-//            }
-//        }
-        
-                var ingredientsArray: [String] = []
-                for i in 1...ingredientCount{
-                    let indexPath = IndexPath.init(row: i-1, section: 0) // Obviously with the correct row/sec
-                    let itemCell = tblViewAddIngredient.cellForRow(at: indexPath) as! IngredientsAddTableViewCell  // your tableview must be an IBOutlet on your view controller
-                    ingredientsArray.append(itemCell.txtFieldIngredient.text!)
-                }
-        
-                var procedureArray: [String] = []
-                for i in 1...procedureCount{
-                    
-                    let indexPath = IndexPath.init(row: i-1, section: 0) // Obviously with the correct row/sec
-                    let itemCell = tblViewAddProcedure.cellForRow(at: indexPath) as! ProcedureTableViewCell  // your tableview must be an IBOutlet on your view controller
-                    procedureArray.append(itemCell.txtFieldProcedure.text!)
-                }
-        
+//                var procedureArray: [String] = []
+//                for i in 1...procedureCount{
+//
+//                    let indexPath = IndexPath.init(row: i-1, section: 0) // Obviously with the correct row/sec
+//                    let itemCell = tblViewAddProcedure.cellForRow(at: indexPath) as! ProcedureTableViewCell  // your tableview must be an IBOutlet on your view controller
+//                    procedureArray.append(itemCell.txtFieldProcedure.text!)
+//                }
+//
         
         
         

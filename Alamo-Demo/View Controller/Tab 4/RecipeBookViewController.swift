@@ -48,7 +48,7 @@ class RecipeBookViewController: UIViewController, UITableViewDelegate, UITableVi
                 }
                 self.tblViewRecipeBook.reloadData()
             }
-          //  print(self.obj[0])
+            print(self.obj[0])
         }
         
     }
