@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import Firebase
 
-class SignInViewController: UIViewController {
+class SignInViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var txtFieldPassword: UITextField!
     @IBOutlet weak var txtFieldEmail: UITextField!
@@ -20,8 +21,21 @@ class SignInViewController: UIViewController {
 
     @IBOutlet weak var btnSignIn: UIButton!
     @IBAction func btnSignInAction(_ sender: Any) {
+//        let email = txtFieldEmail.text!
+//        let password = txtFieldPassword.text!
+        
+        let email = "poojamahajan2092@gmail.com"
+        let password = "pooja12"
+        
+        Auth.auth().signIn(withEmail: email, password: password) { [weak self] user, error in
+            let secondViewController: TabBarController = self?.storyboard?.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
+            self?.present(secondViewController, animated: true, completion: nil)
+        }
     }
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     override func viewWillLayoutSubviews() {
         signInUIView.layer.shadowColor = UIColor.gray.cgColor
         signInUIView.layer.shadowOpacity = 1

@@ -1,0 +1,46 @@
+[
+    {
+        "result":[
+            {
+                "categories":[
+                    {
+                        "cat_id":"1",
+                        "cat_name":"Pink Lady",
+                        "cat_type":"Mild",
+                        "image":"https://images.cocktailflow.com/v1/cocktail/w_300,h_540/cocktail_pink_lady-1.png"
+                    },
+                    {
+                        "cat_id":"2",
+                        "cat_name":"French Martini",
+                        "cat_type":"Strong",
+                        "image":"https://images.cocktailflow.com/v1/cocktail/w_300,h_540/cocktail_french_martini-1.png"
+                    },
+                    {
+                        "cat_id":"3",
+                        "cat_name":"Chocolate Martini",
+                        "cat_type":"Light",
+                        "image":"https://images.cocktailflow.com/v1/cocktail/w_300,h_540/cocktail_chocolate_martini-1.png"
+                    },
+                    {
+                        "cat_id":"4",
+                        "cat_name":"Pomegranate Cosmo",
+                        "cat_type":"Hard",
+                        "image":"https://images.cocktailflow.com/v1/cocktail/w_300,h_540/cocktail_pomegranate_manhattan-1.png"
+                    },
+                    {
+                        "cat_id":"5",
+                        "cat_name":"Crantini",
+                        "cat_type":"Light",
+                        "image":"https://images.cocktailflow.com/v1/cocktail/w_300,h_540/cocktail_crantini-1.png"
+                    },
+                    {
+                        "cat_id":"6",
+                        "cat_name":"French Cosmo",
+                        "cat_type":"Hard",
+                        "image":"https://images.cocktailflow.com/v1/cocktail/w_300,h_540/cocktail_french_cosmo-1.png"
+                    }
+                ]
+            }
+        ]
+    }
+]

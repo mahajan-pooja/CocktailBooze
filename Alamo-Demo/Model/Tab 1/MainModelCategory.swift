@@ -9,25 +9,17 @@
 import UIKit
 
 class MainModelCategory: NSObject {
-    var message : String!
-    var pageSizeLimit : [Int]!
-    var perpage : Int!
-    var responsecode : Int!
-    var result : [SubCategoryModel]!
+    var recipe : [SubCategoryModel]!
     
     /**
      * Instantiate the instance using the passed dictionary values to set the properties values
      */
     init(fromDictionary dictionary: NSDictionary){
-        message = dictionary["message"] as? String
-        pageSizeLimit = dictionary["pageSizeLimit"] as? [Int]
-        perpage = dictionary["per-page"] as? Int
-        responsecode = dictionary["response-code"] as? Int
-        result = [SubCategoryModel]()
-        if let resultArray = dictionary["result"] as? [NSDictionary]{
-            for dic in resultArray{
+        recipe = [SubCategoryModel]()
+        if let recipesArray = dictionary["recipes"] as? [NSDictionary]{
+            for dic in recipesArray{
                 let value = SubCategoryModel(fromDictionary: dic)
-                result.append(value)
+                recipe.append(value)
             }
         }
     }
@@ -37,24 +29,13 @@ class MainModelCategory: NSObject {
      */
     func toDictionary() -> NSDictionary{
         let dictionary = NSMutableDictionary()
-        if message != nil{
-            dictionary["message"] = message
-        }
-        if pageSizeLimit != nil{
-            dictionary["pageSizeLimit"] = pageSizeLimit
-        }
-        if perpage != nil{
-            dictionary["per-page"] = perpage
-        }
-        if responsecode != nil{
-            dictionary["response-code"] = responsecode
-        }
-        if result != nil{
+
+        if recipe != nil{
             var dictionaryElements = [NSDictionary]()
-            for resultElement in result {
-                dictionaryElements.append(resultElement.toDictionary())
+            for recipeElement in recipe {
+                dictionaryElements.append(recipeElement.toDictionary())
             }
-            dictionary["result"] = dictionaryElements
+            dictionary["recipes"] = dictionaryElements
         }
         return dictionary
     }

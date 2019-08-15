@@ -1,0 +1,31 @@
+[
+    {
+        "result":[
+            {
+                "recipes":[
+                    {
+                        "product_id":"1",
+                        "product_name":"Valentine's Day",
+                        "image":"https://images.cocktailflow.com/v1/collection/w_300,h_270/collection_valentines_day.png"
+                    },
+                    {
+                        "product_id":"2",
+                        "product_name":"Summer",
+                        "image":"https://images.cocktailflow.com/v1/collection/w_300,h_270/collection_base_drink_rum.png"
+                    },
+                    {
+                        "product_id":"3",
+                        "product_name":"Spring",
+                        "image":"https://images.cocktailflow.com/v1/collection/w_300,h_270/collection_spring_is_here.png"
+                    },
+                    {
+                        "product_id":"4",
+                        "product_name":"Super Slushies",
+                        "image":"https://images.cocktailflow.com/v1/collection/w_300,h_270/collection_super_slushy_coolers_trio.png"
+                    }
+                ]
+            }
+        ]
+    }
+]
+

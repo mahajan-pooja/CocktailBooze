@@ -1,0 +1,48 @@
+[
+    {
+        "result":[
+            {
+                "categories":[
+                    {
+                        "cat_id":"1",
+                        "cat_name":"Papaya Slushy",
+                        "cat_type":"Mild",
+                        "image":"https://images.cocktailflow.com/v1/cocktail/w_300,h_540/cocktail_papaya_slushy-1.png"
+                    },
+                    {
+                        "cat_id":"2",
+                        "cat_name":"Apple Cooler",
+                        "cat_type":"Strong",
+                        "image":"https://images.cocktailflow.com/v1/cocktail/w_300,h_540/cocktail_watermelon_cooler_slushy-1.png"
+                    },
+                    {
+                        "cat_id":"3",
+                        "cat_name":"Mint Cooler",
+                        "cat_type":"Light",
+                        "image":"https://images.cocktailflow.com/v1/cocktail/w_300,h_540/cocktail_mint_cooler-1.png"
+                    },
+                    {
+                        "cat_id":"4",
+                        "cat_name":"Raspberry Slushy",
+                        "cat_type":"Hard",
+                        "image":"https://images.cocktailflow.com/v1/cocktail/w_300,h_540/cocktail_strawberry_watermelon_slushie-1.png"
+                    },
+                    {
+                        "cat_id":"5",
+                        "cat_name":"Tomato Cooler",
+                        "cat_type":"Light",
+                        "image":"https://images.cocktailflow.com/v1/cocktail/w_300,h_540/cocktail_tomato_cooler-1.png"
+                    },
+                    {
+                        "cat_id":"6",
+                        "cat_name":"Raspberry lemonade",
+                        "cat_type":"Hard",
+                        "image":"https://images.cocktailflow.com/v1/cocktail/w_300,h_540/cocktail_rasperry_limeade-1.png"
+                    }
+                ]
+            }
+        ]
+    }
+]
+ 
+

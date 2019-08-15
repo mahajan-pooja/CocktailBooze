@@ -1,0 +1,47 @@
+[
+    {
+        "result":[
+            {
+                "categories":[
+                    {
+                        "cat_id":"1",
+                        "cat_name":"Greentini",
+                        "cat_type":"Mild",
+                        "image":"https://images.cocktailflow.com/v1/cocktail/w_300,h_540/cocktail_greentini-1.png"
+                    },
+                    {
+                        "cat_id":"2",
+                        "cat_name":"Purple Passion",
+                        "cat_type":"Strong",
+                        "image":"https://images.cocktailflow.com/v1/cocktail/w_300,h_540/cocktail_purple_passion-1.png"
+                    },
+                    {
+                        "cat_id":"3",
+                        "cat_name":"Cranberry Kick",
+                        "cat_type":"Light",
+                        "image":"https://images.cocktailflow.com/v1/cocktail/w_300,h_540/cocktail_strawberry_mango_spring_smoothie-1.png"
+                    },
+                    {
+                        "cat_id":"4",
+                        "cat_name":"Gina",
+                        "cat_type":"Hard",
+                        "image":"https://images.cocktailflow.com/v1/cocktail/w_300,h_540/cocktail_gina-1.png"
+                    },
+                    {
+                        "cat_id":"5",
+                        "cat_name":"Blueberry Punch",
+                        "cat_type":"Light",
+                        "image":"https://images.cocktailflow.com/v1/cocktail/w_300,h_540/cocktail_cherry_berry_ginger-1.png"
+                    },
+                    {
+                        "cat_id":"6",
+                        "cat_name":"Orange Blossom",
+                        "cat_type":"Hard",
+                        "image":"https://images.cocktailflow.com/v1/cocktail/w_300,h_540/cocktail_orange_blossom-1.png"
+                    }
+                ]
+            }
+        ]
+    }
+]
+

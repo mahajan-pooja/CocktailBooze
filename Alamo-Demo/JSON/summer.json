@@ -1,0 +1,47 @@
+[
+    {
+        "result":[
+            {
+                "categories":[
+                    {
+                        "cat_id":"1",
+                        "cat_name":"Rossini",
+                        "cat_type":"Sparkling",
+                        "image":"https://images.cocktailflow.com/v1/cocktail/w_300,h_540/cocktail_rossini-1.png"
+                    },
+                    {
+                        "cat_id":"2",
+                        "cat_name":"Blaster Bates",
+                        "cat_type":"Strong",
+                        "image":"https://images.cocktailflow.com/v1/cocktail/w_300,h_540/cocktail_blaster_bates.png"
+                    },
+                    {
+                        "cat_id":"3",
+                        "cat_name":"Blue Hawaiian",
+                        "cat_type":"Light",
+                        "image":"https://images.cocktailflow.com/v1/cocktail/w_300,h_540/cocktail_blue_hawaiian-1.png"
+                    },
+                    {
+                        "cat_id":"4",
+                        "cat_name":"Strawberry Mojito",
+                        "cat_type":"Hard",
+                        "image":"https://images.cocktailflow.com/v1/cocktail/w_300,h_540/cocktail_strawberry_mojito-1.png"
+                    },
+                    {
+                        "cat_id":"5",
+                        "cat_name":"Mint Cooler",
+                        "cat_type":"Mild",
+                        "image":"https://images.cocktailflow.com/v1/cocktail/w_300,h_540/cocktail_fresh_mint_margaritas-1.png"
+                    },
+                    {
+                        "cat_id":"6",
+                        "cat_name":"Summer Sunset",
+                        "cat_type":"Hard",
+                        "image":"https://images.cocktailflow.com/v1/cocktail/w_300,h_540/cocktail_summer_sunset-1.png"
+                    }
+                ]
+            }
+        ]
+    }
+]
+

@@ -18,9 +18,6 @@ class RecipeViewController: UIViewController, UITableViewDataSource, UITableView
     let items = [["Gin", "Lemon Juice", "Raspberry", "Blueberry","Mint Leaves","Ice"], ["add raspberry, mint leaves, lemon", "crush raspberrymint leaveslemon, lemon", "add sugar syrup, ice, gin","shake well","strain into the old fashioned glass","garnish with lemon spiral"]]
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
         lblRecipeName.text = "Singapore Sling"
         lblRecipeType.text = "Medium (18%)"
         recipeImgView.image = UIImage(named: "cocktail")
@@ -44,12 +41,10 @@ class RecipeViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         let headerText = UILabel()
-       
         headerText.textAlignment = .center
         headerText.text = self.section[section]
         headerText.textColor = UIColor(red: 198/255, green: 23/255, blue: 55/255, alpha: 1)
         headerText.font = UIFont.init(name: "Noteworthy-bold", size: 25)
-        
         
         return headerText
     }
@@ -58,6 +53,4 @@ class RecipeViewController: UIViewController, UITableViewDataSource, UITableView
         cell.lblIngredients.text = self.items[indexPath.section][indexPath.row]
         return cell
     }
-   
-    
 }

@@ -15,7 +15,22 @@
 		7A929FAC219CEF170001B7D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A929FAB219CEF170001B7D7 /* AppDelegate.swift */; };
 		7A929FB1219CEF170001B7D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A929FAF219CEF170001B7D7 /* Main.storyboard */; };
 		7A929FB3219CEF180001B7D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A929FB2219CEF180001B7D7 /* Assets.xcassets */; };
+		7A9DD71E22F4BA6800588941 /* IngredientsAddTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9DD71D22F4BA6800588941 /* IngredientsAddTableViewCell.swift */; };
 		7ABB0E39221E2E25004649E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ABB0E38221E2E25004649E8 /* LaunchScreen.storyboard */; };
+		7ABC09912304C795002CA237 /* ProcedureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABC09902304C795002CA237 /* ProcedureTableViewCell.swift */; };
+		7ADB8F0122CD196100B11100 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7ADB8F0022CD196100B11100 /* GoogleService-Info.plist */; };
+		7ADB8F0722CD2A5F00B11100 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADB8F0622CD2A5F00B11100 /* TabBarController.swift */; };
+		7ADB8F0922CD496400B11100 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADB8F0822CD496400B11100 /* AccountViewController.swift */; };
+		7AEC609D22D3AF36001511DB /* main-category.json in Resources */ = {isa = PBXBuildFile; fileRef = 7AEC609C22D3AF36001511DB /* main-category.json */; };
+		7AEC60A022D3EC66001511DB /* valentine.json in Resources */ = {isa = PBXBuildFile; fileRef = 7AEC609F22D3EC66001511DB /* valentine.json */; };
+		7AEC60A422D3EDC4001511DB /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEC60A322D3EDC4001511DB /* CategoryModel.swift */; };
+		7AEC60A622D3EE41001511DB /* DetailCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEC60A522D3EE41001511DB /* DetailCategoryModel.swift */; };
+		7AEC60AA22D3FB5B001511DB /* summer.json in Resources */ = {isa = PBXBuildFile; fileRef = 7AEC60A922D3FB5B001511DB /* summer.json */; };
+		7AEC60AC22D40742001511DB /* spring.json in Resources */ = {isa = PBXBuildFile; fileRef = 7AEC60AB22D40742001511DB /* spring.json */; };
+		7AEC60AE22D408F0001511DB /* slushy.json in Resources */ = {isa = PBXBuildFile; fileRef = 7AEC60AD22D408F0001511DB /* slushy.json */; };
+		7AF6595C22CBDE3E008EDF8A /* AddRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF6595B22CBDE3E008EDF8A /* AddRecipeViewController.swift */; };
+		7AFE7F5C22D9251B004E5A68 /* RecipeBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFE7F5B22D9251B004E5A68 /* RecipeBookViewController.swift */; };
+		7AFE7F5E22D92939004E5A68 /* RecipeBookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFE7F5D22D92939004E5A68 /* RecipeBookTableViewCell.swift */; };
 		BA21385F22152ECD0082FB68 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA21385E22152ECD0082FB68 /* DetailsViewController.swift */; };
 		BA413982221E443000E74B98 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA413981221E443000E74B98 /* CategoryCollectionViewCell.swift */; };
 		BA43B4C7227299A200349C95 /* welcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43B4C6227299A200349C95 /* welcomeVC.swift */; };
@@ -41,7 +56,22 @@
 		7A929FB0219CEF170001B7D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7A929FB2219CEF180001B7D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A929FB7219CEF180001B7D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A9DD71D22F4BA6800588941 /* IngredientsAddTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsAddTableViewCell.swift; sourceTree = "<group>"; };
 		7ABB0E38221E2E25004649E8 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7ABC09902304C795002CA237 /* ProcedureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcedureTableViewCell.swift; sourceTree = "<group>"; };
+		7ADB8F0022CD196100B11100 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7ADB8F0622CD2A5F00B11100 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		7ADB8F0822CD496400B11100 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		7AEC609C22D3AF36001511DB /* main-category.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "main-category.json"; sourceTree = "<group>"; };
+		7AEC609F22D3EC66001511DB /* valentine.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = valentine.json; sourceTree = "<group>"; };
+		7AEC60A322D3EDC4001511DB /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
+		7AEC60A522D3EE41001511DB /* DetailCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCategoryModel.swift; sourceTree = "<group>"; };
+		7AEC60A922D3FB5B001511DB /* summer.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = summer.json; sourceTree = "<group>"; };
+		7AEC60AB22D40742001511DB /* spring.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = spring.json; sourceTree = "<group>"; };
+		7AEC60AD22D408F0001511DB /* slushy.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = slushy.json; sourceTree = "<group>"; };
+		7AF6595B22CBDE3E008EDF8A /* AddRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipeViewController.swift; sourceTree = "<group>"; };
+		7AFE7F5B22D9251B004E5A68 /* RecipeBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeBookViewController.swift; sourceTree = "<group>"; };
+		7AFE7F5D22D92939004E5A68 /* RecipeBookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeBookTableViewCell.swift; sourceTree = "<group>"; };
 		BA21385E22152ECD0082FB68 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		BA413981221E443000E74B98 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		BA43B4C6227299A200349C95 /* welcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = welcomeVC.swift; sourceTree = "<group>"; };
@@ -103,6 +133,8 @@
 			children = (
 				BAD9328F2212A10F008EDFBC /* MainModelCategory.swift */,
 				BAD9328222128EDD008EDFBC /* SubCategoryModel.swift */,
+				7AEC60A322D3EDC4001511DB /* CategoryModel.swift */,
+				7AEC60A522D3EE41001511DB /* DetailCategoryModel.swift */,
 			);
 			path = "Tab 1";
 			sourceTree = "<group>";
@@ -142,10 +174,51 @@
 				7ABB0E38221E2E25004649E8 /* LaunchScreen.storyboard */,
 				BAD93281221289AD008EDFBC /* View Controller */,
 				BAD932802212899F008EDFBC /* Model */,
+				7AEC609E22D3EB6D001511DB /* JSON */,
 				7A929FB2219CEF180001B7D7 /* Assets.xcassets */,
 				7A929FB7219CEF180001B7D7 /* Info.plist */,
+				7ADB8F0022CD196100B11100 /* GoogleService-Info.plist */,
 			);
 			path = "Alamo-Demo";
+			sourceTree = "<group>";
+		};
+		7ABC09922304D39E002CA237 /* Tab 3 */ = {
+			isa = PBXGroup;
+			children = (
+				7AF6595B22CBDE3E008EDF8A /* AddRecipeViewController.swift */,
+				7A9DD71D22F4BA6800588941 /* IngredientsAddTableViewCell.swift */,
+				7ABC09902304C795002CA237 /* ProcedureTableViewCell.swift */,
+			);
+			path = "Tab 3";
+			sourceTree = "<group>";
+		};
+		7ABC09932304D3CA002CA237 /* Tab 4 */ = {
+			isa = PBXGroup;
+			children = (
+				7AFE7F5B22D9251B004E5A68 /* RecipeBookViewController.swift */,
+				7AFE7F5D22D92939004E5A68 /* RecipeBookTableViewCell.swift */,
+			);
+			path = "Tab 4";
+			sourceTree = "<group>";
+		};
+		7ABC09942304D3EB002CA237 /* Tab 5 */ = {
+			isa = PBXGroup;
+			children = (
+				7ADB8F0822CD496400B11100 /* AccountViewController.swift */,
+			);
+			path = "Tab 5";
+			sourceTree = "<group>";
+		};
+		7AEC609E22D3EB6D001511DB /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				7AEC609C22D3AF36001511DB /* main-category.json */,
+				7AEC609F22D3EC66001511DB /* valentine.json */,
+				7AEC60A922D3FB5B001511DB /* summer.json */,
+				7AEC60AB22D40742001511DB /* spring.json */,
+				7AEC60AD22D408F0001511DB /* slushy.json */,
+			);
+			path = JSON;
 			sourceTree = "<group>";
 		};
 		BACC83FA227653280012158C /* Login */ = {
@@ -172,7 +245,11 @@
 				BACC83FA227653280012158C /* Login */,
 				7A04BC0C2233252100F2C464 /* Tab 1 */,
 				7A04BC0D2233254000F2C464 /* Tab 2 */,
+				7ABC09922304D39E002CA237 /* Tab 3 */,
+				7ABC09932304D3CA002CA237 /* Tab 4 */,
+				7ABC09942304D3EB002CA237 /* Tab 5 */,
 				BA43B4C6227299A200349C95 /* welcomeVC.swift */,
+				7ADB8F0622CD2A5F00B11100 /* TabBarController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -246,9 +323,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7ADB8F0122CD196100B11100 /* GoogleService-Info.plist in Resources */,
+				7AEC60AA22D3FB5B001511DB /* summer.json in Resources */,
 				7A929FB3219CEF180001B7D7 /* Assets.xcassets in Resources */,
+				7AEC60A022D3EC66001511DB /* valentine.json in Resources */,
 				7ABB0E39221E2E25004649E8 /* LaunchScreen.storyboard in Resources */,
+				7AEC60AE22D408F0001511DB /* slushy.json in Resources */,
 				7A929FB1219CEF170001B7D7 /* Main.storyboard in Resources */,
+				7AEC60AC22D40742001511DB /* spring.json in Resources */,
+				7AEC609D22D3AF36001511DB /* main-category.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,16 +370,32 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Alamo-Demo/Pods-Alamo-Demo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -310,18 +409,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A9DD71E22F4BA6800588941 /* IngredientsAddTableViewCell.swift in Sources */,
 				7A04BC092232F5BF00F2C464 /* VideoCategoryViewController.swift in Sources */,
 				BAD93285221295EA008EDFBC /* MainCategoryCollectionViewCell.swift in Sources */,
 				BAD9328722129780008EDFBC /* MainCategoryViewController.swift in Sources */,
+				7ADB8F0722CD2A5F00B11100 /* TabBarController.swift in Sources */,
 				7A04BC052232F21400F2C464 /* VideoCategoryModel.swift in Sources */,
+				7ABC09912304C795002CA237 /* ProcedureTableViewCell.swift in Sources */,
 				BA21385F22152ECD0082FB68 /* DetailsViewController.swift in Sources */,
 				7A04BC0B2232F82B00F2C464 /* MainVideoCategoryModel.swift in Sources */,
 				BAD932902212A10F008EDFBC /* MainModelCategory.swift in Sources */,
 				BABB7631221F967200E2C0D4 /* IngredientsTableViewCell.swift in Sources */,
 				BACC83FC227653520012158C /* SignInViewController.swift in Sources */,
 				BABB762F221F94C100E2C0D4 /* RecipeViewController.swift in Sources */,
+				7AFE7F5C22D9251B004E5A68 /* RecipeBookViewController.swift in Sources */,
 				BACC83FE227653600012158C /* SignUpViewController.swift in Sources */,
+				7AEC60A622D3EE41001511DB /* DetailCategoryModel.swift in Sources */,
+				7ADB8F0922CD496400B11100 /* AccountViewController.swift in Sources */,
+				7AEC60A422D3EDC4001511DB /* CategoryModel.swift in Sources */,
+				7AFE7F5E22D92939004E5A68 /* RecipeBookTableViewCell.swift in Sources */,
 				BA413982221E443000E74B98 /* CategoryCollectionViewCell.swift in Sources */,
+				7AF6595C22CBDE3E008EDF8A /* AddRecipeViewController.swift in Sources */,
 				BAD9328322128EDD008EDFBC /* SubCategoryModel.swift in Sources */,
 				BA43B4C7227299A200349C95 /* welcomeVC.swift in Sources */,
 				7A929FAC219CEF170001B7D7 /* AppDelegate.swift in Sources */,
