@@ -12,7 +12,7 @@
         <!--Recipe View Controller-->
         <scene sceneID="INV-cw-5ok">
             <objects>
-                <viewController id="kRX-xO-6Ln" customClass="RecipeViewController" customModule="Alamo_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RecipeViewController" id="kRX-xO-6Ln" customClass="RecipeViewController" customModule="Alamo_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VlL-Rn-MG8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -163,7 +163,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="DDh-PA-42L">
-                                <rect key="frame" x="5" y="228" width="365" height="439"/>
+                                <rect key="frame" x="5" y="228" width="365" height="390"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="0e9-oQ-WyI">
                                     <size key="itemSize" width="202" height="198"/>
@@ -233,7 +233,7 @@
                                 </connections>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.87264554794520544" blue="0.44402825342465752" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="1" green="0.87450980392156863" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="DDh-PA-42L" firstAttribute="leading" secondItem="etL-Zg-Rj6" secondAttribute="leading" constant="5" id="DrP-Kw-jxP"/>
                             <constraint firstItem="etL-Zg-Rj6" firstAttribute="trailing" secondItem="DDh-PA-42L" secondAttribute="trailing" constant="5" id="XLE-db-58v"/>
@@ -573,7 +573,7 @@
                         <segue destination="MP6-sh-ARb" kind="relationship" relationship="viewControllers" id="DgU-4b-Kpz"/>
                         <segue destination="58K-F1-n6Y" kind="relationship" relationship="viewControllers" id="Rvl-Ya-LS2"/>
                         <segue destination="Ip2-Kq-QHg" kind="relationship" relationship="viewControllers" id="oVt-j2-j0H"/>
-                        <segue destination="JRK-oN-Oat" kind="relationship" relationship="viewControllers" id="x1f-2d-yfT"/>
+                        <segue destination="Kxa-HF-SGD" kind="relationship" relationship="viewControllers" id="9Ne-Rk-qDU"/>
                         <segue destination="zbS-Ip-b9p" kind="relationship" relationship="viewControllers" id="7QV-ZS-JwY"/>
                     </connections>
                 </tabBarController>
@@ -1380,28 +1380,50 @@
             </objects>
             <point key="canvasLocation" x="-6031.1999999999998" y="-863.1184407796103"/>
         </scene>
-        <!--Recipe Book View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="7Xc-Q3-cqj">
+            <objects>
+                <navigationController id="Kxa-HF-SGD" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="open-book (1)" id="UTD-ue-O6Q">
+                        <inset key="imageInsets" minX="0.0" minY="-17" maxX="0.0" maxY="-26"/>
+                    </tabBarItem>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="o6n-C8-Yhd">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="1" green="0.87264554790000004" blue="0.44402825340000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" red="0.2784313725" green="0.078431372550000003" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="1" green="0.87264554790000004" blue="0.44402825340000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="JRK-oN-Oat" kind="relationship" relationship="rootViewController" id="qii-27-g2j"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ykK-9T-6HP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5129" y="-967"/>
+        </scene>
+        <!--Recipe Book-->
         <scene sceneID="8ux-I2-QId">
             <objects>
                 <viewController storyboardIdentifier="RecipeBookViewController" id="JRK-oN-Oat" customClass="RecipeBookViewController" customModule="Alamo_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LxB-GX-32n">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Recipe Book" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JFL-Ei-V62">
-                                <rect key="frame" x="20" y="40" width="335" height="50"/>
+                                <rect key="frame" x="20" y="20" width="335" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="979-ez-ugm"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="23"/>
-                                <color key="textColor" red="0.58039215690000001" green="0.031372549020000001" blue="0.21960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.27843137254901962" green="0.078431372549019607" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EQX-xa-hjJ">
-                                <rect key="frame" x="0.0" y="100" width="375" height="568"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EQX-xa-hjJ">
+                                <rect key="frame" x="0.0" y="80" width="375" height="524"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="RecipeBookTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecipeBookTableViewCell" rowHeight="118" id="40o-cW-Qsi" customClass="RecipeBookTableViewCell" customModule="Alamo_Demo" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="RecipeBookTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="RecipeBookTableViewCell" rowHeight="118" id="40o-cW-Qsi" customClass="RecipeBookTableViewCell" customModule="Alamo_Demo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="118"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="40o-cW-Qsi" id="W4R-fQ-UjA">
@@ -1410,7 +1432,7 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iB0-XG-2bE">
                                                     <rect key="frame" x="20" y="10" width="335" height="98"/>
-                                                    <color key="backgroundColor" red="0.58039215690000001" green="0.031372549020000001" blue="0.21960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" red="1" green="0.87450980392156863" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                             <integer key="value" value="10"/>
@@ -1427,7 +1449,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="spr-tE-jmO">
                                                     <rect key="frame" x="177" y="29" width="183" height="59.5"/>
                                                     <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="20"/>
-                                                    <color key="textColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color key="textColor" red="0.27843137254901962" green="0.078431372549019607" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -1474,6 +1496,7 @@
                     <tabBarItem key="tabBarItem" title="" image="open-book (1)" id="jxL-TS-6bG">
                         <inset key="imageInsets" minX="4" minY="-17" maxX="0.0" maxY="-26"/>
                     </tabBarItem>
+                    <navigationItem key="navigationItem" title="Recipe Book" id="1eK-LE-2hQ"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tblViewRecipeBook" destination="EQX-xa-hjJ" id="lGS-OT-fSr"/>
@@ -1481,7 +1504,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BWO-0C-F4I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5103.1999999999998" y="-874.81259370314854"/>
+            <point key="canvasLocation" x="-4340" y="-967"/>
         </scene>
         <!--WelcomeVC-->
         <scene sceneID="JXe-DS-fVI">
@@ -1640,6 +1663,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="f5e-SJ-2c1"/>
         <segue reference="jh6-qV-pBK"/>
-        <segue reference="2mL-Ro-9iW"/>
+        <segue reference="DgU-4b-Kpz"/>
     </inferredMetricsTieBreakers>
 </document>

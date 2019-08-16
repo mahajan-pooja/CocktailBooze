@@ -147,6 +147,12 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
             if error != nil {
                 print("Error")
             }else{
+                let alert = UIAlertController(title: "Success", message: "Recipe Added Successfully!", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                
+                self.tabBarController?.selectedIndex = 3
+                
                 print("Done")
             }
         }

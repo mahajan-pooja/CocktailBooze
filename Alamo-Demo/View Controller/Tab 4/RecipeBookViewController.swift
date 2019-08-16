@@ -25,9 +25,16 @@ class RecipeBookViewController: UIViewController, UITableViewDelegate, UITableVi
         //cell.imgRecipe.image = UIImage(named: "edit")
         return cell
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "RecipeViewController") as? RecipeViewController
+        self.navigationController?.pushViewController(vc!, animated: true)
+       
+    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,11 +55,10 @@ class RecipeBookViewController: UIViewController, UITableViewDelegate, UITableVi
                 }
                 self.tblViewRecipeBook.reloadData()
             }
-            print(self.obj[0])
         }
         
     }
     override func viewWillAppear(_ animated: Bool) {
-        print("viewwillappear")
+        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
 }

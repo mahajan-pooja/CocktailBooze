@@ -22,6 +22,10 @@ class RecipeViewController: UIViewController, UITableViewDataSource, UITableView
         lblRecipeType.text = "Medium (18%)"
         recipeImgView.image = UIImage(named: "cocktail")
         
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for:.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.layoutIfNeeded()
+        
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return self.section.count
