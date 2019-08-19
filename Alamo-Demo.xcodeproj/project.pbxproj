@@ -16,6 +16,11 @@
 		7A929FB1219CEF170001B7D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A929FAF219CEF170001B7D7 /* Main.storyboard */; };
 		7A929FB3219CEF180001B7D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A929FB2219CEF180001B7D7 /* Assets.xcassets */; };
 		7A9DD71E22F4BA6800588941 /* IngredientsAddTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9DD71D22F4BA6800588941 /* IngredientsAddTableViewCell.swift */; };
+		7AAC189C230B1EAD00EC7D48 /* RecipeDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAC189B230B1EAD00EC7D48 /* RecipeDetailModel.swift */; };
+		7AAC18A1230B25E900EC7D48 /* ProcedureTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAC18A0230B25E900EC7D48 /* ProcedureTableCell.swift */; };
+		7AAC18A3230B3A8500EC7D48 /* RecipeDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAC18A2230B3A8500EC7D48 /* RecipeDetailVC.swift */; };
+		7AAC18A5230B3C1A00EC7D48 /* IngredientsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAC18A4230B3C1A00EC7D48 /* IngredientsCell.swift */; };
+		7AAC18A7230B3D4C00EC7D48 /* ProcedureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAC18A6230B3D4C00EC7D48 /* ProcedureCell.swift */; };
 		7ABB0E39221E2E25004649E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ABB0E38221E2E25004649E8 /* LaunchScreen.storyboard */; };
 		7ABC09912304C795002CA237 /* ProcedureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABC09902304C795002CA237 /* ProcedureTableViewCell.swift */; };
 		7ADB8F0122CD196100B11100 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7ADB8F0022CD196100B11100 /* GoogleService-Info.plist */; };
@@ -57,6 +62,11 @@
 		7A929FB2219CEF180001B7D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A929FB7219CEF180001B7D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A9DD71D22F4BA6800588941 /* IngredientsAddTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsAddTableViewCell.swift; sourceTree = "<group>"; };
+		7AAC189B230B1EAD00EC7D48 /* RecipeDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailModel.swift; sourceTree = "<group>"; };
+		7AAC18A0230B25E900EC7D48 /* ProcedureTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcedureTableCell.swift; sourceTree = "<group>"; };
+		7AAC18A2230B3A8500EC7D48 /* RecipeDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailVC.swift; sourceTree = "<group>"; };
+		7AAC18A4230B3C1A00EC7D48 /* IngredientsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsCell.swift; sourceTree = "<group>"; };
+		7AAC18A6230B3D4C00EC7D48 /* ProcedureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcedureCell.swift; sourceTree = "<group>"; };
 		7ABB0E38221E2E25004649E8 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7ABC09902304C795002CA237 /* ProcedureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcedureTableViewCell.swift; sourceTree = "<group>"; };
 		7ADB8F0022CD196100B11100 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -115,6 +125,7 @@
 				BA413981221E443000E74B98 /* CategoryCollectionViewCell.swift */,
 				BABB762E221F94C100E2C0D4 /* RecipeViewController.swift */,
 				BABB7630221F967200E2C0D4 /* IngredientsTableViewCell.swift */,
+				7AAC18A0230B25E900EC7D48 /* ProcedureTableCell.swift */,
 			);
 			path = "Tab 1";
 			sourceTree = "<group>";
@@ -182,6 +193,14 @@
 			path = "Alamo-Demo";
 			sourceTree = "<group>";
 		};
+		7AAC189F230B24CE00EC7D48 /* Tab 4 */ = {
+			isa = PBXGroup;
+			children = (
+				7AAC189B230B1EAD00EC7D48 /* RecipeDetailModel.swift */,
+			);
+			path = "Tab 4";
+			sourceTree = "<group>";
+		};
 		7ABC09922304D39E002CA237 /* Tab 3 */ = {
 			isa = PBXGroup;
 			children = (
@@ -197,6 +216,9 @@
 			children = (
 				7AFE7F5B22D9251B004E5A68 /* RecipeBookViewController.swift */,
 				7AFE7F5D22D92939004E5A68 /* RecipeBookTableViewCell.swift */,
+				7AAC18A2230B3A8500EC7D48 /* RecipeDetailVC.swift */,
+				7AAC18A4230B3C1A00EC7D48 /* IngredientsCell.swift */,
+				7AAC18A6230B3D4C00EC7D48 /* ProcedureCell.swift */,
 			);
 			path = "Tab 4";
 			sourceTree = "<group>";
@@ -234,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				7A04BC0E2233256300F2C464 /* Tab 1 */,
+				7AAC189F230B24CE00EC7D48 /* Tab 4 */,
 				7A04BC0F2233256B00F2C464 /* Tab 2 */,
 			);
 			path = Model;
@@ -410,17 +433,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A9DD71E22F4BA6800588941 /* IngredientsAddTableViewCell.swift in Sources */,
+				7AAC18A7230B3D4C00EC7D48 /* ProcedureCell.swift in Sources */,
 				7A04BC092232F5BF00F2C464 /* VideoCategoryViewController.swift in Sources */,
 				BAD93285221295EA008EDFBC /* MainCategoryCollectionViewCell.swift in Sources */,
 				BAD9328722129780008EDFBC /* MainCategoryViewController.swift in Sources */,
 				7ADB8F0722CD2A5F00B11100 /* TabBarController.swift in Sources */,
 				7A04BC052232F21400F2C464 /* VideoCategoryModel.swift in Sources */,
 				7ABC09912304C795002CA237 /* ProcedureTableViewCell.swift in Sources */,
+				7AAC18A5230B3C1A00EC7D48 /* IngredientsCell.swift in Sources */,
+				7AAC18A3230B3A8500EC7D48 /* RecipeDetailVC.swift in Sources */,
 				BA21385F22152ECD0082FB68 /* DetailsViewController.swift in Sources */,
 				7A04BC0B2232F82B00F2C464 /* MainVideoCategoryModel.swift in Sources */,
 				BAD932902212A10F008EDFBC /* MainModelCategory.swift in Sources */,
 				BABB7631221F967200E2C0D4 /* IngredientsTableViewCell.swift in Sources */,
 				BACC83FC227653520012158C /* SignInViewController.swift in Sources */,
+				7AAC18A1230B25E900EC7D48 /* ProcedureTableCell.swift in Sources */,
 				BABB762F221F94C100E2C0D4 /* RecipeViewController.swift in Sources */,
 				7AFE7F5C22D9251B004E5A68 /* RecipeBookViewController.swift in Sources */,
 				BACC83FE227653600012158C /* SignUpViewController.swift in Sources */,
@@ -431,6 +458,7 @@
 				BA413982221E443000E74B98 /* CategoryCollectionViewCell.swift in Sources */,
 				7AF6595C22CBDE3E008EDF8A /* AddRecipeViewController.swift in Sources */,
 				BAD9328322128EDD008EDFBC /* SubCategoryModel.swift in Sources */,
+				7AAC189C230B1EAD00EC7D48 /* RecipeDetailModel.swift in Sources */,
 				BA43B4C7227299A200349C95 /* welcomeVC.swift in Sources */,
 				7A929FAC219CEF170001B7D7 /* AppDelegate.swift in Sources */,
 				7A04BC072232F54000F2C464 /* VideoTableViewCell.swift in Sources */,

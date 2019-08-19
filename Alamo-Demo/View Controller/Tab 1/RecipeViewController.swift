@@ -7,14 +7,18 @@
 //
 
 import UIKit
+import Firebase
 
 class RecipeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var ingredientsTableView: UITableView!
+    @IBOutlet weak var procedureTableView: UITableView!
+    
     @IBOutlet weak var recipeImgView: UIImageView!
     @IBOutlet weak var lblRecipeType: UILabel!
     @IBOutlet weak var lblRecipeName: UILabel!
     let section = ["Ingredients", "Recipe"]
-    
+    var recipe: String!
+    var obj = [String:Any]()
     let items = [["Gin", "Lemon Juice", "Raspberry", "Blueberry","Mint Leaves","Ice"], ["add raspberry, mint leaves, lemon", "crush raspberrymint leaveslemon, lemon", "add sugar syrup, ice, gin","shake well","strain into the old fashioned glass","garnish with lemon spiral"]]
     override func viewDidLoad() {
         super.viewDidLoad()

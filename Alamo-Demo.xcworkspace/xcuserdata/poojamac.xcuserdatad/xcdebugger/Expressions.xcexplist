@@ -3,6 +3,17 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "RecipeViewController.tableView(_:cellForRowAt:):RecipeViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "RecipeViewController.viewDidLoad():RecipeViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "obj">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "AddRecipeViewController.addRecipe():AddRecipeViewController.swift">
          <PersistentStrings>
             <PersistentString

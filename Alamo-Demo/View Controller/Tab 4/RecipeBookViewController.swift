@@ -26,9 +26,58 @@ class RecipeBookViewController: UIViewController, UITableViewDelegate, UITableVi
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "RecipeViewController") as? RecipeViewController
-        self.navigationController?.pushViewController(vc!, animated: true)
+        print("\(obj[indexPath.row]["recipe-name"]!)")
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "RecipeDetailVC") as! RecipeDetailVC
+        vc.recipe = obj[indexPath.row]["recipe-name"]! as! String
+        self.navigationController?.pushViewController(vc, animated: true)
        
+    }
+
+    
+    func tableView(_ tableView: UITableView, willBeginEditingRowAt indexPath: IndexPath) {
+        tableView.subviews.forEach { subview in
+            print("YourTableViewController: \(String(describing: type(of: subview)))")
+            if (String(describing: type(of: subview)) == "UISwipeActionPullView") {
+                if (String(describing: type(of: subview.subviews[0])) == "UISwipeActionStandardButton") {
+                    var deleteBtnFrame = subview.subviews[0].frame
+                    deleteBtnFrame.origin.y = 15
+                    deleteBtnFrame.size.height = 140
+                
+                    
+                    // Subview in this case is the whole edit View
+                    subview.frame.origin.y =  subview.frame.origin.y - 3
+                    subview.frame.origin.x =  subview.frame.origin.x - 20
+                    subview.frame.size.height = 140
+                    subview.subviews[0].frame = deleteBtnFrame
+                    subview.backgroundColor = UIColor.white
+                }
+            }
+        }
+    }
+
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            
+            let user = Auth.auth().currentUser
+            var email:String!
+            if let user = user {
+                //let uid = user.uid
+                email = user.email
+            }
+            let document = obj[indexPath.row]["recipe-name"] as? String
+            Firestore.firestore().collection(email).document(document!).delete() { err in
+                if let err = err {
+                    print("Error removing document: \(err)")
+                } else {
+                    print("Document successfully removed!")
+                }
+            }
+            obj.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+        }
+        
+//        tblViewRecipeBook.reloadData()
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
