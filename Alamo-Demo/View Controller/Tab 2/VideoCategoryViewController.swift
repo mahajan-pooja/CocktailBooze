@@ -20,7 +20,7 @@ class VideoCategoryViewController: UIViewController, UITableViewDataSource, UITa
     
     func fetchVideoCategoryData(){
         DispatchQueue.main.async {
-            Alamofire.request("http://demo0104834.mockable.io/videos").responseJSON(completionHandler: {(response) in
+            Alamofire.request("https://mahajan-pooja.github.io/cocktail-booz-api/video-category.json").responseJSON(completionHandler: {(response) in
                 if response.result.isSuccess {
                     let model: MainVideoCategoryModel = MainVideoCategoryModel.init(fromDictionary: (response.result.value as? NSDictionary)!)
                     arrayAllVideosList.removeAll()
@@ -57,7 +57,7 @@ class VideoCategoryViewController: UIViewController, UITableViewDataSource, UITa
             ( image, error, cacheType, imageUrl) in
             if image != nil{
                 cell.videoImageView.clipsToBounds = true
-                cell.videoImageView.backgroundColor = .white
+                //cell.videoImageView.backgroundColor = .white
             }
         })
         cell.cellView.layer.shadowColor = UIColor.gray.cgColor

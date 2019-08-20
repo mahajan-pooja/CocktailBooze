@@ -13,6 +13,7 @@ import FirebaseFirestore
 
 class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource{
     
+    @IBOutlet weak var btnAddRecipe: UIButton!
     @IBOutlet weak var mainViewHeight: NSLayoutConstraint!
     @IBOutlet weak var tblProcedureHeight: NSLayoutConstraint!
     @IBOutlet weak var tblViewAddProcedure: UITableView!
@@ -62,6 +63,7 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
         imagePicker.delegate = self
         btnAddProcedure.layer.cornerRadius = 15
         btnAddIngredients.layer.cornerRadius = 15
+        btnAddRecipe.layer.cornerRadius = 15
         
         ingredientsUIView.layer.cornerRadius = ingredientsUIView.frame.width/15
         addProcedureUIView.layer.cornerRadius = addProcedureUIView.frame.width/15
@@ -140,20 +142,22 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
             }
         }
         
-        //save data on firebase
-        let data: [String:Any] = ["recipe-name":txtfRecipeName.text!, "recipe-type":txtfType.text!, "recipe-img":imageName, "ingredients":ingredientsArray, "procedure": procedureArray]
-        ref = Firestore.firestore().collection(email).document(txtfRecipeName.text!)
-        ref.setData(data){ (error) in
-            if error != nil {
-                print("Error")
-            }else{
-                let alert = UIAlertController(title: "Success", message: "Recipe Added Successfully!", preferredStyle: UIAlertController.Style.alert)
-                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
-                
-                self.tabBarController?.selectedIndex = 3
-                
-                print("Done")
+        if(txtfRecipeName.text! != "" && txtfType.text! != "" && imageName != "" && imageName != nil && ingredientsArray != nil && procedureArray != nil){
+            //save data on firebase
+            let data: [String:Any] = ["recipe-name":txtfRecipeName.text!, "recipe-type":txtfType.text!, "recipe-img":imageName, "ingredients":ingredientsArray, "procedure": procedureArray]
+            ref = Firestore.firestore().collection(email).document(txtfRecipeName.text!)
+            ref.setData(data){ (error) in
+                if error != nil {
+                    print("Error")
+                }else{
+                    let alert = UIAlertController(title: "Success", message: "Recipe Added Successfully!", preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                    
+                    self.tabBarController?.selectedIndex = 3
+                    
+                    print("Done")
+                }
             }
         }
     }

@@ -26,7 +26,7 @@ class RecipeViewController: UIViewController, UITableViewDataSource, UITableView
         lblRecipeType.text = "Medium (18%)"
         recipeImgView.image = UIImage(named: "cocktail")
         
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for:.default)
+    self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for:.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.layoutIfNeeded()
         
@@ -51,8 +51,8 @@ class RecipeViewController: UIViewController, UITableViewDataSource, UITableView
         let headerText = UILabel()
         headerText.textAlignment = .center
         headerText.text = self.section[section]
-        headerText.textColor = UIColor(red: 198/255, green: 23/255, blue: 55/255, alpha: 1)
-        headerText.font = UIFont.init(name: "Noteworthy-bold", size: 25)
+        headerText.textColor = UIColor(red: 70/255, green: 20/255, blue: 72/255, alpha: 1)
+        headerText.font = UIFont.init(name: "Noteworthy-bold", size: 20)
         
         return headerText
     }

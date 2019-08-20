@@ -12,58 +12,96 @@ import Kingfisher
 
 var itemIndex = 0
 var arrayAllProductList: [SubCategoryModel] = [SubCategoryModel]()
+var arrayAllCountryList: [SubCategoryModel] = [SubCategoryModel]()
 
 class MainCategoryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
+    
+    @IBOutlet weak var sliderCollectionView: UICollectionView!
     var objMainCategory: MainModelCategory!
     @IBOutlet weak var MainCategoryCollectionView: UICollectionView!
     @IBOutlet weak var lblTitleDiscover: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchUserData()
-
+        fetchMainCategoryData()
+        fetchCountryCategoryData()
     }
     override func viewWillLayoutSubviews() {
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return arrayAllProductList.count
+        if(collectionView == MainCategoryCollectionView){
+            return arrayAllProductList.count
+        }else{
+            return arrayAllCountryList.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-       let cell:MainCategoryCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainCategoryCollectionViewCell", for: indexPath) as! MainCategoryCollectionViewCell
-        
-        let objectList: SubCategoryModel = arrayAllProductList[indexPath.item]
-        if(objectList.image != "") {
-            let url: URL = URL(string: objectList.image)!
-            cell.imgCategory.kf.setImage(with: url, placeholder: UIImage(named:"cocktail"),  options: nil, progressBlock: nil, completionHandler: {
-                ( image, error, cacheType, imageUrl) in
-                if image != nil{
-                    cell.imgCategory.clipsToBounds = true
-                    cell.imgCategory.backgroundColor = .white
-                }
-            })
+        if(collectionView == MainCategoryCollectionView){
+           let cell:MainCategoryCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainCategoryCollectionViewCell", for: indexPath) as! MainCategoryCollectionViewCell
+            
+            let objectList: SubCategoryModel = arrayAllProductList[indexPath.item]
+            if(objectList.image != "") {
+                let url: URL = URL(string: objectList.image)!
+                cell.imgCategory.kf.setImage(with: url, placeholder: UIImage(named:"cocktail"),  options: nil, progressBlock: nil, completionHandler: {
+                    ( image, error, cacheType, imageUrl) in
+                    if image != nil{
+                        cell.imgCategory.clipsToBounds = true
+                        cell.imgCategory.backgroundColor = .white
+                    }
+                })
+            }
+            cell.mainCategoryView.layer.shadowColor = UIColor.gray.cgColor
+            cell.mainCategoryView.layer.shadowOpacity = 0.8
+            cell.mainCategoryView.layer.shadowOffset = CGSize.zero
+            cell.mainCategoryView.layer.shadowRadius = 5
+            cell.lblMainCategoryName.text = objectList.productName
+            
+            return cell
+        }else{
+            let cell:SliderCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "SliderCollectionViewCell", for: indexPath) as! SliderCollectionViewCell
+            let objectList: SubCategoryModel = arrayAllCountryList[indexPath.item]
+            cell.lblCategoryName.text = objectList.productName
+            if(objectList.image != "") {
+                let url: URL = URL(string: objectList.image)!
+                cell.imgCocktailIcon.kf.setImage(with: url, placeholder: UIImage(named:"cocktail"),  options: nil, progressBlock: nil, completionHandler: {
+                    ( image, error, cacheType, imageUrl) in
+                    if image != nil{
+                        cell.imgCocktailIcon.clipsToBounds = true
+                        //cell.imgCocktailIcon.backgroundColor = .white
+                    }
+                })
+            }
+            
+            cell.sliderCategoryView.layer.shadowColor = UIColor.gray.cgColor
+            cell.sliderCategoryView.layer.shadowOpacity = 0.5
+            cell.sliderCategoryView.layer.shadowOffset = CGSize.zero
+            cell.sliderCategoryView.layer.shadowRadius = 3
+            
+            return cell
         }
-        cell.mainCategoryView.layer.shadowColor = UIColor.gray.cgColor
-        cell.mainCategoryView.layer.shadowOpacity = 0.8
-        cell.mainCategoryView.layer.shadowOffset = CGSize.zero
-        cell.mainCategoryView.layer.shadowRadius = 5
-        cell.lblMainCategoryName.text = objectList.productName
-        
-        return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let yourWidth = collectionView.bounds.width/2.0
-        let yourHeight = yourWidth
-        
-        return CGSize(width: yourWidth, height: yourHeight)
+        if(collectionView == MainCategoryCollectionView){
+            let yourWidth = collectionView.bounds.width/2.0
+            let yourHeight = yourWidth
+            
+            return CGSize(width: yourWidth, height: yourHeight)
+        }else{
+            return CGSize(width: collectionView.bounds.width/2.0 - 10, height: collectionView.bounds.width/2.0)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        itemIndex = indexPath.row
-        let cocktailDetail:DetailsViewController = self.storyboard?.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
-        cocktailDetail.prod_id = arrayAllProductList[indexPath.row].productId!
-        self.navigationController?.pushViewController(cocktailDetail, animated: true)
+        if(collectionView == MainCategoryCollectionView){
+            itemIndex = indexPath.row
+            let cocktailDetail:DetailsViewController = self.storyboard?.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
+            cocktailDetail.prod_id = arrayAllProductList[indexPath.row].productId!
+            self.navigationController?.pushViewController(cocktailDetail, animated: true)
+        }else{
+            
+        }
     }
     
     func readJSONFromFile(fileName: String) -> Any?
@@ -83,7 +121,7 @@ class MainCategoryViewController: UIViewController, UICollectionViewDelegate, UI
         return json
     }
     
-    func fetchUserData(){
+    func fetchMainCategoryData(){
 //        let parentList: [NSDictionary] = ((self.readJSONFromFile(fileName: "main-category") as? [NSDictionary])!)
 //        let arrayList: [NSDictionary] = parentList[0].value(forKey: "result") as! Array
 //        arrayAllProductList.removeAll()
@@ -108,5 +146,21 @@ class MainCategoryViewController: UIViewController, UICollectionViewDelegate, UI
                 }
             })
 //        }
+    }
+    
+    func fetchCountryCategoryData(){
+        Alamofire.request("https://mahajan-pooja.github.io/cocktail-booz-api/country-category.json").responseJSON(completionHandler: {(response) in
+            if response.result.isSuccess {
+                print("response.result.value \(response.result.value)")
+                let model: MainModelCategory = MainModelCategory.init(fromDictionary: (response.result.value as? NSDictionary)!)
+                arrayAllCountryList.removeAll()
+                if (model.recipe.count) > 0 {
+                    arrayAllCountryList.append(contentsOf: model.recipe)
+                }
+                self.sliderCollectionView.reloadData()
+            }else{
+                print("failure error")
+            }
+        })
     }
 }

@@ -29,10 +29,10 @@ class AccountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        btnSignOut.layer.shadowColor = UIColor.black.cgColor
-        btnSignOut.layer.shadowOpacity = 1
+        btnSignOut.layer.shadowColor = UIColor.gray.cgColor
+        btnSignOut.layer.shadowOpacity = 0.5
         btnSignOut.layer.shadowOffset = CGSize.zero
-        btnSignOut.layer.shadowRadius = 10
+        btnSignOut.layer.shadowRadius = 5
         btnSignOut.layer.cornerRadius = 10
         
 //        let docRef = Firestore.firestore().collection("RecipeCollection").document("rum")
