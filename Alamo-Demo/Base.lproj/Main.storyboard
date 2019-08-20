@@ -689,7 +689,7 @@
                                                 <color key="textColor" red="0.2784313725" green="0.078431372550000003" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="09001701260" translatesAutoresizingMaskIntoConstraints="NO" id="T8n-fs-p7F">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="happy-hour-drinks" translatesAutoresizingMaskIntoConstraints="NO" id="T8n-fs-p7F">
                                                 <rect key="frame" x="20" y="1001" width="335" height="178.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="T8n-fs-p7F" secondAttribute="height" multiplier="15:8" id="4TZ-zV-PpC"/>
@@ -1513,7 +1513,7 @@
                                 <color key="textColor" red="0.2784313725" green="0.078431372550000003" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="happy-hour-drinks" translatesAutoresizingMaskIntoConstraints="NO" id="GPl-n0-Uue">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="09001701260" translatesAutoresizingMaskIntoConstraints="NO" id="GPl-n0-Uue">
                                 <rect key="frame" x="20" y="220" width="335" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="5Rk-g2-o95"/>
