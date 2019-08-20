@@ -37,7 +37,11 @@ class DetailsViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.size.width/2.3, height: collectionView.frame.size.width/2)
+       // return CGSize(width: collectionView.frame.size.width/2.3, height: collectionView.frame.size.width/2)
+        let yourWidth = collectionView.bounds.width/2.0
+        let yourHeight = yourWidth
+        
+        return CGSize(width: yourWidth, height: yourHeight)
     }
     
     
@@ -49,15 +53,23 @@ class DetailsViewController: UIViewController, UICollectionViewDelegate, UIColle
             ( image, error, cacheType, imageUrl) in
             if image != nil{
                 cell.categoryItemImage.clipsToBounds = true
-                cell.categoryItemImage.backgroundColor = .white
+               // cell.categoryItemImage.backgroundColor = UIColor(named: "#FFCC00")
             }
         })
-        cell.categoryCellView.layer.masksToBounds = true
-        cell.categoryCellView.layer.cornerRadius = 20
+        
+        //cell.categoryCellView.layer.cornerRadius = 20
         cell.categoryItemName.text = arrayAllCategoryList[indexPath.row].cat_name//"Kir"
         cell.categoryItemType.text = arrayAllCategoryList[indexPath.row].cat_type//"Strong"
-        cell.categoryCellView.layer.borderWidth = 1
-        cell.categoryCellView.layer.borderColor = UIColor(red:222/255, green:225/255, blue:227/255, alpha: 1).cgColor
+        
+//        cell.categoryCellView.layer.borderWidth = 1
+//        cell.categoryCellView.layer.borderColor = UIColor(red:222/255, green:225/255, blue:227/255, alpha: 1).cgColor
+        
+        cell.categoryCellView.layer.shadowColor = UIColor.gray.cgColor
+        cell.categoryCellView.layer.shadowOpacity = 0.5
+        cell.categoryCellView.layer.shadowOffset = CGSize.zero
+        cell.categoryCellView.layer.shadowRadius = 2
+        
+        cell.categoryCellView.layer.masksToBounds = false
         return cell
     }
     

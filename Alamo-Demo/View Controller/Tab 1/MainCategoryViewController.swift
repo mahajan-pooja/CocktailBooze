@@ -45,11 +45,12 @@ class MainCategoryViewController: UIViewController, UICollectionViewDelegate, UI
             })
         }
         cell.mainCategoryView.layer.shadowColor = UIColor.gray.cgColor
-        cell.mainCategoryView.layer.shadowOpacity = 1
+        cell.mainCategoryView.layer.shadowOpacity = 0.8
         cell.mainCategoryView.layer.shadowOffset = CGSize.zero
         cell.mainCategoryView.layer.shadowRadius = 5
-            cell.lblMainCategoryName.text = objectList.productName
-            return cell
+        cell.lblMainCategoryName.text = objectList.productName
+        
+        return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let yourWidth = collectionView.bounds.width/2.0
@@ -83,28 +84,29 @@ class MainCategoryViewController: UIViewController, UICollectionViewDelegate, UI
     }
     
     func fetchUserData(){
-        let parentList: [NSDictionary] = ((self.readJSONFromFile(fileName: "main-category") as? [NSDictionary])!)
-        let arrayList: [NSDictionary] = parentList[0].value(forKey: "result") as! Array
-        arrayAllProductList.removeAll()
-        if (arrayList.count) > 0 {
-            let model: MainModelCategory = MainModelCategory.init(fromDictionary: arrayList[0])
-            arrayAllProductList.append(contentsOf: model.recipe)
-        }
-        self.MainCategoryCollectionView.reloadData()
+//        let parentList: [NSDictionary] = ((self.readJSONFromFile(fileName: "main-category") as? [NSDictionary])!)
+//        let arrayList: [NSDictionary] = parentList[0].value(forKey: "result") as! Array
+//        arrayAllProductList.removeAll()
+//        if (arrayList.count) > 0 {
+//            let model: MainModelCategory = MainModelCategory.init(fromDictionary: arrayList[0])
+//            arrayAllProductList.append(contentsOf: model.recipe)
+//        }
+//        self.MainCategoryCollectionView.reloadData()
         
 //        DispatchQueue.main.async {
-//            Alamofire.request("http://demo0104834.mockable.io/category").responseJSON(completionHandler: {(response) in
-//                if response.result.isSuccess {
-//                    let model: MainModelCategory = MainModelCategory.init(fromDictionary: (response.result.value as? NSDictionary)!)
-//                    arrayAllProductList.removeAll()
-//                    if (model.result.count) > 0 {
-//                        arrayAllProductList.append(contentsOf: model.result)
-//                    }
-//                    self.MainCategoryCollectionView.reloadData()
-//                }else{
-//                    print("failure error")
-//                }
-//            })
+            Alamofire.request("https://mahajan-pooja.github.io/cocktail-booz-api/main-category.json").responseJSON(completionHandler: {(response) in
+                if response.result.isSuccess {
+                    print("response.result.value \(response.result.value)")
+                    let model: MainModelCategory = MainModelCategory.init(fromDictionary: (response.result.value as? NSDictionary)!)
+                    arrayAllProductList.removeAll()
+                    if (model.recipe.count) > 0 {
+                        arrayAllProductList.append(contentsOf: model.recipe)
+                    }
+                    self.MainCategoryCollectionView.reloadData()
+                }else{
+                    print("failure error")
+                }
+            })
 //        }
     }
 }
