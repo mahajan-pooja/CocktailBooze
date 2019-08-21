@@ -61,21 +61,21 @@ class AccountViewController: UIViewController {
             let email = user.email
             lblEmail.text = email
         }
-        retrieveFromJsonFile()
+       // retrieveFromJsonFile()
     }
     
-    func retrieveFromJsonFile() {
-        // Get the url of Persons.json in document directory
-        guard let documentsDirectoryUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
-        let fileUrl = documentsDirectoryUrl.appendingPathComponent("Recipes.json")
-        
-        // Read data from .json file and transform data into an array
-        do {
-            let data = try Data(contentsOf: fileUrl, options: [])
-            guard let recipeArray = try JSONSerialization.jsonObject(with: data, options: []) as? [String:Any] else { return }
-            print("recipe - \(recipeArray)")
-        } catch {
-            print(error)
-        }
-    }
+//    func retrieveFromJsonFile() {
+//        // Get the url of Persons.json in document directory
+//        guard let documentsDirectoryUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
+//        let fileUrl = documentsDirectoryUrl.appendingPathComponent("Recipes.json")
+//        
+//        // Read data from .json file and transform data into an array
+//        do {
+//            let data = try Data(contentsOf: fileUrl, options: [])
+//            guard let recipeArray = try JSONSerialization.jsonObject(with: data, options: []) as? [String:Any] else { return }
+//            print("recipe - \(recipeArray)")
+//        } catch {
+//            print(error)
+//        }
+//    }
 }

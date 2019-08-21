@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SwiftKeychainWrapper
 
 class RecipeBookViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tblViewRecipeBook: UITableView!
@@ -20,8 +21,12 @@ class RecipeBookViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeBookTableViewCell", for: indexPath) as! RecipeBookTableViewCell
         cell.lblRecipeName.text = obj[indexPath.row]["recipe-name"] as? String
-        let data = UserDefaults.standard.object(forKey: obj[indexPath.row]["recipe-img"] as! String) as! NSData
-        cell.imgRecipe.image = UIImage(data: data as Data)
+        if(obj[indexPath.row]["recipe-img"] != nil){
+            let data = UserDefaults.standard.object(forKey: obj[indexPath.row]["recipe-img"] as! String) as! NSData
+            cell.imgRecipe.image = UIImage(data: data as Data)
+        }else{
+            cell.imgRecipe.image = UIImage(named: "cocktail")
+        }
         //cell.imgRecipe.image = UIImage(named: "edit")
         return cell
     }
@@ -88,10 +93,16 @@ class RecipeBookViewController: UIViewController, UITableViewDelegate, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         let user = Auth.auth().currentUser
+        var password:String!
         var email:String!
         if let user = user {
             //let uid = user.uid
             email = user.email
+            print("emailid = \(email)")
+        }else{
+            password = KeychainWrapper.standard.string(forKey: "user-password")
+            email = KeychainWrapper.standard.string(forKey: "user-email")
+            //print("Retrieved passwork is: \(retrievedPassword!)")
         }
         Firestore.firestore().collection(email).getDocuments() { (querySnapshot, err) in
             

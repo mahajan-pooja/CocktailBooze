@@ -50,5 +50,7 @@
 	</array>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>&quot;Required to Select Image&quot;</string>
+	<key>NSFaceIDUsageDescription</key>
+	<string>&quot;Required to login&quot;</string>
 </dict>
 </plist>

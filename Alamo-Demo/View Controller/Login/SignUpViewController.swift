@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SwiftKeychainWrapper
 
 class SignUpViewController: UIViewController, UITextFieldDelegate {
 
@@ -35,6 +36,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             passError.isHidden = true
             Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
                 if((authResult?.user.email) != nil){
+                    KeychainWrapper.standard.set(email, forKey: "user-email")
+                    KeychainWrapper.standard.set(password, forKey: "user-password")
                     self.successMsg.isHidden = false
                     self.btnSignIn.isHidden = false
                     self.txtFieldName.text = ""

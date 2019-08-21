@@ -14,4 +14,5 @@ target 'Alamo-Demo' do
   pod 'Firebase/Storage'
   pod 'Firebase/Database'
   pod 'Firebase/Firestore'
+  pod 'SwiftKeychainWrapper'
 end

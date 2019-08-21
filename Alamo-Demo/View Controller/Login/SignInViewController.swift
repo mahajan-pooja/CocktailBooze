@@ -21,11 +21,11 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var btnSignIn: UIButton!
     @IBAction func btnSignInAction(_ sender: Any) {
-//        let email = txtFieldEmail.text!
-//        let password = txtFieldPassword.text!
+        let email = txtFieldEmail.text!
+        let password = txtFieldPassword.text!
         
-        let email = "poojamahajan2092@gmail.com"
-        let password = "pooja12"
+//        let email = "poojamahajan2092@gmail.com"
+//        let password = "pooja12"
         
         Auth.auth().signIn(withEmail: email, password: password) { [weak self] user, error in
             let secondViewController: TabBarController = self?.storyboard?.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController

@@ -12,11 +12,45 @@ import LocalAuthentication
 
 class welcomeVC: UIViewController {
 
+    @IBOutlet weak var btnFaceID: UIButton!
+    @IBAction func btnFaceIDAction(_ sender: Any) {
+        let context = LAContext()
+        var error: NSError?
+        
+        guard context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) else {
+            return print(error)
+        }
+        
+        let reason = "Face ID authentication"
+        context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { isAuthorized, error in
+            guard isAuthorized == true else {
+                return print(error)
+            }
+            print("success")
+            DispatchQueue.main.async {
+                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let secondViewController: TabBarController = storyBoard.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
+                self.present(secondViewController, animated: true, completion: nil)
+            }
+            
+        }
+    }
+    @IBOutlet weak var btnTouchID: UIButton!
     @IBOutlet weak var logoUIView: UIView!
     @IBOutlet weak var btnSignIn: UIButton!
     @IBOutlet weak var btnSignUp: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let currentType = LAContext().biometricType
+        if(currentType == .touchID){
+            btnTouchID.isHidden = false
+            btnFaceID.isHidden = true
+        }else{
+            btnTouchID.isHidden = true
+            btnFaceID.isHidden = false
+        }
+        print("currentType - \(currentType)")
     }
     @IBAction func btnTouchIdAction(_ sender: Any) {
         // 1
@@ -93,5 +127,34 @@ class welcomeVC: UIViewController {
         btnSignUp.layer.shadowOpacity = 1
         btnSignUp.layer.shadowOffset = CGSize.zero
         btnSignUp.layer.shadowRadius = 10
+    }
+}
+extension LAContext {
+    enum BiometricType: String {
+        case none
+        case touchID
+        case faceID
+    }
+    
+    var biometricType: BiometricType {
+        var error: NSError?
+        
+        guard self.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) else {
+            // Capture these recoverable error thru Crashlytics
+            return .none
+        }
+        
+        if #available(iOS 11.0, *) {
+            switch self.biometryType {
+            case .none:
+                return .none
+            case .touchID:
+                return .touchID
+            case .faceID:
+                return .faceID
+            }
+        } else {
+            return  self.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil) ? .touchID : .none
+        }
     }
 }

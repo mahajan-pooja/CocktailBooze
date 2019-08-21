@@ -415,6 +415,7 @@
                                     <constraint firstItem="Omx-MY-8Q5" firstAttribute="top" secondItem="la9-eM-TBe" secondAttribute="top" constant="70" id="SZL-yj-dCx"/>
                                     <constraint firstItem="Omx-MY-8Q5" firstAttribute="leading" secondItem="la9-eM-TBe" secondAttribute="leading" constant="30" id="WBn-N0-lbI"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Omx-MY-8Q5" secondAttribute="trailing" constant="20" symbolic="YES" id="fZn-Zt-qTh"/>
+                                    <constraint firstAttribute="height" constant="160" id="g63-w1-xgh"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -1917,8 +1918,15 @@
                             <view alpha="0.75" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H8L-73-cHk">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wYh-R2-Hfr">
-                                        <rect key="frame" x="162" y="604" width="50" height="55"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qJt-Vs-cz0">
+                                        <rect key="frame" x="162.5" y="592" width="50" height="55"/>
+                                        <state key="normal" backgroundImage="faceidicon"/>
+                                        <connections>
+                                            <action selector="btnFaceIDAction:" destination="lLz-El-WvW" eventType="touchUpInside" id="0sI-kG-TOr"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wYh-R2-Hfr">
+                                        <rect key="frame" x="162.5" y="592" width="50" height="55"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="85a-Rk-EJt"/>
                                             <constraint firstAttribute="height" constant="55" id="Fpc-QO-Xne"/>
@@ -1934,7 +1942,11 @@
                                 <color key="backgroundColor" red="1" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="wYh-R2-Hfr" secondAttribute="bottom" constant="20" id="DQJ-ok-pd2"/>
+                                    <constraint firstItem="qJt-Vs-cz0" firstAttribute="leading" secondItem="wYh-R2-Hfr" secondAttribute="leading" id="F3f-23-SWq"/>
+                                    <constraint firstItem="qJt-Vs-cz0" firstAttribute="trailing" secondItem="wYh-R2-Hfr" secondAttribute="trailing" id="GnV-Cq-uMb"/>
+                                    <constraint firstItem="qJt-Vs-cz0" firstAttribute="bottom" secondItem="wYh-R2-Hfr" secondAttribute="bottom" id="cBT-vf-qfX"/>
                                     <constraint firstItem="wYh-R2-Hfr" firstAttribute="centerX" secondItem="H8L-73-cHk" secondAttribute="centerX" id="dlX-KK-yG5"/>
+                                    <constraint firstItem="qJt-Vs-cz0" firstAttribute="top" secondItem="wYh-R2-Hfr" secondAttribute="top" id="pSw-fV-4iu"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DZ0-M8-2cC">
@@ -2037,8 +2049,10 @@
                         <viewLayoutGuide key="safeArea" id="QhT-6g-vxi"/>
                     </view>
                     <connections>
+                        <outlet property="btnFaceID" destination="qJt-Vs-cz0" id="pHI-HK-anm"/>
                         <outlet property="btnSignIn" destination="4yh-Cs-ACL" id="QP3-NN-EZy"/>
                         <outlet property="btnSignUp" destination="8wa-xu-YuV" id="uBI-ro-gIA"/>
+                        <outlet property="btnTouchID" destination="wYh-R2-Hfr" id="VQc-Eo-FjU"/>
                         <outlet property="logoUIView" destination="DZ0-M8-2cC" id="h49-I6-Iay"/>
                     </connections>
                 </viewController>
@@ -2053,6 +2067,7 @@
         <image name="background_img" width="474" height="596"/>
         <image name="cocktail" width="300" height="540"/>
         <image name="edit (1)" width="32" height="32"/>
+        <image name="faceidicon" width="1600" height="1600"/>
         <image name="happy-hour-drinks" width="520" height="230"/>
         <image name="magnifying-glass (1)" width="32" height="32"/>
         <image name="open-book (1)" width="32" height="32"/>
@@ -2061,7 +2076,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="isQ-GW-3Zh"/>
-        <segue reference="VW2-Gz-bZU"/>
+        <segue reference="jh6-qV-pBK"/>
         <segue reference="2mL-Ro-9iW"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SwiftKeychainWrapper
 
 class RecipeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -26,9 +27,13 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewWillAppear(_ animated: Bool) {
         let user = Auth.auth().currentUser
         var email:String!
+        var password:String!
         if let user = user {
             //let uid = user.uid
             email = user.email
+        }else{
+            password = KeychainWrapper.standard.string(forKey: "user-password")
+            email = KeychainWrapper.standard.string(forKey: "user-email")
         }
 
         Firestore.firestore().collection(email).getDocuments() { (querySnapshot, err) in
