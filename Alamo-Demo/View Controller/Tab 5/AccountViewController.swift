@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import SwiftKeychainWrapper
 
 class AccountViewController: UIViewController {
     var ref: DocumentReference!
@@ -35,6 +36,8 @@ class AccountViewController: UIViewController {
         btnSignOut.layer.shadowRadius = 5
         btnSignOut.layer.cornerRadius = 10
         
+        lblName.text = KeychainWrapper.standard.string(forKey: "user-name")
+        lblEmail.text = KeychainWrapper.standard.string(forKey: "user-email")
 //        let docRef = Firestore.firestore().collection("RecipeCollection").document("rum")
 //        docRef.getDocument { (document, error) in
 //            if let document = document, document.exists {
@@ -55,12 +58,12 @@ class AccountViewController: UIViewController {
 //        }
 
         
-        let user = Auth.auth().currentUser
-        if let user = user {
-//            let uid = user.uid
-            let email = user.email
-            lblEmail.text = email
-        }
+//        let user = Auth.auth().currentUser
+//        if let user = user {
+////            let uid = user.uid
+//            let email = user.email
+//            lblEmail.text = email
+//        }
        // retrieveFromJsonFile()
     }
     
