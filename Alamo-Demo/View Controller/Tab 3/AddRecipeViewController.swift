@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 import FirebaseFirestore
+import SwiftKeychainWrapper
 
 class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource{
     
@@ -121,9 +122,13 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
     func addRecipe(){
         let user = Auth.auth().currentUser
         var email:String!
+        var password: String!
         if let user = user {
             email = user.email
             print("email - \(email!)")
+        }else{
+            password = KeychainWrapper.standard.string(forKey: "user-password")
+            email = KeychainWrapper.standard.string(forKey: "user-email")
         }
         
         var ingredientsArray: [String] = []
