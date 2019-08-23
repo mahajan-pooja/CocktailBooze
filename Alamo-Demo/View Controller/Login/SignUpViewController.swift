@@ -37,7 +37,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
                 if((authResult?.user.email) != nil){
                     KeychainWrapper.standard.set(email, forKey: "user-email")
-                    KeychainWrapper.standard.set(password, forKey: "user-password")
                     KeychainWrapper.standard.set(self.txtFieldName.text!, forKey: "user-name")
                     
                     self.successMsg.isHidden = false

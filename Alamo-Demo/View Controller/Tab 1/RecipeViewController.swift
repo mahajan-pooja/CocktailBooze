@@ -26,10 +26,10 @@ class RecipeViewController: UIViewController, UITableViewDataSource, UITableView
         lblRecipeType.text = "Medium (18%)"
         recipeImgView.image = UIImage(named: "cocktail")
         
-    self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for:.default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.layoutIfNeeded()
-        
+//    self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for:.default)
+//        self.navigationController?.navigationBar.shadowImage = UIImage()
+//        self.navigationController?.navigationBar.layoutIfNeeded()
+//
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return self.section.count
@@ -59,6 +59,13 @@ class RecipeViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "IngredientsTableViewCell", for: indexPath) as! IngredientsTableViewCell
         cell.lblIngredients.text = self.items[indexPath.section][indexPath.row]
+        
+        cell.containerUIView.layer.shadowColor = UIColor.gray.cgColor
+        cell.containerUIView.layer.shadowOpacity = 0.8
+        cell.containerUIView.layer.shadowOffset = CGSize.zero
+        cell.containerUIView.layer.shadowRadius = 2
+        cell.containerUIView.layer.masksToBounds = false
+        
         return cell
     }
 }

@@ -10,6 +10,7 @@ import UIKit
 
 class ProcedureCell: UITableViewCell {
 
+    @IBOutlet weak var containerUIView: UIView!
     @IBOutlet weak var lblProcedure: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()

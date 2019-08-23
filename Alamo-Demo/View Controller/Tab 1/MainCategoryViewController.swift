@@ -26,7 +26,10 @@ class MainCategoryViewController: UIViewController, UICollectionViewDelegate, UI
         fetchMainCategoryData()
         fetchCountryCategoryData()
     }
-    override func viewWillLayoutSubviews() {
+//    override func viewWillLayoutSubviews() {
+//        navigationController?.setNavigationBarHidden(true, animated: true)
+//    }
+    override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -55,7 +58,7 @@ class MainCategoryViewController: UIViewController, UICollectionViewDelegate, UI
             cell.mainCategoryView.layer.shadowColor = UIColor.gray.cgColor
             cell.mainCategoryView.layer.shadowOpacity = 0.8
             cell.mainCategoryView.layer.shadowOffset = CGSize.zero
-            cell.mainCategoryView.layer.shadowRadius = 5
+            cell.mainCategoryView.layer.shadowRadius = 2
             cell.lblMainCategoryName.text = objectList.productName
             
             return cell
@@ -75,9 +78,9 @@ class MainCategoryViewController: UIViewController, UICollectionViewDelegate, UI
             }
             
             cell.sliderCategoryView.layer.shadowColor = UIColor.gray.cgColor
-            cell.sliderCategoryView.layer.shadowOpacity = 0.5
+            cell.sliderCategoryView.layer.shadowOpacity = 0.8
             cell.sliderCategoryView.layer.shadowOffset = CGSize.zero
-            cell.sliderCategoryView.layer.shadowRadius = 3
+            cell.sliderCategoryView.layer.shadowRadius = 2
             
             return cell
         }

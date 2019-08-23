@@ -42,6 +42,12 @@ class RecipeBookViewController: UIViewController, UITableViewDelegate, UITableVi
         }else{
             cell.imgRecipe.image = UIImage(named: "cocktail")
         }
+        
+        cell.containerUIView.layer.shadowColor = UIColor.gray.cgColor
+        cell.containerUIView.layer.shadowOpacity = 0.8
+        cell.containerUIView.layer.shadowOffset = CGSize.zero
+        cell.containerUIView.layer.shadowRadius = 2
+        
         //cell.imgRecipe.image = UIImage(named: "edit")
         return cell
     }
@@ -84,6 +90,9 @@ class RecipeBookViewController: UIViewController, UITableViewDelegate, UITableVi
             if let user = user {
                 //let uid = user.uid
                 email = user.email
+            }else{
+                
+                email = KeychainWrapper.standard.string(forKey: "user-email")
             }
             let document = obj[indexPath.row]["recipe-name"] as? String
             Firestore.firestore().collection(email).document(document!).delete() { err in
@@ -111,14 +120,14 @@ class RecipeBookViewController: UIViewController, UITableViewDelegate, UITableVi
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: animated)
         let user = Auth.auth().currentUser
-        var password:String!
+        
         var email:String!
         if let user = user {
             //let uid = user.uid
             email = user.email
             print("emailid = \(email)")
         }else{
-            password = KeychainWrapper.standard.string(forKey: "user-password")
+            
             email = KeychainWrapper.standard.string(forKey: "user-email")
             //print("Retrieved passwork is: \(retrievedPassword!)")
         }

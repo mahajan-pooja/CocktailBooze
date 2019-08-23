@@ -27,12 +27,12 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewWillAppear(_ animated: Bool) {
         let user = Auth.auth().currentUser
         var email:String!
-        var password:String!
+        
         if let user = user {
             //let uid = user.uid
             email = user.email
         }else{
-            password = KeychainWrapper.standard.string(forKey: "user-password")
+            
             email = KeychainWrapper.standard.string(forKey: "user-email")
         }
 
@@ -116,10 +116,24 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         if(tableView == tblViewIngredients){
             let cell:IngredientsCell = tableView.dequeueReusableCell(withIdentifier: "IngredientsCell", for: indexPath) as! IngredientsCell
             cell.lblIngredients.text = ingredients[indexPath.row]
+            
+            cell.containerUIView.layer.shadowColor = UIColor.gray.cgColor
+            cell.containerUIView.layer.shadowOpacity = 0.8
+            cell.containerUIView.layer.shadowOffset = CGSize.zero
+            cell.containerUIView.layer.shadowRadius = 2
+            cell.containerUIView.layer.masksToBounds = false
+            
             return cell
         }else{
             let cell:ProcedureCell = tableView.dequeueReusableCell(withIdentifier: "ProcedureCell", for: indexPath) as! ProcedureCell
             cell.lblProcedure.text = procedure[indexPath.row]
+            
+            cell.containerUIView.layer.shadowColor = UIColor.gray.cgColor
+            cell.containerUIView.layer.shadowOpacity = 0.8
+            cell.containerUIView.layer.shadowOffset = CGSize.zero
+            cell.containerUIView.layer.shadowRadius = 2
+            cell.containerUIView.layer.masksToBounds = false
+            
             return cell
         }
     }

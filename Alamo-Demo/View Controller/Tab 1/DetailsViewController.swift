@@ -65,7 +65,7 @@ class DetailsViewController: UIViewController, UICollectionViewDelegate, UIColle
 //        cell.categoryCellView.layer.borderColor = UIColor(red:222/255, green:225/255, blue:227/255, alpha: 1).cgColor
         
         cell.categoryCellView.layer.shadowColor = UIColor.gray.cgColor
-        cell.categoryCellView.layer.shadowOpacity = 0.5
+        cell.categoryCellView.layer.shadowOpacity = 0.8
         cell.categoryCellView.layer.shadowOffset = CGSize.zero
         cell.categoryCellView.layer.shadowRadius = 2
         

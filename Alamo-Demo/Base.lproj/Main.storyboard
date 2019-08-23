@@ -90,6 +90,7 @@
                                                         </tableViewCellContentView>
                                                         <color key="backgroundColor" red="0.2784313725" green="0.078431372550000003" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <connections>
+                                                            <outlet property="containerUIView" destination="SGQ-f9-P5z" id="5hM-Wh-w04"/>
                                                             <outlet property="lblIngredients" destination="keZ-Je-jWo" id="D1Y-xb-IBD"/>
                                                         </connections>
                                                     </tableViewCell>
@@ -475,19 +476,19 @@
         <!--Navigation Controller-->
         <scene sceneID="J54-gz-KQ5">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBarsOnSwipe="YES" id="MP6-sh-ARb" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MP6-sh-ARb" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="magnifying-glass (1)" id="dOa-Zq-U4F">
                         <inset key="imageInsets" minX="7" minY="7" maxX="-7" maxY="-7"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6ux-bP-dFh">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="6ux-bP-dFh">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="1" green="0.87264554790000004" blue="0.44402825340000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.2784313725" green="0.078431372550000003" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="barTintColor" red="1" green="0.87264554790000004" blue="0.44402825340000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" red="0.2784313725" green="0.078431372550000003" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -504,11 +505,11 @@
             <objects>
                 <viewController storyboardIdentifier="MainCategoryViewController" id="ieh-3R-NLa" customClass="MainCategoryViewController" customModule="Alamo_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oMk-57-28a">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1236"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0lY-xW-SBf">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1300"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1236"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AjW-8K-z6a">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1300"/>
@@ -1147,9 +1148,11 @@
                         <outlet property="btnAddProcedure" destination="rzM-8D-Wzl" id="hjz-Nz-Epw"/>
                         <outlet property="btnAddRecipe" destination="zmb-I0-pAm" id="w4v-FP-RXm"/>
                         <outlet property="imgCocktail" destination="p4H-Vp-Vka" id="LMe-No-dqO"/>
+                        <outlet property="imgUIView" destination="acy-sv-ld0" id="IwE-NV-dcC"/>
                         <outlet property="ingredientsUIView" destination="S8d-GR-v08" id="maZ-qr-SES"/>
                         <outlet property="lblProcedure" destination="IyU-3F-xOg" id="qSy-tj-psd"/>
                         <outlet property="mainViewHeight" destination="DNL-Ek-vuW" id="iwj-6B-CNL"/>
+                        <outlet property="nameTypeUIView" destination="LOX-vg-6r5" id="RkI-2b-ljp"/>
                         <outlet property="tblIngredientHeight" destination="XNG-1F-KMD" id="ieS-LP-8ex"/>
                         <outlet property="tblProcedureHeight" destination="3iR-Nd-fF0" id="zC9-aB-3WF"/>
                         <outlet property="tblViewAddIngredient" destination="pRy-8P-CdX" id="eYX-Hw-ZY3"/>
@@ -1171,10 +1174,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cBi-ew-vtz">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="736"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYB-oE-4v4">
-                                        <rect key="frame" x="37.333333333333314" y="80" width="300" height="30"/>
+                                        <rect key="frame" x="41.333333333333343" y="80" width="331.33333333333326" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="PUb-qS-nGl"/>
                                         </constraints>
@@ -1183,19 +1186,19 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C5r-bf-bvc">
-                                        <rect key="frame" x="37.333333333333314" y="130" width="300" height="390"/>
+                                        <rect key="frame" x="41.333333333333343" y="130.00000000000003" width="331.33333333333326" height="430.66666666666674"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="nT5-6L-S5t">
-                                                <rect key="frame" x="30" y="79" width="240" height="154"/>
+                                                <rect key="frame" x="30" y="79" width="265" height="154"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HrW-9b-Pj7">
-                                                        <rect key="frame" x="0.0" y="0.0" width="240" height="29"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="265" height="29"/>
                                                         <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="18"/>
                                                         <color key="textColor" red="0.2901960784" green="0.08235294118" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wUh-ZK-WkX">
-                                                        <rect key="frame" x="0.0" y="41" width="240" height="30"/>
+                                                        <rect key="frame" x="0.0" y="41" width="265" height="30"/>
                                                         <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1205,13 +1208,13 @@
                                                         </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NRT-Ab-zne">
-                                                        <rect key="frame" x="0.0" y="83" width="240" height="29"/>
+                                                        <rect key="frame" x="0.0" y="83" width="265" height="29"/>
                                                         <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="18"/>
                                                         <color key="textColor" red="0.2901960784" green="0.08235294118" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y8g-Ip-4FJ">
-                                                        <rect key="frame" x="0.0" y="124" width="240" height="30"/>
+                                                        <rect key="frame" x="0.0" y="124" width="265" height="30"/>
                                                         <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1223,7 +1226,7 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6PE-zC-6Nc">
-                                                <rect key="frame" x="45" y="263" width="210" height="40"/>
+                                                <rect key="frame" x="49.666666666666657" y="263" width="231.99999999999997" height="40"/>
                                                 <color key="backgroundColor" red="0.2784313725" green="0.078431372550000003" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="PQK-5o-OmP"/>
@@ -1237,7 +1240,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A15-Vn-lmX">
-                                                <rect key="frame" x="130.66666666666666" y="323" width="39" height="36"/>
+                                                <rect key="frame" x="146.33333333333331" y="323" width="39" height="36"/>
                                                 <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="15"/>
                                                 <state key="normal" title="Cancel">
                                                     <color key="titleColor" red="0.2901960784" green="0.08235294118" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1654,6 +1657,7 @@
                                         </tableViewCellContentView>
                                         <accessibility key="accessibilityConfiguration" identifier="RecipeBookTableViewCell"/>
                                         <connections>
+                                            <outlet property="containerUIView" destination="iB0-XG-2bE" id="xp5-eD-fmT"/>
                                             <outlet property="imgRecipe" destination="0nD-MS-u76" id="9aM-ld-Hh4"/>
                                             <outlet property="lblRecipeName" destination="spr-tE-jmO" id="loq-RP-GGN"/>
                                         </connections>
@@ -1780,6 +1784,7 @@
                                                         </tableViewCellContentView>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <connections>
+                                                            <outlet property="containerUIView" destination="xU3-TY-uuG" id="6Ga-fC-oaS"/>
                                                             <outlet property="lblIngredients" destination="3VA-fm-5iw" id="3av-0T-SIN"/>
                                                         </connections>
                                                     </tableViewCell>
@@ -1847,6 +1852,7 @@
                                                         </tableViewCellContentView>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <connections>
+                                                            <outlet property="containerUIView" destination="cMv-J7-Ea9" id="7TE-0v-SBp"/>
                                                             <outlet property="lblProcedure" destination="Fza-VD-dgG" id="8Lv-h8-WBy"/>
                                                         </connections>
                                                     </tableViewCell>

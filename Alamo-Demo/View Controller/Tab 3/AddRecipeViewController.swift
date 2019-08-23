@@ -14,6 +14,8 @@ import SwiftKeychainWrapper
 
 class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource{
     
+    @IBOutlet weak var imgUIView: UIView!
+    @IBOutlet weak var nameTypeUIView: UIView!
     @IBOutlet weak var MainScrollView: UIScrollView!
     @IBOutlet weak var btnAddRecipe: UIButton!
     @IBOutlet weak var mainViewHeight: NSLayoutConstraint!
@@ -80,6 +82,27 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
         imgCocktail.isUserInteractionEnabled = true
         imgCocktail.addGestureRecognizer(tapGestureRecognizer)
         
+        
+        addProcedureUIView.layer.shadowColor = UIColor.gray.cgColor
+        addProcedureUIView.layer.shadowOpacity = 0.8
+        addProcedureUIView.layer.shadowOffset = CGSize.zero
+        addProcedureUIView.layer.shadowRadius = 2
+        
+        ingredientsUIView.layer.shadowColor = UIColor.gray.cgColor
+        ingredientsUIView.layer.shadowOpacity = 0.8
+        ingredientsUIView.layer.shadowOffset = CGSize.zero
+        ingredientsUIView.layer.shadowRadius = 2
+        
+        nameTypeUIView.layer.shadowColor = UIColor.gray.cgColor
+        nameTypeUIView.layer.shadowOpacity = 0.8
+        nameTypeUIView.layer.shadowOffset = CGSize.zero
+        nameTypeUIView.layer.shadowRadius = 2
+        
+        
+        imgUIView.layer.shadowColor = UIColor.gray.cgColor
+        imgUIView.layer.shadowOpacity = 0.8
+        imgUIView.layer.shadowOffset = CGSize.zero
+        imgUIView.layer.shadowRadius = 2
     }
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer){
         //let tappedImage = tapGestureRecognizer.view as! UIImageView
@@ -138,12 +161,12 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
     func addRecipe(){
         let user = Auth.auth().currentUser
         var email:String!
-        var password: String!
+        
         if let user = user {
             email = user.email
             print("email - \(email!)")
         }else{
-            password = KeychainWrapper.standard.string(forKey: "user-password")
+            
             email = KeychainWrapper.standard.string(forKey: "user-email")
         }
         
