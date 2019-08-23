@@ -51,8 +51,25 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
                         self.lblRecipeName.text = model.recipe_name
                         self.lblRecipeType.text = model.recipe_type
                         
-                        let data = UserDefaults.standard.object(forKey: model.recipe_img as! String) as! NSData
-                        self.imgRecipeIcon.image = UIImage(data: data as Data)
+                        // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
+                        let imageRef = Storage.storage().reference().child("images/\(model.recipe_img!)")
+                        imageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+                            if let error = error {
+                                
+                                print("error \(error)")
+                                // Uh-oh, an error occurred!
+                            } else {
+                                // Data for "images/island.jpg" is returned
+                                let image = UIImage(data: data!)
+                                print("IMAGEEE = \(image)")
+                                self.imgRecipeIcon.image = image
+                            }
+                        }
+                        
+                        
+                        
+//                        let data = UserDefaults.standard.object(forKey: model.recipe_img as! String) as! NSData
+//                        self.imgRecipeIcon.image = UIImage(data: data as Data)
 //                        if(model.recipe_img != "") {
 //                            let url: URL = URL(string: model.recipe_img)!
 //                            self.imgRecipeIcon.kf.setImage(with: url, placeholder: UIImage(named:"cocktail"),  options: nil, progressBlock: nil, completionHandler: {

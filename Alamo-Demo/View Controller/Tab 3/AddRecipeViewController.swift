@@ -217,19 +217,59 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
         MainScrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        dismiss(animated: true, completion: nil)
+        
         let randomInt = Int.random(in: 0..<100000)
         let imgName = "img\(randomInt)"
         imageName = imgName
-        if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as?
-            UIImage{
-                imgCocktail.contentMode = .scaleAspectFit
-            let imageData: NSData = pickedImage.pngData()! as NSData
-            UserDefaults.standard.set(imageData, forKey: imgName)
-            }
         
-        let data = UserDefaults.standard.object(forKey: imgName) as! NSData
-        imgCocktail.image = UIImage(data: data as Data)
-        dismiss(animated: true, completion: nil)
+        if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+        var data = Data()
+            data = pickedImage.jpegData(compressionQuality:0.8)!
+        
+            let imageRef = Storage.storage().reference().child("images/\(imageName!)")
+            
+            _ = imageRef.putData(data, metadata: nil){ (metadata, error) in
+                guard let metadata = metadata else {
+                    return
+                }
+                
+            }
+            imgCocktail.image = UIImage(data: data as Data)
+            
+            // Create a reference to the file you want to download
+            //let islandRef = Storage.storage().reference().child("images/aa")
+            
+            // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
+//            imageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+//                if let error = error {
+//                    
+//                    print("error \(error)")
+//                    // Uh-oh, an error occurred!
+//                } else {
+//                    // Data for "images/island.jpg" is returned
+//                    let image = UIImage(data: data!)
+//                    print("IMAGEEE = \(image)")
+//                    self.imgCocktail.image = image
+//                }
+//            }
+            
+            
+        
+        }
+//        let randomInt = Int.random(in: 0..<100000)
+//        let imgName = "img\(randomInt)"
+//        imageName = imgName
+//        if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as?
+//            UIImage{
+//                imgCocktail.contentMode = .scaleAspectFit
+//            let imageData: NSData = pickedImage.pngData()! as NSData
+//            UserDefaults.standard.set(imageData, forKey: imgName)
+//            }
+//
+//        let data = UserDefaults.standard.object(forKey: imgName) as! NSData
+//        imgCocktail.image = UIImage(data: data as Data)
+        
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {

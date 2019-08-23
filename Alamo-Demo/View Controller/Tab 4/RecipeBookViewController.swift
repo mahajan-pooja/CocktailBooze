@@ -22,8 +22,23 @@ class RecipeBookViewController: UIViewController, UITableViewDelegate, UITableVi
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeBookTableViewCell", for: indexPath) as! RecipeBookTableViewCell
         cell.lblRecipeName.text = obj[indexPath.row]["recipe-name"] as? String
         if(obj[indexPath.row]["recipe-img"] != nil){
-            let data = UserDefaults.standard.object(forKey: obj[indexPath.row]["recipe-img"] as! String) as! NSData
-            cell.imgRecipe.image = UIImage(data: data as Data)
+            print("obj[indexPath.row][recipeimg] \(obj[indexPath.row]["recipe-img"]) ")
+            // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
+            let imageRef = Storage.storage().reference().child("images/\(obj[indexPath.row]["recipe-img"]!)")
+            imageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+                if let error = error {
+
+                    print("error \(error)")
+                    // Uh-oh, an error occurred!
+                } else {
+                    // Data for "images/island.jpg" is returned
+                    let image = UIImage(data: data!)
+                    print("IMAGEEE = \(image)")
+                    cell.imgRecipe.image = image
+                }
+            }
+           // let data = UserDefaults.standard.object(forKey: obj[indexPath.row]["recipe-img"] as! String) as! NSData
+           // cell.imgRecipe.image = UIImage(data: data as Data)
         }else{
             cell.imgRecipe.image = UIImage(named: "cocktail")
         }
