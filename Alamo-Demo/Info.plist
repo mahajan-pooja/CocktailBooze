@@ -52,5 +52,7 @@
 	<string>&quot;Required to Select Image&quot;</string>
 	<key>NSFaceIDUsageDescription</key>
 	<string>&quot;Required to login&quot;</string>
+	<key>NSCameraUsageDescription</key>
+	<string>&quot;Required to take recipe photo&quot;</string>
 </dict>
 </plist>

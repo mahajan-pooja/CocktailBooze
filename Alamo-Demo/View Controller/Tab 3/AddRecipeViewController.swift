@@ -14,6 +14,7 @@ import SwiftKeychainWrapper
 
 class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource{
     
+    @IBOutlet weak var MainScrollView: UIScrollView!
     @IBOutlet weak var btnAddRecipe: UIButton!
     @IBOutlet weak var mainViewHeight: NSLayoutConstraint!
     @IBOutlet weak var tblProcedureHeight: NSLayoutConstraint!
@@ -29,13 +30,17 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
     @IBOutlet weak var txtfRecipeName: UITextField!
     @IBOutlet weak var imgCocktail: UIImageView!
     @IBOutlet weak var txtfType: UITextField!
-    
+    var ingredientsArray: [String] = []
+    var procedureArray: [String] = []
     let imagePicker = UIImagePickerController()
     var ref: DocumentReference!
     var imageName: String!
     var ingredientCount: Int = 1
     var procedureCount: Int = 1
     
+    @IBAction func btnCancelAction(_ sender: Any) {
+        resetForm()
+    }
     @IBAction func btnAddRecipeAction(_ sender: Any) {
         addRecipe()
     }
@@ -71,6 +76,17 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
 //        tblViewAddProcedure.layer.cornerRadius = tblViewAddProcedure.frame.width/15
 //        tblViewAddIngredient.layer.cornerRadius = tblViewAddIngredient.frame.width/15
         
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+        imgCocktail.isUserInteractionEnabled = true
+        imgCocktail.addGestureRecognizer(tapGestureRecognizer)
+        
+    }
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer){
+        //let tappedImage = tapGestureRecognizer.view as! UIImageView
+        imagePicker.allowsEditing = true
+        imagePicker.sourceType = .photoLibrary
+        
+        present(imagePicker,animated: true, completion: nil)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -131,7 +147,7 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
             email = KeychainWrapper.standard.string(forKey: "user-email")
         }
         
-        var ingredientsArray: [String] = []
+       // var ingredientsArray: [String] = []
         for i in 1...ingredientCount{
             if let theTextField = self.view.viewWithTag(i) as? UITextField {
                 ingredientsArray.append(theTextField.text!)
@@ -139,7 +155,7 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
             }
         }
 
-        var procedureArray: [String] = []
+//        var procedureArray: [String] = []
         for i in 1...procedureCount{
             if let theTextField = self.view.viewWithTag(i+50) as? UITextField {
                 procedureArray.append(theTextField.text!)
@@ -161,12 +177,45 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
                     
                     self.tabBarController?.selectedIndex = 3
                     
+                    self.resetForm()
+                    
                     print("Done")
                 }
             }
+        }else{
+            print("Please add all information.")
         }
     }
-
+    func resetForm(){
+        //reset form when recipe added or cancel button tapped
+        self.tblIngredientHeight.constant = 150
+        self.tblProcedureHeight.constant = 150
+        
+        ingredientsArray.removeAll()
+        procedureArray.removeAll()
+        
+        self.ingredientCount = 1
+        self.tblViewAddIngredient.reloadData()
+        self.procedureCount = 1
+        self.tblViewAddProcedure.reloadData()
+        
+        for i in 1...50{
+            if let theTextField = self.view.viewWithTag(i) as? UITextField {
+                theTextField.text = ""
+            }
+        }
+        for i in 51...100{
+            if let theTextField = self.view.viewWithTag(i) as? UITextField {
+                theTextField.text = ""
+            }
+        }
+        
+        self.txtfRecipeName.text = ""
+        self.txtfType.text = ""
+        self.imgCocktail.image = UIImage(named: "cocktail")
+        
+        MainScrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+    }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let randomInt = Int.random(in: 0..<100000)
         let imgName = "img\(randomInt)"

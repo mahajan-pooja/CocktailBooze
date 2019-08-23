@@ -92,6 +92,9 @@ class RecipeBookViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: animated)
         let user = Auth.auth().currentUser
         var password:String!
         var email:String!
@@ -109,6 +112,7 @@ class RecipeBookViewController: UIViewController, UITableViewDelegate, UITableVi
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
+                self.obj.removeAll()
                 for document in querySnapshot!.documents {
                     //print("\(document.documentID) => \(document.data())")
                     self.obj.append(document.data())
@@ -116,9 +120,5 @@ class RecipeBookViewController: UIViewController, UITableViewDelegate, UITableVi
                 self.tblViewRecipeBook.reloadData()
             }
         }
-        
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
 }
