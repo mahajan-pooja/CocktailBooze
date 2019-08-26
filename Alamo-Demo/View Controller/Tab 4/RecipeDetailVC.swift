@@ -19,7 +19,10 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var tblIngreHeight: NSLayoutConstraint!
     @IBOutlet weak var tblViewProcedure: UITableView!
     @IBOutlet weak var tblViewIngredients: UITableView!
-    var recipe: String!
+    var recipeName: String!
+    var recipeType: String!
+    var recipeImage: String!
+    
     var obj = [String:Any]()
     var ingredients = [String]()
     var procedure = [String]()
@@ -42,44 +45,27 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
                 print("Error getting documents: \(err)")
             } else {
                 for document in querySnapshot!.documents {
-                    if(document.documentID == self.recipe){
+                    if(document.documentID == self.recipeName){
                         self.obj = document.data()
+                        print("DATA => \(document.data())")
                         let model: RecipeDetailModel = RecipeDetailModel.init(fromDictionary: self.obj as NSDictionary)
         
                         self.ingredients = model.ingredients
                         self.procedure = model.procedure
-                        self.lblRecipeName.text = model.recipe_name
-                        self.lblRecipeType.text = model.recipe_type
+                        self.lblRecipeName.text = self.recipeName
+                        self.lblRecipeType.text = self.recipeType
                         
                         // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
-                        let imageRef = Storage.storage().reference().child("images/\(model.recipe_img!)")
+                        let imageRef = Storage.storage().reference().child("images/\(self.recipeImage!)")
                         imageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
                             if let error = error {
-                                
                                 print("error \(error)")
-                                // Uh-oh, an error occurred!
                             } else {
                                 // Data for "images/island.jpg" is returned
                                 let image = UIImage(data: data!)
-                                print("IMAGEEE = \(image)")
                                 self.imgRecipeIcon.image = image
                             }
                         }
-                        
-                        
-                        
-//                        let data = UserDefaults.standard.object(forKey: model.recipe_img as! String) as! NSData
-//                        self.imgRecipeIcon.image = UIImage(data: data as Data)
-//                        if(model.recipe_img != "") {
-//                            let url: URL = URL(string: model.recipe_img)!
-//                            self.imgRecipeIcon.kf.setImage(with: url, placeholder: UIImage(named:"cocktail"),  options: nil, progressBlock: nil, completionHandler: {
-//                                ( image, error, cacheType, imageUrl) in
-//                                if image != nil{
-//                                    self.imgRecipeIcon.clipsToBounds = true
-//                                    self.imgRecipeIcon.backgroundColor = .white
-//                                }
-//                            })
-//                        }
                         
                         self.tblViewProcedure.reloadData()
                         self.tblViewIngredients.reloadData()
@@ -93,7 +79,6 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         // Do any additional setup after loading the view.
     }

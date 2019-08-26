@@ -54,7 +54,9 @@ class RecipeBookViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("\(obj[indexPath.row]["recipe-name"]!)")
         let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "RecipeDetailVC") as! RecipeDetailVC
-        vc.recipe = obj[indexPath.row]["recipe-name"]! as! String
+        vc.recipeName = obj[indexPath.row]["recipe-name"]! as? String
+        vc.recipeType = obj[indexPath.row]["recipe-type"]! as? String
+        vc.recipeImage = obj[indexPath.row]["recipe-img"]! as? String
         self.navigationController?.pushViewController(vc, animated: true)
        
     }

@@ -9,10 +9,10 @@
 import UIKit
 
 class RecipeDetailModel: NSObject {
-    var recipe_name : String!
-    //var pageSizeLimit : [Int]!
-    var recipe_type : String!
-    var recipe_img : String!
+//    var recipe_name : String!
+//    //var pageSizeLimit : [Int]!
+//    var recipe_type : String!
+//    var recipe_img : String!
     var ingredients = [String]()
     var procedure = [String]()
     
@@ -21,9 +21,9 @@ class RecipeDetailModel: NSObject {
      * Instantiate the instance using the passed dictionary values to set the properties values
      */
     init(fromDictionary dictionary: NSDictionary){
-        recipe_name = dictionary["recipe-name"] as? String
-        recipe_type = dictionary["recipe-type"] as? String
-        recipe_img = dictionary["recipe-img"] as? String
+//        recipe_name = dictionary["recipe-name"] as? String
+//        recipe_type = dictionary["recipe-type"] as? String
+//        recipe_img = dictionary["recipe-img"] as? String
         ingredients = (dictionary["ingredients"] as? Array)!
         procedure = (dictionary["procedure"] as? Array)!
     }
@@ -33,15 +33,15 @@ class RecipeDetailModel: NSObject {
      */
     func toDictionary() -> NSDictionary{
         let dictionary = NSMutableDictionary()
-        if recipe_name != nil{
-            dictionary["recipe-name"] = recipe_name
-        }
-        if recipe_type != nil{
-            dictionary["recipe-type"] = recipe_type
-        }
-        if recipe_img != nil{
-            dictionary["recipe-img"] = recipe_img
-        }
+//        if recipe_name != nil{
+//            dictionary["recipe-name"] = recipe_name
+//        }
+//        if recipe_type != nil{
+//            dictionary["recipe-type"] = recipe_type
+//        }
+//        if recipe_img != nil{
+//            dictionary["recipe-img"] = recipe_img
+//        }
         if ingredients != nil{
             dictionary["ingredients"] = ingredients
         }

@@ -8,64 +8,134 @@
 
 import UIKit
 import Firebase
+import FirebaseDatabase
+import FirebaseFirestore
+import SwiftKeychainWrapper
+import Alamofire
 
 class RecipeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    @IBOutlet weak var procedureTblviewHeight: NSLayoutConstraint!
     @IBOutlet weak var ingredientsTableView: UITableView!
     @IBOutlet weak var procedureTableView: UITableView!
+    @IBOutlet weak var ingredientsTblViewHeight: NSLayoutConstraint!
+    var ref: DocumentReference!
+    var recipeImage: String!
+    var recipeName: String!
+    var recipeType: String!
+    var ingredients = [String]()
+    var procedure = [String]()
     
+    
+    @IBAction func btnAddFevoritesAction(_ sender: Any) {
+        let user = Auth.auth().currentUser
+        var email:String!
+        
+        if let user = user {
+            email = user.email
+            print("email - \(email!)")
+        }else{
+            
+            email = KeychainWrapper.standard.string(forKey: "user-email")
+        }
+        //print("fevorites => \(lblRecipeName.text) \(email)")
+        ref = Firestore.firestore().collection("RecipeCollection").document(email)
+        
+        // Atomically add a new region to the "regions" array field.
+        ref.updateData([
+            "regions": FieldValue.arrayUnion([recipeName])
+            ])
+    }
     @IBOutlet weak var recipeImgView: UIImageView!
     @IBOutlet weak var lblRecipeType: UILabel!
     @IBOutlet weak var lblRecipeName: UILabel!
-    let section = ["Ingredients", "Recipe"]
     var recipe: String!
     var obj = [String:Any]()
-    let items = [["Gin", "Lemon Juice", "Raspberry", "Blueberry","Mint Leaves","Ice"], ["add raspberry, mint leaves, lemon", "crush raspberrymint leaveslemon, lemon", "add sugar syrup, ice, gin","shake well","strain into the old fashioned glass","garnish with lemon spiral"]]
     override func viewDidLoad() {
         super.viewDidLoad()
-        lblRecipeName.text = "Singapore Sling"
-        lblRecipeType.text = "Medium (18%)"
-        recipeImgView.image = UIImage(named: "cocktail")
+       // recipeImgView.image = UIImage(named: "cocktail")
         
-//    self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for:.default)
-//        self.navigationController?.navigationBar.shadowImage = UIImage()
-//        self.navigationController?.navigationBar.layoutIfNeeded()
-//
+        self.lblRecipeName.text = recipeName
+        self.lblRecipeType.text = recipeType
+        print("recipeImage  \(recipeImage)")
+        if(recipeImage != "") {
+            let url: URL = URL(string: recipeImage)!
+            self.recipeImgView.kf.setImage(with: url, placeholder: UIImage(named:"cocktail"),  options: nil, progressBlock: nil, completionHandler: {
+                ( image, error, cacheType, imageUrl) in
+                if image != nil{
+                    self.recipeImgView.clipsToBounds = true
+                    self.recipeImgView.backgroundColor = .white
+                }
+            })
+        }
+        
     }
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return self.section.count
+    override func viewWillAppear(_ animated: Bool) {
+        getRecipe()
     }
+    func getRecipe(){
+        Alamofire.request("https://mahajan-pooja.github.io/cocktail-booz-api/greentini.json").responseJSON(completionHandler: {(response) in
+            if response.result.isSuccess {
+                print("response.result.value \(response.result.value!)")
+                let model: RecipeDetailModel = RecipeDetailModel.init(fromDictionary: response.result.value as! NSDictionary)
+                self.ingredients.removeAll()
+                self.procedure.removeAll()
+                
+                self.ingredients = model.ingredients
+                self.procedure = model.procedure
+                
+                
+                self.ingredientsTableView.reloadData()
+                self.ingredientsTblViewHeight.constant = CGFloat(self.ingredients.count * 70)
+                self.procedureTableView.reloadData()
+                self.procedureTblviewHeight.constant = CGFloat(self.procedure.count * 70)
+               
+            }else{
+                print("failure error")
+            }
+        })
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.items[section].count
+        if(tableView == ingredientsTableView){
+            return ingredients.count
+        }else{
+            return procedure.count
+        }
     }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 50
-    }
-    
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
-        return 70
+        if(tableView == ingredientsTableView){
+            return 70
+        }else{
+            return 70
+        }
     }
 
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        
-        let headerText = UILabel()
-        headerText.textAlignment = .center
-        headerText.text = self.section[section]
-        headerText.textColor = UIColor(red: 70/255, green: 20/255, blue: 72/255, alpha: 1)
-        headerText.font = UIFont.init(name: "Noteworthy-bold", size: 20)
-        
-        return headerText
-    }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "IngredientsTableViewCell", for: indexPath) as! IngredientsTableViewCell
-        cell.lblIngredients.text = self.items[indexPath.section][indexPath.row]
-        
-        cell.containerUIView.layer.shadowColor = UIColor.gray.cgColor
-        cell.containerUIView.layer.shadowOpacity = 0.8
-        cell.containerUIView.layer.shadowOffset = CGSize.zero
-        cell.containerUIView.layer.shadowRadius = 2
-        cell.containerUIView.layer.masksToBounds = false
-        
-        return cell
+        if(tableView == ingredientsTableView){
+            let cell = tableView.dequeueReusableCell(withIdentifier: "IngredientsTableViewCell", for: indexPath) as! IngredientsTableViewCell
+            cell.lblIngredients.text = ingredients[indexPath.row]
+            
+            cell.containerUIView.layer.shadowColor = UIColor.gray.cgColor
+            cell.containerUIView.layer.shadowOpacity = 0.8
+            cell.containerUIView.layer.shadowOffset = CGSize.zero
+            cell.containerUIView.layer.shadowRadius = 2
+            cell.containerUIView.layer.masksToBounds = false
+            
+            return cell
+        }else{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ProcedureTableCell", for: indexPath) as! ProcedureTableCell
+            cell.lblProcedure.text = procedure[indexPath.row]
+            
+            cell.containerUIView.layer.shadowColor = UIColor.gray.cgColor
+            cell.containerUIView.layer.shadowOpacity = 0.8
+            cell.containerUIView.layer.shadowOffset = CGSize.zero
+            cell.containerUIView.layer.shadowRadius = 2
+            cell.containerUIView.layer.masksToBounds = false
+            
+            return cell
+        }
     }
 }

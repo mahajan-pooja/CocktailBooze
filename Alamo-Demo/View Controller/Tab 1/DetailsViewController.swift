@@ -14,6 +14,7 @@ class DetailsViewController: UIViewController, UICollectionViewDelegate, UIColle
     @IBOutlet weak var lblDetailsDesc: UILabel!
     var arrayAllCategoryList: [DetailCategoryModel] = [DetailCategoryModel]()
     var prod_id: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchUserData()
@@ -44,7 +45,17 @@ class DetailsViewController: UIViewController, UICollectionViewDelegate, UIColle
         return CGSize(width: yourWidth, height: yourHeight)
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+            itemIndex = indexPath.row
+            let cocktailDetail:RecipeViewController = self.storyboard?.instantiateViewController(withIdentifier: "RecipeViewController") as! RecipeViewController
+            cocktailDetail.recipeName = arrayAllCategoryList[indexPath.row].cat_name!
+        print("arrayAllCategoryList[indexPath.row].image => \(arrayAllCategoryList[indexPath.row].image!)")
+            cocktailDetail.recipeImage = arrayAllCategoryList[indexPath.row].image!
+            cocktailDetail.recipeType = arrayAllCategoryList[indexPath.row].cat_type!
+            self.navigationController?.pushViewController(cocktailDetail, animated: true)
+        
+    }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell:CategoryCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCollectionViewCell", for: indexPath) as! CategoryCollectionViewCell
