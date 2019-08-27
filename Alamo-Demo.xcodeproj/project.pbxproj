@@ -27,6 +27,8 @@
 		7ADB8F0122CD196100B11100 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7ADB8F0022CD196100B11100 /* GoogleService-Info.plist */; };
 		7ADB8F0722CD2A5F00B11100 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADB8F0622CD2A5F00B11100 /* TabBarController.swift */; };
 		7ADB8F0922CD496400B11100 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADB8F0822CD496400B11100 /* AccountViewController.swift */; };
+		7ADD4D9323159CE1003B2154 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADD4D9223159CE1003B2154 /* FavoritesViewController.swift */; };
+		7ADD4D9523159D0B003B2154 /* FavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADD4D9423159D0B003B2154 /* FavoritesTableViewCell.swift */; };
 		7AEC609D22D3AF36001511DB /* main-category.json in Resources */ = {isa = PBXBuildFile; fileRef = 7AEC609C22D3AF36001511DB /* main-category.json */; };
 		7AEC60A022D3EC66001511DB /* valentine.json in Resources */ = {isa = PBXBuildFile; fileRef = 7AEC609F22D3EC66001511DB /* valentine.json */; };
 		7AEC60A422D3EDC4001511DB /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEC60A322D3EDC4001511DB /* CategoryModel.swift */; };
@@ -74,6 +76,8 @@
 		7ADB8F0022CD196100B11100 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7ADB8F0622CD2A5F00B11100 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		7ADB8F0822CD496400B11100 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		7ADD4D9223159CE1003B2154 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		7ADD4D9423159D0B003B2154 /* FavoritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewCell.swift; sourceTree = "<group>"; };
 		7AEC609C22D3AF36001511DB /* main-category.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "main-category.json"; sourceTree = "<group>"; };
 		7AEC609F22D3EC66001511DB /* valentine.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = valentine.json; sourceTree = "<group>"; };
 		7AEC60A322D3EDC4001511DB /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
@@ -230,6 +234,8 @@
 			isa = PBXGroup;
 			children = (
 				7ADB8F0822CD496400B11100 /* AccountViewController.swift */,
+				7ADD4D9223159CE1003B2154 /* FavoritesViewController.swift */,
+				7ADD4D9423159D0B003B2154 /* FavoritesTableViewCell.swift */,
 			);
 			path = "Tab 5";
 			sourceTree = "<group>";
@@ -451,9 +457,11 @@
 				7A04BC0B2232F82B00F2C464 /* MainVideoCategoryModel.swift in Sources */,
 				BAD932902212A10F008EDFBC /* MainModelCategory.swift in Sources */,
 				BABB7631221F967200E2C0D4 /* IngredientsTableViewCell.swift in Sources */,
+				7ADD4D9323159CE1003B2154 /* FavoritesViewController.swift in Sources */,
 				BACC83FC227653520012158C /* SignInViewController.swift in Sources */,
 				7AAC18A1230B25E900EC7D48 /* ProcedureTableCell.swift in Sources */,
 				BABB762F221F94C100E2C0D4 /* RecipeViewController.swift in Sources */,
+				7ADD4D9523159D0B003B2154 /* FavoritesTableViewCell.swift in Sources */,
 				7AFE7F5C22D9251B004E5A68 /* RecipeBookViewController.swift in Sources */,
 				BACC83FE227653600012158C /* SignUpViewController.swift in Sources */,
 				7AEC60A622D3EE41001511DB /* DetailCategoryModel.swift in Sources */,

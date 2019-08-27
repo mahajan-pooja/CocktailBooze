@@ -24,26 +24,51 @@ class RecipeViewController: UIViewController, UITableViewDataSource, UITableView
     var recipeType: String!
     var ingredients = [String]()
     var procedure = [String]()
+    var favoritesArray: [String] = []
     
+    @IBOutlet weak var btnFavorite: UIButton!
     
-    @IBAction func btnAddFevoritesAction(_ sender: Any) {
-        let user = Auth.auth().currentUser
-        var email:String!
+    @IBAction func btnAddFavoritesAction(_ sender: Any) {
         
-        if let user = user {
-            email = user.email
-            print("email - \(email!)")
-        }else{
+        if(self.favoritesArray.contains(self.recipeName)){
+            let user = Auth.auth().currentUser
+            var email:String!
             
-            email = KeychainWrapper.standard.string(forKey: "user-email")
+            if let user = user {
+                email = user.email
+                print("email - \(email!)")
+            }else{
+                
+                email = KeychainWrapper.standard.string(forKey: "user-email")
+            }
+            //print("favorites => \(lblRecipeName.text) \(email)")
+            ref = Firestore.firestore().collection("RecipeCollection").document(email)
+            
+            // Atomically add a new region to the "regions" array field.
+            ref.updateData([
+                "regions": FieldValue.arrayRemove([recipeName])
+                ])
+            self.btnFavorite.setBackgroundImage(UIImage(named: "like"), for: .normal)
+        }else{
+            let user = Auth.auth().currentUser
+            var email:String!
+            
+            if let user = user {
+                email = user.email
+                print("email - \(email!)")
+            }else{
+                
+                email = KeychainWrapper.standard.string(forKey: "user-email")
+            }
+            //print("favorites => \(lblRecipeName.text) \(email)")
+            ref = Firestore.firestore().collection("RecipeCollection").document(email)
+            
+            // Atomically add a new region to the "regions" array field.
+            ref.updateData([
+                "regions": FieldValue.arrayUnion([recipeName])
+                ])
+            self.btnFavorite.setBackgroundImage(UIImage(named: "like (1)"), for: .normal)
         }
-        //print("fevorites => \(lblRecipeName.text) \(email)")
-        ref = Firestore.firestore().collection("RecipeCollection").document(email)
-        
-        // Atomically add a new region to the "regions" array field.
-        ref.updateData([
-            "regions": FieldValue.arrayUnion([recipeName])
-            ])
     }
     @IBOutlet weak var recipeImgView: UIImageView!
     @IBOutlet weak var lblRecipeType: UILabel!
@@ -71,6 +96,28 @@ class RecipeViewController: UIViewController, UITableViewDataSource, UITableView
     }
     override func viewWillAppear(_ animated: Bool) {
         getRecipe()
+        
+        Firestore.firestore().collection("RecipeCollection").getDocuments() { (querySnapshot, err) in
+            
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                // self.obj.removeAll()
+                for document in querySnapshot!.documents {
+                    //print("\(document.documentID) => \(document.data())")
+                    // self.obj.append(document.data())
+                    self.favoritesArray = document.data()["regions"]! as! [String]
+                    print("document.data() => \(document.data()["regions"]!)")
+                }
+               // print("TF => \(self.favoritesArray.contains("recipeName"))")
+                if(self.favoritesArray.contains(self.recipeName)){
+                    
+                    self.btnFavorite.setBackgroundImage(UIImage(named: "like (1)"), for: .normal)
+                }else{
+                    self.btnFavorite.setBackgroundImage(UIImage(named: "like"), for: .normal)
+                }
+            }
+        }
     }
     func getRecipe(){
         Alamofire.request("https://mahajan-pooja.github.io/cocktail-booz-api/greentini.json").responseJSON(completionHandler: {(response) in
