@@ -13,6 +13,10 @@ import SwiftKeychainWrapper
 
 class AccountViewController: UIViewController {
     var ref: DocumentReference!
+    
+    @IBOutlet weak var btnWineHub: UIButton!
+    
+    @IBOutlet weak var btnBeerHub: UIButton!
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var btnSignOut: UIButton!
     @IBOutlet weak var lblEmail: UILabel!
@@ -50,6 +54,18 @@ class AccountViewController: UIViewController {
         btnMyFavorites.layer.shadowOffset = CGSize.zero
         btnMyFavorites.layer.shadowRadius = 5
         btnMyFavorites.layer.cornerRadius = 10
+        
+        btnWineHub.layer.shadowColor = UIColor.gray.cgColor
+        btnWineHub.layer.shadowOpacity = 0.5
+        btnWineHub.layer.shadowOffset = CGSize.zero
+        btnWineHub.layer.shadowRadius = 5
+        btnWineHub.layer.cornerRadius = 10
+        
+        btnBeerHub.layer.shadowColor = UIColor.gray.cgColor
+        btnBeerHub.layer.shadowOpacity = 0.5
+        btnBeerHub.layer.shadowOffset = CGSize.zero
+        btnBeerHub.layer.shadowRadius = 5
+        btnBeerHub.layer.cornerRadius = 10
         
         lblName.text = KeychainWrapper.standard.string(forKey: "user-name")
         lblEmail.text = KeychainWrapper.standard.string(forKey: "user-email")

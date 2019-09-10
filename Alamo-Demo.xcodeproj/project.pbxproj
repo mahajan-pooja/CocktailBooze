@@ -12,6 +12,8 @@
 		7A04BC072232F54000F2C464 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A04BC062232F54000F2C464 /* VideoTableViewCell.swift */; };
 		7A04BC092232F5BF00F2C464 /* VideoCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A04BC082232F5BF00F2C464 /* VideoCategoryViewController.swift */; };
 		7A04BC0B2232F82B00F2C464 /* MainVideoCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A04BC0A2232F82B00F2C464 /* MainVideoCategoryModel.swift */; };
+		7A0C9DF5232824E600B9ACB5 /* BeerHubVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0C9DF4232824E600B9ACB5 /* BeerHubVC.swift */; };
+		7A0C9DF72328250400B9ACB5 /* BeerHubCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0C9DF62328250400B9ACB5 /* BeerHubCell.swift */; };
 		7A30B87C230C8AE30043075A /* SliderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A30B87B230C8AE30043075A /* SliderCollectionViewCell.swift */; };
 		7A8297112327165700B7AA7F /* WineHubVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8297102327165700B7AA7F /* WineHubVC.swift */; };
 		7A8297132327167400B7AA7F /* WineHubCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8297122327167400B7AA7F /* WineHubCell.swift */; };
@@ -61,6 +63,8 @@
 		7A04BC062232F54000F2C464 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
 		7A04BC082232F5BF00F2C464 /* VideoCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCategoryViewController.swift; sourceTree = "<group>"; };
 		7A04BC0A2232F82B00F2C464 /* MainVideoCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVideoCategoryModel.swift; sourceTree = "<group>"; };
+		7A0C9DF4232824E600B9ACB5 /* BeerHubVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerHubVC.swift; sourceTree = "<group>"; };
+		7A0C9DF62328250400B9ACB5 /* BeerHubCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerHubCell.swift; sourceTree = "<group>"; };
 		7A30B87B230C8AE30043075A /* SliderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderCollectionViewCell.swift; sourceTree = "<group>"; };
 		7A8297102327165700B7AA7F /* WineHubVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineHubVC.swift; sourceTree = "<group>"; };
 		7A8297122327167400B7AA7F /* WineHubCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineHubCell.swift; sourceTree = "<group>"; };
@@ -288,6 +292,8 @@
 				7ADB8F0622CD2A5F00B11100 /* TabBarController.swift */,
 				7A8297102327165700B7AA7F /* WineHubVC.swift */,
 				7A8297122327167400B7AA7F /* WineHubCell.swift */,
+				7A0C9DF4232824E600B9ACB5 /* BeerHubVC.swift */,
+				7A0C9DF62328250400B9ACB5 /* BeerHubCell.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -465,8 +471,10 @@
 				7A8297112327165700B7AA7F /* WineHubVC.swift in Sources */,
 				BABB7631221F967200E2C0D4 /* IngredientsTableViewCell.swift in Sources */,
 				7ADD4D9323159CE1003B2154 /* FavoritesViewController.swift in Sources */,
+				7A0C9DF5232824E600B9ACB5 /* BeerHubVC.swift in Sources */,
 				BACC83FC227653520012158C /* SignInViewController.swift in Sources */,
 				7AAC18A1230B25E900EC7D48 /* ProcedureTableCell.swift in Sources */,
+				7A0C9DF72328250400B9ACB5 /* BeerHubCell.swift in Sources */,
 				BABB762F221F94C100E2C0D4 /* RecipeViewController.swift in Sources */,
 				7A8297132327167400B7AA7F /* WineHubCell.swift in Sources */,
 				7ADD4D9523159D0B003B2154 /* FavoritesTableViewCell.swift in Sources */,
