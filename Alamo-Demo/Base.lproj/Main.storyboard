@@ -1747,6 +1747,13 @@
                                     <segue destination="zft-wf-rEg" kind="push" id="beB-vO-yDB"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WJo-NB-gyB">
+                                <rect key="frame" x="173.66666666666666" y="620.66666666666663" width="67" height="30"/>
+                                <state key="normal" title="Wine Hub"/>
+                                <connections>
+                                    <segue destination="5zy-kL-UeK" kind="show" id="JT5-Xh-xma"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -1756,9 +1763,11 @@
                             <constraint firstItem="LNC-et-BrO" firstAttribute="leading" secondItem="XbY-Ma-noC" secondAttribute="leading" constant="20" id="Fwj-UO-2An"/>
                             <constraint firstItem="GPl-n0-Uue" firstAttribute="leading" secondItem="XbY-Ma-noC" secondAttribute="leading" constant="20" id="Ibg-7P-u8p"/>
                             <constraint firstItem="n35-Rw-On4" firstAttribute="leading" secondItem="XbY-Ma-noC" secondAttribute="leading" constant="20" id="MXR-pQ-N7v"/>
+                            <constraint firstItem="WJo-NB-gyB" firstAttribute="top" secondItem="OCU-aC-xgY" secondAttribute="bottom" constant="20" id="PXk-pV-J9W"/>
                             <constraint firstItem="n35-Rw-On4" firstAttribute="top" secondItem="LNC-et-BrO" secondAttribute="bottom" constant="20" id="YNL-jZ-9mg"/>
                             <constraint firstItem="MAt-Pk-BGD" firstAttribute="top" secondItem="XbY-Ma-noC" secondAttribute="top" constant="400" id="dif-kh-wcP"/>
                             <constraint firstItem="XbY-Ma-noC" firstAttribute="trailing" secondItem="n35-Rw-On4" secondAttribute="trailing" constant="20" id="euU-hZ-dU6"/>
+                            <constraint firstItem="WJo-NB-gyB" firstAttribute="centerX" secondItem="XbY-Ma-noC" secondAttribute="centerX" id="hlY-Y6-XS1"/>
                             <constraint firstItem="OCU-aC-xgY" firstAttribute="centerY" secondItem="XbY-Ma-noC" secondAttribute="centerY" constant="200" id="jHy-gg-vrh"/>
                             <constraint firstItem="XbY-Ma-noC" firstAttribute="trailing" secondItem="GPl-n0-Uue" secondAttribute="trailing" constant="20" id="qcX-hf-J48"/>
                             <constraint firstItem="OCU-aC-xgY" firstAttribute="centerX" secondItem="XbY-Ma-noC" secondAttribute="centerX" id="vyL-sg-Krs"/>
@@ -2157,6 +2166,108 @@
             </objects>
             <point key="canvasLocation" x="-3534" y="-967"/>
         </scene>
+        <!--Wine HubVC-->
+        <scene sceneID="Wnx-HV-WqA">
+            <objects>
+                <viewController storyboardIdentifier="WineHubVC" id="5zy-kL-UeK" customClass="WineHubVC" customModule="Alamo_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fSN-iJ-sjT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vNi-XZ-t5O">
+                                <rect key="frame" x="0.0" y="64" width="414" height="368"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="winery" translatesAutoresizingMaskIntoConstraints="NO" id="T78-48-aS7">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="110.33333333333333"/>
+                                        <color key="backgroundColor" red="0.1019607843" green="0.1843137255" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </imageView>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ksi-XI-GdV">
+                                        <rect key="frame" x="0.0" y="30.333333333333343" width="414" height="337.66666666666663"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ut5-Iw-fKv">
+                                            <size key="itemSize" width="176" height="364"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WineHubCell" id="qqe-xf-gHe" customClass="WineHubCell" customModule="Alamo_Demo" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="-13.333333333333334" width="176" height="364"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="176" height="364"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wsciupcTTAajMiqDY6Xh6g_pb_x600" translatesAutoresizingMaskIntoConstraints="NO" id="yDB-Sc-TiS">
+                                                            <rect key="frame" x="0.0" y="0.0" width="176" height="182"/>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chardonnay 2015" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wcp-jg-iQK">
+                                                            <rect key="frame" x="0.0" y="192" width="176" height="50"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="50" id="Xgc-PC-taH"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Juggernaut" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dX2-Xa-xE1">
+                                                            <rect key="frame" x="0.0" y="232" width="176" height="30"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="30" id="N0d-ke-waa"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </view>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="yDB-Sc-TiS" secondAttribute="trailing" id="3Dh-4U-pgf"/>
+                                                    <constraint firstItem="Wcp-jg-iQK" firstAttribute="top" secondItem="yDB-Sc-TiS" secondAttribute="bottom" constant="10" id="6ja-OH-X4F"/>
+                                                    <constraint firstAttribute="trailing" secondItem="dX2-Xa-xE1" secondAttribute="trailing" id="6nd-vn-p9h"/>
+                                                    <constraint firstItem="dX2-Xa-xE1" firstAttribute="leading" secondItem="qqe-xf-gHe" secondAttribute="leading" id="TXe-Rc-qVS"/>
+                                                    <constraint firstItem="yDB-Sc-TiS" firstAttribute="leading" secondItem="qqe-xf-gHe" secondAttribute="leading" id="Tye-1H-MVy"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Wcp-jg-iQK" secondAttribute="trailing" id="bzG-xS-M2U"/>
+                                                    <constraint firstItem="yDB-Sc-TiS" firstAttribute="top" secondItem="qqe-xf-gHe" secondAttribute="top" id="erz-0l-jFt"/>
+                                                    <constraint firstItem="Wcp-jg-iQK" firstAttribute="bottom" secondItem="dX2-Xa-xE1" secondAttribute="top" constant="10" id="ifz-SN-oJu"/>
+                                                    <constraint firstItem="Wcp-jg-iQK" firstAttribute="leading" secondItem="qqe-xf-gHe" secondAttribute="leading" id="rPm-Tx-Rrj"/>
+                                                    <constraint firstItem="yDB-Sc-TiS" firstAttribute="height" secondItem="qqe-xf-gHe" secondAttribute="height" multiplier="0.5" id="uax-HK-jbb"/>
+                                                </constraints>
+                                            </collectionViewCell>
+                                        </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="5zy-kL-UeK" id="wBt-dO-lbt"/>
+                                            <outlet property="delegate" destination="5zy-kL-UeK" id="awq-cA-G6t"/>
+                                        </connections>
+                                    </collectionView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="T78-48-aS7" firstAttribute="top" secondItem="vNi-XZ-t5O" secondAttribute="top" id="A9j-ss-Tu7"/>
+                                    <constraint firstItem="Ksi-XI-GdV" firstAttribute="top" secondItem="T78-48-aS7" secondAttribute="bottom" constant="-80" id="BZ5-3d-qLI"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ksi-XI-GdV" secondAttribute="bottom" id="cwT-2y-o9G"/>
+                                    <constraint firstAttribute="trailing" secondItem="T78-48-aS7" secondAttribute="trailing" id="gKf-0J-FaT"/>
+                                    <constraint firstItem="T78-48-aS7" firstAttribute="leading" secondItem="vNi-XZ-t5O" secondAttribute="leading" id="rgE-eH-xlC"/>
+                                    <constraint firstItem="Ksi-XI-GdV" firstAttribute="leading" secondItem="vNi-XZ-t5O" secondAttribute="leading" id="uHK-Nd-V2J"/>
+                                    <constraint firstItem="T78-48-aS7" firstAttribute="height" secondItem="vNi-XZ-t5O" secondAttribute="height" multiplier="0.3" id="uUn-tu-BKh"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ksi-XI-GdV" secondAttribute="trailing" id="vfz-ZG-iab"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vNi-XZ-t5O" firstAttribute="top" secondItem="pwH-oy-taT" secondAttribute="top" id="0B5-m5-yN8"/>
+                            <constraint firstItem="pwH-oy-taT" firstAttribute="trailing" secondItem="vNi-XZ-t5O" secondAttribute="trailing" id="GeU-CM-4bB"/>
+                            <constraint firstItem="vNi-XZ-t5O" firstAttribute="height" secondItem="fSN-iJ-sjT" secondAttribute="height" multiplier="0.5" id="ngm-AY-Vzl"/>
+                            <constraint firstItem="vNi-XZ-t5O" firstAttribute="leading" secondItem="pwH-oy-taT" secondAttribute="leading" id="pXS-Wh-zex"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pwH-oy-taT"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qMM-z6-2eU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-6659.420289855073" y="-1890.4891304347827"/>
+        </scene>
         <!--WelcomeVC-->
         <scene sceneID="JXe-DS-fVI">
             <objects>
@@ -2338,6 +2449,8 @@
         <image name="outline_person_black_36pt" width="36" height="36"/>
         <image name="outline_search_black_36pt" width="36" height="36"/>
         <image name="outline_video_library_black_36pt" width="36" height="36"/>
+        <image name="winery" width="353" height="143"/>
+        <image name="wsciupcTTAajMiqDY6Xh6g_pb_x600" width="171" height="600"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="vGC-ch-U9p"/>
