@@ -2291,6 +2291,9 @@
                                                                     <constraint firstItem="J2h-om-Kyu" firstAttribute="leading" secondItem="qqe-xf-gHe" secondAttribute="leading" id="jL8-JY-5es"/>
                                                                     <constraint firstAttribute="bottom" secondItem="J2h-om-Kyu" secondAttribute="bottom" id="qCU-IQ-3Fr"/>
                                                                 </constraints>
+                                                                <connections>
+                                                                    <segue destination="oBv-Mq-b1j" kind="show" id="yrZ-gg-F3q"/>
+                                                                </connections>
                                                             </collectionViewCell>
                                                         </cells>
                                                         <connections>
@@ -2397,6 +2400,9 @@
                                                                     <constraint firstItem="ph9-xm-eAB" firstAttribute="leading" secondItem="gaQ-Tg-fvB" secondAttribute="leading" id="IDT-lf-Ojf"/>
                                                                     <constraint firstAttribute="bottom" secondItem="ph9-xm-eAB" secondAttribute="bottom" id="P9p-rX-KLk"/>
                                                                 </constraints>
+                                                                <connections>
+                                                                    <segue destination="oBv-Mq-b1j" kind="show" id="tYj-BK-xnl"/>
+                                                                </connections>
                                                             </collectionViewCell>
                                                         </cells>
                                                         <connections>
@@ -2503,6 +2509,9 @@
                                                                     <constraint firstItem="Jwk-3Y-qTt" firstAttribute="top" secondItem="fDM-hn-epH" secondAttribute="top" id="Qsa-DU-e1c"/>
                                                                     <constraint firstItem="Jwk-3Y-qTt" firstAttribute="leading" secondItem="fDM-hn-epH" secondAttribute="leading" id="jp5-U0-oxk"/>
                                                                 </constraints>
+                                                                <connections>
+                                                                    <segue destination="oBv-Mq-b1j" kind="show" id="0Dr-TR-wp4"/>
+                                                                </connections>
                                                             </collectionViewCell>
                                                         </cells>
                                                         <connections>
@@ -2672,6 +2681,9 @@
                                                                     <constraint firstItem="nkf-4t-lkX" firstAttribute="top" secondItem="Rze-Cx-I0i" secondAttribute="top" id="xUE-Yv-xk3"/>
                                                                     <constraint firstAttribute="trailing" secondItem="nkf-4t-lkX" secondAttribute="trailing" id="zIL-Fw-HFE"/>
                                                                 </constraints>
+                                                                <connections>
+                                                                    <segue destination="oBv-Mq-b1j" kind="show" id="0jO-bO-a3m"/>
+                                                                </connections>
                                                             </collectionViewCell>
                                                         </cells>
                                                         <connections>
@@ -2778,6 +2790,9 @@
                                                                     <constraint firstItem="dkj-p7-KSz" firstAttribute="top" secondItem="R3t-3k-5dD" secondAttribute="top" id="fIZ-ED-OYl"/>
                                                                     <constraint firstAttribute="trailing" secondItem="dkj-p7-KSz" secondAttribute="trailing" id="wnC-Bb-BqM"/>
                                                                 </constraints>
+                                                                <connections>
+                                                                    <segue destination="oBv-Mq-b1j" kind="show" id="FCD-8c-y0J"/>
+                                                                </connections>
                                                             </collectionViewCell>
                                                         </cells>
                                                         <connections>
@@ -2884,6 +2899,9 @@
                                                                     <constraint firstItem="4Yx-WW-r9a" firstAttribute="top" secondItem="Jbx-TN-GhJ" secondAttribute="top" id="My6-VT-YbO"/>
                                                                     <constraint firstAttribute="trailing" secondItem="4Yx-WW-r9a" secondAttribute="trailing" id="OlD-bB-neS"/>
                                                                 </constraints>
+                                                                <connections>
+                                                                    <segue destination="oBv-Mq-b1j" kind="show" id="vdG-VA-4OH"/>
+                                                                </connections>
                                                             </collectionViewCell>
                                                         </cells>
                                                         <connections>
@@ -2953,45 +2971,91 @@
             </objects>
             <point key="canvasLocation" x="-5685" y="-1993"/>
         </scene>
-        <!--View Controller-->
+        <!--Wine Beer DetailVC-->
         <scene sceneID="b15-1P-Tl9">
             <objects>
-                <viewController id="oBv-Mq-b1j" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WineBeerDetailVC" id="oBv-Mq-b1j" customClass="WineBeerDetailVC" customModule="Alamo_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SmP-iN-Lti">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c7Y-m4-pWm">
-                                <rect key="frame" x="0.0" y="20" width="414" height="980"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="887"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VFf-rh-wV9">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cwX-ZA-BfT">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="w2" translatesAutoresizingMaskIntoConstraints="NO" id="cwX-ZA-BfT">
                                                 <rect key="frame" x="157" y="40" width="100" height="200"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="bj2-Xg-51m"/>
                                                     <constraint firstAttribute="height" constant="200" id="teZ-6c-8TJ"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="teW-Tq-Jv9">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ACE PINEAPPLE CIDER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="teW-Tq-Jv9">
                                                 <rect key="frame" x="0.0" y="260" width="414" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="ged-hi-nMc"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="25"/>
+                                                <color key="textColor" red="0.2784313725" green="0.078431372550000003" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I8w-sy-wKp">
+                                                <rect key="frame" x="20" y="310" width="374" height="200"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qby-WV-N00">
+                                                        <rect key="frame" x="20" y="20" width="334" height="160"/>
+                                                        <string key="text">California- Fruit Cider- Ace's Pineapple Cider is a balanced, crisp, natural offering made with fresh pineapple and no added sugars. It contains fewer calories than some of the industry's leading cider brands with zero artificial ingredients. Fruity, tropical &amp; refreshing! Enjoy.</string>
+                                                        <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="15"/>
+                                                        <color key="textColor" red="0.2784313725" green="0.078431372550000003" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" red="1" green="0.87264554790000004" blue="0.44402825340000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="qby-WV-N00" secondAttribute="bottom" constant="20" id="Aw7-oW-GqY"/>
+                                                    <constraint firstAttribute="trailing" secondItem="qby-WV-N00" secondAttribute="trailing" constant="20" id="LAk-pV-uky"/>
+                                                    <constraint firstItem="qby-WV-N00" firstAttribute="leading" secondItem="I8w-sy-wKp" secondAttribute="leading" constant="20" id="Oum-Aa-2xD"/>
+                                                    <constraint firstItem="qby-WV-N00" firstAttribute="top" secondItem="I8w-sy-wKp" secondAttribute="top" constant="20" id="XI3-kL-0QV"/>
+                                                    <constraint firstAttribute="height" constant="200" id="s6f-3K-UrP"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b17-HQ-C3v">
+                                                <rect key="frame" x="20" y="525" width="374" height="150"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cWy-8I-Y1Z">
+                                                        <rect key="frame" x="20" y="20" width="334" height="110"/>
+                                                        <string key="text"> It contains fewer calories than some of the industry's leading cider brands with zero artificial ingredients. Fruity, tropical &amp; refreshing! Enjoy.</string>
+                                                        <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="15"/>
+                                                        <color key="textColor" red="0.2784313725" green="0.078431372550000003" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.98431372549999996" green="0.68627450980000004" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstItem="cWy-8I-Y1Z" firstAttribute="top" secondItem="b17-HQ-C3v" secondAttribute="top" constant="20" id="7pi-xK-t5e"/>
+                                                    <constraint firstItem="cWy-8I-Y1Z" firstAttribute="leading" secondItem="b17-HQ-C3v" secondAttribute="leading" constant="20" id="HHM-qt-vVx"/>
+                                                    <constraint firstAttribute="bottom" secondItem="cWy-8I-Y1Z" secondAttribute="bottom" constant="20" id="Una-UV-cR1"/>
+                                                    <constraint firstAttribute="trailing" secondItem="cWy-8I-Y1Z" secondAttribute="trailing" constant="20" id="bbA-Je-sJr"/>
+                                                    <constraint firstAttribute="height" constant="150" id="rgV-Cm-5sG"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="cwX-ZA-BfT" firstAttribute="centerX" secondItem="VFf-rh-wV9" secondAttribute="centerX" id="HvR-jI-Z5a"/>
                                             <constraint firstItem="teW-Tq-Jv9" firstAttribute="top" secondItem="cwX-ZA-BfT" secondAttribute="bottom" constant="20" id="IIf-eP-wQG"/>
+                                            <constraint firstAttribute="trailing" secondItem="b17-HQ-C3v" secondAttribute="trailing" constant="20" id="OB5-gt-65D"/>
+                                            <constraint firstItem="b17-HQ-C3v" firstAttribute="top" secondItem="I8w-sy-wKp" secondAttribute="bottom" constant="15" id="P8t-qH-B82"/>
+                                            <constraint firstItem="I8w-sy-wKp" firstAttribute="top" secondItem="teW-Tq-Jv9" secondAttribute="bottom" constant="20" id="Pzs-pd-u53"/>
                                             <constraint firstAttribute="trailing" secondItem="teW-Tq-Jv9" secondAttribute="trailing" id="QOK-JL-a7Q"/>
+                                            <constraint firstAttribute="trailing" secondItem="I8w-sy-wKp" secondAttribute="trailing" constant="20" id="clA-DF-lUv"/>
                                             <constraint firstItem="cwX-ZA-BfT" firstAttribute="top" secondItem="VFf-rh-wV9" secondAttribute="top" constant="40" id="eMQ-Yp-LHf"/>
+                                            <constraint firstItem="I8w-sy-wKp" firstAttribute="leading" secondItem="VFf-rh-wV9" secondAttribute="leading" constant="20" id="lRf-2f-dJ7"/>
                                             <constraint firstAttribute="height" constant="1000" id="obD-04-JwD"/>
                                             <constraint firstItem="teW-Tq-Jv9" firstAttribute="leading" secondItem="VFf-rh-wV9" secondAttribute="leading" id="rzh-de-gmX"/>
+                                            <constraint firstItem="b17-HQ-C3v" firstAttribute="leading" secondItem="VFf-rh-wV9" secondAttribute="leading" constant="20" id="wD2-St-QYp"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -3014,6 +3078,10 @@
                         <viewLayoutGuide key="safeArea" id="ghY-7n-reQ"/>
                     </view>
                     <size key="freeformSize" width="414" height="1000"/>
+                    <connections>
+                        <outlet property="UIViewLblDesc" destination="I8w-sy-wKp" id="qyB-TM-xha"/>
+                        <outlet property="UIViewLblDescExtra" destination="b17-HQ-C3v" id="Ajm-7S-Zv6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xgn-9P-lJy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -3028,7 +3096,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_img" translatesAutoresizingMaskIntoConstraints="NO" id="Dbk-pf-6ta">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414.00000000000011" height="736"/>
                             </imageView>
                             <view alpha="0.75" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H8L-73-cHk">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
@@ -3215,6 +3283,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="vGC-ch-U9p"/>
+        <segue reference="vdG-VA-4OH"/>
         <segue reference="jh6-qV-pBK"/>
         <segue reference="DgU-4b-Kpz"/>
     </inferredMetricsTieBreakers>
