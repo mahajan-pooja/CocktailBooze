@@ -12,6 +12,7 @@ import LocalAuthentication
 
 class welcomeVC: UIViewController {
 
+    @IBOutlet weak var UIViewContainer: UIView!
     @IBOutlet weak var btnFaceID: UIButton!
     @IBAction func btnFaceIDAction(_ sender: Any) {
         let context = LAContext()
@@ -41,7 +42,7 @@ class welcomeVC: UIViewController {
     @IBOutlet weak var btnSignUp: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        UIViewContainer.layer.cornerRadius = UIViewContainer.frame.height/12
         let currentType = LAContext().biometricType
         if(currentType == .touchID){
             btnTouchID.isHidden = false

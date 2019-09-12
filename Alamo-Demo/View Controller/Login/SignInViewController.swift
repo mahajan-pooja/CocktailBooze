@@ -18,7 +18,26 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
     }
     
-
+    @IBAction func btnForgotAction(_ sender: Any) {
+        //1. Create the alert controller.
+        let alert = UIAlertController(title: "Password Reset", message: "Enter registered Email Id to get password reset link.", preferredStyle: .alert)
+        
+        //2. Add the text field. You can configure it however you need.
+        alert.addTextField { (textField) in
+            // textField.text = "Some default text"
+        }
+        
+        // 3. Grab the value from the text field, and print it when the user clicks OK.
+        alert.addAction(UIAlertAction(title: "Send", style: .default, handler: { [weak alert] (_) in
+            let textField = alert?.textFields![0] // Force unwrapping because we know it exists.
+            let email = textField!.text
+            Auth.auth().sendPasswordReset(withEmail: email!) { error in
+            }
+        }))
+        
+        // 4. Present the alert.
+        self.present(alert, animated: true, completion: nil)
+    }
     @IBOutlet weak var btnSignIn: UIButton!
     @IBAction func btnSignInAction(_ sender: Any) {
         var email = txtFieldEmail.text!

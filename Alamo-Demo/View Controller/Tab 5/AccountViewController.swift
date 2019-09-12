@@ -47,25 +47,25 @@ class AccountViewController: UIViewController {
         btnSignOut.layer.shadowOpacity = 0.5
         btnSignOut.layer.shadowOffset = CGSize.zero
         btnSignOut.layer.shadowRadius = 5
-        btnSignOut.layer.cornerRadius = 10
+        btnSignOut.layer.cornerRadius = btnSignOut.frame.height/2
         
         btnMyFavorites.layer.shadowColor = UIColor.gray.cgColor
         btnMyFavorites.layer.shadowOpacity = 0.5
         btnMyFavorites.layer.shadowOffset = CGSize.zero
         btnMyFavorites.layer.shadowRadius = 5
-        btnMyFavorites.layer.cornerRadius = 10
+        btnMyFavorites.layer.cornerRadius = btnMyFavorites.frame.height/2
         
         btnWineHub.layer.shadowColor = UIColor.gray.cgColor
         btnWineHub.layer.shadowOpacity = 0.5
         btnWineHub.layer.shadowOffset = CGSize.zero
         btnWineHub.layer.shadowRadius = 5
-        btnWineHub.layer.cornerRadius = 10
+        btnWineHub.layer.cornerRadius = btnWineHub.frame.height/2
         
         btnBeerHub.layer.shadowColor = UIColor.gray.cgColor
         btnBeerHub.layer.shadowOpacity = 0.5
         btnBeerHub.layer.shadowOffset = CGSize.zero
         btnBeerHub.layer.shadowRadius = 5
-        btnBeerHub.layer.cornerRadius = 10
+        btnBeerHub.layer.cornerRadius = btnBeerHub.frame.height/2
         
         lblName.text = KeychainWrapper.standard.string(forKey: "user-name")
         lblEmail.text = KeychainWrapper.standard.string(forKey: "user-email")
