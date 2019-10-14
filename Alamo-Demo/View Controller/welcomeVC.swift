@@ -42,7 +42,8 @@ class welcomeVC: UIViewController {
     @IBOutlet weak var btnSignUp: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        UIViewContainer.layer.cornerRadius = UIViewContainer.frame.height/12
+        
+        
         let currentType = LAContext().biometricType
         if(currentType == .touchID){
             btnTouchID.isHidden = false
@@ -52,7 +53,17 @@ class welcomeVC: UIViewController {
             btnFaceID.isHidden = false
         }
         print("currentType - \(currentType)")
+      
+        
+        let gradientLayer:CAGradientLayer = CAGradientLayer()
+        gradientLayer.frame.size = UIViewContainer.frame.size
+        gradientLayer.colors =
+            [UIColor(red: 1, green: 0.8745, blue: 0.4431, alpha: 1.0).cgColor,UIColor(red: 1, green: 0.8745, blue: 0.4431, alpha: 1.0).cgColor]
+        UIViewContainer.layer.insertSublayer(gradientLayer, at: 0)
+        UIViewContainer.layer.cornerRadius = UIViewContainer.frame.height/20
     }
+    
+    
     @IBAction func btnTouchIdAction(_ sender: Any) {
         // 1
         let context = LAContext()
@@ -157,5 +168,20 @@ extension LAContext {
         } else {
             return  self.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil) ? .touchID : .none
         }
+    }
+}
+extension UIView {
+    func addGradientLayer(with colors: [CGColor], startPoint: CGPoint, endPoint: CGPoint, locations: [NSNumber] = [0.0, 1.0], frame: CGRect = CGRect.zero) {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = colors
+        
+        gradientLayer.startPoint = startPoint
+        gradientLayer.endPoint = endPoint
+        
+        gradientLayer.locations = locations
+        gradientLayer.frame = frame
+        
+        gradientLayer.cornerRadius = self.layer.cornerRadius
+        self.layer.insertSublayer(gradientLayer, at: 0)
     }
 }

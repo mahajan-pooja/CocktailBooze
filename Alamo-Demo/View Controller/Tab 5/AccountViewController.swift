@@ -25,6 +25,7 @@ class AccountViewController: UIViewController {
         let firebaseAuth = Auth.auth()
         do {
             try firebaseAuth.signOut()
+            UserDefaults.standard.set("", forKey: "userEmail")
             let secondViewController: welcomeVC = self.storyboard?.instantiateViewController(withIdentifier: "welcomeVC") as! welcomeVC
             self.present(secondViewController, animated: true, completion: nil)
             

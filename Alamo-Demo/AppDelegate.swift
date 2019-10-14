@@ -20,6 +20,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Thread.sleep(forTimeInterval: 0.5)
         FirebaseApp.configure()
         firebaseStorage = Storage.storage()
+        if(UserDefaults.standard.string(forKey: "userEmail") != nil && UserDefaults.standard.string(forKey: "userEmail") != ""){
+            print("userEmail \(UserDefaults.standard.string(forKey: "userEmail")!)")
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: "TabBarController")
+            
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
+        }
+        
         return true
     }
 

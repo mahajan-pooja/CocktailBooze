@@ -29,6 +29,8 @@
 		7AAC18A7230B3D4C00EC7D48 /* ProcedureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAC18A6230B3D4C00EC7D48 /* ProcedureCell.swift */; };
 		7ABB0E39221E2E25004649E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ABB0E38221E2E25004649E8 /* LaunchScreen.storyboard */; };
 		7ABC09912304C795002CA237 /* ProcedureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABC09902304C795002CA237 /* ProcedureTableViewCell.swift */; };
+		7AC664FE235519A2004EAA62 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC664FD235519A2004EAA62 /* GradientView.swift */; };
+		7AC66500235521BE004EAA62 /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC664FF235521BE004EAA62 /* GradientButton.swift */; };
 		7ADB8F0122CD196100B11100 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7ADB8F0022CD196100B11100 /* GoogleService-Info.plist */; };
 		7ADB8F0722CD2A5F00B11100 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADB8F0622CD2A5F00B11100 /* TabBarController.swift */; };
 		7ADB8F0922CD496400B11100 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADB8F0822CD496400B11100 /* AccountViewController.swift */; };
@@ -83,6 +85,8 @@
 		7AAC18A6230B3D4C00EC7D48 /* ProcedureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcedureCell.swift; sourceTree = "<group>"; };
 		7ABB0E38221E2E25004649E8 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7ABC09902304C795002CA237 /* ProcedureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcedureTableViewCell.swift; sourceTree = "<group>"; };
+		7AC664FD235519A2004EAA62 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		7AC664FF235521BE004EAA62 /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
 		7ADB8F0022CD196100B11100 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7ADB8F0622CD2A5F00B11100 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		7ADB8F0822CD496400B11100 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
@@ -291,6 +295,8 @@
 				7ABC09932304D3CA002CA237 /* Tab 4 */,
 				7ABC09942304D3EB002CA237 /* Tab 5 */,
 				BA43B4C6227299A200349C95 /* welcomeVC.swift */,
+				7AC664FD235519A2004EAA62 /* GradientView.swift */,
+				7AC664FF235521BE004EAA62 /* GradientButton.swift */,
 				7ADB8F0622CD2A5F00B11100 /* TabBarController.swift */,
 				7A8297102327165700B7AA7F /* WineHubVC.swift */,
 				7A8297122327167400B7AA7F /* WineHubCell.swift */,
@@ -481,7 +487,9 @@
 				7A0C9DF923286E3A00B9ACB5 /* WineBeerDetailVC.swift in Sources */,
 				BABB762F221F94C100E2C0D4 /* RecipeViewController.swift in Sources */,
 				7A8297132327167400B7AA7F /* WineHubCell.swift in Sources */,
+				7AC664FE235519A2004EAA62 /* GradientView.swift in Sources */,
 				7ADD4D9523159D0B003B2154 /* FavoritesTableViewCell.swift in Sources */,
+				7AC66500235521BE004EAA62 /* GradientButton.swift in Sources */,
 				7AFE7F5C22D9251B004E5A68 /* RecipeBookViewController.swift in Sources */,
 				BACC83FE227653600012158C /* SignUpViewController.swift in Sources */,
 				7AEC60A622D3EE41001511DB /* DetailCategoryModel.swift in Sources */,

@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SwiftKeychainWrapper
 
 class SignInViewController: UIViewController, UITextFieldDelegate {
 
@@ -47,6 +48,9 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
          password = "Abc123"
         
         Auth.auth().signIn(withEmail: email, password: password) { [weak self] user, error in
+            KeychainWrapper.standard.set(email, forKey: "user-email")
+            UserDefaults.standard.set(email, forKey: "userEmail")
+            
             let secondViewController: TabBarController = self?.storyboard?.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
             self?.present(secondViewController, animated: true, completion: nil)
         }
