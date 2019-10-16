@@ -26,8 +26,9 @@ class AccountViewController: UIViewController {
         do {
             try firebaseAuth.signOut()
             UserDefaults.standard.set("", forKey: "userEmail")
-            let secondViewController: welcomeVC = self.storyboard?.instantiateViewController(withIdentifier: "welcomeVC") as! welcomeVC
-            self.present(secondViewController, animated: true, completion: nil)
+            let SignInViewController: SignInViewController = self.storyboard?.instantiateViewController(withIdentifier: "SignInViewController") as! SignInViewController
+            SignInViewController.modalPresentationStyle = .fullScreen
+            self.present(SignInViewController, animated: true, completion: nil)
             
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)

@@ -12,6 +12,7 @@ import SwiftKeychainWrapper
 
 class FavoritesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    
     @IBOutlet weak var tblViewFavorites: UITableView!
     var favoritesArray: [String] = []
     var ref: DocumentReference!
@@ -65,8 +66,14 @@ class FavoritesViewController: UIViewController, UITableViewDataSource, UITableV
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+//        containerUIView.layer.shadowColor = UIColor.gray.cgColor
+//        containerUIView.layer.shadowOpacity = 0.8
+//        containerUIView.layer.shadowOffset = CGSize.zero
+//        containerUIView.layer.shadowRadius = 2
+//        containerUIView.layer.cornerRadius = containerUIView.frame.height/15
         // Do any additional setup after loading the view.
+        navigationController?.navigationBar.barTintColor = UIColor(red: 255.0/255.0, green: 223.0/255.0, blue: 113.0/255.0, alpha: 1.0)
+
     }
     override func viewWillAppear(_ animated: Bool) {
         getFavorites()
@@ -115,6 +122,11 @@ class FavoritesViewController: UIViewController, UITableViewDataSource, UITableV
         cell.btnRemoveFevorites.tag = indexPath.row
         cell.btnRemoveFevorites.addTarget(self, action: #selector(btnRemoveFavoritesAction(sender:)), for: .touchUpInside)
         
+        cell.containerUIView.layer.shadowColor = UIColor.gray.cgColor
+        cell.containerUIView.layer.shadowOpacity = 0.8
+        cell.containerUIView.layer.shadowOffset = CGSize.zero
+        cell.containerUIView.layer.shadowRadius = 2
+        cell.containerUIView.layer.cornerRadius = cell.containerUIView.frame.height/15
         
         return cell
     }

@@ -26,6 +26,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func btnCancelAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     @IBAction func btnSignUpAction(_ sender: Any) {
         guard let password = txtFieldPassword.text else { return print("Password Empty") }
         guard let email = txtFieldEmail.text else { return print("Email Empty") }

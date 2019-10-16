@@ -71,7 +71,7 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
         imagePicker.delegate = self
         btnAddProcedure.layer.cornerRadius = 15
         btnAddIngredients.layer.cornerRadius = 15
-        btnAddRecipe.layer.cornerRadius = 15
+        btnAddRecipe.layer.cornerRadius = btnAddRecipe.frame.height/2
         
         ingredientsUIView.layer.cornerRadius = ingredientsUIView.frame.width/15
         addProcedureUIView.layer.cornerRadius = addProcedureUIView.frame.width/15

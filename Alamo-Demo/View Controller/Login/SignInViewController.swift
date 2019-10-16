@@ -19,6 +19,12 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
     }
     
+    @IBAction func btnSignUpAction(_ sender: Any) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let SignUpViewController: SignUpViewController = storyBoard.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
+        SignUpViewController.modalPresentationStyle = .fullScreen
+        self.present(SignUpViewController, animated: true, completion: nil)
+    }
     @IBAction func btnForgotAction(_ sender: Any) {
         //1. Create the alert controller.
         let alert = UIAlertController(title: "Password Reset", message: "Enter registered Email Id to get password reset link.", preferredStyle: .alert)
@@ -52,6 +58,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
             UserDefaults.standard.set(email, forKey: "userEmail")
             
             let secondViewController: TabBarController = self?.storyboard?.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
+            secondViewController.modalPresentationStyle = .fullScreen
             self?.present(secondViewController, animated: true, completion: nil)
         }
     }

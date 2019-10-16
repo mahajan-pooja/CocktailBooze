@@ -12,6 +12,18 @@ import LocalAuthentication
 
 class welcomeVC: UIViewController {
 
+    @IBAction func btnSignUpAction(_ sender: Any) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let SignUpViewController: SignUpViewController = storyBoard.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
+        SignUpViewController.modalPresentationStyle = .fullScreen
+        self.present(SignUpViewController, animated: true, completion: nil)
+    }
+    @IBAction func btnSignInAction(_ sender: Any) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let SignInViewController: SignInViewController = storyBoard.instantiateViewController(withIdentifier: "SignInViewController") as! SignInViewController
+        SignInViewController.modalPresentationStyle = .fullScreen
+        self.present(SignInViewController, animated: true, completion: nil)
+    }
     @IBOutlet weak var UIViewContainer: UIView!
     @IBOutlet weak var btnFaceID: UIButton!
     @IBAction func btnFaceIDAction(_ sender: Any) {
