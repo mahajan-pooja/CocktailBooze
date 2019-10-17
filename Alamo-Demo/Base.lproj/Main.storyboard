@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aG9-80-m71">
-    <device id="retina5_5" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aG9-80-m71">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -68,7 +69,7 @@
                                                 </constraints>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="IngredientsTableViewCell" rowHeight="45" id="DtV-6i-v8M" customClass="IngredientsTableViewCell" customModule="Alamo_Demo" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="28" width="375" height="45"/>
+                                                        <rect key="frame" x="0.0" y="50" width="375" height="45"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DtV-6i-v8M" id="9vr-wJ-Eph">
                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
@@ -136,7 +137,7 @@
                                                 </constraints>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProcedureTableCell" rowHeight="45" id="1AR-y7-FYu" customClass="ProcedureTableCell" customModule="Alamo_Demo" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="28" width="375" height="45"/>
+                                                        <rect key="frame" x="0.0" y="50" width="375" height="45"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1AR-y7-FYu" id="Znq-Sd-3is">
                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
@@ -441,13 +442,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Watch Cocktail Recipes &amp; Make Your Own Booze!!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Omx-MY-8Q5">
-                                <rect key="frame" x="30" y="20" width="354" height="73.666666666666671"/>
+                                <rect key="frame" x="30" y="40.000000000000007" width="354" height="73.666666666666686"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="23"/>
                                 <color key="textColor" red="0.2784313725" green="0.078431372550000003" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9HN-0u-PLb">
-                                <rect key="frame" x="20" y="113.66666666666669" width="374" height="573.33333333333326"/>
+                                <rect key="frame" x="20" y="133.66666666666669" width="374" height="553.33333333333326"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="VideoTableViewCell" rowHeight="210" id="HPJ-QK-cNQ" customClass="VideoTableViewCell" customModule="Alamo_Demo" customModuleProvider="target">
@@ -498,7 +499,7 @@
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="YES"/>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
-                                                            <color key="value" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="value" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
                                                             <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -591,7 +592,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="6ux-bP-dFh">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="1" green="0.87264554790000004" blue="0.44402825340000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="tintColor" red="0.2784313725" green="0.078431372550000003" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -614,11 +615,11 @@
             <objects>
                 <viewController storyboardIdentifier="MainCategoryViewController" id="ieh-3R-NLa" customClass="MainCategoryViewController" customModule="Alamo_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oMk-57-28a">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1224"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1236"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0lY-xW-SBf">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1224"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1236"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AjW-8K-z6a">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1300"/>
@@ -772,7 +773,7 @@
                                                                             <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </userDefinedRuntimeAttribute>
                                                                         <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
-                                                                            <color key="value" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <color key="value" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         </userDefinedRuntimeAttribute>
                                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isHorizontal" value="NO"/>
                                                                     </userDefinedRuntimeAttributes>
@@ -893,7 +894,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="xMd-p8-Zf3">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="901"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="881"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eyd-wn-XCu">
                                         <rect key="frame" x="20" y="25" width="335" height="950"/>
@@ -973,7 +974,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.clipsToBounds" value="YES"/>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
-                                                        <color key="value" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="value" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
                                                         <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1016,10 +1017,10 @@
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <prototypes>
                                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="IngredientsAddTableViewCell" id="2EO-rK-HbA" customClass="IngredientsAddTableViewCell" customModule="Alamo_Demo" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="28" width="325" height="40"/>
+                                                                <rect key="frame" x="0.0" y="28" width="325" height="44"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
-                                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2EO-rK-HbA" id="bNh-Zn-dzC">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="325" height="40"/>
+                                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2EO-rK-HbA" id="bNh-Zn-dzC">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="325" height="44"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <subviews>
                                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add Ingredient" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dxq-WL-ebP">
@@ -1067,7 +1068,7 @@
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
-                                                        <color key="value" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="value" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
                                                         <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1107,10 +1108,10 @@
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <prototypes>
                                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProcedureTableViewCell" id="a47-KC-rKG" customClass="ProcedureTableViewCell" customModule="Alamo_Demo" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="28" width="325" height="40"/>
+                                                                <rect key="frame" x="0.0" y="28" width="325" height="44"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
-                                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="a47-KC-rKG" id="TAO-dn-0J4">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="325" height="40"/>
+                                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="a47-KC-rKG" id="TAO-dn-0J4">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="325" height="44"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <subviews>
                                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add Procedure" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aAg-JW-2eW">
@@ -1159,7 +1160,7 @@
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
-                                                        <color key="value" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="value" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
                                                         <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1212,7 +1213,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.clipsToBounds" value="YES"/>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
-                                                        <color key="value" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="value" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
                                                         <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1232,7 +1233,7 @@
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
-                                                        <color key="value" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="value" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
                                                         <color key="value" red="0.2784313725" green="0.078431372550000003" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1336,26 +1337,26 @@
             <objects>
                 <viewController storyboardIdentifier="SignInViewController" id="aG9-80-m71" customClass="SignInViewController" customModule="Alamo_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="G4l-oR-Smf">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cBi-ew-vtz">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="716"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C5r-bf-bvc" customClass="GradientView" customModule="Alamo_Demo" customModuleProvider="target">
-                                        <rect key="frame" x="37.666666666666657" y="130" width="300" height="390"/>
+                                        <rect key="frame" x="41.333333333333343" y="130.00000000000003" width="331.33333333333326" height="430.66666666666674"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="nT5-6L-S5t">
-                                                <rect key="frame" x="30" y="50" width="240" height="162"/>
+                                                <rect key="frame" x="30" y="50" width="265" height="154"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HrW-9b-Pj7">
-                                                        <rect key="frame" x="0.0" y="0.0" width="240" height="29"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="265" height="29"/>
                                                         <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="18"/>
                                                         <color key="textColor" red="0.2901960784" green="0.08235294118" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wUh-ZK-WkX">
-                                                        <rect key="frame" x="0.0" y="41" width="240" height="34"/>
+                                                        <rect key="frame" x="0.0" y="41" width="265" height="30"/>
                                                         <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <color key="textColor" red="0.2784313725" green="0.078431372550000003" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1365,13 +1366,13 @@
                                                         </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NRT-Ab-zne">
-                                                        <rect key="frame" x="0.0" y="87" width="240" height="29"/>
+                                                        <rect key="frame" x="0.0" y="83" width="265" height="29"/>
                                                         <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="18"/>
                                                         <color key="textColor" red="0.2901960784" green="0.08235294118" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y8g-Ip-4FJ">
-                                                        <rect key="frame" x="0.0" y="128" width="240" height="34"/>
+                                                        <rect key="frame" x="0.0" y="124" width="265" height="30"/>
                                                         <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <color key="textColor" red="0.2784313725" green="0.078431372550000003" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1383,7 +1384,7 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6PE-zC-6Nc" customClass="GradientButton" customModule="Alamo_Demo" customModuleProvider="target">
-                                                <rect key="frame" x="45" y="242" width="210" height="40"/>
+                                                <rect key="frame" x="49.666666666666657" y="234" width="231.99999999999997" height="40"/>
                                                 <color key="backgroundColor" red="0.2784313725" green="0.078431372550000003" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="PQK-5o-OmP"/>
@@ -1394,7 +1395,7 @@
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
-                                                        <color key="value" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="value" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
                                                         <color key="value" red="0.2784313725" green="0.078431372550000003" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1405,7 +1406,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xRe-fD-u7h">
-                                                <rect key="frame" x="93.333333333333343" y="302" width="113" height="38"/>
+                                                <rect key="frame" x="109.33333333333331" y="294" width="113" height="38"/>
                                                 <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="16"/>
                                                 <state key="normal" title="Forgot Password?">
                                                     <color key="titleColor" red="0.2784313725" green="0.078431372550000003" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1416,7 +1417,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A15-Vn-lmX">
-                                                <rect key="frame" x="121" y="340" width="58" height="41"/>
+                                                <rect key="frame" x="136.66666666666666" y="332" width="58" height="41"/>
                                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="18"/>
                                                 <state key="normal" title="Sign Up">
                                                     <color key="titleColor" red="0.2901960784" green="0.08235294118" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1444,7 +1445,7 @@
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
-                                                <color key="value" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
                                                 <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1578,7 +1579,7 @@
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
-                                                        <color key="value" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="value" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
                                                         <color key="value" red="0.2784313725" green="0.078431372550000003" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1601,7 +1602,7 @@
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
-                                                <color key="value" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
                                                 <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1684,7 +1685,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lIZ-FU-xGF">
-                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
+                                <rect key="frame" x="0.0" y="84" width="414" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="FavoritesTableViewCell" rowHeight="204" id="5qX-SM-c4L" customClass="FavoritesTableViewCell" customModule="Alamo_Demo" customModuleProvider="target">
@@ -1781,7 +1782,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LNC-et-BrO">
-                                <rect key="frame" x="20" y="94" width="374" height="30"/>
+                                <rect key="frame" x="20" y="114" width="374" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="mTg-Fc-IB4"/>
                                 </constraints>
@@ -1790,7 +1791,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n35-Rw-On4">
-                                <rect key="frame" x="20" y="144" width="374" height="30"/>
+                                <rect key="frame" x="20" y="164" width="374" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="iT3-59-E4Q"/>
                                 </constraints>
@@ -1799,13 +1800,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="09001701260" translatesAutoresizingMaskIntoConstraints="NO" id="GPl-n0-Uue">
-                                <rect key="frame" x="20" y="194" width="374" height="150"/>
+                                <rect key="frame" x="20" y="214" width="374" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="5Rk-g2-o95"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MAt-Pk-BGD" customClass="GradientButton" customModule="Alamo_Demo" customModuleProvider="target">
-                                <rect key="frame" x="57" y="364" width="300" height="50"/>
+                                <rect key="frame" x="57" y="384" width="300" height="50"/>
                                 <color key="backgroundColor" red="0.2784313725" green="0.078431372550000003" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="AUT-OX-CCU"/>
@@ -1816,7 +1817,7 @@
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
-                                        <color key="value" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
                                         <color key="value" red="0.2784313725" green="0.078431372550000003" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1828,7 +1829,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WJo-NB-gyB" customClass="GradientButton" customModule="Alamo_Demo" customModuleProvider="target">
-                                <rect key="frame" x="57" y="434" width="300" height="50"/>
+                                <rect key="frame" x="57" y="454" width="300" height="50"/>
                                 <color key="backgroundColor" red="0.2784313725" green="0.078431372550000003" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="SMu-tn-ww2"/>
@@ -1842,7 +1843,7 @@
                                         <color key="value" red="0.2784313725" green="0.078431372550000003" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
-                                        <color key="value" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isHorizontal" value="YES"/>
                                 </userDefinedRuntimeAttributes>
@@ -1851,7 +1852,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YsJ-Xx-A94" customClass="GradientButton" customModule="Alamo_Demo" customModuleProvider="target">
-                                <rect key="frame" x="57" y="504" width="300" height="50"/>
+                                <rect key="frame" x="57" y="524" width="300" height="50"/>
                                 <color key="backgroundColor" red="0.2784313725" green="0.078431372550000003" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="0A8-Cp-ZDs"/>
@@ -1862,7 +1863,7 @@
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
-                                        <color key="value" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
                                         <color key="value" red="0.2784313725" green="0.078431372550000003" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1874,7 +1875,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OCU-aC-xgY" customClass="GradientButton" customModule="Alamo_Demo" customModuleProvider="target">
-                                <rect key="frame" x="57" y="574" width="300" height="50"/>
+                                <rect key="frame" x="57" y="594" width="300" height="50"/>
                                 <color key="backgroundColor" red="0.2784313725" green="0.078431372550000003" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="EYi-ux-OFU"/>
@@ -1888,7 +1889,7 @@
                                         <color key="value" red="0.2784313725" green="0.078431372550000003" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
-                                        <color key="value" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -1946,7 +1947,7 @@
                         <inset key="imageInsets" minX="7" minY="7" maxX="-7" maxY="-7"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uhd-OT-GaP">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.2784313725" green="0.078431372550000003" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="barTintColor" red="1" green="0.87450980392156863" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1970,7 +1971,7 @@
                         <inset key="imageInsets" minX="7" minY="7" maxX="-7" maxY="-7"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="o6n-C8-Yhd">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="1" green="0.87264554790000004" blue="0.44402825340000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="tintColor" red="0.2784313725" green="0.078431372550000003" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1989,7 +1990,7 @@
             <objects>
                 <viewController storyboardIdentifier="RecipeBookViewController" id="JRK-oN-Oat" customClass="RecipeBookViewController" customModule="Alamo_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LxB-GX-32n">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="692"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Recipe Book" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JFL-Ei-V62">
@@ -2002,7 +2003,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EQX-xa-hjJ">
-                                <rect key="frame" x="0.0" y="80" width="414" height="613"/>
+                                <rect key="frame" x="0.0" y="80" width="414" height="593"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="RecipeBookTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="RecipeBookTableViewCell" rowHeight="118" id="40o-cW-Qsi" customClass="RecipeBookTableViewCell" customModule="Alamo_Demo" customModuleProvider="target">
@@ -2021,7 +2022,7 @@
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="layer.clipsToBounds" value="YES"/>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
-                                                            <color key="value" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="value" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
                                                             <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2145,7 +2146,7 @@
                                                 </constraints>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="IngredientsCell" rowHeight="45" id="nX8-of-e44" customClass="IngredientsCell" customModule="Alamo_Demo" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="28" width="375" height="45"/>
+                                                        <rect key="frame" x="0.0" y="50" width="375" height="45"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nX8-of-e44" id="cPh-IP-Oxs">
                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
@@ -2213,7 +2214,7 @@
                                                 </constraints>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProcedureCell" rowHeight="45" id="EaR-p9-oSD" customClass="ProcedureCell" customModule="Alamo_Demo" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="28" width="375" height="45"/>
+                                                        <rect key="frame" x="0.0" y="50" width="375" height="45"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EaR-p9-oSD" id="eJB-nY-G3G">
                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
@@ -2334,7 +2335,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vw2-ax-8D7">
-                                <rect key="frame" x="0.0" y="44" width="414" height="1107"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="1087"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5CJ-dm-GpO">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
@@ -2751,7 +2752,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gvs-Hu-JHU">
-                                <rect key="frame" x="0.0" y="44" width="414" height="1107"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="1087"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="527-8t-BzM">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
@@ -3168,7 +3169,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c7Y-m4-pWm">
-                                <rect key="frame" x="0.0" y="44" width="414" height="907"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="887"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VFf-rh-wV9">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
@@ -3306,7 +3307,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zQr-ae-4uE">
-                                <rect key="frame" x="41.333333333333343" y="47.333333333333343" width="331.33333333333326" height="441.33333333333326"/>
+                                <rect key="frame" x="41.333333333333343" y="57.333333333333343" width="331.33333333333326" height="441.33333333333326"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DZ0-M8-2cC">
                                         <rect key="frame" x="33.333333333333343" y="29.999999999999986" width="264.66666666666663" height="132.33333333333331"/>
