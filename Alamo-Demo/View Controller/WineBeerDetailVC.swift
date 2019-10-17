@@ -10,8 +10,11 @@ import UIKit
 
 class WineBeerDetailVC: UIViewController {
 
+    @IBOutlet weak var imgViewBottle: UIImageView!
+    @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var UIViewLblDescExtra: UIView!
     @IBOutlet weak var UIViewLblDesc: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

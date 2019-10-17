@@ -19,14 +19,14 @@ class BeerHubVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        //            let yourWidth = collectionView.bounds.width/2.0
-        //            let yourHeight = yourWidth
-        
         return CGSize(width: 200, height: 400)
         
     }
-
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let WineBeerDetailVC: WineBeerDetailVC = storyBoard.instantiateViewController(withIdentifier: "WineBeerDetailVC") as! WineBeerDetailVC
+        self.present(WineBeerDetailVC, animated: true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
