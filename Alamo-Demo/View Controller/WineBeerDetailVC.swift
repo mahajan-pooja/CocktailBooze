@@ -9,12 +9,17 @@
 import UIKit
 
 class WineBeerDetailVC: UIViewController {
-
+    var desc: String!
+    var descExtra: String!
+    var name: String!
+    var img: String!
     @IBOutlet weak var imgViewBottle: UIImageView!
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var UIViewLblDescExtra: UIView!
     @IBOutlet weak var UIViewLblDesc: UIView!
     
+    @IBOutlet weak var lblExtra: UILabel!
+    @IBOutlet weak var lblDesc: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,5 +37,19 @@ class WineBeerDetailVC: UIViewController {
         UIViewLblDescExtra.layer.shadowOffset = CGSize.zero
         UIViewLblDescExtra.layer.shadowRadius = 2
         UIViewLblDescExtra.layer.masksToBounds = false
+        
+        lblDesc.text = desc
+        lblName.text = name
+        lblExtra.text = descExtra
+        if(img != "") {
+            let url: URL = URL(string: img)!
+            imgViewBottle.kf.setImage(with: url, placeholder: UIImage(named:"cocktail"),  options: nil, progressBlock: nil, completionHandler: {
+                ( image, error, cacheType, imageUrl) in
+                if image != nil{
+                    self.imgViewBottle.clipsToBounds = true
+                    self.imgViewBottle.backgroundColor = .clear
+                }
+            })
+        }
     }
 }

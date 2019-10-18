@@ -15,23 +15,20 @@ var arrayAllProductList: [SubCategoryModel] = [SubCategoryModel]()
 var arrayAllCountryList: [SubCategoryModel] = [SubCategoryModel]()
 
 class MainCategoryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
-    
+
     @IBOutlet weak var sliderCollectionView: UICollectionView!
     var objMainCategory: MainModelCategory!
     @IBOutlet weak var MainCategoryCollectionView: UICollectionView!
-    @IBOutlet weak var lblTitleDiscover: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchMainCategoryData()
         fetchCountryCategoryData()
     }
-//    override func viewWillLayoutSubviews() {
-//        navigationController?.setNavigationBarHidden(true, animated: true)
-//    }
+
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if(collectionView == MainCategoryCollectionView){
             return arrayAllProductList.count
@@ -72,11 +69,9 @@ class MainCategoryViewController: UIViewController, UICollectionViewDelegate, UI
                     ( image, error, cacheType, imageUrl) in
                     if image != nil{
                         cell.imgCocktailIcon.clipsToBounds = true
-                        //cell.imgCocktailIcon.backgroundColor = .white
                     }
                 })
             }
-            
             cell.sliderCategoryView.layer.shadowColor = UIColor.gray.cgColor
             cell.sliderCategoryView.layer.shadowOpacity = 0.8
             cell.sliderCategoryView.layer.shadowOffset = CGSize.zero
@@ -103,58 +98,27 @@ class MainCategoryViewController: UIViewController, UICollectionViewDelegate, UI
             cocktailDetail.prod_id = arrayAllProductList[indexPath.row].productId!
             self.navigationController?.pushViewController(cocktailDetail, animated: true)
         }else{
-            
         }
-    }
-    
-    func readJSONFromFile(fileName: String) -> Any?
-    {
-        var json: Any?
-        if let path = Bundle.main.path(forResource: fileName, ofType: "json") {
-            do {
-                let fileUrl = URL(fileURLWithPath: path)
-                // Getting data from JSON file using the file URL
-                let data = try Data(contentsOf: fileUrl, options: .mappedIfSafe)
-                json = try? JSONSerialization.jsonObject(with: data)
-               // print(json!)
-            } catch {
-                // Handle error here
-            }
-        }
-        return json
     }
     
     func fetchMainCategoryData(){
-//        let parentList: [NSDictionary] = ((self.readJSONFromFile(fileName: "main-category") as? [NSDictionary])!)
-//        let arrayList: [NSDictionary] = parentList[0].value(forKey: "result") as! Array
-//        arrayAllProductList.removeAll()
-//        if (arrayList.count) > 0 {
-//            let model: MainModelCategory = MainModelCategory.init(fromDictionary: arrayList[0])
-//            arrayAllProductList.append(contentsOf: model.recipe)
-//        }
-//        self.MainCategoryCollectionView.reloadData()
-        
-//        DispatchQueue.main.async {
-            Alamofire.request("https://mahajan-pooja.github.io/cocktail-booz-api/main-category.json").responseJSON(completionHandler: {(response) in
-                if response.result.isSuccess {
-                    print("response.result.value \(response.result.value)")
-                    let model: MainModelCategory = MainModelCategory.init(fromDictionary: (response.result.value as? NSDictionary)!)
-                    arrayAllProductList.removeAll()
-                    if (model.recipe.count) > 0 {
-                        arrayAllProductList.append(contentsOf: model.recipe)
-                    }
-                    self.MainCategoryCollectionView.reloadData()
-                }else{
-                    print("failure error")
+        Alamofire.request("https://mahajan-pooja.github.io/cocktail-booz-api/main-category.json").responseJSON(completionHandler: {(response) in
+            if response.result.isSuccess {
+                let model: MainModelCategory = MainModelCategory.init(fromDictionary: (response.result.value as? NSDictionary)!)
+                arrayAllProductList.removeAll()
+                if (model.recipe.count) > 0 {
+                    arrayAllProductList.append(contentsOf: model.recipe)
                 }
-            })
-//        }
+                self.MainCategoryCollectionView.reloadData()
+            }else{
+                print("failure error")
+            }
+        })
     }
     
     func fetchCountryCategoryData(){
         Alamofire.request("https://mahajan-pooja.github.io/cocktail-booz-api/country-category.json").responseJSON(completionHandler: {(response) in
             if response.result.isSuccess {
-                print("response.result.value \(response.result.value)")
                 let model: MainModelCategory = MainModelCategory.init(fromDictionary: (response.result.value as? NSDictionary)!)
                 arrayAllCountryList.removeAll()
                 if (model.recipe.count) > 0 {

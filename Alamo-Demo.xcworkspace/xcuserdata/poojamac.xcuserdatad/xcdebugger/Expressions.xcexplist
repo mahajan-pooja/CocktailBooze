@@ -57,5 +57,16 @@
             </PersistentString>
          </PersistentStrings>
       </ContextState>
+      <ContextState
+         contextName = "closure #1 in WineHubVC.fetchWineData():WineHubVC.swift">
+      </ContextState>
+      <ContextState
+         contextName = "WineHubVC.collectionView(_:cellForItemAt:):WineHubVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "arrayAllWinesListTwo[indexPath.item].name">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
    </ContextStates>
 </VariablesViewState>

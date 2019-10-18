@@ -2422,6 +2422,11 @@
                                                                     <constraint firstItem="J2h-om-Kyu" firstAttribute="leading" secondItem="qqe-xf-gHe" secondAttribute="leading" id="jL8-JY-5es"/>
                                                                     <constraint firstAttribute="bottom" secondItem="J2h-om-Kyu" secondAttribute="bottom" id="qCU-IQ-3Fr"/>
                                                                 </constraints>
+                                                                <connections>
+                                                                    <outlet property="imgIcon" destination="yDB-Sc-TiS" id="o7S-cO-G7T"/>
+                                                                    <outlet property="lblCategory" destination="dX2-Xa-xE1" id="1X1-rP-MLG"/>
+                                                                    <outlet property="lblName" destination="Wcp-jg-iQK" id="6Hr-mZ-MrN"/>
+                                                                </connections>
                                                             </collectionViewCell>
                                                         </cells>
                                                         <connections>
@@ -2480,7 +2485,7 @@
                                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         </collectionViewFlowLayout>
                                                         <cells>
-                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WineHubCell" id="gaQ-Tg-fvB" customClass="WineHubCell" customModule="Alamo_Demo" customModuleProvider="target">
+                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WineHubCellTwo" id="gaQ-Tg-fvB" customClass="WineHubCell" customModule="Alamo_Demo" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="-32" width="176" height="364"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -2537,6 +2542,11 @@
                                                                     <constraint firstItem="ph9-xm-eAB" firstAttribute="leading" secondItem="gaQ-Tg-fvB" secondAttribute="leading" id="IDT-lf-Ojf"/>
                                                                     <constraint firstAttribute="bottom" secondItem="ph9-xm-eAB" secondAttribute="bottom" id="P9p-rX-KLk"/>
                                                                 </constraints>
+                                                                <connections>
+                                                                    <outlet property="imgIcon" destination="yuL-nf-2VN" id="ArU-qp-ohO"/>
+                                                                    <outlet property="lblCategory" destination="S0L-rE-UIh" id="nFw-qa-GJZ"/>
+                                                                    <outlet property="lblName" destination="hZ8-08-H0R" id="Z8D-sp-GQi"/>
+                                                                </connections>
                                                             </collectionViewCell>
                                                         </cells>
                                                         <connections>
@@ -2595,7 +2605,7 @@
                                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         </collectionViewFlowLayout>
                                                         <cells>
-                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WineHubCell" id="fDM-hn-epH" customClass="WineHubCell" customModule="Alamo_Demo" customModuleProvider="target">
+                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WineHubCellThree" id="fDM-hn-epH" customClass="WineHubCell" customModule="Alamo_Demo" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="-32" width="176" height="364"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -2652,6 +2662,11 @@
                                                                     <constraint firstItem="Jwk-3Y-qTt" firstAttribute="top" secondItem="fDM-hn-epH" secondAttribute="top" id="Qsa-DU-e1c"/>
                                                                     <constraint firstItem="Jwk-3Y-qTt" firstAttribute="leading" secondItem="fDM-hn-epH" secondAttribute="leading" id="jp5-U0-oxk"/>
                                                                 </constraints>
+                                                                <connections>
+                                                                    <outlet property="imgIcon" destination="Ext-wI-yho" id="t5x-6V-WsQ"/>
+                                                                    <outlet property="lblCategory" destination="yrL-CY-hI9" id="SmR-oq-6RK"/>
+                                                                    <outlet property="lblName" destination="dzg-JA-XOj" id="jVd-KM-1WA"/>
+                                                                </connections>
                                                             </collectionViewCell>
                                                         </cells>
                                                         <connections>
@@ -2727,6 +2742,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Wine Kingdom" id="gDY-vM-LYa"/>
                     <size key="freeformSize" width="414" height="1200"/>
+                    <connections>
+                        <outlet property="WineCollectionOne" destination="Ksi-XI-GdV" id="8Mg-CL-Dhq"/>
+                        <outlet property="WineCollectionThree" destination="qgQ-Oa-vCp" id="jKi-U0-tZJ"/>
+                        <outlet property="WineCollectionTwo" destination="YFI-Ia-JrK" id="FRU-ns-ukT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qMM-z6-2eU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -3156,7 +3176,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VFf-rh-wV9">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="500"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="w2" translatesAutoresizingMaskIntoConstraints="NO" id="cwX-ZA-BfT">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="w2" translatesAutoresizingMaskIntoConstraints="NO" id="cwX-ZA-BfT">
                                                 <rect key="frame" x="182" y="20" width="50" height="150"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="50" id="bj2-Xg-51m"/>
@@ -3272,6 +3292,8 @@
                         <outlet property="UIViewLblDesc" destination="I8w-sy-wKp" id="qyB-TM-xha"/>
                         <outlet property="UIViewLblDescExtra" destination="b17-HQ-C3v" id="Ajm-7S-Zv6"/>
                         <outlet property="imgViewBottle" destination="cwX-ZA-BfT" id="ge6-GR-Xue"/>
+                        <outlet property="lblDesc" destination="qby-WV-N00" id="Siv-wa-mie"/>
+                        <outlet property="lblExtra" destination="cWy-8I-Y1Z" id="kAo-Op-cLY"/>
                         <outlet property="lblName" destination="teW-Tq-Jv9" id="yus-kc-VCE"/>
                     </connections>
                 </viewController>
@@ -3288,7 +3310,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_img" translatesAutoresizingMaskIntoConstraints="NO" id="Dbk-pf-6ta">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414.00000000000011" height="736"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zQr-ae-4uE">

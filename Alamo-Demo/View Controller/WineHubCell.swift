@@ -10,4 +10,7 @@ import UIKit
 
 class WineHubCell: UICollectionViewCell {
     
+    @IBOutlet weak var imgIcon: UIImageView!
+    @IBOutlet weak var lblName: UILabel!
+    @IBOutlet weak var lblCategory: UILabel!
 }

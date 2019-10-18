@@ -43,12 +43,15 @@ class VideoCategoryViewController: UIViewController, UITableViewDataSource, UITa
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
         return 300
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrayAllVideosList.count
     }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "VideoTableViewCell", for: indexPath) as! VideoTableViewCell
         cell.lblVideo.text = arrayAllVideosList[indexPath.row].productName!
@@ -57,7 +60,6 @@ class VideoCategoryViewController: UIViewController, UITableViewDataSource, UITa
             ( image, error, cacheType, imageUrl) in
             if image != nil{
                 cell.videoImageView.clipsToBounds = true
-                //cell.videoImageView.backgroundColor = .white
             }
         })
         cell.cellView.layer.shadowColor = UIColor.gray.cgColor

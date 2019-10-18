@@ -24,7 +24,6 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
     @IBOutlet weak var tblViewAddIngredient: UITableView!
     @IBOutlet weak var tblIngredientHeight: NSLayoutConstraint!
     @IBOutlet weak var btnAddIngredients: UIButton!
-    @IBOutlet weak var addRecipeSection: UIStackView!
     @IBOutlet weak var addProcedureUIView: UIView!
     @IBOutlet weak var btnAddProcedure: UIButton!
     @IBOutlet weak var ingredientsUIView: UIView!
@@ -43,9 +42,11 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
     @IBAction func btnCancelAction(_ sender: Any) {
         resetForm()
     }
+    
     @IBAction func btnAddRecipeAction(_ sender: Any) {
         addRecipe()
     }
+    
     @IBAction func btnAddIngredient(_ sender: Any) {
         ingredientCount = ingredientCount + 1
         tblIngredientHeight.constant = tblIngredientHeight.constant+50
@@ -63,7 +64,6 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
     @IBAction func selectImageAction(_ sender: Any) {
         imagePicker.allowsEditing = true
         imagePicker.sourceType = .photoLibrary
-        
         present(imagePicker,animated: true, completion: nil)
     }
     override func viewDidLoad() {
@@ -75,13 +75,10 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
         
         ingredientsUIView.layer.cornerRadius = ingredientsUIView.frame.width/15
         addProcedureUIView.layer.cornerRadius = addProcedureUIView.frame.width/15
-//        tblViewAddProcedure.layer.cornerRadius = tblViewAddProcedure.frame.width/15
-//        tblViewAddIngredient.layer.cornerRadius = tblViewAddIngredient.frame.width/15
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
         imgCocktail.isUserInteractionEnabled = true
         imgCocktail.addGestureRecognizer(tapGestureRecognizer)
-        
         
         addProcedureUIView.layer.shadowColor = UIColor.gray.cgColor
         addProcedureUIView.layer.shadowOpacity = 0.8
@@ -98,17 +95,15 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
         nameTypeUIView.layer.shadowOffset = CGSize.zero
         nameTypeUIView.layer.shadowRadius = 2
         
-        
         imgUIView.layer.shadowColor = UIColor.gray.cgColor
         imgUIView.layer.shadowOpacity = 0.8
         imgUIView.layer.shadowOffset = CGSize.zero
         imgUIView.layer.shadowRadius = 2
     }
+    
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer){
-        //let tappedImage = tapGestureRecognizer.view as! UIImageView
         imagePicker.allowsEditing = true
         imagePicker.sourceType = .photoLibrary
-        
         present(imagePicker,animated: true, completion: nil)
     }
     
@@ -130,7 +125,6 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
             let cell:ProcedureTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ProcedureTableViewCell", for: indexPath) as! ProcedureTableViewCell
             //tags starts from 51
             cell.txtFieldProcedure.tag = indexPath.row+1+50
-            
             return cell
         }
     }
@@ -145,7 +139,6 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == .delete) {
-            // handle delete (by removing the data from your array and updating the tableview)
             if(tableView == tblViewAddIngredient){
                 tblIngredientHeight.constant = tblIngredientHeight.constant-50
                 mainViewHeight.constant = mainViewHeight.constant-50
@@ -158,19 +151,17 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
+    
     func addRecipe(){
         let user = Auth.auth().currentUser
         var email:String!
         
         if let user = user {
             email = user.email
-            print("email - \(email!)")
         }else{
-            
             email = KeychainWrapper.standard.string(forKey: "user-email")
         }
         
-       // var ingredientsArray: [String] = []
         for i in 1...ingredientCount{
             if let theTextField = self.view.viewWithTag(i) as? UITextField {
                 ingredientsArray.append(theTextField.text!)
@@ -178,7 +169,6 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
             }
         }
 
-//        var procedureArray: [String] = []
         for i in 1...procedureCount{
             if let theTextField = self.view.viewWithTag(i+50) as? UITextField {
                 procedureArray.append(theTextField.text!)
@@ -209,8 +199,8 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
             print("Please add all information.")
         }
     }
+    
     func resetForm(){
-        //reset form when recipe added or cancel button tapped
         self.tblIngredientHeight.constant = 150
         self.tblProcedureHeight.constant = 150
         
@@ -236,9 +226,9 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
         self.txtfRecipeName.text = ""
         self.txtfType.text = ""
         self.imgCocktail.image = UIImage(named: "cocktail")
-        
         MainScrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
     }
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         dismiss(animated: true, completion: nil)
         
@@ -259,40 +249,7 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
                 
             }
             imgCocktail.image = UIImage(data: data as Data)
-            
-            // Create a reference to the file you want to download
-            //let islandRef = Storage.storage().reference().child("images/aa")
-            
-            // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
-//            imageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
-//                if let error = error {
-//                    
-//                    print("error \(error)")
-//                    // Uh-oh, an error occurred!
-//                } else {
-//                    // Data for "images/island.jpg" is returned
-//                    let image = UIImage(data: data!)
-//                    print("IMAGEEE = \(image)")
-//                    self.imgCocktail.image = image
-//                }
-//            }
-            
-            
-        
         }
-//        let randomInt = Int.random(in: 0..<100000)
-//        let imgName = "img\(randomInt)"
-//        imageName = imgName
-//        if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as?
-//            UIImage{
-//                imgCocktail.contentMode = .scaleAspectFit
-//            let imageData: NSData = pickedImage.pngData()! as NSData
-//            UserDefaults.standard.set(imageData, forKey: imgName)
-//            }
-//
-//        let data = UserDefaults.standard.object(forKey: imgName) as! NSData
-//        imgCocktail.image = UIImage(data: data as Data)
-        
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {

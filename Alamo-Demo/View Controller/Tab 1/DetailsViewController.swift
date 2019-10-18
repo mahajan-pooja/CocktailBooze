@@ -8,19 +8,19 @@
 import UIKit
 
 class DetailsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     @IBOutlet weak var lblDetailsTitle: UILabel!
     @IBOutlet weak var imgDetailView: UIImageView!
     @IBOutlet weak var lblDetailsDesc: UILabel!
+    
     var arrayAllCategoryList: [DetailCategoryModel] = [DetailCategoryModel]()
     var prod_id: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchUserData()
-        
         navigationController?.setNavigationBarHidden(false, animated: true)
-
         lblDetailsTitle.text = arrayAllProductList[itemIndex].productName
         lblDetailsDesc.text = "Somewhere in Oprah's mantra is making time for yourself…with an adult beverage.!!"
         let url: URL = URL(string: arrayAllProductList[itemIndex].image)!
@@ -38,54 +38,41 @@ class DetailsViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-       // return CGSize(width: collectionView.frame.size.width/2.3, height: collectionView.frame.size.width/2)
         let yourWidth = collectionView.bounds.width/2.0
         let yourHeight = yourWidth
-        
         return CGSize(width: yourWidth, height: yourHeight)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-            itemIndex = indexPath.row
-            let cocktailDetail:RecipeViewController = self.storyboard?.instantiateViewController(withIdentifier: "RecipeViewController") as! RecipeViewController
-            cocktailDetail.recipeName = arrayAllCategoryList[indexPath.row].cat_name!
-        print("arrayAllCategoryList[indexPath.row].image => \(arrayAllCategoryList[indexPath.row].image!)")
-            cocktailDetail.recipeImage = arrayAllCategoryList[indexPath.row].image!
-            cocktailDetail.recipeType = arrayAllCategoryList[indexPath.row].cat_type!
-            self.navigationController?.pushViewController(cocktailDetail, animated: true)
-        
+        itemIndex = indexPath.row
+        let cocktailDetail:RecipeViewController = self.storyboard?.instantiateViewController(withIdentifier: "RecipeViewController") as! RecipeViewController
+        cocktailDetail.recipeName = arrayAllCategoryList[indexPath.row].cat_name!
+        cocktailDetail.recipeImage = arrayAllCategoryList[indexPath.row].image!
+        cocktailDetail.recipeType = arrayAllCategoryList[indexPath.row].cat_type!
+        self.navigationController?.pushViewController(cocktailDetail, animated: true)
     }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         let cell:CategoryCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCollectionViewCell", for: indexPath) as! CategoryCollectionViewCell
         let url: URL = URL(string: arrayAllCategoryList[indexPath.row].image)!
         cell.categoryItemImage.kf.setImage(with: url, placeholder: UIImage(named:"cocktail"),  options: nil, progressBlock: nil, completionHandler: {
             ( image, error, cacheType, imageUrl) in
             if image != nil{
                 cell.categoryItemImage.clipsToBounds = true
-               // cell.categoryItemImage.backgroundColor = UIColor(named: "#FFCC00")
             }
         })
         
-        //cell.categoryCellView.layer.cornerRadius = 20
-        cell.categoryItemName.text = arrayAllCategoryList[indexPath.row].cat_name//"Kir"
-        cell.categoryItemType.text = arrayAllCategoryList[indexPath.row].cat_type//"Strong"
-        
-//        cell.categoryCellView.layer.borderWidth = 1
-//        cell.categoryCellView.layer.borderColor = UIColor(red:222/255, green:225/255, blue:227/255, alpha: 1).cgColor
-        
+        cell.categoryItemName.text = arrayAllCategoryList[indexPath.row].cat_name
+        cell.categoryItemType.text = arrayAllCategoryList[indexPath.row].cat_type
         cell.categoryCellView.layer.shadowColor = UIColor.gray.cgColor
         cell.categoryCellView.layer.shadowOpacity = 0.8
         cell.categoryCellView.layer.shadowOffset = CGSize.zero
         cell.categoryCellView.layer.shadowRadius = 2
-        
         cell.categoryCellView.layer.masksToBounds = false
         return cell
     }
     
-    func readJSONFromFile(fileName: String) -> Any?
-    {
+    func readJSONFromFile(fileName: String) -> Any?{
         var json: Any?
         if let path = Bundle.main.path(forResource: fileName, ofType: "json") {
             do {
@@ -93,13 +80,13 @@ class DetailsViewController: UIViewController, UICollectionViewDelegate, UIColle
                 // Getting data from JSON file using the file URL
                 let data = try Data(contentsOf: fileUrl, options: .mappedIfSafe)
                 json = try? JSONSerialization.jsonObject(with: data)
-                // print(json!)
             } catch {
                 // Handle error here
             }
         }
         return json
     }
+    
     func loadJson(filename:String){
         let parentList: [NSDictionary] = ((self.readJSONFromFile(fileName: filename) as? [NSDictionary])!)
         let arrayList: [NSDictionary] = parentList[0].value(forKey: "result") as! Array
@@ -109,26 +96,10 @@ class DetailsViewController: UIViewController, UICollectionViewDelegate, UIColle
             arrayAllCategoryList.append(contentsOf: model.category)
         }
         self.categoryCollectionView.reloadData()
-        
-        //        DispatchQueue.main.async {
-        //            Alamofire.request("http://demo0104834.mockable.io/category").responseJSON(completionHandler: {(response) in
-        //                if response.result.isSuccess {
-        //                    let model: MainModelCategory = MainModelCategory.init(fromDictionary: (response.result.value as? NSDictionary)!)
-        //                    arrayAllProductList.removeAll()
-        //                    if (model.result.count) > 0 {
-        //                        arrayAllProductList.append(contentsOf: model.result)
-        //                    }
-        //                    self.MainCategoryCollectionView.reloadData()
-        //                }else{
-        //                    print("failure error")
-        //                }
-        //            })
-        //        }
     }
+    
     func fetchUserData(){
-        //print("prod_id \(prod_id)")
         let recipe_id = prod_id!
-        
         if(recipe_id == "1"){
             loadJson(filename: "valentine")
         }else if(recipe_id == "2"){

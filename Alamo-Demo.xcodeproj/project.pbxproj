@@ -43,6 +43,10 @@
 		7AEC60AA22D3FB5B001511DB /* summer.json in Resources */ = {isa = PBXBuildFile; fileRef = 7AEC60A922D3FB5B001511DB /* summer.json */; };
 		7AEC60AC22D40742001511DB /* spring.json in Resources */ = {isa = PBXBuildFile; fileRef = 7AEC60AB22D40742001511DB /* spring.json */; };
 		7AEC60AE22D408F0001511DB /* slushy.json in Resources */ = {isa = PBXBuildFile; fileRef = 7AEC60AD22D408F0001511DB /* slushy.json */; };
+		7AF12C46235A586D007FDDD0 /* WineCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF12C45235A586D007FDDD0 /* WineCategoryModel.swift */; };
+		7AF12C4A235A5981007FDDD0 /* WineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF12C49235A5981007FDDD0 /* WineModel.swift */; };
+		7AF12C4C235A64E1007FDDD0 /* WineMainCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF12C4B235A64E1007FDDD0 /* WineMainCategoryModel.swift */; };
+		7AF12C4E235A6AD7007FDDD0 /* WineCategoryMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF12C4D235A6AD7007FDDD0 /* WineCategoryMain.swift */; };
 		7AF6595C22CBDE3E008EDF8A /* AddRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF6595B22CBDE3E008EDF8A /* AddRecipeViewController.swift */; };
 		7AFE7F5C22D9251B004E5A68 /* RecipeBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFE7F5B22D9251B004E5A68 /* RecipeBookViewController.swift */; };
 		7AFE7F5E22D92939004E5A68 /* RecipeBookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFE7F5D22D92939004E5A68 /* RecipeBookTableViewCell.swift */; };
@@ -99,6 +103,10 @@
 		7AEC60A922D3FB5B001511DB /* summer.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = summer.json; sourceTree = "<group>"; };
 		7AEC60AB22D40742001511DB /* spring.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = spring.json; sourceTree = "<group>"; };
 		7AEC60AD22D408F0001511DB /* slushy.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = slushy.json; sourceTree = "<group>"; };
+		7AF12C45235A586D007FDDD0 /* WineCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineCategoryModel.swift; sourceTree = "<group>"; };
+		7AF12C49235A5981007FDDD0 /* WineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WineModel.swift; path = "/Users/poojamac/Documents/CocktailApp/iOSApp/Alamo-Demo/View Controller/WineModel.swift"; sourceTree = "<absolute>"; };
+		7AF12C4B235A64E1007FDDD0 /* WineMainCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineMainCategoryModel.swift; sourceTree = "<group>"; };
+		7AF12C4D235A6AD7007FDDD0 /* WineCategoryMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineCategoryMain.swift; sourceTree = "<group>"; };
 		7AF6595B22CBDE3E008EDF8A /* AddRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipeViewController.swift; sourceTree = "<group>"; };
 		7AFE7F5B22D9251B004E5A68 /* RecipeBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeBookViewController.swift; sourceTree = "<group>"; };
 		7AFE7F5D22D92939004E5A68 /* RecipeBookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeBookTableViewCell.swift; sourceTree = "<group>"; };
@@ -299,6 +307,10 @@
 				7AC664FF235521BE004EAA62 /* GradientButton.swift */,
 				7ADB8F0622CD2A5F00B11100 /* TabBarController.swift */,
 				7A8297102327165700B7AA7F /* WineHubVC.swift */,
+				7AF12C4B235A64E1007FDDD0 /* WineMainCategoryModel.swift */,
+				7AF12C4D235A6AD7007FDDD0 /* WineCategoryMain.swift */,
+				7AF12C45235A586D007FDDD0 /* WineCategoryModel.swift */,
+				7AF12C49235A5981007FDDD0 /* WineModel.swift */,
 				7A8297122327167400B7AA7F /* WineHubCell.swift */,
 				7A0C9DF4232824E600B9ACB5 /* BeerHubVC.swift */,
 				7A0C9DF62328250400B9ACB5 /* BeerHubCell.swift */,
@@ -475,9 +487,11 @@
 				7AAC18A5230B3C1A00EC7D48 /* IngredientsCell.swift in Sources */,
 				7AAC18A3230B3A8500EC7D48 /* RecipeDetailVC.swift in Sources */,
 				BA21385F22152ECD0082FB68 /* DetailsViewController.swift in Sources */,
+				7AF12C4E235A6AD7007FDDD0 /* WineCategoryMain.swift in Sources */,
 				7A04BC0B2232F82B00F2C464 /* MainVideoCategoryModel.swift in Sources */,
 				BAD932902212A10F008EDFBC /* MainModelCategory.swift in Sources */,
 				7A8297112327165700B7AA7F /* WineHubVC.swift in Sources */,
+				7AF12C46235A586D007FDDD0 /* WineCategoryModel.swift in Sources */,
 				BABB7631221F967200E2C0D4 /* IngredientsTableViewCell.swift in Sources */,
 				7ADD4D9323159CE1003B2154 /* FavoritesViewController.swift in Sources */,
 				7A0C9DF5232824E600B9ACB5 /* BeerHubVC.swift in Sources */,
@@ -493,6 +507,7 @@
 				7AFE7F5C22D9251B004E5A68 /* RecipeBookViewController.swift in Sources */,
 				BACC83FE227653600012158C /* SignUpViewController.swift in Sources */,
 				7AEC60A622D3EE41001511DB /* DetailCategoryModel.swift in Sources */,
+				7AF12C4A235A5981007FDDD0 /* WineModel.swift in Sources */,
 				7ADB8F0922CD496400B11100 /* AccountViewController.swift in Sources */,
 				7AEC60A422D3EDC4001511DB /* CategoryModel.swift in Sources */,
 				7AFE7F5E22D92939004E5A68 /* RecipeBookTableViewCell.swift in Sources */,
@@ -501,6 +516,7 @@
 				BAD9328322128EDD008EDFBC /* SubCategoryModel.swift in Sources */,
 				7AAC189C230B1EAD00EC7D48 /* RecipeDetailModel.swift in Sources */,
 				7A30B87C230C8AE30043075A /* SliderCollectionViewCell.swift in Sources */,
+				7AF12C4C235A64E1007FDDD0 /* WineMainCategoryModel.swift in Sources */,
 				BA43B4C7227299A200349C95 /* welcomeVC.swift in Sources */,
 				7A929FAC219CEF170001B7D7 /* AppDelegate.swift in Sources */,
 				7A04BC072232F54000F2C464 /* VideoTableViewCell.swift in Sources */,

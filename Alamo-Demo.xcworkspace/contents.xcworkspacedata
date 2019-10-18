@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/poojamac/Documents/CocktailApp/iOSApp/Alamo-Demo/View Controller/WineModel.swift">
+   </FileRef>
+   <FileRef
       location = "group:Alamo-Demo.xcodeproj">
    </FileRef>
    <FileRef

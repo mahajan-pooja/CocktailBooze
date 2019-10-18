@@ -12,7 +12,7 @@ import FirebaseAuth
 import SwiftKeychainWrapper
 
 class AccountViewController: UIViewController {
-    var ref: DocumentReference!
+    //var ref: DocumentReference!
     
     @IBOutlet weak var btnWineHub: UIButton!
     
