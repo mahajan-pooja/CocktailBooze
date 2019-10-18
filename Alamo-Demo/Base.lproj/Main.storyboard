@@ -308,7 +308,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="181" height="204"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iga-nX-Tnl">
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iga-nX-Tnl" customClass="GradientView" customModule="Alamo_Demo" customModuleProvider="target">
                                                                     <rect key="frame" x="10" y="10" width="161" height="184"/>
                                                                     <subviews>
                                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9e2-cw-osL">
@@ -347,6 +347,15 @@
                                                                         <constraint firstItem="9e2-cw-osL" firstAttribute="leading" secondItem="Iga-nX-Tnl" secondAttribute="leading" id="hjM-He-rd1"/>
                                                                         <constraint firstItem="9e2-cw-osL" firstAttribute="top" secondItem="Iga-nX-Tnl" secondAttribute="top" constant="-20" id="iut-0I-YoD"/>
                                                                     </constraints>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
+                                                                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
+                                                                            <color key="value" red="0.99607843139999996" green="0.81176470590000005" blue="0.0039215686269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHorizontal" value="NO"/>
+                                                                    </userDefinedRuntimeAttributes>
                                                                 </view>
                                                             </subviews>
                                                         </view>
@@ -554,7 +563,7 @@
                                 <color key="value" red="0.84254601883561642" green="0.078431372549019607" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="color" keyPath="unselectedItemTintColor">
-                                <color key="value" red="0.84254601880000002" green="0.078431372550000003" blue="0.28235294119999998" alpha="0.29596532534246578" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="value" red="0.99607843139999996" green="0.81176470590000005" blue="0.0039215686269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </tabBar>
@@ -3447,6 +3456,6 @@
         <image name="wsciupcTTAajMiqDY6Xh6g_pb_x600" width="171" height="600"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="DgU-4b-Kpz"/>
+        <segue reference="2mL-Ro-9iW"/>
     </inferredMetricsTieBreakers>
 </document>
