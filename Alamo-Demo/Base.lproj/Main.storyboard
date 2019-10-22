@@ -587,7 +587,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="6ux-bP-dFh">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="1" green="0.87264554790000004" blue="0.44402825340000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="tintColor" red="0.2784313725" green="0.078431372550000003" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -610,11 +610,11 @@
             <objects>
                 <viewController storyboardIdentifier="MainCategoryViewController" id="ieh-3R-NLa" customClass="MainCategoryViewController" customModule="Alamo_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oMk-57-28a">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1156"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1124"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0lY-xW-SBf">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1156"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1124"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AjW-8K-z6a">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
@@ -885,14 +885,14 @@
             <objects>
                 <viewController id="Ip2-Kq-QHg" customClass="AddRecipeViewController" customModule="Alamo_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DWf-cX-qL3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="950"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1130"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="xMd-p8-Zf3">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="901"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1081"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eyd-wn-XCu">
-                                        <rect key="frame" x="20" y="25" width="335" height="950"/>
+                                        <rect key="frame" x="20" y="25" width="335" height="1130"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Your Cocktail Recipe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cR9-L6-NNz">
                                                 <rect key="frame" x="0.0" y="-10" width="335" height="50"/>
@@ -904,7 +904,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LOX-vg-6r5" userLabel="NameTypeView" customClass="GradientView" customModule="Alamo_Demo" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="60" width="335" height="185"/>
+                                                <rect key="frame" x="0.0" y="60" width="335" height="250"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iDc-oU-3eo">
                                                         <rect key="frame" x="20.000000000000007" y="10" width="101.66666666666669" height="30"/>
@@ -936,31 +936,30 @@
                                                         <color key="textColor" red="0.2784313725" green="0.078431372550000003" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ugw-kv-6sV">
-                                                        <rect key="frame" x="20" y="134" width="295" height="34"/>
-                                                        <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EQX-UY-e2W">
+                                                        <rect key="frame" x="7.6666666666666572" y="124" width="320" height="100"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="34" id="9kK-Co-gmL"/>
+                                                            <constraint firstAttribute="height" constant="100" id="lkL-Qb-p2Y"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
                                                         <connections>
-                                                            <outlet property="delegate" destination="Ip2-Kq-QHg" id="P8y-8w-xf7"/>
+                                                            <outlet property="dataSource" destination="Ip2-Kq-QHg" id="wSw-rn-3uo"/>
+                                                            <outlet property="delegate" destination="Ip2-Kq-QHg" id="UQQ-ry-Nfr"/>
                                                         </connections>
-                                                    </textField>
+                                                    </pickerView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstItem="Ugw-kv-6sV" firstAttribute="leading" secondItem="LOX-vg-6r5" secondAttribute="leading" constant="20" id="0ip-Qh-PuC"/>
-                                                    <constraint firstAttribute="height" constant="185" id="277-eo-uCj"/>
+                                                    <constraint firstAttribute="height" constant="250" id="277-eo-uCj"/>
                                                     <constraint firstItem="iDc-oU-3eo" firstAttribute="leading" secondItem="LOX-vg-6r5" secondAttribute="leading" constant="20" id="527-7D-uPn"/>
                                                     <constraint firstItem="puP-VV-5NU" firstAttribute="leading" secondItem="LOX-vg-6r5" secondAttribute="leading" constant="20" id="9hl-rk-hHk"/>
                                                     <constraint firstItem="iDc-oU-3eo" firstAttribute="top" secondItem="LOX-vg-6r5" secondAttribute="top" constant="10" id="GGc-oV-vk4"/>
-                                                    <constraint firstItem="Ugw-kv-6sV" firstAttribute="top" secondItem="puP-VV-5NU" secondAttribute="bottom" constant="10" id="H1u-2P-iNH"/>
                                                     <constraint firstItem="0rV-fT-yZa" firstAttribute="leading" secondItem="LOX-vg-6r5" secondAttribute="leading" constant="20" id="NV6-PP-D0g"/>
-                                                    <constraint firstAttribute="trailing" secondItem="Ugw-kv-6sV" secondAttribute="trailing" constant="20" id="ab4-ap-2Pp"/>
                                                     <constraint firstAttribute="trailing" secondItem="0rV-fT-yZa" secondAttribute="trailing" constant="20" id="c4d-4R-pOb"/>
                                                     <constraint firstItem="0rV-fT-yZa" firstAttribute="top" secondItem="iDc-oU-3eo" secondAttribute="bottom" constant="10" id="cxj-CD-zYk"/>
+                                                    <constraint firstItem="EQX-UY-e2W" firstAttribute="centerX" secondItem="LOX-vg-6r5" secondAttribute="centerX" id="k7e-sM-QCB"/>
+                                                    <constraint firstItem="puP-VV-5NU" firstAttribute="bottom" secondItem="EQX-UY-e2W" secondAttribute="top" id="xOH-p2-aHk"/>
                                                     <constraint firstItem="puP-VV-5NU" firstAttribute="top" secondItem="0rV-fT-yZa" secondAttribute="bottom" constant="10" id="yOo-f6-sr3"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
@@ -978,7 +977,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S8d-GR-v08" customClass="GradientView" customModule="Alamo_Demo" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="265" width="335" height="150"/>
+                                                <rect key="frame" x="0.0" y="330" width="335" height="150"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ct-g2-XpC">
                                                         <rect key="frame" x="20" y="25" width="268" height="30"/>
@@ -1072,7 +1071,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZLw-R9-pYm" customClass="GradientView" customModule="Alamo_Demo" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="435" width="335" height="150"/>
+                                                <rect key="frame" x="0.0" y="500" width="335" height="150"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Procedure" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IyU-3F-xOg">
                                                         <rect key="frame" x="20" y="20" width="268" height="30"/>
@@ -1164,7 +1163,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="acy-sv-ld0" userLabel="ImageView" customClass="GradientView" customModule="Alamo_Demo" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="605" width="335" height="230"/>
+                                                <rect key="frame" x="0.0" y="670" width="335" height="230"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7xf-rD-l2j">
                                                         <rect key="frame" x="20" y="20" width="45" height="30"/>
@@ -1217,7 +1216,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zmb-I0-pAm" customClass="GradientButton" customModule="Alamo_Demo" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="855" width="295" height="40"/>
+                                                <rect key="frame" x="20" y="920" width="295" height="40"/>
                                                 <color key="backgroundColor" red="0.2784313725" green="0.078431372550000003" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="3y7-v2-0P0"/>
@@ -1240,7 +1239,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byy-dP-pXe">
-                                                <rect key="frame" x="144" y="905" width="47" height="41"/>
+                                                <rect key="frame" x="144" y="970" width="47" height="41"/>
                                                 <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="18"/>
                                                 <state key="normal" title="Cancel">
                                                     <color key="titleColor" red="0.2784313725" green="0.078431372550000003" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1256,14 +1255,14 @@
                                             <constraint firstItem="ZLw-R9-pYm" firstAttribute="leading" secondItem="Eyd-wn-XCu" secondAttribute="leading" id="0ik-Fk-HoQ"/>
                                             <constraint firstItem="S8d-GR-v08" firstAttribute="leading" secondItem="Eyd-wn-XCu" secondAttribute="leading" id="4gL-hW-dGD"/>
                                             <constraint firstItem="cR9-L6-NNz" firstAttribute="centerX" secondItem="Eyd-wn-XCu" secondAttribute="centerX" id="4gv-ZK-2Dl"/>
-                                            <constraint firstAttribute="height" constant="950" id="DNL-Ek-vuW"/>
+                                            <constraint firstAttribute="height" constant="1130" id="DNL-Ek-vuW"/>
                                             <constraint firstItem="zmb-I0-pAm" firstAttribute="leading" secondItem="Eyd-wn-XCu" secondAttribute="leading" constant="20" id="Efo-G9-A99"/>
                                             <constraint firstAttribute="trailing" secondItem="zmb-I0-pAm" secondAttribute="trailing" constant="20" id="Fqx-uG-hJ6"/>
                                             <constraint firstItem="ZLw-R9-pYm" firstAttribute="top" secondItem="S8d-GR-v08" secondAttribute="bottom" constant="20" id="LeS-fj-iix"/>
-                                            <constraint firstItem="acy-sv-ld0" firstAttribute="bottom" secondItem="zmb-I0-pAm" secondAttribute="top" constant="-20" id="Lj7-2z-MVW"/>
                                             <constraint firstItem="cR9-L6-NNz" firstAttribute="top" secondItem="Eyd-wn-XCu" secondAttribute="top" constant="-10" id="Oc3-NA-6Lv"/>
                                             <constraint firstItem="S8d-GR-v08" firstAttribute="top" secondItem="LOX-vg-6r5" secondAttribute="bottom" constant="20" id="VAC-e3-9XA"/>
                                             <constraint firstItem="cR9-L6-NNz" firstAttribute="width" secondItem="Eyd-wn-XCu" secondAttribute="width" id="a15-RS-eFe"/>
+                                            <constraint firstItem="zmb-I0-pAm" firstAttribute="top" secondItem="acy-sv-ld0" secondAttribute="bottom" constant="20" id="bHV-cF-tIT"/>
                                             <constraint firstItem="byy-dP-pXe" firstAttribute="centerX" secondItem="Eyd-wn-XCu" secondAttribute="centerX" id="bUg-O5-uem"/>
                                             <constraint firstAttribute="trailing" secondItem="LOX-vg-6r5" secondAttribute="trailing" id="cr6-nz-ItC"/>
                                             <constraint firstItem="LOX-vg-6r5" firstAttribute="top" secondItem="cR9-L6-NNz" secondAttribute="bottom" constant="20" id="dSc-mp-lcM"/>
@@ -1302,7 +1301,7 @@
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="950"/>
+                    <size key="freeformSize" width="375" height="1130"/>
                     <connections>
                         <outlet property="MainScrollView" destination="xMd-p8-Zf3" id="UHw-Pr-7ek"/>
                         <outlet property="addProcedureUIView" destination="ZLw-R9-pYm" id="pEh-ho-tvq"/>
@@ -1315,12 +1314,12 @@
                         <outlet property="lblProcedure" destination="IyU-3F-xOg" id="qSy-tj-psd"/>
                         <outlet property="mainViewHeight" destination="DNL-Ek-vuW" id="iwj-6B-CNL"/>
                         <outlet property="nameTypeUIView" destination="LOX-vg-6r5" id="RkI-2b-ljp"/>
+                        <outlet property="pickerView" destination="EQX-UY-e2W" id="MP0-98-naq"/>
                         <outlet property="tblIngredientHeight" destination="XNG-1F-KMD" id="ieS-LP-8ex"/>
                         <outlet property="tblProcedureHeight" destination="3iR-Nd-fF0" id="zC9-aB-3WF"/>
                         <outlet property="tblViewAddIngredient" destination="pRy-8P-CdX" id="eYX-Hw-ZY3"/>
                         <outlet property="tblViewAddProcedure" destination="6V4-Ut-8b2" id="esG-Qj-Vdk"/>
                         <outlet property="txtfRecipeName" destination="0rV-fT-yZa" id="G8h-7v-vH4"/>
-                        <outlet property="txtfType" destination="Ugw-kv-6sV" id="wXh-bO-0jk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6SB-uk-Ze8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3310,7 +3309,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_img" translatesAutoresizingMaskIntoConstraints="NO" id="Dbk-pf-6ta">
-                                <rect key="frame" x="0.0" y="0.0" width="414.00000000000011" height="736"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zQr-ae-4uE">
@@ -3477,6 +3476,6 @@
         <image name="wsciupcTTAajMiqDY6Xh6g_pb_x600" width="171" height="600"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="DgU-4b-Kpz"/>
+        <segue reference="2mL-Ro-9iW"/>
     </inferredMetricsTieBreakers>
 </document>

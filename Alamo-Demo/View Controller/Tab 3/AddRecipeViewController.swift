@@ -12,8 +12,20 @@ import FirebaseDatabase
 import FirebaseFirestore
 import SwiftKeychainWrapper
 
-class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource{
+class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource{
+    let type = ["Mild","Smooth","Strong","Hard","Non-Alcoholic"]
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
     
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return type.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return type[row]
+    }
+    @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var imgUIView: UIView!
     @IBOutlet weak var nameTypeUIView: UIView!
     @IBOutlet weak var MainScrollView: UIScrollView!
@@ -30,7 +42,6 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
     @IBOutlet weak var lblProcedure: UILabel!
     @IBOutlet weak var txtfRecipeName: UITextField!
     @IBOutlet weak var imgCocktail: UIImageView!
-    @IBOutlet weak var txtfType: UITextField!
     var ingredientsArray: [String] = []
     var procedureArray: [String] = []
     let imagePicker = UIImagePickerController()
@@ -72,6 +83,8 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
         btnAddProcedure.layer.cornerRadius = 15
         btnAddIngredients.layer.cornerRadius = 15
         btnAddRecipe.layer.cornerRadius = btnAddRecipe.frame.height/2
+    
+        pickerView.setValue(UIColor.purple, forKeyPath: "textColor")
         
         ingredientsUIView.layer.cornerRadius = ingredientsUIView.frame.width/15
         addProcedureUIView.layer.cornerRadius = addProcedureUIView.frame.width/15
@@ -151,7 +164,9 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        pickerView.selectRow(2, inComponent: 0, animated: true)
+    }
     func addRecipe(){
         let user = Auth.auth().currentUser
         var email:String!
@@ -175,10 +190,10 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
                 print(theTextField.text!)
             }
         }
-        
-        if(txtfRecipeName.text! != "" && txtfType.text! != "" && imageName != "" && imageName != nil && ingredientsArray != nil && procedureArray != nil){
+        var selectedValue = pickerView.selectedRow(inComponent: 0)
+        if(txtfRecipeName.text! != "" && imageName != "" && imageName != nil && ingredientsArray != nil && procedureArray != nil){
             //save data on firebase
-            let data: [String:Any] = ["recipe-name":txtfRecipeName.text!, "recipe-type":txtfType.text!, "recipe-img":imageName, "ingredients":ingredientsArray, "procedure": procedureArray]
+            let data: [String:Any] = ["recipe-name":txtfRecipeName.text!, "recipe-type":type[selectedValue], "recipe-img":imageName, "ingredients":ingredientsArray, "procedure": procedureArray]
             ref = Firestore.firestore().collection(email).document(txtfRecipeName.text!)
             ref.setData(data){ (error) in
                 if error != nil {
@@ -187,11 +202,11 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
                     let alert = UIAlertController(title: "Success", message: "Recipe Added Successfully!", preferredStyle: UIAlertController.Style.alert)
                     alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
                     self.present(alert, animated: true, completion: nil)
-                    
+
                     self.tabBarController?.selectedIndex = 3
-                    
+
                     self.resetForm()
-                    
+
                     print("Done")
                 }
             }
@@ -224,7 +239,6 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
         }
         
         self.txtfRecipeName.text = ""
-        self.txtfType.text = ""
         self.imgCocktail.image = UIImage(named: "cocktail")
         MainScrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
     }
