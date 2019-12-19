@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import SwiftKeychainWrapper
+import LocalAuthentication
 
 class SignInViewController: UIViewController, UITextFieldDelegate {
 
@@ -18,7 +19,29 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
+    @IBAction func faceIdAuthAction(_ sender: Any) {
+        let context = LAContext()
+        var error: NSError?
+        
+        guard context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) else {
+            return print(error)
+        }
+        
+        let reason = "Face ID authentication"
+        context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { isAuthorized, error in
+            guard isAuthorized == true else {
+                return print(error)
+            }
+            print("success")
+            DispatchQueue.main.async {
+                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let secondViewController: TabBarController = storyBoard.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
+                secondViewController.modalPresentationStyle = .fullScreen
+                self.present(secondViewController, animated: true, completion: nil)
+            }
+            
+        }
+    }
     @IBAction func btnSignUpAction(_ sender: Any) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let SignUpViewController: SignUpViewController = storyBoard.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
@@ -50,8 +73,8 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         var email = txtFieldEmail.text!
         var password = txtFieldPassword.text!
         
-         email = "pooja@test.com"
-         password = "Abc123"
+//         email = "pooja@test.com"
+//         password = "Abc123"
         
         Auth.auth().signIn(withEmail: email, password: password) { [weak self] user, error in
             KeychainWrapper.standard.set(email, forKey: "user-email")
