@@ -70,8 +70,8 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     }
     @IBOutlet weak var btnSignIn: UIButton!
     @IBAction func btnSignInAction(_ sender: Any) {
-        var email = txtFieldEmail.text!
-        var password = txtFieldPassword.text!
+        let email = txtFieldEmail.text!
+        let password = txtFieldPassword.text!
         
 //         email = "pooja@test.com"
 //         password = "Abc123"

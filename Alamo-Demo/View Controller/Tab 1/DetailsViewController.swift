@@ -13,6 +13,7 @@ class DetailsViewController: UIViewController, UICollectionViewDelegate, UIColle
     @IBOutlet weak var lblDetailsTitle: UILabel!
     @IBOutlet weak var imgDetailView: UIImageView!
     @IBOutlet weak var lblDetailsDesc: UILabel!
+    @IBOutlet weak var shadowContainer: UIView!
     
     var arrayAllCategoryList: [DetailCategoryModel] = [DetailCategoryModel]()
     var prod_id: String!
