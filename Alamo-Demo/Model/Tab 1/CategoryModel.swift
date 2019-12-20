@@ -9,9 +9,6 @@
 import UIKit
 
 class CategoryModel: NSObject {
-
-
-
     var category : [DetailCategoryModel]!
     
     /**

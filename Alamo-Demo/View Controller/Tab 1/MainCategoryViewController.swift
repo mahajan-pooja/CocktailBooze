@@ -16,9 +16,10 @@ var arrayAllCountryList: [SubCategoryModel] = [SubCategoryModel]()
 
 class MainCategoryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
-    @IBOutlet weak var sliderCollectionView: UICollectionView!
     var objMainCategory: MainModelCategory!
+    @IBOutlet weak var sliderCollectionView: UICollectionView!
     @IBOutlet weak var MainCategoryCollectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchMainCategoryData()
@@ -52,10 +53,10 @@ class MainCategoryViewController: UIViewController, UICollectionViewDelegate, UI
                     }
                 })
             }
-            cell.mainCategoryView.layer.shadowColor = UIColor.gray.cgColor
-            cell.mainCategoryView.layer.shadowOpacity = 0.8
+            cell.mainCategoryView.layer.shadowColor = UIColor.red.cgColor
+            cell.mainCategoryView.layer.shadowOpacity = 0.5
             cell.mainCategoryView.layer.shadowOffset = CGSize.zero
-            cell.mainCategoryView.layer.shadowRadius = 2
+            cell.mainCategoryView.layer.shadowRadius = 1.5
             cell.lblMainCategoryName.text = objectList.productName
             
             return cell
@@ -72,14 +73,15 @@ class MainCategoryViewController: UIViewController, UICollectionViewDelegate, UI
                     }
                 })
             }
-            cell.sliderCategoryView.layer.shadowColor = UIColor.gray.cgColor
-            cell.sliderCategoryView.layer.shadowOpacity = 0.8
+            cell.sliderCategoryView.layer.shadowColor = UIColor.red.cgColor
+            cell.sliderCategoryView.layer.shadowOpacity = 0.5
             cell.sliderCategoryView.layer.shadowOffset = CGSize.zero
-            cell.sliderCategoryView.layer.shadowRadius = 2
+            cell.sliderCategoryView.layer.shadowRadius = 1.5
             
             return cell
         }
     }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if(collectionView == MainCategoryCollectionView){
             let yourWidth = collectionView.bounds.width/2.0

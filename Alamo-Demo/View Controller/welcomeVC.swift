@@ -12,20 +12,27 @@ import LocalAuthentication
 
 class welcomeVC: UIViewController {
 
+    @IBOutlet weak var UIViewContainer: UIView!
+    @IBOutlet weak var btnFaceID: UIButton!
+    @IBOutlet weak var btnTouchID: UIButton!
+    @IBOutlet weak var logoUIView: UIView!
+    @IBOutlet weak var btnSignIn: UIButton!
+    @IBOutlet weak var btnSignUp: UIButton!
+    
     @IBAction func btnSignUpAction(_ sender: Any) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let SignUpViewController: SignUpViewController = storyBoard.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
         SignUpViewController.modalPresentationStyle = .fullScreen
         self.present(SignUpViewController, animated: true, completion: nil)
     }
+    
     @IBAction func btnSignInAction(_ sender: Any) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let SignInViewController: SignInViewController = storyBoard.instantiateViewController(withIdentifier: "SignInViewController") as! SignInViewController
         SignInViewController.modalPresentationStyle = .fullScreen
         self.present(SignInViewController, animated: true, completion: nil)
     }
-    @IBOutlet weak var UIViewContainer: UIView!
-    @IBOutlet weak var btnFaceID: UIButton!
+
     @IBAction func btnFaceIDAction(_ sender: Any) {
         let context = LAContext()
         var error: NSError?
@@ -39,7 +46,6 @@ class welcomeVC: UIViewController {
             guard isAuthorized == true else {
                 return print(error)
             }
-            print("success")
             DispatchQueue.main.async {
                 let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 let secondViewController: TabBarController = storyBoard.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
@@ -48,13 +54,9 @@ class welcomeVC: UIViewController {
             
         }
     }
-    @IBOutlet weak var btnTouchID: UIButton!
-    @IBOutlet weak var logoUIView: UIView!
-    @IBOutlet weak var btnSignIn: UIButton!
-    @IBOutlet weak var btnSignUp: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         let currentType = LAContext().biometricType
         if(currentType == .touchID){
@@ -63,9 +65,7 @@ class welcomeVC: UIViewController {
         }else{
             btnTouchID.isHidden = true
             btnFaceID.isHidden = false
-        }
-        print("currentType - \(currentType)")
-      
+        }      
         
         let gradientLayer:CAGradientLayer = CAGradientLayer()
         gradientLayer.frame.size = UIViewContainer.frame.size

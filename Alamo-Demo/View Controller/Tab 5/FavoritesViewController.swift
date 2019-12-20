@@ -25,7 +25,6 @@ class FavoritesViewController: UIViewController, UITableViewDataSource, UITableV
         if let user = user {
             email = user.email
         }else{
-            
             email = KeychainWrapper.standard.string(forKey: "user-email")
         }
         ref = Firestore.firestore().collection("RecipeCollection").document(email)
@@ -35,16 +34,17 @@ class FavoritesViewController: UIViewController, UITableViewDataSource, UITableV
         ])
         getFavorites()
         self.tblViewFavorites.reloadData()
-        
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.barTintColor = UIColor(red: 255.0/255.0, green: 223.0/255.0, blue: 113.0/255.0, alpha: 1.0)
-
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         getFavorites()
     }
+    
     func getFavorites(){
         Firestore.firestore().collection("RecipeCollection").getDocuments() { (querySnapshot, err) in
             if let err = err {
@@ -57,6 +57,7 @@ class FavoritesViewController: UIViewController, UITableViewDataSource, UITableV
             }
         }
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return favoritesArray.count
     }
@@ -70,10 +71,10 @@ class FavoritesViewController: UIViewController, UITableViewDataSource, UITableV
         cell.lblFavoriteName.text = favoritesArray[indexPath.row]
         cell.btnRemoveFevorites.tag = indexPath.row
         cell.btnRemoveFevorites.addTarget(self, action: #selector(btnRemoveFavoritesAction(sender:)), for: .touchUpInside)
-        cell.containerUIView.layer.shadowColor = UIColor.gray.cgColor
-        cell.containerUIView.layer.shadowOpacity = 0.8
+        cell.containerUIView.layer.shadowColor = UIColor.red.cgColor
+        cell.containerUIView.layer.shadowOpacity = 0.5
         cell.containerUIView.layer.shadowOffset = CGSize.zero
-        cell.containerUIView.layer.shadowRadius = 2
+        cell.containerUIView.layer.shadowRadius = 1.5
         cell.containerUIView.layer.cornerRadius = cell.containerUIView.frame.height/15
         
         return cell

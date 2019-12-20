@@ -18,6 +18,7 @@ class AccountViewController: UIViewController {
     @IBOutlet weak var btnSignOut: UIButton!
     @IBOutlet weak var lblEmail: UILabel!
     @IBOutlet weak var btnMyFavorites: UIButton!
+    
     @IBAction func btnSignoutAction(_ sender: Any) {
         let firebaseAuth = Auth.auth()
         do {
@@ -31,9 +32,11 @@ class AccountViewController: UIViewController {
             print ("Error signing out: %@", signOutError)
         }
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
+    
     override func viewWillDisappear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(false, animated: true)
     }

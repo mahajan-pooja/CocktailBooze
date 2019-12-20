@@ -1,5 +1,5 @@
 //
-//  WineCategoryMain.swift
+//  WineCategoryModel.swift
 //  Alamo-Demo
 //
 //  Created by Akshay on 2/11/19.
@@ -8,18 +8,18 @@
 
 import UIKit
 
-class WineCategoryMain: NSObject {
-    var wineCategory : [WineCategoryModel]!
+class WineCategoryModel: NSObject {
+    var wine : [WineModel]!
     
     /**
      * Instantiate the instance using the passed dictionary values to set the properties values
      */
     init(fromDictionary dictionary: NSDictionary){
-        wineCategory = [WineCategoryModel]()
-        if let wineCategoryArray = dictionary["wines"] as? [NSDictionary]{
-            for dic in wineCategoryArray{
-                let value = WineCategoryModel(fromDictionary: dic)
-                wineCategory.append(value)
+        wine = [WineModel]()
+        if let wineArray = dictionary["wines-sub"] as? [NSDictionary]{
+            for dic in wineArray{
+                let value = WineModel(fromDictionary: dic)
+                wine.append(value)
             }
         }
     }
@@ -30,15 +30,13 @@ class WineCategoryMain: NSObject {
     func toDictionary() -> NSDictionary{
         let dictionary = NSMutableDictionary()
 
-        if wineCategory != nil{
+        if wine != nil{
             var dictionaryElements = [NSDictionary]()
-            for recipeElement in wineCategory {
+            for recipeElement in wine {
                 dictionaryElements.append(recipeElement.toDictionary())
             }
-            dictionary["wines"] = dictionaryElements
+            dictionary["wines-sub"] = dictionaryElements
         }
         return dictionary
     }
 }
-
-

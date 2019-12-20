@@ -20,15 +20,12 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passError: UILabel!
     @IBOutlet weak var btnSignIn: UIButton!
     @IBOutlet weak var successMsg: UILabel!
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
+    @IBOutlet weak var btnSignUp: UIButton!
     
     @IBAction func btnCancelAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
     @IBAction func btnSignUpAction(_ sender: Any) {
         guard let password = txtFieldPassword.text else { return print("Password Empty") }
         guard let email = txtFieldEmail.text else { return print("Email Empty") }
@@ -52,16 +49,19 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             }
         }
     }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
 
-    @IBOutlet weak var btnSignUp: UIButton!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
    
     override func viewWillLayoutSubviews() {
-        signUpUIView.layer.shadowColor = UIColor.gray.cgColor
-        signUpUIView.layer.shadowOpacity = 1
+        signUpUIView.layer.shadowColor = UIColor.red.cgColor
+        signUpUIView.layer.shadowOpacity = 0.5
         signUpUIView.layer.shadowOffset = CGSize.zero
         signUpUIView.layer.shadowRadius = 5
         signUpUIView.layer.cornerRadius = 20
@@ -72,5 +72,4 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         btnSignUp.layer.shadowRadius = 5
         btnSignUp.layer.cornerRadius = 20
     }
-
 }

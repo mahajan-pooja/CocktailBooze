@@ -188,6 +188,17 @@
 			path = "Tab 2";
 			sourceTree = "<group>";
 		};
+		7A76487C23AD7D25006F09D8 /* Tab5 */ = {
+			isa = PBXGroup;
+			children = (
+				7AF12C4B235A64E1007FDDD0 /* WineMainCategoryModel.swift */,
+				7AF12C4D235A6AD7007FDDD0 /* WineCategoryMain.swift */,
+				7AF12C45235A586D007FDDD0 /* WineCategoryModel.swift */,
+				7AF12C49235A5981007FDDD0 /* WineModel.swift */,
+			);
+			path = Tab5;
+			sourceTree = "<group>";
+		};
 		7A929F9F219CEF170001B7D7 = {
 			isa = PBXGroup;
 			children = (
@@ -287,8 +298,9 @@
 			isa = PBXGroup;
 			children = (
 				7A04BC0E2233256300F2C464 /* Tab 1 */,
-				7AAC189F230B24CE00EC7D48 /* Tab 4 */,
 				7A04BC0F2233256B00F2C464 /* Tab 2 */,
+				7AAC189F230B24CE00EC7D48 /* Tab 4 */,
+				7A76487C23AD7D25006F09D8 /* Tab5 */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -307,10 +319,6 @@
 				7AC664FF235521BE004EAA62 /* GradientButton.swift */,
 				7ADB8F0622CD2A5F00B11100 /* TabBarController.swift */,
 				7A8297102327165700B7AA7F /* WineHubVC.swift */,
-				7AF12C4B235A64E1007FDDD0 /* WineMainCategoryModel.swift */,
-				7AF12C4D235A6AD7007FDDD0 /* WineCategoryMain.swift */,
-				7AF12C45235A586D007FDDD0 /* WineCategoryModel.swift */,
-				7AF12C49235A5981007FDDD0 /* WineModel.swift */,
 				7A8297122327167400B7AA7F /* WineHubCell.swift */,
 				7A0C9DF4232824E600B9ACB5 /* BeerHubVC.swift */,
 				7A0C9DF62328250400B9ACB5 /* BeerHubCell.swift */,

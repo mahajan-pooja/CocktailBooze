@@ -658,7 +658,7 @@
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZCt-Ki-R7V">
                                                                             <rect key="frame" x="0.0" y="126" width="200" height="54"/>
                                                                             <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="18"/>
-                                                                            <color key="textColor" red="0.30196078430000001" green="0.0" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                            <color key="textColor" red="0.30196078431372547" green="0.0" blue="0.49803921568627452" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
@@ -1438,10 +1438,17 @@
                                                     <action selector="faceIdAuthAction:" destination="aG9-80-m71" eventType="touchUpInside" id="PDk-tK-WTu"/>
                                                 </connections>
                                             </button>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter login credentials." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UB4-ZM-9Zv">
+                                                <rect key="frame" x="27" y="441.33333333333337" width="246" height="25.666666666666686"/>
+                                                <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="18"/>
+                                                <color key="textColor" red="0.80000000000000004" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="0.87264554790000004" blue="0.44402825340000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstItem="nT5-6L-S5t" firstAttribute="top" secondItem="C5r-bf-bvc" secondAttribute="top" constant="50" id="0RE-kJ-QXr"/>
+                                            <constraint firstItem="xNj-lX-ioi" firstAttribute="bottom" secondItem="UB4-ZM-9Zv" secondAttribute="top" constant="-10" id="2Dm-KW-sZo"/>
                                             <constraint firstItem="A15-Vn-lmX" firstAttribute="centerX" secondItem="C5r-bf-bvc" secondAttribute="centerX" id="EEu-fV-OpJ"/>
                                             <constraint firstAttribute="trailing" secondItem="nT5-6L-S5t" secondAttribute="trailing" constant="30" id="Fxc-xp-8Zm"/>
                                             <constraint firstItem="6PE-zC-6Nc" firstAttribute="centerX" secondItem="C5r-bf-bvc" secondAttribute="centerX" id="Hii-DR-pPr"/>
@@ -1449,6 +1456,7 @@
                                             <constraint firstItem="A15-Vn-lmX" firstAttribute="bottom" secondItem="xNj-lX-ioi" secondAttribute="top" constant="-10" id="TG7-uM-BVF"/>
                                             <constraint firstItem="A15-Vn-lmX" firstAttribute="top" secondItem="xRe-fD-u7h" secondAttribute="bottom" id="XCm-Vz-5kY"/>
                                             <constraint firstAttribute="width" secondItem="C5r-bf-bvc" secondAttribute="height" multiplier="1:1.5" id="XFV-XX-cJg" customClass="NSLayoutHelper"/>
+                                            <constraint firstItem="UB4-ZM-9Zv" firstAttribute="centerX" secondItem="C5r-bf-bvc" secondAttribute="centerX" id="bmQ-aX-4Yu"/>
                                             <constraint firstItem="xRe-fD-u7h" firstAttribute="centerX" secondItem="C5r-bf-bvc" secondAttribute="centerX" id="ceP-wE-Gih"/>
                                             <constraint firstItem="xNj-lX-ioi" firstAttribute="centerX" secondItem="C5r-bf-bvc" secondAttribute="centerX" id="cgV-QD-0ya"/>
                                             <constraint firstItem="6PE-zC-6Nc" firstAttribute="bottom" secondItem="xRe-fD-u7h" secondAttribute="top" constant="-20" id="fVf-7V-AYE"/>
@@ -1491,6 +1499,7 @@
                     </view>
                     <connections>
                         <outlet property="btnSignIn" destination="6PE-zC-6Nc" id="9oW-9j-N4p"/>
+                        <outlet property="lblError" destination="UB4-ZM-9Zv" id="vDL-ac-6Hk"/>
                         <outlet property="signInUIView" destination="C5r-bf-bvc" id="cE0-CL-YIt"/>
                         <outlet property="txtFieldEmail" destination="wUh-ZK-WkX" id="his-6e-Wrg"/>
                         <outlet property="txtFieldPassword" destination="y8g-Ip-4FJ" id="BxA-Al-1Tp"/>
@@ -1937,7 +1946,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="btnSignoutAction:" destination="zbS-Ip-b9p" eventType="touchUpInside" id="OC1-Rs-I7p"/>
+                                    <action selector="btnSignoutAction:" destination="zbS-Ip-b9p" eventType="touchUpInside" id="XgX-y1-Nfq"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&quot;99% of all problems can be solved by money and for the other 1% there’s alcohol.&quot;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VwO-3k-EjY">

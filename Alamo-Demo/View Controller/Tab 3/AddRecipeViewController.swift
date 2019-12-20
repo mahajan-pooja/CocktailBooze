@@ -14,17 +14,14 @@ import SwiftKeychainWrapper
 
 class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource{
     let type = ["Mild","Smooth","Strong","Hard","Non-Alcoholic"]
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
+    var ingredientsArray: [String] = []
+    var procedureArray: [String] = []
+    let imagePicker = UIImagePickerController()
+    var ref: DocumentReference!
+    var imageName: String!
+    var ingredientCount: Int = 1
+    var procedureCount: Int = 1
     
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return type.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return type[row]
-    }
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var imgUIView: UIView!
     @IBOutlet weak var nameTypeUIView: UIView!
@@ -42,14 +39,7 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
     @IBOutlet weak var lblProcedure: UILabel!
     @IBOutlet weak var txtfRecipeName: UITextField!
     @IBOutlet weak var imgCocktail: UIImageView!
-    var ingredientsArray: [String] = []
-    var procedureArray: [String] = []
-    let imagePicker = UIImagePickerController()
-    var ref: DocumentReference!
-    var imageName: String!
-    var ingredientCount: Int = 1
-    var procedureCount: Int = 1
-    
+
     @IBAction func btnCancelAction(_ sender: Any) {
         resetForm()
     }
@@ -77,6 +67,19 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
         imagePicker.sourceType = .photoLibrary
         present(imagePicker,animated: true, completion: nil)
     }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return type.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return type[row]
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
@@ -93,25 +96,25 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
         imgCocktail.isUserInteractionEnabled = true
         imgCocktail.addGestureRecognizer(tapGestureRecognizer)
         
-        addProcedureUIView.layer.shadowColor = UIColor.gray.cgColor
-        addProcedureUIView.layer.shadowOpacity = 0.8
+        addProcedureUIView.layer.shadowColor = UIColor.red.cgColor
+        addProcedureUIView.layer.shadowOpacity = 0.5
         addProcedureUIView.layer.shadowOffset = CGSize.zero
-        addProcedureUIView.layer.shadowRadius = 2
+        addProcedureUIView.layer.shadowRadius = 1.5
         
-        ingredientsUIView.layer.shadowColor = UIColor.gray.cgColor
-        ingredientsUIView.layer.shadowOpacity = 0.8
+        ingredientsUIView.layer.shadowColor = UIColor.red.cgColor
+        ingredientsUIView.layer.shadowOpacity = 0.5
         ingredientsUIView.layer.shadowOffset = CGSize.zero
-        ingredientsUIView.layer.shadowRadius = 2
+        ingredientsUIView.layer.shadowRadius = 1.5
         
-        nameTypeUIView.layer.shadowColor = UIColor.gray.cgColor
-        nameTypeUIView.layer.shadowOpacity = 0.8
+        nameTypeUIView.layer.shadowColor = UIColor.red.cgColor
+        nameTypeUIView.layer.shadowOpacity = 0.5
         nameTypeUIView.layer.shadowOffset = CGSize.zero
-        nameTypeUIView.layer.shadowRadius = 2
+        nameTypeUIView.layer.shadowRadius = 1.5
         
-        imgUIView.layer.shadowColor = UIColor.gray.cgColor
-        imgUIView.layer.shadowOpacity = 0.8
+        imgUIView.layer.shadowColor = UIColor.red.cgColor
+        imgUIView.layer.shadowOpacity = 0.5
         imgUIView.layer.shadowOffset = CGSize.zero
-        imgUIView.layer.shadowRadius = 2
+        imgUIView.layer.shadowRadius = 1.5
     }
     
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer){
@@ -164,9 +167,11 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         pickerView.selectRow(2, inComponent: 0, animated: true)
     }
+    
     func addRecipe(){
         let user = Auth.auth().currentUser
         var email:String!

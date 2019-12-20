@@ -12,6 +12,13 @@ import SwiftKeychainWrapper
 
 class RecipeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    var recipeName: String!
+    var recipeType: String!
+    var recipeImage: String!
+    var obj = [String:Any]()
+    var ingredients = [String]()
+    var procedure = [String]()
+    
     @IBOutlet weak var imgRecipeIcon: UIImageView!
     @IBOutlet weak var lblRecipeType: UILabel!
     @IBOutlet weak var lblRecipeName: UILabel!
@@ -19,23 +26,14 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var tblIngreHeight: NSLayoutConstraint!
     @IBOutlet weak var tblViewProcedure: UITableView!
     @IBOutlet weak var tblViewIngredients: UITableView!
-    var recipeName: String!
-    var recipeType: String!
-    var recipeImage: String!
-    
-    var obj = [String:Any]()
-    var ingredients = [String]()
-    var procedure = [String]()
     
     override func viewWillAppear(_ animated: Bool) {
         let user = Auth.auth().currentUser
         var email:String!
         
         if let user = user {
-            //let uid = user.uid
             email = user.email
         }else{
-            
             email = KeychainWrapper.standard.string(forKey: "user-email")
         }
 
@@ -47,7 +45,6 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
                 for document in querySnapshot!.documents {
                     if(document.documentID == self.recipeName){
                         self.obj = document.data()
-                        print("DATA => \(document.data())")
                         let model: RecipeDetailModel = RecipeDetailModel.init(fromDictionary: self.obj as NSDictionary)
         
                         self.ingredients = model.ingredients
@@ -77,11 +74,13 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
     }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if(tableView == tblViewIngredients){
             return 60
@@ -89,6 +88,7 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
             return 100
         }
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(tableView == tblViewIngredients){
             return ingredients.count
@@ -102,10 +102,10 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
             let cell:IngredientsCell = tableView.dequeueReusableCell(withIdentifier: "IngredientsCell", for: indexPath) as! IngredientsCell
             cell.lblIngredients.text = ingredients[indexPath.row]
             
-            cell.containerUIView.layer.shadowColor = UIColor.gray.cgColor
-            cell.containerUIView.layer.shadowOpacity = 0.8
+            cell.containerUIView.layer.shadowColor = UIColor.red.cgColor
+            cell.containerUIView.layer.shadowOpacity = 0.5
             cell.containerUIView.layer.shadowOffset = CGSize.zero
-            cell.containerUIView.layer.shadowRadius = 2
+            cell.containerUIView.layer.shadowRadius = 1.5
             cell.containerUIView.layer.masksToBounds = false
             
             return cell
@@ -113,10 +113,10 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
             let cell:ProcedureCell = tableView.dequeueReusableCell(withIdentifier: "ProcedureCell", for: indexPath) as! ProcedureCell
             cell.lblProcedure.text = procedure[indexPath.row]
             
-            cell.containerUIView.layer.shadowColor = UIColor.gray.cgColor
-            cell.containerUIView.layer.shadowOpacity = 0.8
+            cell.containerUIView.layer.shadowColor = UIColor.red.cgColor
+            cell.containerUIView.layer.shadowOpacity = 0.5
             cell.containerUIView.layer.shadowOffset = CGSize.zero
-            cell.containerUIView.layer.shadowRadius = 2
+            cell.containerUIView.layer.shadowRadius = 1.5
             cell.containerUIView.layer.masksToBounds = false
             
             return cell

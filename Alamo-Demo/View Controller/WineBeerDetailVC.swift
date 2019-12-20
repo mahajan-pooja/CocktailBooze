@@ -13,13 +13,14 @@ class WineBeerDetailVC: UIViewController {
     var descExtra: String!
     var name: String!
     var img: String!
+    
     @IBOutlet weak var imgViewBottle: UIImageView!
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var UIViewLblDescExtra: UIView!
     @IBOutlet weak var UIViewLblDesc: UIView!
-    
     @IBOutlet weak var lblExtra: UILabel!
     @IBOutlet weak var lblDesc: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,7 +30,6 @@ class WineBeerDetailVC: UIViewController {
         UIViewLblDesc.layer.shadowOffset = CGSize.zero
         UIViewLblDesc.layer.shadowRadius = 2
         UIViewLblDesc.layer.masksToBounds = false
-        
         
         UIViewLblDescExtra.layer.cornerRadius = UIViewLblDescExtra.frame.height/6
         UIViewLblDescExtra.layer.shadowColor = UIColor.gray.cgColor

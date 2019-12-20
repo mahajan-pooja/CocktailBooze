@@ -43,22 +43,21 @@ class WineHubVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if(collectionView == WineCollectionOne){
-        let cell:WineHubCell = collectionView.dequeueReusableCell(withReuseIdentifier: "WineHubCell", for: indexPath) as! WineHubCell
-        cell.lblName.text = arrayAllWinesListOne[indexPath.item].name
-        cell.lblCategory.text = arrayAllWinesListOne[indexPath.item].category
-        if(arrayAllWinesListOne[indexPath.item].image != "") {
-            let url: URL = URL(string: arrayAllWinesListOne[indexPath.item].image)!
-            cell.imgIcon.kf.setImage(with: url, placeholder: UIImage(named:"cocktail"),  options: nil, progressBlock: nil, completionHandler: {
-                ( image, error, cacheType, imageUrl) in
-                if image != nil{
-                    cell.imgIcon.clipsToBounds = true
-                    cell.imgIcon.backgroundColor = .clear
-                }
-            })
-        }
-        return cell
-        }
-        else if(collectionView == WineCollectionTwo){
+            let cell:WineHubCell = collectionView.dequeueReusableCell(withReuseIdentifier: "WineHubCell", for: indexPath) as! WineHubCell
+            cell.lblName.text = arrayAllWinesListOne[indexPath.item].name
+            cell.lblCategory.text = arrayAllWinesListOne[indexPath.item].category
+            if(arrayAllWinesListOne[indexPath.item].image != "") {
+                let url: URL = URL(string: arrayAllWinesListOne[indexPath.item].image)!
+                cell.imgIcon.kf.setImage(with: url, placeholder: UIImage(named:"cocktail"),  options: nil, progressBlock: nil, completionHandler: {
+                    ( image, error, cacheType, imageUrl) in
+                    if image != nil{
+                        cell.imgIcon.clipsToBounds = true
+                        cell.imgIcon.backgroundColor = .clear
+                    }
+                })
+            }
+            return cell
+        }else if(collectionView == WineCollectionTwo){
             let cell:WineHubCell = collectionView.dequeueReusableCell(withReuseIdentifier: "WineHubCellTwo", for: indexPath) as! WineHubCell
             cell.lblName.text = arrayAllWinesListTwo[indexPath.item].name
             cell.lblCategory.text = arrayAllWinesListTwo[indexPath.item].category
@@ -73,8 +72,7 @@ class WineHubVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
                 })
             }
             return cell
-        }
-        else if(collectionView == WineCollectionThree){
+        }else if(collectionView == WineCollectionThree){
             let cell:WineHubCell = collectionView.dequeueReusableCell(withReuseIdentifier: "WineHubCellThree", for: indexPath) as! WineHubCell
             cell.lblName.text = arrayAllWinesListThree[indexPath.item].name
             cell.lblCategory.text = arrayAllWinesListThree[indexPath.item].category

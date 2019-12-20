@@ -9,14 +9,12 @@ import UIKit
 
 class DetailsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
+    var arrayAllCategoryList: [DetailCategoryModel] = [DetailCategoryModel]()
+    var prod_id: String!
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     @IBOutlet weak var lblDetailsTitle: UILabel!
     @IBOutlet weak var imgDetailView: UIImageView!
     @IBOutlet weak var lblDetailsDesc: UILabel!
-    @IBOutlet weak var shadowContainer: UIView!
-    
-    var arrayAllCategoryList: [DetailCategoryModel] = [DetailCategoryModel]()
-    var prod_id: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,10 +63,10 @@ class DetailsViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         cell.categoryItemName.text = arrayAllCategoryList[indexPath.row].cat_name
         cell.categoryItemType.text = arrayAllCategoryList[indexPath.row].cat_type
-        cell.categoryCellView.layer.shadowColor = UIColor.gray.cgColor
-        cell.categoryCellView.layer.shadowOpacity = 0.8
+        cell.categoryCellView.layer.shadowColor = UIColor.red.cgColor
+        cell.categoryCellView.layer.shadowOpacity = 0.5
         cell.categoryCellView.layer.shadowOffset = CGSize.zero
-        cell.categoryCellView.layer.shadowRadius = 2
+        cell.categoryCellView.layer.shadowRadius = 1.5
         cell.categoryCellView.layer.masksToBounds = false
         return cell
     }

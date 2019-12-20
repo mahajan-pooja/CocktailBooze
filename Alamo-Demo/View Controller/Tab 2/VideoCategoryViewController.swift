@@ -62,10 +62,10 @@ class VideoCategoryViewController: UIViewController, UITableViewDataSource, UITa
                 cell.videoImageView.clipsToBounds = true
             }
         })
-        cell.cellView.layer.shadowColor = UIColor.gray.cgColor
-        cell.cellView.layer.shadowOpacity = 0.8
+        cell.cellView.layer.shadowColor = UIColor.red.cgColor
+        cell.cellView.layer.shadowOpacity = 0.5
         cell.cellView.layer.shadowOffset = CGSize.zero
-        cell.cellView.layer.shadowRadius = 2
+        cell.cellView.layer.shadowRadius = 1.5
         
         return cell
     }

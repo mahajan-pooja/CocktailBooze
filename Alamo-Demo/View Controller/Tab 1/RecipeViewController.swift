@@ -15,13 +15,6 @@ import Alamofire
 
 class RecipeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    @IBOutlet weak var procedureTblviewHeight: NSLayoutConstraint!
-    @IBOutlet weak var ingredientsTableView: UITableView!
-    @IBOutlet weak var procedureTableView: UITableView!
-    @IBOutlet weak var ingredientsTblViewHeight: NSLayoutConstraint!
-    @IBOutlet weak var recipeImgView: UIImageView!
-    @IBOutlet weak var lblRecipeType: UILabel!
-    @IBOutlet weak var lblRecipeName: UILabel!
     var recipe: String!
     var obj = [String:Any]()
     var ref: DocumentReference!
@@ -32,7 +25,15 @@ class RecipeViewController: UIViewController, UITableViewDataSource, UITableView
     var procedure = [String]()
     var favoritesArray: [String] = []
     
+    @IBOutlet weak var procedureTblviewHeight: NSLayoutConstraint!
+    @IBOutlet weak var ingredientsTableView: UITableView!
+    @IBOutlet weak var procedureTableView: UITableView!
+    @IBOutlet weak var ingredientsTblViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var recipeImgView: UIImageView!
+    @IBOutlet weak var lblRecipeType: UILabel!
+    @IBOutlet weak var lblRecipeName: UILabel!
     @IBOutlet weak var btnFavorite: UIButton!
+    
     @IBAction func btnAddFavoritesAction(_ sender: Any) {
         if(self.favoritesArray.contains(self.recipeName)){
             let user = Auth.auth().currentUser
@@ -93,7 +94,6 @@ class RecipeViewController: UIViewController, UITableViewDataSource, UITableView
             } else {
                 for document in querySnapshot!.documents {
                     self.favoritesArray = document.data()["regions"]! as! [String]
-                    print("document.data() => \(document.data()["regions"]!)")
                 }
                 if(self.favoritesArray.contains(self.recipeName)){
                     self.btnFavorite.setBackgroundImage(UIImage(named: "like (1)"), for: .normal)
@@ -103,6 +103,7 @@ class RecipeViewController: UIViewController, UITableViewDataSource, UITableView
             }
         }
     }
+    
     func getRecipe(){
         Alamofire.request("https://mahajan-pooja.github.io/cocktail-booz-api/greentini.json").responseJSON(completionHandler: {(response) in
             if response.result.isSuccess {
@@ -141,19 +142,19 @@ class RecipeViewController: UIViewController, UITableViewDataSource, UITableView
         if(tableView == ingredientsTableView){
             let cell = tableView.dequeueReusableCell(withIdentifier: "IngredientsTableViewCell", for: indexPath) as! IngredientsTableViewCell
             cell.lblIngredients.text = ingredients[indexPath.row]
-            cell.containerUIView.layer.shadowColor = UIColor.gray.cgColor
-            cell.containerUIView.layer.shadowOpacity = 0.8
+            cell.containerUIView.layer.shadowColor = UIColor.red.cgColor
+            cell.containerUIView.layer.shadowOpacity = 0.5
             cell.containerUIView.layer.shadowOffset = CGSize.zero
-            cell.containerUIView.layer.shadowRadius = 2
+            cell.containerUIView.layer.shadowRadius = 1.5
             cell.containerUIView.layer.masksToBounds = false
             return cell
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProcedureTableCell", for: indexPath) as! ProcedureTableCell
             cell.lblProcedure.text = procedure[indexPath.row]
-            cell.containerUIView.layer.shadowColor = UIColor.gray.cgColor
-            cell.containerUIView.layer.shadowOpacity = 0.8
+            cell.containerUIView.layer.shadowColor = UIColor.red.cgColor
+            cell.containerUIView.layer.shadowOpacity = 0.5
             cell.containerUIView.layer.shadowOffset = CGSize.zero
-            cell.containerUIView.layer.shadowRadius = 2
+            cell.containerUIView.layer.shadowRadius = 1.5
             cell.containerUIView.layer.masksToBounds = false
             return cell
         }
