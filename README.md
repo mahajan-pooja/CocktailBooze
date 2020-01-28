@@ -6,7 +6,7 @@
 
 <img src="https://github.com/mahajan-pooja/CocktailBooze/blob/master/video_home.PNG" width="240"> <img src="https://github.com/mahajan-pooja/CocktailBooze/blob/master/receipe_video_page.PNG" width="240">
 
-<img src="https://github.com/mahajan-pooja/CocktailBooze/blob/master/add_receipe_page.PNG" width="240">
+<img src="https://github.com/mahajan-pooja/CocktailBooze/blob/master/add_receipe_page.PNG" width="240"> <img src="https://github.com/mahajan-pooja/CocktailBooze/blob/master/receipe_book.PNG" width="240">
 
 <img src="https://github.com/mahajan-pooja/CocktailBooze/blob/master/user_information_page.PNG" width="240"> <img src="https://github.com/mahajan-pooja/CocktailBooze/blob/master/favorites_page.PNG" width="240">
 
