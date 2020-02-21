@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		652D7F33F934513D25FD49E6 /* Pods_Alamo_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AE278007A5C48BA6AAB04CC /* Pods_Alamo_Demo.framework */; };
+		55E54A81C2C211A094CE6DAE /* libPods-Alamo-Demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F946ECC5905CA3EBCDE2459 /* libPods-Alamo-Demo.a */; };
 		7A04BC052232F21400F2C464 /* VideoCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A04BC042232F21400F2C464 /* VideoCategoryModel.swift */; };
 		7A04BC072232F54000F2C464 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A04BC062232F54000F2C464 /* VideoTableViewCell.swift */; };
 		7A04BC092232F5BF00F2C464 /* VideoCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A04BC082232F5BF00F2C464 /* VideoCategoryViewController.swift */; };
@@ -44,7 +44,6 @@
 		7AEC60AC22D40742001511DB /* spring.json in Resources */ = {isa = PBXBuildFile; fileRef = 7AEC60AB22D40742001511DB /* spring.json */; };
 		7AEC60AE22D408F0001511DB /* slushy.json in Resources */ = {isa = PBXBuildFile; fileRef = 7AEC60AD22D408F0001511DB /* slushy.json */; };
 		7AF12C46235A586D007FDDD0 /* WineCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF12C45235A586D007FDDD0 /* WineCategoryModel.swift */; };
-		7AF12C4A235A5981007FDDD0 /* WineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF12C49235A5981007FDDD0 /* WineModel.swift */; };
 		7AF12C4C235A64E1007FDDD0 /* WineMainCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF12C4B235A64E1007FDDD0 /* WineMainCategoryModel.swift */; };
 		7AF12C4E235A6AD7007FDDD0 /* WineCategoryMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF12C4D235A6AD7007FDDD0 /* WineCategoryMain.swift */; };
 		7AF6595C22CBDE3E008EDF8A /* AddRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF6595B22CBDE3E008EDF8A /* AddRecipeViewController.swift */; };
@@ -53,6 +52,7 @@
 		BA21385F22152ECD0082FB68 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA21385E22152ECD0082FB68 /* DetailsViewController.swift */; };
 		BA413982221E443000E74B98 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA413981221E443000E74B98 /* CategoryCollectionViewCell.swift */; };
 		BA43B4C7227299A200349C95 /* welcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43B4C6227299A200349C95 /* welcomeVC.swift */; };
+		BAB0EA7D23FF9FA900527670 /* WineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB0EA7C23FF9FA900527670 /* WineModel.swift */; };
 		BABB762F221F94C100E2C0D4 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABB762E221F94C100E2C0D4 /* RecipeViewController.swift */; };
 		BABB7631221F967200E2C0D4 /* IngredientsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABB7630221F967200E2C0D4 /* IngredientsTableViewCell.swift */; };
 		BACC83FC227653520012158C /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACC83FB227653520012158C /* SignInViewController.swift */; };
@@ -65,7 +65,7 @@
 
 /* Begin PBXFileReference section */
 		02E18FA7310AEDE068283A41 /* Pods-Alamo-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alamo-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Alamo-Demo/Pods-Alamo-Demo.release.xcconfig"; sourceTree = "<group>"; };
-		6AE278007A5C48BA6AAB04CC /* Pods_Alamo_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Alamo_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F946ECC5905CA3EBCDE2459 /* libPods-Alamo-Demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Alamo-Demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A04BC042232F21400F2C464 /* VideoCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCategoryModel.swift; sourceTree = "<group>"; };
 		7A04BC062232F54000F2C464 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
 		7A04BC082232F5BF00F2C464 /* VideoCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCategoryViewController.swift; sourceTree = "<group>"; };
@@ -104,7 +104,6 @@
 		7AEC60AB22D40742001511DB /* spring.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = spring.json; sourceTree = "<group>"; };
 		7AEC60AD22D408F0001511DB /* slushy.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = slushy.json; sourceTree = "<group>"; };
 		7AF12C45235A586D007FDDD0 /* WineCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineCategoryModel.swift; sourceTree = "<group>"; };
-		7AF12C49235A5981007FDDD0 /* WineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WineModel.swift; path = "/Users/poojamac/Documents/CocktailApp/iOSApp/Alamo-Demo/View Controller/WineModel.swift"; sourceTree = "<absolute>"; };
 		7AF12C4B235A64E1007FDDD0 /* WineMainCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineMainCategoryModel.swift; sourceTree = "<group>"; };
 		7AF12C4D235A6AD7007FDDD0 /* WineCategoryMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineCategoryMain.swift; sourceTree = "<group>"; };
 		7AF6595B22CBDE3E008EDF8A /* AddRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipeViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +112,7 @@
 		BA21385E22152ECD0082FB68 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		BA413981221E443000E74B98 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		BA43B4C6227299A200349C95 /* welcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = welcomeVC.swift; sourceTree = "<group>"; };
+		BAB0EA7C23FF9FA900527670 /* WineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineModel.swift; sourceTree = "<group>"; };
 		BABB762E221F94C100E2C0D4 /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
 		BABB7630221F967200E2C0D4 /* IngredientsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsTableViewCell.swift; sourceTree = "<group>"; };
 		BACC83FB227653520012158C /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -129,7 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				652D7F33F934513D25FD49E6 /* Pods_Alamo_Demo.framework in Frameworks */,
+				55E54A81C2C211A094CE6DAE /* libPods-Alamo-Demo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,7 +139,7 @@
 		4C953CED056A6E380DE6A893 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6AE278007A5C48BA6AAB04CC /* Pods_Alamo_Demo.framework */,
+				6F946ECC5905CA3EBCDE2459 /* libPods-Alamo-Demo.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -194,7 +194,7 @@
 				7AF12C4B235A64E1007FDDD0 /* WineMainCategoryModel.swift */,
 				7AF12C4D235A6AD7007FDDD0 /* WineCategoryMain.swift */,
 				7AF12C45235A586D007FDDD0 /* WineCategoryModel.swift */,
-				7AF12C49235A5981007FDDD0 /* WineModel.swift */,
+				BAB0EA7C23FF9FA900527670 /* WineModel.swift */,
 			);
 			path = Tab5;
 			sourceTree = "<group>";
@@ -347,7 +347,7 @@
 				7A929FA4219CEF170001B7D7 /* Sources */,
 				7A929FA5219CEF170001B7D7 /* Frameworks */,
 				7A929FA6219CEF170001B7D7 /* Resources */,
-				2771C9BF5EC40F69D5E4ADF6 /* [CP] Embed Pods Frameworks */,
+				6054F6F655E087C7BC47E211 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -433,48 +433,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2771C9BF5EC40F69D5E4ADF6 /* [CP] Embed Pods Frameworks */ = {
+		6054F6F655E087C7BC47E211 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Alamo-Demo/Pods-Alamo-Demo-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Alamo-Demo/Pods-Alamo-Demo-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-Alamo-Demo/Pods-Alamo-Demo-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Alamo-Demo/Pods-Alamo-Demo-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Alamo-Demo/Pods-Alamo-Demo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -484,6 +457,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAB0EA7D23FF9FA900527670 /* WineModel.swift in Sources */,
 				7A9DD71E22F4BA6800588941 /* IngredientsAddTableViewCell.swift in Sources */,
 				7AAC18A7230B3D4C00EC7D48 /* ProcedureCell.swift in Sources */,
 				7A04BC092232F5BF00F2C464 /* VideoCategoryViewController.swift in Sources */,
@@ -515,7 +489,6 @@
 				7AFE7F5C22D9251B004E5A68 /* RecipeBookViewController.swift in Sources */,
 				BACC83FE227653600012158C /* SignUpViewController.swift in Sources */,
 				7AEC60A622D3EE41001511DB /* DetailCategoryModel.swift in Sources */,
-				7AF12C4A235A5981007FDDD0 /* WineModel.swift in Sources */,
 				7ADB8F0922CD496400B11100 /* AccountViewController.swift in Sources */,
 				7AEC60A422D3EDC4001511DB /* CategoryModel.swift in Sources */,
 				7AFE7F5E22D92939004E5A68 /* RecipeBookTableViewCell.swift in Sources */,
@@ -667,13 +640,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9P93MKY8RJ;
+				DEVELOPMENT_TEAM = 4N4URRN245;
 				INFOPLIST_FILE = "Alamo-Demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.esv.Alamo-Demo";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cocktail.Cocktail-Booze";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -686,13 +659,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9P93MKY8RJ;
+				DEVELOPMENT_TEAM = 4N4URRN245;
 				INFOPLIST_FILE = "Alamo-Demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.esv.Alamo-Demo";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cocktail.Cocktail-Booze";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;

@@ -8,8 +8,8 @@
 
 import UIKit
 import Firebase
-import FirebaseDatabase
-import FirebaseFirestore
+//import FirebaseDatabase
+//import FirebaseFirestore
 import SwiftKeychainWrapper
 
 class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource{
