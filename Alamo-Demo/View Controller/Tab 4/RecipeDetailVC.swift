@@ -36,7 +36,7 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         }else{
             email = KeychainWrapper.standard.string(forKey: "user-email")
         }
-
+        
         Firestore.firestore().collection(email).getDocuments() { (querySnapshot, err) in
             
             if let err = err {
@@ -46,7 +46,7 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
                     if(document.documentID == self.recipeName){
                         self.obj = document.data()
                         let model: RecipeDetailModel = RecipeDetailModel.init(fromDictionary: self.obj as NSDictionary)
-        
+                        
                         self.ingredients = model.ingredients
                         self.procedure = model.procedure
                         self.lblRecipeName.text = self.recipeName

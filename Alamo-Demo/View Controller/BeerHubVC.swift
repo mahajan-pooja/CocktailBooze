@@ -23,11 +23,11 @@ class BeerHubVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let WineBeerDetailVC: WineBeerDetailVC = storyBoard.instantiateViewController(withIdentifier: "WineBeerDetailVC") as! WineBeerDetailVC
-        self.present(WineBeerDetailVC, animated: true, completion: nil)
-    }
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//        let WineBeerDetailVC: WineBeerDetailVC = storyBoard.instantiateViewController(withIdentifier: "WineBeerDetailVC") as! WineBeerDetailVC
+//        self.present(WineBeerDetailVC, animated: true, completion: nil)
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

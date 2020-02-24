@@ -15,7 +15,7 @@ class FavoritesViewController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var tblViewFavorites: UITableView!
     var favoritesArray: [String] = []
     var ref: DocumentReference!
-
+    
     @objc func btnRemoveFavoritesAction(sender: UIButton) {
         let data = favoritesArray[sender.tag]
         

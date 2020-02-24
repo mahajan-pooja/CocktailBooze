@@ -34,7 +34,7 @@ class VideoCategoryViewController: UIViewController, UITableViewDataSource, UITa
             })
         }
     }
-
+    
     //Set the spacing between sections
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 0

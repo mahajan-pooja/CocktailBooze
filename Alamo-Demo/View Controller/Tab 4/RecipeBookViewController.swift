@@ -84,7 +84,7 @@ class RecipeBookViewController: UIViewController, UITableViewDelegate, UITableVi
         vc.recipeImage = obj[indexPath.row]["recipe-img"]! as? String
         self.navigationController?.pushViewController(vc, animated: true)
     }
-
+    
     
     func tableView(_ tableView: UITableView, willBeginEditingRowAt indexPath: IndexPath) {
         tableView.subviews.forEach { subview in
@@ -104,7 +104,7 @@ class RecipeBookViewController: UIViewController, UITableViewDelegate, UITableVi
             }
         }
     }
-
+    
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete {

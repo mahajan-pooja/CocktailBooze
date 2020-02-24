@@ -20,7 +20,7 @@ class SubCategoryModel: NSObject {
         productId = dictionary["product_id"] as? String
         productName = dictionary["product_name"] as? String
     }
-
+    
     /**
      * Returns all the available property values in the form of NSDictionary object where the key is the approperiate json key and the value is the value of the corresponding property
      */

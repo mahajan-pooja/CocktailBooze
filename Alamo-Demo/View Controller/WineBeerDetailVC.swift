@@ -41,15 +41,16 @@ class WineBeerDetailVC: UIViewController {
         lblDesc.text = desc
         lblName.text = name
         lblExtra.text = descExtra
-        if(img != "") {
-            let url: URL = URL(string: img)!
-            imgViewBottle.kf.setImage(with: url, placeholder: UIImage(named:"cocktail"),  options: nil, progressBlock: nil, completionHandler: {
-                ( image, error, cacheType, imageUrl) in
-                if image != nil{
-                    self.imgViewBottle.clipsToBounds = true
-                    self.imgViewBottle.backgroundColor = .clear
-                }
-            })
+        if let img = img {
+            if let url: URL = URL(string: img) {
+                imgViewBottle.kf.setImage(with: url, placeholder: UIImage(named:"cocktail"),  options: nil, progressBlock: nil, completionHandler: {
+                    ( image, error, cacheType, imageUrl) in
+                    if image != nil{
+                        self.imgViewBottle.clipsToBounds = true
+                        self.imgViewBottle.backgroundColor = .clear
+                    }
+                })
+            }
         }
     }
 }

@@ -31,7 +31,7 @@ class RecipeDetailModel: NSObject {
         if procedure != nil{
             dictionary["procedure"] = procedure
         }
-
+        
         return dictionary
     }
 }

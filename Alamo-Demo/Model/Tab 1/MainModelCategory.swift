@@ -29,7 +29,7 @@ class MainModelCategory: NSObject {
      */
     func toDictionary() -> NSDictionary{
         let dictionary = NSMutableDictionary()
-
+        
         if recipe != nil{
             var dictionaryElements = [NSDictionary]()
             for recipeElement in recipe {

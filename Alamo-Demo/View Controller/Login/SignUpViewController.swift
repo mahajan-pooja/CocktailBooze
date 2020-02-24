@@ -11,7 +11,7 @@ import Firebase
 import SwiftKeychainWrapper
 
 class SignUpViewController: UIViewController, UITextFieldDelegate {
-
+    
     @IBOutlet weak var txtFieldConfPassword: UITextField!
     @IBOutlet weak var txtFieldPassword: UITextField!
     @IBOutlet weak var txtFieldEmail: UITextField!
@@ -54,11 +54,11 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-   
+    
     override func viewWillLayoutSubviews() {
         signUpUIView.layer.shadowColor = UIColor.red.cgColor
         signUpUIView.layer.shadowOpacity = 0.5

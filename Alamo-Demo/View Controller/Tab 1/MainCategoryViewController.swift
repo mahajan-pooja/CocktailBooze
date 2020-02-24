@@ -15,7 +15,7 @@ var arrayAllProductList: [SubCategoryModel] = [SubCategoryModel]()
 var arrayAllCountryList: [SubCategoryModel] = [SubCategoryModel]()
 
 class MainCategoryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-
+    
     var objMainCategory: MainModelCategory!
     @IBOutlet weak var sliderCollectionView: UICollectionView!
     @IBOutlet weak var MainCategoryCollectionView: UICollectionView!
@@ -25,7 +25,7 @@ class MainCategoryViewController: UIViewController, UICollectionViewDelegate, UI
         fetchMainCategoryData()
         fetchCountryCategoryData()
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
@@ -40,7 +40,7 @@ class MainCategoryViewController: UIViewController, UICollectionViewDelegate, UI
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if(collectionView == MainCategoryCollectionView){
-           let cell:MainCategoryCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainCategoryCollectionViewCell", for: indexPath) as! MainCategoryCollectionViewCell
+            let cell:MainCategoryCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainCategoryCollectionViewCell", for: indexPath) as! MainCategoryCollectionViewCell
             
             let objectList: SubCategoryModel = arrayAllProductList[indexPath.item]
             if(objectList.image != "") {

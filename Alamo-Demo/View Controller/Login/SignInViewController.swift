@@ -12,7 +12,7 @@ import SwiftKeychainWrapper
 import LocalAuthentication
 
 class SignInViewController: UIViewController, UITextFieldDelegate {
-
+    
     @IBOutlet weak var txtFieldPassword: UITextField!
     @IBOutlet weak var txtFieldEmail: UITextField!
     @IBOutlet weak var signInUIView: UIView!
@@ -77,7 +77,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     @IBAction func btnSignInAction(_ sender: Any) {
         let email = txtFieldEmail.text!
         let password = txtFieldPassword.text!
-
+        
         if(email != "" && password != ""){
             Auth.auth().signIn(withEmail: email, password: password) { [weak self] user, error in
                 self!.lblError.isHidden = true

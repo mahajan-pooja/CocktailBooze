@@ -11,7 +11,7 @@ import Firebase
 import LocalAuthentication
 
 class welcomeVC: UIViewController {
-
+    
     @IBOutlet weak var UIViewContainer: UIView!
     @IBOutlet weak var btnFaceID: UIButton!
     @IBOutlet weak var btnTouchID: UIButton!
@@ -32,7 +32,7 @@ class welcomeVC: UIViewController {
         SignInViewController.modalPresentationStyle = .fullScreen
         self.present(SignInViewController, animated: true, completion: nil)
     }
-
+    
     @IBAction func btnFaceIDAction(_ sender: Any) {
         let context = LAContext()
         var error: NSError?
@@ -54,7 +54,7 @@ class welcomeVC: UIViewController {
             
         }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -113,7 +113,7 @@ class welcomeVC: UIViewController {
         
         //2. Add the text field. You can configure it however you need.
         alert.addTextField { (textField) in
-           // textField.text = "Some default text"
+            // textField.text = "Some default text"
         }
         
         // 3. Grab the value from the text field, and print it when the user clicks OK.

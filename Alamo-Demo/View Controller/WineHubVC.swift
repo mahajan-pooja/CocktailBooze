@@ -36,9 +36,9 @@ class WineHubVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
         }
         return 0
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-            return CGSize(width: 200, height: 400)
+        return CGSize(width: 200, height: 400)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

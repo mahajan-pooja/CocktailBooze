@@ -49,7 +49,7 @@ class RecipeViewController: UIViewController, UITableViewDataSource, UITableView
             // Atomically add a new region to the "regions" array field.
             ref.updateData([
                 "regions": FieldValue.arrayRemove([recipeName])
-                ])
+            ])
             self.btnFavorite.setBackgroundImage(UIImage(named: "like"), for: .normal)
         }else{
             let user = Auth.auth().currentUser
@@ -65,7 +65,7 @@ class RecipeViewController: UIViewController, UITableViewDataSource, UITableView
             // Atomically add a new region to the "regions" array field.
             ref.updateData([
                 "regions": FieldValue.arrayUnion([recipeName])
-                ])
+            ])
             self.btnFavorite.setBackgroundImage(UIImage(named: "like (1)"), for: .normal)
         }
     }
@@ -129,7 +129,7 @@ class RecipeViewController: UIViewController, UITableViewDataSource, UITableView
             return procedure.count
         }
     }
-
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
         if(tableView == ingredientsTableView){
             return 70
@@ -137,7 +137,7 @@ class RecipeViewController: UIViewController, UITableViewDataSource, UITableView
             return 70
         }
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if(tableView == ingredientsTableView){
             let cell = tableView.dequeueReusableCell(withIdentifier: "IngredientsTableViewCell", for: indexPath) as! IngredientsTableViewCell

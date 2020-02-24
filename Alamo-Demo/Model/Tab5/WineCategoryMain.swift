@@ -29,7 +29,7 @@ class WineCategoryMain: NSObject {
      */
     func toDictionary() -> NSDictionary{
         let dictionary = NSMutableDictionary()
-
+        
         if wineCategory != nil{
             var dictionaryElements = [NSDictionary]()
             for recipeElement in wineCategory {

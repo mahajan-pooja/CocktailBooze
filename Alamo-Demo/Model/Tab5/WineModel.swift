@@ -6,7 +6,7 @@ class WineModel: NSObject {
     var desc : String!
     var descExtra: String!
     var category: String!
-
+    
     /**
      * Instantiate the instance using the passed dictionary values to set the properties values
      */

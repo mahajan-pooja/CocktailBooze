@@ -39,7 +39,7 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
     @IBOutlet weak var lblProcedure: UILabel!
     @IBOutlet weak var txtfRecipeName: UITextField!
     @IBOutlet weak var imgCocktail: UIImageView!
-
+    
     @IBAction func btnCancelAction(_ sender: Any) {
         resetForm()
     }
@@ -86,7 +86,7 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
         btnAddProcedure.layer.cornerRadius = 15
         btnAddIngredients.layer.cornerRadius = 15
         btnAddRecipe.layer.cornerRadius = btnAddRecipe.frame.height/2
-    
+        
         pickerView.setValue(UIColor.purple, forKeyPath: "textColor")
         
         ingredientsUIView.layer.cornerRadius = ingredientsUIView.frame.width/15
@@ -188,7 +188,7 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
                 print(theTextField.text!)
             }
         }
-
+        
         for i in 1...procedureCount{
             if let theTextField = self.view.viewWithTag(i+50) as? UITextField {
                 procedureArray.append(theTextField.text!)
@@ -207,11 +207,11 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
                     let alert = UIAlertController(title: "Success", message: "Recipe Added Successfully!", preferredStyle: UIAlertController.Style.alert)
                     alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
                     self.present(alert, animated: true, completion: nil)
-
+                    
                     self.tabBarController?.selectedIndex = 3
-
+                    
                     self.resetForm()
-
+                    
                     print("Done")
                 }
             }
@@ -256,9 +256,9 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
         imageName = imgName
         
         if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-        var data = Data()
+            var data = Data()
             data = pickedImage.jpegData(compressionQuality:0.8)!
-        
+            
             let imageRef = Storage.storage().reference().child("images/\(imageName!)")
             
             _ = imageRef.putData(data, metadata: nil){ (metadata, error) in
@@ -272,7 +272,7 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-         dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
