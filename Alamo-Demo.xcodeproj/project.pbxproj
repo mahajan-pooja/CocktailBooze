@@ -49,6 +49,7 @@
 		7AF6595C22CBDE3E008EDF8A /* AddRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF6595B22CBDE3E008EDF8A /* AddRecipeViewController.swift */; };
 		7AFE7F5C22D9251B004E5A68 /* RecipeBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFE7F5B22D9251B004E5A68 /* RecipeBookViewController.swift */; };
 		7AFE7F5E22D92939004E5A68 /* RecipeBookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFE7F5D22D92939004E5A68 /* RecipeBookTableViewCell.swift */; };
+		BA02B85E24C63CD000FF6A29 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA02B85D24C63CD000FF6A29 /* Constants.swift */; };
 		BA21385F22152ECD0082FB68 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA21385E22152ECD0082FB68 /* DetailsViewController.swift */; };
 		BA413982221E443000E74B98 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA413981221E443000E74B98 /* CategoryCollectionViewCell.swift */; };
 		BA43B4C7227299A200349C95 /* welcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43B4C6227299A200349C95 /* welcomeVC.swift */; };
@@ -109,6 +110,7 @@
 		7AF6595B22CBDE3E008EDF8A /* AddRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipeViewController.swift; sourceTree = "<group>"; };
 		7AFE7F5B22D9251B004E5A68 /* RecipeBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeBookViewController.swift; sourceTree = "<group>"; };
 		7AFE7F5D22D92939004E5A68 /* RecipeBookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeBookTableViewCell.swift; sourceTree = "<group>"; };
+		BA02B85D24C63CD000FF6A29 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BA21385E22152ECD0082FB68 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		BA413981221E443000E74B98 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		BA43B4C6227299A200349C95 /* welcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = welcomeVC.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 				7A929FB2219CEF180001B7D7 /* Assets.xcassets */,
 				7A929FB7219CEF180001B7D7 /* Info.plist */,
 				7ADB8F0022CD196100B11100 /* GoogleService-Info.plist */,
+				BA02B85D24C63CD000FF6A29 /* Constants.swift */,
 			);
 			path = "Alamo-Demo";
 			sourceTree = "<group>";
@@ -366,7 +369,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1000;
 				LastUpgradeCheck = 1000;
-				ORGANIZATIONNAME = GenistaBio;
+				ORGANIZATIONNAME = "Pooja Mahajan";
 				TargetAttributes = {
 					7A929FA7219CEF170001B7D7 = {
 						CreatedOnToolsVersion = 10.0;
@@ -492,6 +495,7 @@
 				7ADB8F0922CD496400B11100 /* AccountViewController.swift in Sources */,
 				7AEC60A422D3EDC4001511DB /* CategoryModel.swift in Sources */,
 				7AFE7F5E22D92939004E5A68 /* RecipeBookTableViewCell.swift in Sources */,
+				BA02B85E24C63CD000FF6A29 /* Constants.swift in Sources */,
 				BA413982221E443000E74B98 /* CategoryCollectionViewCell.swift in Sources */,
 				7AF6595C22CBDE3E008EDF8A /* AddRecipeViewController.swift in Sources */,
 				BAD9328322128EDD008EDFBC /* SubCategoryModel.swift in Sources */,
@@ -648,7 +652,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cocktailbooze.Cocktail-Booze";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -667,7 +671,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cocktailbooze.Cocktail-Booze";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

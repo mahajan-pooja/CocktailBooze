@@ -3,7 +3,7 @@
 //  Alamo-Demo
 //
 //  Created by Pooja on 7/3/19.
-//  Copyright © 2019 GenistaBio. All rights reserved.
+//  Copyright © 2019 Pooja Mahajan. All rights reserved.
 //
 
 import UIKit
