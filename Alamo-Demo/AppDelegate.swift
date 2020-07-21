@@ -17,10 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var firebaseStorage: Storage?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        Thread.sleep(forTimeInterval: 0.5)
+        Thread.sleep(forTimeInterval: 3.0)
         FirebaseApp.configure()
         firebaseStorage = Storage.storage()
-        if(UserDefaults.standard.string(forKey: "userEmail") != nil && UserDefaults.standard.string(forKey: "userEmail") != ""){
+        if(UserDefaults.standard.string(forKey: "userEmail") != nil && UserDefaults.standard.string(forKey: "userEmail") != "") {
             print("userEmail \(UserDefaults.standard.string(forKey: "userEmail")!)")
             self.window = UIWindow(frame: UIScreen.main.bounds)
             
@@ -55,7 +55,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
 }
-

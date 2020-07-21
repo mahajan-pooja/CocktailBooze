@@ -9,8 +9,8 @@ import UIKit
 
 class DetailsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
-    var arrayAllCategoryList: [DetailCategoryModel] = [DetailCategoryModel]()
-    var productId: String!
+    private var arrayAllCategoryList = [DetailCategoryModel]()
+    var recipeID: String?
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     @IBOutlet weak var lblDetailsTitle: UILabel!
     @IBOutlet weak var imgDetailView: UIImageView!
@@ -18,17 +18,14 @@ class DetailsViewController: UIViewController, UICollectionViewDelegate, UIColle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchUserData()
+        fetchRecipeData()
         navigationController?.setNavigationBarHidden(false, animated: true)
         lblDetailsTitle.text = arrayAllProductList[itemIndex].productName
-        lblDetailsDesc.text = "Somewhere in Oprah's mantra is making time for yourself…with an adult beverage.!!"
-        let url: URL = URL(string: arrayAllProductList[itemIndex].image)!
-        imgDetailView.kf.setImage(with: url, placeholder: UIImage(named: "cocktail"), options: nil, progressBlock: nil, completionHandler: { (image, _, _, _) in
-            if image != nil {
-                self.imgDetailView.clipsToBounds = true
-                self.imgDetailView.backgroundColor = .white
-            }
-        })
+        lblDetailsDesc.text = Constants.quote
+        
+        if let url = URL(string: arrayAllProductList[itemIndex].image) {
+            Common.setImage(imageView: imgDetailView, url: url)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -44,29 +41,21 @@ class DetailsViewController: UIViewController, UICollectionViewDelegate, UIColle
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         itemIndex = indexPath.row
         if let recipeViewController = self.storyboard?.instantiateViewController(withIdentifier: "RecipeViewController") as? RecipeViewController {
-            recipeViewController.recipeName = arrayAllCategoryList[indexPath.row].categoryName!
-            recipeViewController.recipeImage = arrayAllCategoryList[indexPath.row].image!
-            recipeViewController.recipeType = arrayAllCategoryList[indexPath.row].categoryType!
+            recipeViewController.recipeName = arrayAllCategoryList[indexPath.row].categoryName
+            recipeViewController.recipeImage = arrayAllCategoryList[indexPath.row].image
+            recipeViewController.recipeType = arrayAllCategoryList[indexPath.row].categoryType
             self.navigationController?.pushViewController(recipeViewController, animated: true)
         }
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCollectionViewCell", for: indexPath) as? CategoryCollectionViewCell {
-            let url: URL = URL(string: arrayAllCategoryList[indexPath.row].image)!
-            cell.categoryItemImage.kf.setImage(with: url, placeholder: UIImage(named:"cocktail"),  options: nil, progressBlock: nil, completionHandler: { (image, _, _, _) in
-                if image != nil {
-                    cell.categoryItemImage.clipsToBounds = true
-                }
-            })
-
+            if let url: URL = URL(string: arrayAllCategoryList[indexPath.row].image) {
+                Common.setImage(imageView: cell.categoryItemImage, url: url)
+            }
             cell.categoryItemName.text = arrayAllCategoryList[indexPath.row].categoryName
             cell.categoryItemType.text = arrayAllCategoryList[indexPath.row].categoryType
-            cell.categoryCellView.layer.shadowColor = UIColor.red.cgColor
-            cell.categoryCellView.layer.shadowOpacity = 0.5
-            cell.categoryCellView.layer.shadowOffset = CGSize.zero
-            cell.categoryCellView.layer.shadowRadius = 1.5
-            cell.categoryCellView.layer.masksToBounds = false
+            Common.setShadow(view: cell.categoryCellView)
             return cell
         }
         return UICollectionViewCell()
@@ -88,26 +77,30 @@ class DetailsViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     func loadJson(filename: String) {
-        let parentList: [NSDictionary] = ((self.readJSONFromFile(fileName: filename) as? [NSDictionary])!)
-        let arrayList: [NSDictionary] = parentList[0].value(forKey: "result") as! Array
-
-        if (arrayList.count) > 0 {
-            let model: CategoryModel = CategoryModel.init(fromDictionary: arrayList[0])
-            arrayAllCategoryList.append(contentsOf: model.category)
+        if let parentList: [NSDictionary] = (self.readJSONFromFile(fileName: filename) as? [NSDictionary]) {
+            if let arrayList: [NSDictionary] = parentList[0].value(forKey: "result") as? Array {
+                if !arrayList.isEmpty {
+                    let model = CategoryModel.init(fromDictionary: arrayList[0])
+                    arrayAllCategoryList.append(contentsOf: model.category)
+                }
+                self.categoryCollectionView.reloadData()
+            }
         }
-        self.categoryCollectionView.reloadData()
     }
     
-    func fetchUserData() {
-        let recipeId = productId!
-        if recipeId == "1" {
+    private func fetchRecipeData() {
+        let recipeId = recipeID
+        switch recipeId {
+        case "1":
             loadJson(filename: "valentine")
-        } else if recipeId == "2" {
+        case "2":
             loadJson(filename: "summer")
-        } else if recipeId == "3" {
+        case "3":
             loadJson(filename: "spring")
-        } else if recipeId == "4" {
+        case "4":
             loadJson(filename: "slushy")
+        default:
+            loadJson(filename: "valentine")
         }
     }
 }

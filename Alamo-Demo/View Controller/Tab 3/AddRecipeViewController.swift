@@ -8,8 +8,6 @@
 
 import UIKit
 import Firebase
-//import FirebaseDatabase
-//import FirebaseFirestore
 import SwiftKeychainWrapper
 
 class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource {
@@ -69,15 +67,15 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
+        1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return type.count
+        type.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return type[row]
+        type[row]
     }
     
     override func viewDidLoad() {
@@ -85,12 +83,12 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
         imagePicker.delegate = self
         btnAddProcedure.layer.cornerRadius = 15
         btnAddIngredients.layer.cornerRadius = 15
-        btnAddRecipe.layer.cornerRadius = btnAddRecipe.frame.height/2
+        btnAddRecipe.layer.cornerRadius = btnAddRecipe.frame.height / 2
 
         pickerView.setValue(UIColor.purple, forKeyPath: "textColor")
         
-        ingredientsUIView.layer.cornerRadius = ingredientsUIView.frame.width/15
-        addProcedureUIView.layer.cornerRadius = addProcedureUIView.frame.width/15
+        ingredientsUIView.layer.cornerRadius = ingredientsUIView.frame.width / 15
+        addProcedureUIView.layer.cornerRadius = addProcedureUIView.frame.width / 15
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
         imgCocktail.isUserInteractionEnabled = true
@@ -117,7 +115,8 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
         imgUIView.layer.shadowRadius = 1.5
     }
     
-    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
+    @objc
+    func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
         imagePicker.allowsEditing = true
         imagePicker.sourceType = .photoLibrary
         present(imagePicker, animated: true, completion: nil)
@@ -133,24 +132,27 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if tableView == tblViewAddIngredient {
-            let cell:IngredientsAddTableViewCell = tableView.dequeueReusableCell(withIdentifier: "IngredientsAddTableViewCell", for: indexPath) as! IngredientsAddTableViewCell
-            //tags starts from 1
-            cell.txtFieldIngredient.tag = indexPath.row+1
-            return cell
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "IngredientsAddTableViewCell", for: indexPath) as? IngredientsAddTableViewCell {
+                //tags starts from 1
+                cell.txtFieldIngredient.tag = indexPath.row + 1
+                return cell
+            }
         } else {
-            let cell:ProcedureTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ProcedureTableViewCell", for: indexPath) as! ProcedureTableViewCell
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "ProcedureTableViewCell", for: indexPath) as? ProcedureTableViewCell {
             //tags starts from 51
-            cell.txtFieldProcedure.tag = indexPath.row+1+50
+            cell.txtFieldProcedure.tag = indexPath.row + 1 + 50
             return cell
+            }
         }
+        return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
+        50
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
+        true
     }
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -169,6 +171,7 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
     }
 
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         pickerView.selectRow(2, inComponent: 0, animated: true)
     }
 
@@ -190,7 +193,7 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
         }
 
         for index in 1...procedureCount {
-            if let theTextField = self.view.viewWithTag(index+50) as? UITextField {
+            if let theTextField = self.view.viewWithTag(index + 50) as? UITextField {
                 procedureArray.append(theTextField.text!)
                 print(theTextField.text!)
             }
@@ -200,7 +203,7 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
             //save data on firebase
             let data: [String: Any] = ["recipe-name": txtfRecipeName.text!, "recipe-type": type[selectedValue], "recipe-img": imageName, "ingredients": ingredientsArray, "procedure": procedureArray]
             ref = Firestore.firestore().collection(email).document(txtfRecipeName.text!)
-            ref.setData(data) { (error) in
+            ref.setData(data) { error in
                 if error != nil {
                     print("Error")
                 } else {
@@ -248,10 +251,10 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
         mainScrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
     }
 
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         dismiss(animated: true, completion: nil)
 
-        let randomInt = Int.random(in: 0..<100000)
+        let randomInt = Int.random(in: 0 ..< 100000)
         let imgName = "img\(randomInt)"
         imageName = imgName
 
@@ -261,7 +264,7 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
             
             let imageRef = Storage.storage().reference().child("images/\(imageName!)")
 
-            _ = imageRef.putData(data, metadata: nil) { (metadata, error) in
+            _ = imageRef.putData(data, metadata: nil) { metadata, _ in
                 guard metadata != nil else {
                     return
                 }

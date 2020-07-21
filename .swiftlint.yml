@@ -5,7 +5,6 @@ disabled_rules: # rule identifiers to exclude from running
 # - private_over_fileprivate
  - trailing_whitespace
 opt_in_rules: # some rules are only opt-in
-  - missing_docs
   - attributes
   - closure_spacing
   - conditional_returns_on_newline

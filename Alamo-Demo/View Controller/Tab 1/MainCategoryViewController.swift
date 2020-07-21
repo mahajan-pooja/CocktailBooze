@@ -11,8 +11,8 @@ import Alamofire
 import Kingfisher
 
 var itemIndex = 0
-var arrayAllProductList: [SubCategoryModel] = [SubCategoryModel]()
-var arrayAllCountryList: [SubCategoryModel] = [SubCategoryModel]()
+var arrayAllProductList = [SubCategoryModel]()
+var arrayAllCountryList = [SubCategoryModel]()
 
 class MainCategoryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
@@ -43,19 +43,10 @@ class MainCategoryViewController: UIViewController, UICollectionViewDelegate, UI
         if collectionView == mainCategoryCollectionView {
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainCategoryCollectionViewCell", for: indexPath) as? MainCategoryCollectionViewCell {
                 let objectList: SubCategoryModel = arrayAllProductList[indexPath.item]
-                if objectList.image != "" {
-                    let url: URL = URL(string: objectList.image)!
-                    cell.imgCategory.kf.setImage(with: url, placeholder: UIImage(named: "cocktail"), options: nil, progressBlock: nil, completionHandler: { (image, _, _, _) in
-                        if image != nil {
-                            cell.imgCategory.clipsToBounds = true
-                            cell.imgCategory.backgroundColor = .white
-                        }
-                    })
+                if let image = objectList.image, let url = URL(string: image) {
+                    Common.setImage(imageView: cell.imgCategory, url: url)
                 }
-                cell.mainCategoryView.layer.shadowColor = UIColor.red.cgColor
-                cell.mainCategoryView.layer.shadowOpacity = 0.5
-                cell.mainCategoryView.layer.shadowOffset = CGSize.zero
-                cell.mainCategoryView.layer.shadowRadius = 1.5
+                Common.setShadow(view: cell.mainCategoryView)
                 cell.lblMainCategoryName.text = objectList.productName
                 return cell
             }
@@ -63,20 +54,10 @@ class MainCategoryViewController: UIViewController, UICollectionViewDelegate, UI
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SliderCollectionViewCell", for: indexPath) as? SliderCollectionViewCell {
                 let objectList: SubCategoryModel = arrayAllCountryList[indexPath.item]
                 cell.lblCategoryName.text = objectList.productName
-                if objectList.image != "" {
-                    let url: URL = URL(string: objectList.image)!
-                    cell.imgCocktailIcon.kf.setImage(with: url, placeholder: UIImage(named: "cocktail"), options: nil, progressBlock: nil, completionHandler: {
-                        (image, _, _, _) in
-                        if image != nil {
-                            cell.imgCocktailIcon.clipsToBounds = true
-                        }
-                    })
+                if let image = objectList.image, let url = URL(string: image) {
+                    Common.setImage(imageView: cell.imgCocktailIcon, url: url)
                 }
-                cell.sliderCategoryView.layer.shadowColor = UIColor.red.cgColor
-                cell.sliderCategoryView.layer.shadowOpacity = 0.5
-                cell.sliderCategoryView.layer.shadowOffset = CGSize.zero
-                cell.sliderCategoryView.layer.shadowRadius = 1.5
-                
+                Common.setShadow(view: cell.sliderCategoryView)
                 return cell
             }
         }
@@ -87,30 +68,28 @@ class MainCategoryViewController: UIViewController, UICollectionViewDelegate, UI
         if collectionView == mainCategoryCollectionView {
             let yourWidth = collectionView.bounds.width / 2.0
             let yourHeight = yourWidth
-
             return CGSize(width: yourWidth, height: yourHeight)
         } else {
-            return CGSize(width: collectionView.bounds.width/2.0 - 10, height: collectionView.bounds.width/2.0)
+            return CGSize(width: collectionView.bounds.width / 2.0 - 10, height: collectionView.bounds.width / 2.0)
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == mainCategoryCollectionView {
             itemIndex = indexPath.row
-            let viewController = self.storyboard?.instantiateViewController(withIdentifier: "DetailsViewController")
-            if let detailsViewController = viewController as? DetailsViewController {
-                detailsViewController.productId = arrayAllProductList[indexPath.row].productId!
+            if let detailsViewController = storyboard?.instantiateViewController(withIdentifier: "DetailsViewController") as? DetailsViewController {
+                detailsViewController.recipeID = arrayAllProductList[indexPath.row].productId!
                 self.navigationController?.pushViewController(detailsViewController, animated: true)
             }
         }
     }
     
-    func fetchMainCategoryData() {
+    private func fetchMainCategoryData() {
         Alamofire.request(Constants.ExternalHyperlinks.mainCategory).responseJSON(completionHandler: {(response) in
             if response.result.isSuccess {
                 let model: MainModelCategory = MainModelCategory.init(fromDictionary: (response.result.value as? NSDictionary)!)
                 arrayAllProductList.removeAll()
-                if (model.recipe.count) > 0 {
+                if !model.recipe.isEmpty {
                     arrayAllProductList.append(contentsOf: model.recipe)
                 }
                 self.mainCategoryCollectionView.reloadData()
@@ -120,12 +99,12 @@ class MainCategoryViewController: UIViewController, UICollectionViewDelegate, UI
         })
     }
     
-    func fetchCountryCategoryData() {
+    private func fetchCountryCategoryData() {
         Alamofire.request(Constants.ExternalHyperlinks.countryCategory).responseJSON(completionHandler: {(response) in
             if response.result.isSuccess {
                 let model: MainModelCategory = MainModelCategory.init(fromDictionary: (response.result.value as? NSDictionary)!)
                 arrayAllCountryList.removeAll()
-                if (model.recipe.count) > 0 {
+                if !model.recipe.isEmpty {
                     arrayAllCountryList.append(contentsOf: model.recipe)
                 }
                 self.sliderCollectionView.reloadData()

@@ -16,7 +16,7 @@ class MainModelCategory: NSObject {
      */
     init(fromDictionary dictionary: NSDictionary) {
         recipe = [SubCategoryModel]()
-        if let recipesArray = dictionary["recipes"] as? [NSDictionary]{
+        if let recipesArray = dictionary["recipes"] as? [NSDictionary] {
             for dic in recipesArray {
                 let value = SubCategoryModel(fromDictionary: dic)
                 recipe.append(value)

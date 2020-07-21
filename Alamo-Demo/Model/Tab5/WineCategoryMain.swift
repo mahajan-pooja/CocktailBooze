@@ -9,15 +9,15 @@
 import UIKit
 
 class WineCategoryMain: NSObject {
-    var wineCategory : [WineCategoryModel]!
+    var wineCategory: [WineCategoryModel]!
     
     /**
      * Instantiate the instance using the passed dictionary values to set the properties values
      */
-    init(fromDictionary dictionary: NSDictionary){
+    init(fromDictionary dictionary: NSDictionary) {
         wineCategory = [WineCategoryModel]()
-        if let wineCategoryArray = dictionary["wines"] as? [NSDictionary]{
-            for dic in wineCategoryArray{
+        if let wineCategoryArray = dictionary["wines"] as? [NSDictionary] {
+            for dic in wineCategoryArray {
                 let value = WineCategoryModel(fromDictionary: dic)
                 wineCategory.append(value)
             }
@@ -27,10 +27,10 @@ class WineCategoryMain: NSObject {
     /**
      * Returns all the available property values in the form of NSDictionary object where the key is the approperiate json key and the value is the value of the corresponding property
      */
-    func toDictionary() -> NSDictionary{
+    func toDictionary() -> NSDictionary {
         let dictionary = NSMutableDictionary()
         
-        if wineCategory != nil{
+        if wineCategory != nil {
             var dictionaryElements = [NSDictionary]()
             for recipeElement in wineCategory {
                 dictionaryElements.append(recipeElement.toDictionary())

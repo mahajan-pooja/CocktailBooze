@@ -28,6 +28,7 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var tblViewIngredients: UITableView!
 
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         let user = Auth.auth().currentUser
         var email: String!
 
@@ -37,7 +38,7 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
             email = KeychainWrapper.standard.string(forKey: "user-email")
         }
         
-        Firestore.firestore().collection(email).getDocuments() { (querySnapshot, err) in
+        Firestore.firestore().collection(email).getDocuments { querySnapshot, err in
 
             if let err = err {
                 print("Error getting documents: \(err)")
@@ -97,27 +98,20 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if tableView == tblViewIngredients {
-            let cell:IngredientsCell = tableView.dequeueReusableCell(withIdentifier: "IngredientsCell", for: indexPath) as! IngredientsCell
-            cell.lblIngredients.text = ingredients[indexPath.row]
-
-            cell.containerUIView.layer.shadowColor = UIColor.red.cgColor
-            cell.containerUIView.layer.shadowOpacity = 0.5
-            cell.containerUIView.layer.shadowOffset = CGSize.zero
-            cell.containerUIView.layer.shadowRadius = 1.5
-            cell.containerUIView.layer.masksToBounds = false
-
-            return cell
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "IngredientsCell", for: indexPath) as? IngredientsCell {
+                cell.lblIngredients.text = ingredients[indexPath.row]
+                Common.setShadow(view: cell.containerUIView)
+                cell.containerUIView.layer.masksToBounds = false
+                return cell
+            }
         } else {
-            let cell:ProcedureCell = tableView.dequeueReusableCell(withIdentifier: "ProcedureCell", for: indexPath) as! ProcedureCell
-            cell.lblProcedure.text = procedure[indexPath.row]
-
-            cell.containerUIView.layer.shadowColor = UIColor.red.cgColor
-            cell.containerUIView.layer.shadowOpacity = 0.5
-            cell.containerUIView.layer.shadowOffset = CGSize.zero
-            cell.containerUIView.layer.shadowRadius = 1.5
-            cell.containerUIView.layer.masksToBounds = false
-
-            return cell
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "ProcedureCell", for: indexPath) as? ProcedureCell {
+                cell.lblProcedure.text = procedure[indexPath.row]
+                Common.setShadow(view: cell.containerUIView)
+                cell.containerUIView.layer.masksToBounds = false
+                return cell
+            }
         }
+        return UITableViewCell()
     }
 }

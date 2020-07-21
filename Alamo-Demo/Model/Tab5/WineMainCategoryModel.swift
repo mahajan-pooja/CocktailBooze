@@ -24,7 +24,7 @@ class WineMainCategoryModel: NSObject {
     func toDictionary() -> NSDictionary {
         let dictionary = NSMutableDictionary()
         
-        if wineCategory != nil{
+        if wineCategory != nil {
             var dictionaryElements = [NSDictionary]()
             for recipeElement in wineCategory {
                 dictionaryElements.append(recipeElement.toDictionary())

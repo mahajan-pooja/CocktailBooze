@@ -71,11 +71,7 @@ class RecipeBookViewController: UIViewController, UITableViewDelegate, UITableVi
                 recipeBookTableViewCell.imgRecipe.image = UIImage(named: "cocktail")
             }
 
-            recipeBookTableViewCell.containerUIView.layer.shadowColor = UIColor.red.cgColor
-            recipeBookTableViewCell.containerUIView.layer.shadowOpacity = 0.5
-            recipeBookTableViewCell.containerUIView.layer.shadowOffset = CGSize.zero
-            recipeBookTableViewCell.containerUIView.layer.shadowRadius = 1.5
-
+            Common.setShadow(view: recipeBookTableViewCell.containerUIView)
             return cell
         }
         

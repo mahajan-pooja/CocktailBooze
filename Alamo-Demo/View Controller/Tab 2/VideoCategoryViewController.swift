@@ -10,7 +10,9 @@ import UIKit
 import Alamofire
 import Kingfisher
 import AVKit
+
 var arrayAllVideosList: [VideoCategoryModel] = [VideoCategoryModel]()
+
 class VideoCategoryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var videoCategoryTableView: UITableView!
     override func viewDidLoad() {
@@ -18,13 +20,13 @@ class VideoCategoryViewController: UIViewController, UITableViewDataSource, UITa
         fetchVideoCategoryData()
     }
 
-    func fetchVideoCategoryData(){
+    private func fetchVideoCategoryData() {
         DispatchQueue.main.async {
-            Alamofire.request("https://mahajan-pooja.github.io/cocktail-booz-api/video-category.json").responseJSON(completionHandler: {(response) in
+            Alamofire.request(Constants.ExternalHyperlinks.videoCategory).responseJSON(completionHandler: {(response) in
                 if response.result.isSuccess {
                     let model: MainVideoCategoryModel = MainVideoCategoryModel.init(fromDictionary: (response.result.value as? NSDictionary)!)
                     arrayAllVideosList.removeAll()
-                    if (model.result.count) > 0 {
+                    if !model.result.isEmpty {
                         arrayAllVideosList.append(contentsOf: model.result)
                     }
                     self.videoCategoryTableView.reloadData()
@@ -35,38 +37,32 @@ class VideoCategoryViewController: UIViewController, UITableViewDataSource, UITa
         }
     }
 
-    //Set the spacing between sections
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 0
+        0
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 300
+        300
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrayAllVideosList.count
+        arrayAllVideosList.count
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        1
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "VideoTableViewCell", for: indexPath) as! VideoTableViewCell
-        cell.lblVideo.text = arrayAllVideosList[indexPath.row].productName!
-        let url: URL = URL(string: arrayAllVideosList[indexPath.row].image!)!
-        cell.videoImageView.kf.setImage(with: url, placeholder: UIImage(named: ""), options: nil, progressBlock: nil, completionHandler: { (image, _, _, _) in
-            if image != nil{
-                cell.videoImageView.clipsToBounds = true
-            }
-        })
-        cell.cellView.layer.shadowColor = UIColor.red.cgColor
-        cell.cellView.layer.shadowOpacity = 0.5
-        cell.cellView.layer.shadowOffset = CGSize.zero
-        cell.cellView.layer.shadowRadius = 1.5
-
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "VideoTableViewCell", for: indexPath) as? VideoTableViewCell {
+        cell.lblVideo.text = arrayAllVideosList[indexPath.row].productName
+        if let url = URL(string: arrayAllVideosList[indexPath.row].image) {
+            Common.setImage(imageView: cell.videoImageView, url: url)
+        }
+        Common.setShadow(view: cell.cellView)
         return cell
+        }
+        return UITableViewCell()
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
