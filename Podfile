@@ -15,4 +15,5 @@ target 'Alamo-Demo' do
   pod 'Firebase/Firestore'
   pod 'SwiftKeychainWrapper'
   pod 'Firebase/Analytics'
+  pod 'SwiftLint'
 end

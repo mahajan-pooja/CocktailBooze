@@ -444,13 +444,15 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Alamo-Demo/Pods-Alamo-Demo-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Alamo-Demo/Pods-Alamo-Demo-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Alamo-Demo/Pods-Alamo-Demo-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Alamo-Demo/Pods-Alamo-Demo-resources.sh\"\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

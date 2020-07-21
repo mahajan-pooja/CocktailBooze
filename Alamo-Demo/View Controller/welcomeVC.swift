@@ -1,5 +1,5 @@
 //
-//  welcomeVC.swift
+//  WelcomeVC.swift
 //  Alamo-Demo
 //
 //  Created by Akshay on 4/25/19.
@@ -10,33 +10,34 @@ import UIKit
 import Firebase
 import LocalAuthentication
 
-class welcomeVC: UIViewController {
-    
+class WelcomeVC: UIViewController {
+
     @IBOutlet weak var UIViewContainer: UIView!
     @IBOutlet weak var btnFaceID: UIButton!
     @IBOutlet weak var btnTouchID: UIButton!
     @IBOutlet weak var logoUIView: UIView!
     @IBOutlet weak var btnSignIn: UIButton!
     @IBOutlet weak var btnSignUp: UIButton!
-    
     @IBAction func btnSignUpAction(_ sender: Any) {
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let SignUpViewController: SignUpViewController = storyBoard.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
-        SignUpViewController.modalPresentationStyle = .fullScreen
-        self.present(SignUpViewController, animated: true, completion: nil)
+        let signUpViewController = Constants.storyBoard.instantiateViewController(withIdentifier: "SignUpViewController")
+        if let signUpViewController = signUpViewController as? SignUpViewController {
+            signUpViewController.modalPresentationStyle = .fullScreen
+            self.present(signUpViewController, animated: true, completion: nil)
+        }
     }
-    
+
     @IBAction func btnSignInAction(_ sender: Any) {
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let SignInViewController: SignInViewController = storyBoard.instantiateViewController(withIdentifier: "SignInViewController") as! SignInViewController
-        SignInViewController.modalPresentationStyle = .fullScreen
-        self.present(SignInViewController, animated: true, completion: nil)
+        let signInViewController = Constants.storyBoard.instantiateViewController(withIdentifier: "SignInViewController")
+        if let signInViewController = signInViewController as? SignInViewController {
+            signInViewController.modalPresentationStyle = .fullScreen
+            self.present(signInViewController, animated: true, completion: nil)
+        }
     }
     
     @IBAction func btnFaceIDAction(_ sender: Any) {
         let context = LAContext()
         var error: NSError?
-        
+
         guard context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) else {
             return print(error)
         }
@@ -47,57 +48,49 @@ class welcomeVC: UIViewController {
                 return print(error)
             }
             DispatchQueue.main.async {
-                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                let secondViewController: TabBarController = storyBoard.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
+                let secondViewController: TabBarController = Constants.storyBoard.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
                 self.present(secondViewController, animated: true, completion: nil)
             }
-            
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         let currentType = LAContext().biometricType
-        if(currentType == .touchID){
+        if currentType == .touchID {
             btnTouchID.isHidden = false
             btnFaceID.isHidden = true
-        }else{
+        } else {
             btnTouchID.isHidden = true
             btnFaceID.isHidden = false
-        }      
-        
-        let gradientLayer:CAGradientLayer = CAGradientLayer()
+        }
+
+        let gradientLayer: CAGradientLayer = CAGradientLayer()
         gradientLayer.frame.size = UIViewContainer.frame.size
         gradientLayer.colors =
             [UIColor(red: 1, green: 0.8745, blue: 0.4431, alpha: 1.0).cgColor,UIColor(red: 1, green: 0.8745, blue: 0.4431, alpha: 1.0).cgColor]
         UIViewContainer.layer.insertSublayer(gradientLayer, at: 0)
         UIViewContainer.layer.cornerRadius = UIViewContainer.frame.height/20
     }
-    
-    
+
     @IBAction func btnTouchIdAction(_ sender: Any) {
-        // 1
         let context = LAContext()
         var error: NSError?
-        
-        // 2
+
         // check if Touch ID is available
         if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
-            // 3
             let reason = "Authenticate with Touch ID"
-            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason, reply:
-                {(success, error) in
-                    // 4
+            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason, reply: { (success, error) in
                     if success {
                         //self.showAlertController("Touch ID Authentication Succeeded")
                         DispatchQueue.main.async {
-                            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                            let secondViewController: TabBarController = storyBoard.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
-                            self.present(secondViewController, animated: true, completion: nil)
+                            let secondViewController = Constants.storyBoard.instantiateViewController(withIdentifier: "TabBarController")
+                            if let secondViewController = secondViewController as? TabBarController {
+                                self.present(secondViewController, animated: true, completion: nil)
+                            }
                         }
-                    }
-                    else {
+                    } else {
                         self.showAlertController("Touch ID Authentication Failed")
                     }
             })
@@ -115,7 +108,7 @@ class welcomeVC: UIViewController {
         alert.addTextField { (textField) in
             // textField.text = "Some default text"
         }
-        
+
         // 3. Grab the value from the text field, and print it when the user clicks OK.
         alert.addAction(UIAlertAction(title: "Send", style: .default, handler: { [weak alert] (_) in
             let textField = alert?.textFields![0] // Force unwrapping because we know it exists.
@@ -123,11 +116,11 @@ class welcomeVC: UIViewController {
             Auth.auth().sendPasswordReset(withEmail: email!) { error in
             }
         }))
-        
+
         // 4. Present the alert.
         self.present(alert, animated: true, completion: nil)
     }
-    
+
     func showAlertController(_ message: String) {
         DispatchQueue.main.async {
             let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
@@ -135,13 +128,13 @@ class welcomeVC: UIViewController {
             self.present(alertController, animated: true, completion: nil)
         }
     }
-    
+
     override func viewWillLayoutSubviews() {
         logoUIView.layer.shadowColor = UIColor.black.cgColor
         logoUIView.layer.shadowOpacity = 1
         logoUIView.layer.shadowOffset = CGSize.zero
         logoUIView.layer.shadowRadius = 10
-        
+
         btnSignIn.layer.shadowColor = UIColor.black.cgColor
         btnSignIn.layer.shadowOpacity = 1
         btnSignIn.layer.shadowOffset = CGSize.zero
@@ -159,15 +152,15 @@ extension LAContext {
         case touchID
         case faceID
     }
-    
+
     var biometricType: BiometricType {
         var error: NSError?
-        
+
         guard self.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) else {
             // Capture these recoverable error thru Crashlytics
             return .none
         }
-        
+
         if #available(iOS 11.0, *) {
             switch self.biometryType {
             case .none:
@@ -186,13 +179,13 @@ extension UIView {
     func addGradientLayer(with colors: [CGColor], startPoint: CGPoint, endPoint: CGPoint, locations: [NSNumber] = [0.0, 1.0], frame: CGRect = CGRect.zero) {
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = colors
-        
+
         gradientLayer.startPoint = startPoint
         gradientLayer.endPoint = endPoint
-        
+
         gradientLayer.locations = locations
         gradientLayer.frame = frame
-        
+
         gradientLayer.cornerRadius = self.layer.cornerRadius
         self.layer.insertSublayer(gradientLayer, at: 0)
     }

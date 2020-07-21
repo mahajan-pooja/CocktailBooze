@@ -15,23 +15,21 @@ class WineHubVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
     var arrayAllWinesListTwo: [WineModel] = [WineModel]()
     var arrayAllWinesListThree: [WineModel] = [WineModel]()
     
-    @IBOutlet weak var WineCollectionOne: UICollectionView!
-    @IBOutlet weak var WineCollectionTwo: UICollectionView!
-    @IBOutlet weak var WineCollectionThree: UICollectionView!
-    
+    @IBOutlet weak var wineCollectionOne: UICollectionView!
+    @IBOutlet weak var wineCollectionTwo: UICollectionView!
+    @IBOutlet weak var wineCollectionThree: UICollectionView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchWineData()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if(collectionView == WineCollectionOne){
+        if collectionView == wineCollectionOne {
             return arrayAllWinesListOne.count
-        }
-        else if(collectionView == WineCollectionTwo){
+        } else if collectionView == wineCollectionTwo {
             return arrayAllWinesListTwo.count
-        }
-        else if(collectionView == WineCollectionThree){
+        } else if collectionView == wineCollectionThree {
             return arrayAllWinesListThree.count
         }
         return 0
@@ -42,45 +40,42 @@ class WineHubVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if(collectionView == WineCollectionOne){
+        if collectionView == wineCollectionOne {
             let cell:WineHubCell = collectionView.dequeueReusableCell(withReuseIdentifier: "WineHubCell", for: indexPath) as! WineHubCell
             cell.lblName.text = arrayAllWinesListOne[indexPath.item].name
             cell.lblCategory.text = arrayAllWinesListOne[indexPath.item].category
-            if(arrayAllWinesListOne[indexPath.item].image != "") {
+            if arrayAllWinesListOne[indexPath.item].image != "" {
                 let url: URL = URL(string: arrayAllWinesListOne[indexPath.item].image)!
-                cell.imgIcon.kf.setImage(with: url, placeholder: UIImage(named:"cocktail"),  options: nil, progressBlock: nil, completionHandler: {
-                    ( image, error, cacheType, imageUrl) in
-                    if image != nil{
+                cell.imgIcon.kf.setImage(with: url, placeholder: UIImage(named:"cocktail"), options: nil, progressBlock: nil, completionHandler: { (image, _, _, _) in
+                    if image != nil {
                         cell.imgIcon.clipsToBounds = true
                         cell.imgIcon.backgroundColor = .clear
                     }
                 })
             }
             return cell
-        }else if(collectionView == WineCollectionTwo){
-            let cell:WineHubCell = collectionView.dequeueReusableCell(withReuseIdentifier: "WineHubCellTwo", for: indexPath) as! WineHubCell
+        } else if collectionView == wineCollectionTwo {
+            let cell: WineHubCell = collectionView.dequeueReusableCell(withReuseIdentifier: "WineHubCellTwo", for: indexPath) as! WineHubCell
             cell.lblName.text = arrayAllWinesListTwo[indexPath.item].name
             cell.lblCategory.text = arrayAllWinesListTwo[indexPath.item].category
-            if(arrayAllWinesListTwo[indexPath.item].image != "") {
+            if arrayAllWinesListTwo[indexPath.item].image != "" {
                 let url: URL = URL(string: arrayAllWinesListTwo[indexPath.item].image)!
-                cell.imgIcon.kf.setImage(with: url, placeholder: UIImage(named:"cocktail"),  options: nil, progressBlock: nil, completionHandler: {
-                    ( image, error, cacheType, imageUrl) in
-                    if image != nil{
+                cell.imgIcon.kf.setImage(with: url, placeholder: UIImage(named: "cocktail"), options: nil, progressBlock: nil, completionHandler: { (image, _, _, _) in
+                    if image != nil {
                         cell.imgIcon.clipsToBounds = true
                         cell.imgIcon.backgroundColor = .clear
                     }
                 })
             }
             return cell
-        }else if(collectionView == WineCollectionThree){
-            let cell:WineHubCell = collectionView.dequeueReusableCell(withReuseIdentifier: "WineHubCellThree", for: indexPath) as! WineHubCell
+        } else if collectionView == wineCollectionThree {
+            let cell: WineHubCell = collectionView.dequeueReusableCell(withReuseIdentifier: "WineHubCellThree", for: indexPath) as! WineHubCell
             cell.lblName.text = arrayAllWinesListThree[indexPath.item].name
             cell.lblCategory.text = arrayAllWinesListThree[indexPath.item].category
-            if(arrayAllWinesListThree[indexPath.item].image != "") {
+            if arrayAllWinesListThree[indexPath.item].image != "" {
                 let url: URL = URL(string: arrayAllWinesListThree[indexPath.item].image)!
-                cell.imgIcon.kf.setImage(with: url, placeholder: UIImage(named:"cocktail"),  options: nil, progressBlock: nil, completionHandler: {
-                    ( image, error, cacheType, imageUrl) in
-                    if image != nil{
+                cell.imgIcon.kf.setImage(with: url, placeholder: UIImage(named:"cocktail"),  options: nil, progressBlock: nil, completionHandler: { (image, _, _, _) in
+                    if image != nil {
                         cell.imgIcon.clipsToBounds = true
                         cell.imgIcon.backgroundColor = .clear
                     }
@@ -90,8 +85,8 @@ class WineHubVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
         }
         return UICollectionViewCell()
     }
-    
-    func fetchWineData(){
+
+    func fetchWineData() {
         Alamofire.request("https://mahajan-pooja.github.io/cocktail-booz-api/wine-category.json").responseJSON(completionHandler: {(response) in
             if response.result.isSuccess {
                 let model: WineCategoryMain = WineCategoryMain.init(fromDictionary: (response.result.value as? NSDictionary)!)
@@ -100,40 +95,43 @@ class WineHubVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
                     self.arrayAllWinesListTwo.append(contentsOf: model.wineCategory[1].wine)
                     self.arrayAllWinesListThree.append(contentsOf: model.wineCategory[2].wine)
                 }
-                self.WineCollectionOne.reloadData()
-                self.WineCollectionTwo.reloadData()
-                self.WineCollectionThree.reloadData()
-            }else{
+                self.wineCollectionOne.reloadData()
+                self.wineCollectionTwo.reloadData()
+                self.wineCollectionThree.reloadData()
+            } else {
                 print("failure error")
             }
         })
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if(collectionView == WineCollectionOne){
-            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let WineBeerDetailVC: WineBeerDetailVC = storyBoard.instantiateViewController(withIdentifier: "WineBeerDetailVC") as! WineBeerDetailVC
-            WineBeerDetailVC.desc = arrayAllWinesListOne[indexPath.item].desc
-            WineBeerDetailVC.descExtra = arrayAllWinesListOne[indexPath.item].descExtra
-            WineBeerDetailVC.name = arrayAllWinesListOne[indexPath.item].name
-            WineBeerDetailVC.img = arrayAllWinesListOne[indexPath.item].image
-            self.present(WineBeerDetailVC, animated: true, completion: nil)
-        }else if(collectionView == WineCollectionTwo){
-            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let WineBeerDetailVC: WineBeerDetailVC = storyBoard.instantiateViewController(withIdentifier: "WineBeerDetailVC") as! WineBeerDetailVC
-            WineBeerDetailVC.desc = arrayAllWinesListTwo[indexPath.item].desc
-            WineBeerDetailVC.descExtra = arrayAllWinesListTwo[indexPath.item].descExtra
-            WineBeerDetailVC.name = arrayAllWinesListTwo[indexPath.item].name
-            WineBeerDetailVC.img = arrayAllWinesListTwo[indexPath.item].image
-            self.present(WineBeerDetailVC, animated: true, completion: nil)
-        }else if(collectionView == WineCollectionThree){
-            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let WineBeerDetailVC: WineBeerDetailVC = storyBoard.instantiateViewController(withIdentifier: "WineBeerDetailVC") as! WineBeerDetailVC
-            WineBeerDetailVC.desc = arrayAllWinesListThree[indexPath.item].desc
-            WineBeerDetailVC.descExtra = arrayAllWinesListThree[indexPath.item].descExtra
-            WineBeerDetailVC.name = arrayAllWinesListThree[indexPath.item].name
-            WineBeerDetailVC.img = arrayAllWinesListThree[indexPath.item].image
-            self.present(WineBeerDetailVC, animated: true, completion: nil)
+        if collectionView == wineCollectionOne {
+            let wineBeerDetailVC = Constants.storyBoard.instantiateViewController(withIdentifier: "WineBeerDetailVC")
+            if let wineBeerDetailVC = wineBeerDetailVC as? WineBeerDetailVC {
+                wineBeerDetailVC.desc = arrayAllWinesListOne[indexPath.item].desc
+                wineBeerDetailVC.descExtra = arrayAllWinesListOne[indexPath.item].descExtra
+                wineBeerDetailVC.name = arrayAllWinesListOne[indexPath.item].name
+                wineBeerDetailVC.img = arrayAllWinesListOne[indexPath.item].image
+                self.present(wineBeerDetailVC, animated: true, completion: nil)
+            }
+        } else if collectionView == wineCollectionTwo {
+            let wineBeerDetailVC = Constants.storyBoard.instantiateViewController(withIdentifier: "WineBeerDetailVC")
+            if let wineBeerDetailVC = wineBeerDetailVC as? WineBeerDetailVC {
+                wineBeerDetailVC.desc = arrayAllWinesListTwo[indexPath.item].desc
+                wineBeerDetailVC.descExtra = arrayAllWinesListTwo[indexPath.item].descExtra
+                wineBeerDetailVC.name = arrayAllWinesListTwo[indexPath.item].name
+                wineBeerDetailVC.img = arrayAllWinesListTwo[indexPath.item].image
+                self.present(wineBeerDetailVC, animated: true, completion: nil)
+            }
+        } else if collectionView == wineCollectionThree {
+            let wineBeerDetailVC = Constants.storyBoard.instantiateViewController(withIdentifier: "WineBeerDetailVC")
+            if let wineBeerDetailVC = wineBeerDetailVC as? WineBeerDetailVC {
+                wineBeerDetailVC.desc = arrayAllWinesListThree[indexPath.item].desc
+                wineBeerDetailVC.descExtra = arrayAllWinesListThree[indexPath.item].descExtra
+                wineBeerDetailVC.name = arrayAllWinesListThree[indexPath.item].name
+                wineBeerDetailVC.img = arrayAllWinesListThree[indexPath.item].image
+                self.present(wineBeerDetailVC, animated: true, completion: nil)
+            }
         }
     }
 }

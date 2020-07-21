@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aG9-80-m71">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aG9-80-m71">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -36,13 +36,13 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nrK-ZA-ZBS">
-                                                <rect key="frame" x="0.0" y="310" width="375" height="24.333333333333314"/>
+                                                <rect key="frame" x="0.0" y="310" width="375" height="24.666666666666686"/>
                                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="17"/>
                                                 <color key="textColor" red="0.80000000000000004" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PkI-li-fNV">
-                                                <rect key="frame" x="20" y="354.33333333333331" width="335" height="30"/>
+                                                <rect key="frame" x="20" y="354.66666666666669" width="335" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="vek-QM-CS5"/>
                                                 </constraints>
@@ -51,7 +51,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="50" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2jo-Nf-HUr">
-                                                <rect key="frame" x="0.0" y="394.33333333333326" width="375" height="300"/>
+                                                <rect key="frame" x="0.0" y="394.66666666666674" width="375" height="300"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="300" id="Zf1-Ti-0bh"/>
@@ -110,7 +110,7 @@
                                                 </connections>
                                             </tableView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Procedure" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vnb-J8-4tU">
-                                                <rect key="frame" x="20" y="714.33333333333337" width="335" height="30"/>
+                                                <rect key="frame" x="20" y="714.66666666666663" width="335" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="9Vs-4u-Xga"/>
                                                 </constraints>
@@ -119,7 +119,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="50" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nLT-nz-Mhh">
-                                                <rect key="frame" x="0.0" y="754.33333333333337" width="375" height="300.00000000000011"/>
+                                                <rect key="frame" x="0.0" y="754.66666666666663" width="375" height="299.99999999999989"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="300" id="tS0-cW-T3e"/>
@@ -872,7 +872,7 @@
                     <navigationItem key="navigationItem" title="Home" id="g7D-JO-AtF"/>
                     <size key="freeformSize" width="375" height="1200"/>
                     <connections>
-                        <outlet property="MainCategoryCollectionView" destination="aU5-vc-ggA" id="a7Q-1C-HdY"/>
+                        <outlet property="mainCategoryCollectionView" destination="aU5-vc-ggA" id="a7Q-1C-HdY"/>
                         <outlet property="sliderCollectionView" destination="wiD-y9-OGl" id="4JY-d1-hfD"/>
                     </connections>
                 </viewController>
@@ -929,7 +929,7 @@
                                                         </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="puP-VV-5NU">
-                                                        <rect key="frame" x="20.000000000000007" y="94" width="96.666666666666686" height="30"/>
+                                                        <rect key="frame" x="20" y="94" width="97" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="UTv-PP-a2m"/>
                                                         </constraints>
@@ -1169,7 +1169,7 @@
                                                 <rect key="frame" x="0.0" y="670" width="335" height="230"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7xf-rD-l2j">
-                                                        <rect key="frame" x="20.000000000000004" y="20" width="50.333333333333343" height="30"/>
+                                                        <rect key="frame" x="19.999999999999996" y="20" width="50.666666666666657" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="I5S-sn-vET"/>
                                                         </constraints>
@@ -1307,7 +1307,6 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="1130"/>
                     <connections>
-                        <outlet property="MainScrollView" destination="xMd-p8-Zf3" id="UHw-Pr-7ek"/>
                         <outlet property="addProcedureUIView" destination="ZLw-R9-pYm" id="pEh-ho-tvq"/>
                         <outlet property="btnAddIngredients" destination="H34-Rb-Lwn" id="Meo-fd-Ln9"/>
                         <outlet property="btnAddProcedure" destination="rzM-8D-Wzl" id="hjz-Nz-Epw"/>
@@ -1316,6 +1315,7 @@
                         <outlet property="imgUIView" destination="acy-sv-ld0" id="IwE-NV-dcC"/>
                         <outlet property="ingredientsUIView" destination="S8d-GR-v08" id="maZ-qr-SES"/>
                         <outlet property="lblProcedure" destination="IyU-3F-xOg" id="qSy-tj-psd"/>
+                        <outlet property="mainScrollView" destination="xMd-p8-Zf3" id="UHw-Pr-7ek"/>
                         <outlet property="mainViewHeight" destination="DNL-Ek-vuW" id="iwj-6B-CNL"/>
                         <outlet property="nameTypeUIView" destination="LOX-vg-6r5" id="RkI-2b-ljp"/>
                         <outlet property="pickerView" destination="EQX-UY-e2W" id="MP0-98-naq"/>
@@ -2814,9 +2814,9 @@
                     <navigationItem key="navigationItem" title="Wine Kingdom" id="gDY-vM-LYa"/>
                     <size key="freeformSize" width="414" height="1200"/>
                     <connections>
-                        <outlet property="WineCollectionOne" destination="Ksi-XI-GdV" id="8Mg-CL-Dhq"/>
-                        <outlet property="WineCollectionThree" destination="qgQ-Oa-vCp" id="jKi-U0-tZJ"/>
-                        <outlet property="WineCollectionTwo" destination="YFI-Ia-JrK" id="FRU-ns-ukT"/>
+                        <outlet property="wineCollectionOne" destination="Ksi-XI-GdV" id="8Mg-CL-Dhq"/>
+                        <outlet property="wineCollectionThree" destination="qgQ-Oa-vCp" id="jKi-U0-tZJ"/>
+                        <outlet property="wineCollectionTwo" destination="YFI-Ia-JrK" id="FRU-ns-ukT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qMM-z6-2eU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3520,6 +3520,9 @@
             <point key="canvasLocation" x="-6322.3999999999996" y="35.532233883058474"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="2mL-Ro-9iW"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Cocktail-PNG-Clipart" width="600" height="441"/>
         <image name="Touch_ID" width="512" height="512"/>
@@ -3549,7 +3552,4 @@
         <image name="winery" width="353" height="143"/>
         <image name="wsciupcTTAajMiqDY6Xh6g_pb_x600" width="171" height="600"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="2mL-Ro-9iW"/>
-    </inferredMetricsTieBreakers>
 </document>

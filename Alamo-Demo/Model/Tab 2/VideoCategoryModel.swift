@@ -9,35 +9,30 @@
 import UIKit
 
 class VideoCategoryModel: NSObject {
-    var url : String!
-    var productId : String!
-    var productName : String!
-    var image : String!
-    /**
-     * Instantiate the instance using the passed dictionary values to set the properties values
-     */
-    init(fromDictionary dictionary: NSDictionary){
+    var url: String!
+    var productId: String!
+    var productName: String!
+    var image: String!
+
+    init(fromDictionary dictionary: NSDictionary) {
         url = dictionary["video_url"] as? String
         image = dictionary["image"] as? String
         productId = dictionary["product_id"] as? String
         productName = dictionary["product_name"] as? String
     }
-    
-    /**
-     * Returns all the available property values in the form of NSDictionary object where the key is the approperiate json key and the value is the value of the corresponding property
-     */
-    func toDictionary() -> NSDictionary{
+
+    func toDictionary() -> NSDictionary {
         let dictionary = NSMutableDictionary()
-        if url != nil{
+        if url != nil {
             dictionary["video_url"] = url
         }
-        if image != nil{
+        if image != nil {
             dictionary["image"] = image
         }
-        if productId != nil{
+        if productId != nil {
             dictionary["product_id"] = productId
         }
-        if productName != nil{
+        if productName != nil {
             dictionary["product_name"] = productName
         }
         return dictionary

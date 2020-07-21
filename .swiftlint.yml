@@ -1,0 +1,80 @@
+# See all the rules here:
+#   https://github.com/realm/SwiftLint/blob/master/Rules.md
+
+disabled_rules: # rule identifiers to exclude from running
+# - private_over_fileprivate
+ - trailing_whitespace
+opt_in_rules: # some rules are only opt-in
+  - missing_docs
+  - attributes
+  - closure_spacing
+  - conditional_returns_on_newline
+  - contains_over_first_not_nil
+  - discouraged_optional_boolean
+  - empty_count
+  - empty_string
+  - empty_xctest_method
+  - fallthrough
+  - function_default_parameter_at_end
+  - implicit_return
+  - literal_expression_end_indentation
+  - modifier_order
+  - multiline_arguments
+  - multiline_parameters
+  - operator_usage_whitespace
+  - overridden_super_call
+  - prohibited_super_call
+  - redundant_nil_coalescing
+  - required_enum_case
+  - trailing_closure
+  - unneeded_parentheses_in_closure_argument
+  - vertical_parameter_alignment_on_call
+  - yoda_condition
+  - todo
+
+
+
+  # Find all the available rules by running:
+  # swiftlint rules
+included: # paths to include during linting. `--path` is ignored if present.
+  - Alamo-Demo
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+  - Pods
+  - Source/ExcludedFolder
+  - Source/ExcludedFile.swift
+  - Alamo-Demo/Frameworks
+
+# configurable rules can be customized from this configuration file
+# binary rules can set their severity level
+force_cast: warning # implicitly
+force_try:
+  severity: warning # explicitly
+# rules that have both warning and error levels, can set just the warning level
+# implicitly
+line_length: 500
+# they can set both implicitly with an array
+type_body_length:
+  - 500 # warning
+  - 800 # error
+# or they can set both explicitly
+file_length:
+  warning: 500
+  error: 1200
+# naming rules can set warnings/errors for min_length and max_length
+# additionally they can set excluded names
+type_name:
+  min_length: 3 # only warning
+  max_length: # warning and error
+    warning: 50
+  excluded: iPhone # excluded via string
+identifier_name:
+  min_length: # only min_length
+    error: 3 # only error
+  max_length: 50
+  excluded: # excluded via string array
+    - id
+    - eu
+    - me
+
+
+reporter: "xcode" # reporter type (xcode, json, csv, checkstyle, junit, html, emoji)

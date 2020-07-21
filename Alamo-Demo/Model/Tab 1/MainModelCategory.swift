@@ -9,15 +9,15 @@
 import UIKit
 
 class MainModelCategory: NSObject {
-    var recipe : [SubCategoryModel]!
+    var recipe: [SubCategoryModel]!
     
     /**
      * Instantiate the instance using the passed dictionary values to set the properties values
      */
-    init(fromDictionary dictionary: NSDictionary){
+    init(fromDictionary dictionary: NSDictionary) {
         recipe = [SubCategoryModel]()
         if let recipesArray = dictionary["recipes"] as? [NSDictionary]{
-            for dic in recipesArray{
+            for dic in recipesArray {
                 let value = SubCategoryModel(fromDictionary: dic)
                 recipe.append(value)
             }
@@ -27,10 +27,10 @@ class MainModelCategory: NSObject {
     /**
      * Returns all the available property values in the form of NSDictionary object where the key is the approperiate json key and the value is the value of the corresponding property
      */
-    func toDictionary() -> NSDictionary{
+    func toDictionary() -> NSDictionary {
         let dictionary = NSMutableDictionary()
         
-        if recipe != nil{
+        if recipe != nil {
             var dictionaryElements = [NSDictionary]()
             for recipeElement in recipe {
                 dictionaryElements.append(recipeElement.toDictionary())
