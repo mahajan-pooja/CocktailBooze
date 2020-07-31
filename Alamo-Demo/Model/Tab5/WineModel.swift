@@ -6,10 +6,7 @@ class WineModel: NSObject {
     var desc: String!
     var descExtra: String!
     var category: String!
-    
-    /**
-     * Instantiate the instance using the passed dictionary values to set the properties values
-     */
+
     init(fromDictionary dictionary: NSDictionary) {
         name = dictionary["name"] as? String
         image = dictionary["image"] as? String
@@ -17,10 +14,7 @@ class WineModel: NSObject {
         descExtra = dictionary["desc-extra"] as? String
         category = dictionary["category"] as? String
     }
-    
-    /**
-     * Returns all the available property values in the form of NSDictionary object where the key is the approperiate json key and the value is the value of the corresponding property
-     */
+
     func toDictionary() -> NSDictionary {
         let dictionary = NSMutableDictionary()
         if name != nil {

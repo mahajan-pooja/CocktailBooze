@@ -9,8 +9,8 @@
 import UIKit
 
 class RecipeDetailModel: NSObject {
-    var ingredients = [String]()
-    var procedure = [String]()
+    var ingredients: [String]!
+    var procedure: [String]!
 
     init(fromDictionary dictionary: NSDictionary) {
         ingredients = (dictionary["ingredients"] as? Array)!

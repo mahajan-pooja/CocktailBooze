@@ -14,7 +14,7 @@ class WineMainCategoryModel: NSObject {
     init(fromDictionary dictionary: NSDictionary) {
         wineCategory = [WineCategoryModel]()
         if let wineCategoryArray = dictionary["wines"] as? [NSDictionary] {
-            for dic in wineCategoryArray{
+            for dic in wineCategoryArray {
                 let value = WineCategoryModel(fromDictionary: dic)
                 wineCategory.append(value)
             }

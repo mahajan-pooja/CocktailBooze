@@ -74,7 +74,7 @@ class WineHubVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
     }
 
     private func fetchWineData() {
-        Alamofire.request(Constants.ExternalHyperlinks.wineCategory).responseJSON(completionHandler: {(response) in
+        Alamofire.request(Constants.ExternalHyperlinks.wineCategory).responseJSON(completionHandler: { response in
             if response.result.isSuccess {
                 let model: WineCategoryMain = WineCategoryMain.init(fromDictionary: (response.result.value as? NSDictionary)!)
                 if (model.wineCategory.count) > 0 {

@@ -41,9 +41,7 @@ class DetailsViewController: UIViewController, UICollectionViewDelegate, UIColle
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         itemIndex = indexPath.row
         if let recipeViewController = self.storyboard?.instantiateViewController(withIdentifier: "RecipeViewController") as? RecipeViewController {
-            recipeViewController.recipeName = arrayAllCategoryList[indexPath.row].categoryName
-            recipeViewController.recipeImage = arrayAllCategoryList[indexPath.row].image
-            recipeViewController.recipeType = arrayAllCategoryList[indexPath.row].categoryType
+            recipeViewController.recipe = arrayAllCategoryList[indexPath.row]
             self.navigationController?.pushViewController(recipeViewController, animated: true)
         }
     }

@@ -16,7 +16,7 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
     var procedureArray: [String] = []
     let imagePicker = UIImagePickerController()
     var ref: DocumentReference!
-    var imageName: String!
+    var imageName: String?
     var ingredientCount: Int = 1
     var procedureCount: Int = 1
 
@@ -94,25 +94,10 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
         imgCocktail.isUserInteractionEnabled = true
         imgCocktail.addGestureRecognizer(tapGestureRecognizer)
 
-        addProcedureUIView.layer.shadowColor = UIColor.red.cgColor
-        addProcedureUIView.layer.shadowOpacity = 0.5
-        addProcedureUIView.layer.shadowOffset = CGSize.zero
-        addProcedureUIView.layer.shadowRadius = 1.5
-        
-        ingredientsUIView.layer.shadowColor = UIColor.red.cgColor
-        ingredientsUIView.layer.shadowOpacity = 0.5
-        ingredientsUIView.layer.shadowOffset = CGSize.zero
-        ingredientsUIView.layer.shadowRadius = 1.5
-
-        nameTypeUIView.layer.shadowColor = UIColor.red.cgColor
-        nameTypeUIView.layer.shadowOpacity = 0.5
-        nameTypeUIView.layer.shadowOffset = CGSize.zero
-        nameTypeUIView.layer.shadowRadius = 1.5
-        
-        imgUIView.layer.shadowColor = UIColor.red.cgColor
-        imgUIView.layer.shadowOpacity = 0.5
-        imgUIView.layer.shadowOffset = CGSize.zero
-        imgUIView.layer.shadowRadius = 1.5
+        Common.setShadow(view: addProcedureUIView)
+        Common.setShadow(view: ingredientsUIView)
+        Common.setShadow(view: nameTypeUIView)
+        Common.setShadow(view: imgUIView)
     }
     
     @objc
@@ -187,39 +172,39 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
 
         for index in 1...ingredientCount {
             if let theTextField = self.view.viewWithTag(index) as? UITextField {
-                ingredientsArray.append(theTextField.text!)
-                print(theTextField.text!)
+                if let ingredient = theTextField.text {
+                    ingredientsArray.append(ingredient)
+                }
             }
         }
 
         for index in 1...procedureCount {
             if let theTextField = self.view.viewWithTag(index + 50) as? UITextField {
-                procedureArray.append(theTextField.text!)
-                print(theTextField.text!)
+                if let procedure = theTextField.text {
+                    procedureArray.append(procedure)
+                }
             }
         }
         let selectedValue = pickerView.selectedRow(inComponent: 0)
-        if txtfRecipeName.text! != "" && imageName != "" && imageName != nil && ingredientsArray != nil && procedureArray != nil {
+        if let recipeName = txtfRecipeName.text, let recipeImage = imageName, !ingredientsArray.isEmpty, !procedureArray.isEmpty {
             //save data on firebase
-            let data: [String: Any] = ["recipe-name": txtfRecipeName.text!, "recipe-type": type[selectedValue], "recipe-img": imageName, "ingredients": ingredientsArray, "procedure": procedureArray]
+            let data: [String: Any] = ["recipe-name": recipeName, "recipe-type": type[selectedValue], "recipe-img": recipeImage, "ingredients": ingredientsArray, "procedure": procedureArray]
             ref = Firestore.firestore().collection(email).document(txtfRecipeName.text!)
             ref.setData(data) { error in
-                if error != nil {
-                    print("Error")
+                if let error = error {
+                    print("Error - \(error)")
                 } else {
                     let alert = UIAlertController(title: "Success", message: "Recipe Added Successfully!", preferredStyle: UIAlertController.Style.alert)
                     alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
                     self.present(alert, animated: true, completion: nil)
-
                     self.tabBarController?.selectedIndex = 3
-
                     self.resetForm()
-
-                    print("Done")
                 }
             }
         } else {
-            print("Please add all information.")
+            let alert = UIAlertController(title: "Incomplete Recipe", message: "Please Recipe Name, Ingredients, Procedure and Image", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }
     }
     

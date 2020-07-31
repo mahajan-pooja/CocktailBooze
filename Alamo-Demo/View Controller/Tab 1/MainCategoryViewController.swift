@@ -85,7 +85,7 @@ class MainCategoryViewController: UIViewController, UICollectionViewDelegate, UI
     }
     
     private func fetchMainCategoryData() {
-        Alamofire.request(Constants.ExternalHyperlinks.mainCategory).responseJSON(completionHandler: {(response) in
+        Alamofire.request(Constants.ExternalHyperlinks.mainCategory).responseJSON(completionHandler: { response in
             if response.result.isSuccess {
                 let model: MainModelCategory = MainModelCategory.init(fromDictionary: (response.result.value as? NSDictionary)!)
                 arrayAllProductList.removeAll()
@@ -100,7 +100,7 @@ class MainCategoryViewController: UIViewController, UICollectionViewDelegate, UI
     }
     
     private func fetchCountryCategoryData() {
-        Alamofire.request(Constants.ExternalHyperlinks.countryCategory).responseJSON(completionHandler: {(response) in
+        Alamofire.request(Constants.ExternalHyperlinks.countryCategory).responseJSON(completionHandler: { response in
             if response.result.isSuccess {
                 let model: MainModelCategory = MainModelCategory.init(fromDictionary: (response.result.value as? NSDictionary)!)
                 arrayAllCountryList.removeAll()

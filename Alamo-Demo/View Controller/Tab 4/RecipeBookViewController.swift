@@ -59,7 +59,7 @@ class RecipeBookViewController: UIViewController, UITableViewDelegate, UITableVi
             if obj[indexPath.row]["recipe-img"] != nil {
                 // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
                 let imageRef = Storage.storage().reference().child("images/\(obj[indexPath.row]["recipe-img"]!)")
-                imageRef.getData(maxSize: 15 * 1024 * 1024) { data, error in
+                imageRef.getData(maxSize: 50 * 1024 * 1024) { data, error in
                     if let error = error {
                         print("error \(error)")
                     } else {

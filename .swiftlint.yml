@@ -25,7 +25,6 @@ opt_in_rules: # some rules are only opt-in
   - prohibited_super_call
   - redundant_nil_coalescing
   - required_enum_case
-  - trailing_closure
   - unneeded_parentheses_in_closure_argument
   - vertical_parameter_alignment_on_call
   - yoda_condition

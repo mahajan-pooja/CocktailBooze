@@ -11,10 +11,9 @@ import Alamofire
 import Kingfisher
 import AVKit
 
-var arrayAllVideosList: [VideoCategoryModel] = [VideoCategoryModel]()
-
 class VideoCategoryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var videoCategoryTableView: UITableView!
+    private var arrayAllVideosList: [VideoCategoryModel] = [VideoCategoryModel]()
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchVideoCategoryData()
@@ -22,12 +21,12 @@ class VideoCategoryViewController: UIViewController, UITableViewDataSource, UITa
 
     private func fetchVideoCategoryData() {
         DispatchQueue.main.async {
-            Alamofire.request(Constants.ExternalHyperlinks.videoCategory).responseJSON(completionHandler: {(response) in
+            Alamofire.request(Constants.ExternalHyperlinks.videoCategory).responseJSON(completionHandler: { response in
                 if response.result.isSuccess {
                     let model: MainVideoCategoryModel = MainVideoCategoryModel.init(fromDictionary: (response.result.value as? NSDictionary)!)
-                    arrayAllVideosList.removeAll()
+                    self.arrayAllVideosList.removeAll()
                     if !model.result.isEmpty {
-                        arrayAllVideosList.append(contentsOf: model.result)
+                        self.arrayAllVideosList.append(contentsOf: model.result)
                     }
                     self.videoCategoryTableView.reloadData()
                 } else {
@@ -55,12 +54,12 @@ class VideoCategoryViewController: UIViewController, UITableViewDataSource, UITa
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "VideoTableViewCell", for: indexPath) as? VideoTableViewCell {
-        cell.lblVideo.text = arrayAllVideosList[indexPath.row].productName
-        if let url = URL(string: arrayAllVideosList[indexPath.row].image) {
-            Common.setImage(imageView: cell.videoImageView, url: url)
-        }
-        Common.setShadow(view: cell.cellView)
-        return cell
+            cell.lblVideo.text = arrayAllVideosList[indexPath.row].productName
+            if let url = URL(string: arrayAllVideosList[indexPath.row].image) {
+                Common.setImage(imageView: cell.videoImageView, url: url)
+            }
+            Common.setShadow(view: cell.cellView)
+            return cell
         }
         return UITableViewCell()
     }

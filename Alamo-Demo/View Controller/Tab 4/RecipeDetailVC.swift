@@ -55,7 +55,7 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
 
                         // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
                         let imageRef = Storage.storage().reference().child("images/\(self.recipeImage!)")
-                        imageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+                        imageRef.getData(maxSize: 50 * 1024 * 1024) { data, error in
                             if let error = error {
                                 print("error \(error)")
                             } else {
