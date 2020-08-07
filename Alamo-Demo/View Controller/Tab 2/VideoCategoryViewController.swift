@@ -11,12 +11,25 @@ import Alamofire
 import Kingfisher
 import AVKit
 
-class VideoCategoryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class VideoCategoryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var videoCategoryTableView: UITableView!
     private var arrayAllVideosList: [VideoCategoryModel] = [VideoCategoryModel]()
+    private var videos = [VideoCategoryModel]()
+    private var filteredVideos = [VideoCategoryModel]() {
+        didSet {
+            DispatchQueue.main.async {
+                self.videoCategoryTableView.reloadData()
+            }
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchVideoCategoryData()
+        searchBar.backgroundImage = UIImage()
+
+//        let textFieldInsideSearchBar = searchBar.value(forKey: "searchField") as? UITextField
+//        textFieldInsideSearchBar?.backgroundColor = UIColor.systemOrange
     }
 
     private func fetchVideoCategoryData() {
@@ -27,8 +40,10 @@ class VideoCategoryViewController: UIViewController, UITableViewDataSource, UITa
                     self.arrayAllVideosList.removeAll()
                     if !model.result.isEmpty {
                         self.arrayAllVideosList.append(contentsOf: model.result)
+                        self.videos = self.arrayAllVideosList
+                        self.filteredVideos = self.videos
                     }
-                    self.videoCategoryTableView.reloadData()
+                  //  self.videoCategoryTableView.reloadData()
                 } else {
                     print("failure error")
                 }
@@ -45,7 +60,7 @@ class VideoCategoryViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        arrayAllVideosList.count
+        filteredVideos.count
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -54,8 +69,8 @@ class VideoCategoryViewController: UIViewController, UITableViewDataSource, UITa
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "VideoTableViewCell", for: indexPath) as? VideoTableViewCell {
-            cell.lblVideo.text = arrayAllVideosList[indexPath.row].productName
-            if let url = URL(string: arrayAllVideosList[indexPath.row].image) {
+            cell.lblVideo.text = filteredVideos[indexPath.row].productName
+            if let url = URL(string: filteredVideos[indexPath.row].image) {
                 Common.setImage(imageView: cell.videoImageView, url: url)
             }
             Common.setShadow(view: cell.cellView)
@@ -65,11 +80,20 @@ class VideoCategoryViewController: UIViewController, UITableViewDataSource, UITa
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let player = AVPlayer(url: URL.init(string: arrayAllVideosList[indexPath.row].url)!)
+        let player = AVPlayer(url: URL.init(string: filteredVideos[indexPath.row].url)!)
         let playerViewController = AVPlayerViewController()
         playerViewController.player = player
         present(playerViewController, animated: true) {
             player.play()
         }
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filteredVideos = searchText.isEmptyOrWhiteSpace ? arrayAllVideosList : arrayAllVideosList.filter { $0.productName.lowercased().contains(searchText.lowercased()) }
+    }
+}
+extension String {
+    var isEmptyOrWhiteSpace: Bool {
+        return self.trimmingCharacters(in: .whitespacesAndNewlines) == ""
     }
 }

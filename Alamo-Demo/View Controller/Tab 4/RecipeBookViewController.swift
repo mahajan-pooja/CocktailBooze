@@ -10,10 +10,17 @@ import UIKit
 import Firebase
 import SwiftKeychainWrapper
 
-class RecipeBookViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class RecipeBookViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     @IBOutlet weak var tblViewRecipeBook: UITableView!
-    var obj = [[String: Any]]()
-
+    private var downloadedRecipe = [[String: Any]]()
+    private var recipes = [RecipeModel]()
+    private var filteredRecipes = [RecipeModel]() {
+        didSet {
+            DispatchQueue.main.async {
+                self.tblViewRecipeBook.reloadData()
+            }
+        }
+    }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
@@ -38,27 +45,34 @@ class RecipeBookViewController: UIViewController, UITableViewDelegate, UITableVi
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
-                self.obj.removeAll()
+                self.downloadedRecipe.removeAll()
+                self.recipes.removeAll()
+                self.filteredRecipes.removeAll()
                 for document in querySnapshot!.documents {
-                    self.obj.append(document.data())
+                    self.downloadedRecipe.append(document.data())
                 }
-                self.tblViewRecipeBook.reloadData()
+                
+                for recipe in self.downloadedRecipe {
+                    let recipeTemp = RecipeModel(fromDictionary: recipe as NSDictionary)
+                    self.recipes.append(recipeTemp)
+                    self.filteredRecipes = self.recipes
+                }
             }
         }
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        obj.count
+        filteredRecipes.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeBookTableViewCell", for: indexPath)
         
         if let recipeBookTableViewCell = cell as? RecipeBookTableViewCell {
-            recipeBookTableViewCell.lblRecipeName.text = obj[indexPath.row]["recipe-name"] as? String
-            if obj[indexPath.row]["recipe-img"] != nil {
+            recipeBookTableViewCell.lblRecipeName.text = filteredRecipes[indexPath.row].recipeName
+            if filteredRecipes[indexPath.row].recipeImage != nil {
                 // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
-                let imageRef = Storage.storage().reference().child("images/\(obj[indexPath.row]["recipe-img"]!)")
+                let imageRef = Storage.storage().reference().child("images/\(filteredRecipes[indexPath.row].recipeImage!)")
                 imageRef.getData(maxSize: 50 * 1024 * 1024) { data, error in
                     if let error = error {
                         print("error \(error)")
@@ -81,9 +95,9 @@ class RecipeBookViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let viewController = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "RecipeDetailVC")
         if let recipeDetailVC = viewController as? RecipeDetailVC {
-            recipeDetailVC.recipeName = obj[indexPath.row]["recipe-name"]! as? String
-            recipeDetailVC.recipeType = obj[indexPath.row]["recipe-type"]! as? String
-            recipeDetailVC.recipeImage = obj[indexPath.row]["recipe-img"]! as? String
+            recipeDetailVC.recipeName = filteredRecipes[indexPath.row].recipeName
+            recipeDetailVC.recipeType = filteredRecipes[indexPath.row].recipeType
+            recipeDetailVC.recipeImage = filteredRecipes[indexPath.row].recipeImage
             self.navigationController?.pushViewController(viewController, animated: true)
         }
     }
@@ -116,7 +130,7 @@ class RecipeBookViewController: UIViewController, UITableViewDelegate, UITableVi
             } else {
                 email = KeychainWrapper.standard.string(forKey: "user-email")
             }
-            let document = obj[indexPath.row]["recipe-name"] as? String
+            let document = filteredRecipes[indexPath.row].recipeName
             Firestore.firestore().collection(email).document(document!).delete { err in
                 if let err = err {
                     print("Error removing document: \(err)")
@@ -124,12 +138,17 @@ class RecipeBookViewController: UIViewController, UITableViewDelegate, UITableVi
                     print("Document successfully removed!")
                 }
             }
-            obj.remove(at: indexPath.row)
+            recipes.remove(at: indexPath.row)
+            filteredRecipes.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
         }
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         150
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filteredRecipes = searchText.isEmptyOrWhiteSpace ? recipes : recipes.filter { $0.recipeName.lowercased().contains(searchText.lowercased()) }
     }
 }

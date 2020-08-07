@@ -116,5 +116,69 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D61278DD-59E2-4E9B-A3B5-B20C8D70EF9A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Alamo-Demo/View Controller/Tab 2/VideoCategoryViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "searchBar(_:textDidChange:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D61278DD-59E2-4E9B-A3B5-B20C8D70EF9A - 3988af09d39fd5be"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Alamo_Demo.VideoCategoryViewController.searchBar(_: __C.UISearchBar, textDidChange: Swift.String) -&gt; ()"
+                  moduleName = "Alamo-Demo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/akshay/Documents/MyApp/Alamo-Demo/Alamo-Demo/View%20Controller/Tab%202/VideoCategoryViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "92"
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "59">
+               </Location>
+               <Location
+                  uuid = "D61278DD-59E2-4E9B-A3B5-B20C8D70EF9A - b586a5d0e2a88a9a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamo_Demo.VideoCategoryModel) -&gt; Swift.Bool in Alamo_Demo.VideoCategoryViewController.searchBar(_: __C.UISearchBar, textDidChange: Swift.String) -&gt; ()"
+                  moduleName = "Alamo-Demo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/akshay/Documents/MyApp/Alamo-Demo/Alamo-Demo/View%20Controller/Tab%202/VideoCategoryViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "92"
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "108">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6C8DD46F-A978-4AD2-B434-71D446364A99"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Alamo-Demo/View Controller/Tab 2/VideoCategoryViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "filteredVideos"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "closure #1 in RecipeBookViewController.viewWillAppear(_:):RecipeBookViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "recipeObject">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "DetailsViewController.viewDidLoad():DetailsViewController.swift">
          <PersistentStrings>
             <PersistentString

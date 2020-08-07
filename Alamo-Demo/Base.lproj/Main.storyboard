@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aG9-80-m71">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aG9-80-m71">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -442,8 +442,23 @@
                                 <color key="textColor" red="0.80000000000000004" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <searchBar contentMode="redraw" text="" placeholder="Search Cocktail Videos" translatesAutoresizingMaskIntoConstraints="NO" id="fXl-xs-8s0">
+                                <rect key="frame" x="0.0" y="94" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="xHd-c1-ou7"/>
+                                </constraints>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                                <connections>
+                                    <outlet property="delegate" destination="58K-F1-n6Y" id="TM5-Po-bak"/>
+                                </connections>
+                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9HN-0u-PLb">
-                                <rect key="frame" x="20" y="104" width="374" height="583"/>
+                                <rect key="frame" x="20" y="148" width="374" height="539"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="VideoTableViewCell" rowHeight="210" id="HPJ-QK-cNQ" customClass="VideoTableViewCell" customModule="Alamo_Demo" customModuleProvider="target">
@@ -527,10 +542,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="fXl-xs-8s0" firstAttribute="top" secondItem="Omx-MY-8Q5" secondAttribute="bottom" constant="10" id="57j-B4-BRH"/>
                             <constraint firstItem="9HN-0u-PLb" firstAttribute="leading" secondItem="1lf-2f-Cde" secondAttribute="leading" constant="20" id="5hU-Md-q7X"/>
+                            <constraint firstItem="fXl-xs-8s0" firstAttribute="bottom" secondItem="9HN-0u-PLb" secondAttribute="top" constant="-10" id="6q5-iW-8BS"/>
+                            <constraint firstItem="fXl-xs-8s0" firstAttribute="leading" secondItem="1lf-2f-Cde" secondAttribute="leading" id="8Sl-U9-fTt"/>
                             <constraint firstItem="1lf-2f-Cde" firstAttribute="trailing" secondItem="Omx-MY-8Q5" secondAttribute="trailing" constant="30" id="Cc6-Uq-dHM"/>
+                            <constraint firstItem="fXl-xs-8s0" firstAttribute="trailing" secondItem="1lf-2f-Cde" secondAttribute="trailing" id="GfM-jt-Mpi"/>
                             <constraint firstItem="Omx-MY-8Q5" firstAttribute="top" secondItem="1lf-2f-Cde" secondAttribute="top" constant="20" id="L6m-dR-gvO"/>
-                            <constraint firstItem="9HN-0u-PLb" firstAttribute="top" secondItem="Omx-MY-8Q5" secondAttribute="bottom" constant="20" id="L9C-Gk-kvi"/>
                             <constraint firstItem="9HN-0u-PLb" firstAttribute="bottom" secondItem="1lf-2f-Cde" secondAttribute="bottom" id="QmK-rF-SaP"/>
                             <constraint firstItem="1lf-2f-Cde" firstAttribute="trailing" secondItem="9HN-0u-PLb" secondAttribute="trailing" constant="20" id="Qyc-N6-gVY"/>
                             <constraint firstItem="Omx-MY-8Q5" firstAttribute="leading" secondItem="1lf-2f-Cde" secondAttribute="leading" constant="30" id="hqr-DF-m8M"/>
@@ -541,6 +559,7 @@
                         <inset key="imageInsets" minX="7" minY="0.0" maxX="-7" maxY="0.0"/>
                     </tabBarItem>
                     <connections>
+                        <outlet property="searchBar" destination="fXl-xs-8s0" id="rd9-fU-1xK"/>
                         <outlet property="videoCategoryTableView" destination="9HN-0u-PLb" id="pNz-KW-LPw"/>
                         <segue destination="MP6-sh-ARb" kind="show" id="2mL-Ro-9iW"/>
                     </connections>
@@ -1783,6 +1802,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="LZ7-bf-JfN" secondAttribute="trailing" constant="20" id="l7z-Of-O94"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="btnRemoveFevorites" destination="jMC-fq-PmF" id="Yhg-63-1qI"/>
                                             <outlet property="containerUIView" destination="LZ7-bf-JfN" id="995-po-o2k"/>
@@ -2067,8 +2087,18 @@
                                 <color key="textColor" red="0.84313725490000002" green="0.078431372550000003" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <searchBar contentMode="redraw" placeholder="Search your recipies" translatesAutoresizingMaskIntoConstraints="NO" id="PjX-jM-gwU">
+                                <rect key="frame" x="0.0" y="60" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="UOJ-oe-2fi"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="JRK-oN-Oat" id="u0i-zY-AfX"/>
+                                </connections>
+                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EQX-xa-hjJ">
-                                <rect key="frame" x="0.0" y="60" width="414" height="633"/>
+                                <rect key="frame" x="0.0" y="114" width="414" height="579"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="RecipeBookTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="RecipeBookTableViewCell" rowHeight="118" id="40o-cW-Qsi" customClass="RecipeBookTableViewCell" customModule="Alamo_Demo" customModuleProvider="target">
@@ -2143,10 +2173,13 @@
                             <constraint firstItem="JFL-Ei-V62" firstAttribute="top" secondItem="UUo-tG-O5Q" secondAttribute="top" id="BAb-Cx-wzR"/>
                             <constraint firstItem="UUo-tG-O5Q" firstAttribute="trailing" secondItem="EQX-xa-hjJ" secondAttribute="trailing" id="CGK-gq-4Se"/>
                             <constraint firstItem="EQX-xa-hjJ" firstAttribute="leading" secondItem="UUo-tG-O5Q" secondAttribute="leading" id="Kak-oa-ygg"/>
+                            <constraint firstItem="PjX-jM-gwU" firstAttribute="top" secondItem="JFL-Ei-V62" secondAttribute="bottom" constant="10" id="LuO-Vm-XEe"/>
                             <constraint firstItem="EQX-xa-hjJ" firstAttribute="bottom" secondItem="UUo-tG-O5Q" secondAttribute="bottom" constant="50" id="MQe-zf-vYa"/>
+                            <constraint firstItem="PjX-jM-gwU" firstAttribute="leading" secondItem="UUo-tG-O5Q" secondAttribute="leading" id="WBw-uu-UcD"/>
                             <constraint firstItem="UUo-tG-O5Q" firstAttribute="trailing" secondItem="JFL-Ei-V62" secondAttribute="trailing" constant="20" id="Xk1-i0-I91"/>
+                            <constraint firstItem="UUo-tG-O5Q" firstAttribute="trailing" secondItem="PjX-jM-gwU" secondAttribute="trailing" id="Ytg-tN-sNG"/>
                             <constraint firstItem="JFL-Ei-V62" firstAttribute="leading" secondItem="UUo-tG-O5Q" secondAttribute="leading" constant="20" id="biz-wj-W14"/>
-                            <constraint firstItem="EQX-xa-hjJ" firstAttribute="top" secondItem="JFL-Ei-V62" secondAttribute="bottom" constant="10" id="zxG-ab-AVX"/>
+                            <constraint firstItem="EQX-xa-hjJ" firstAttribute="top" secondItem="PjX-jM-gwU" secondAttribute="bottom" constant="10" id="dXc-wA-ssu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UUo-tG-O5Q"/>
                     </view>

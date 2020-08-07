@@ -56,6 +56,7 @@
 		BABB762F221F94C100E2C0D4 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABB762E221F94C100E2C0D4 /* RecipeViewController.swift */; };
 		BABB7631221F967200E2C0D4 /* IngredientsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABB7630221F967200E2C0D4 /* IngredientsTableViewCell.swift */; };
 		BABC3EA424C784E80037E1DA /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABC3EA324C784E80037E1DA /* Common.swift */; };
+		BACAC7EE24DDF96900A24933 /* RecipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACAC7ED24DDF96900A24933 /* RecipeModel.swift */; };
 		BACC83FC227653520012158C /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACC83FB227653520012158C /* SignInViewController.swift */; };
 		BACC83FE227653600012158C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACC83FD227653600012158C /* SignUpViewController.swift */; };
 		BAD9328322128EDD008EDFBC /* SubCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD9328222128EDD008EDFBC /* SubCategoryModel.swift */; };
@@ -117,6 +118,7 @@
 		BABB762E221F94C100E2C0D4 /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
 		BABB7630221F967200E2C0D4 /* IngredientsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsTableViewCell.swift; sourceTree = "<group>"; };
 		BABC3EA324C784E80037E1DA /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		BACAC7ED24DDF96900A24933 /* RecipeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeModel.swift; sourceTree = "<group>"; };
 		BACC83FB227653520012158C /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		BACC83FD227653600012158C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		BAD9328222128EDD008EDFBC /* SubCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategoryModel.swift; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				7AAC189B230B1EAD00EC7D48 /* RecipeDetailModel.swift */,
+				BACAC7ED24DDF96900A24933 /* RecipeModel.swift */,
 			);
 			path = "Tab 4";
 			sourceTree = "<group>";
@@ -511,6 +514,7 @@
 				7AFE7F5C22D9251B004E5A68 /* RecipeBookViewController.swift in Sources */,
 				BACC83FE227653600012158C /* SignUpViewController.swift in Sources */,
 				7AEC60A622D3EE41001511DB /* DetailCategoryModel.swift in Sources */,
+				BACAC7EE24DDF96900A24933 /* RecipeModel.swift in Sources */,
 				7ADB8F0922CD496400B11100 /* AccountViewController.swift in Sources */,
 				7AEC60A422D3EDC4001511DB /* CategoryModel.swift in Sources */,
 				7AFE7F5E22D92939004E5A68 /* RecipeBookTableViewCell.swift in Sources */,
