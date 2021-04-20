@@ -68,4 +68,17 @@ class APIClient {
             }
         }
     }
+    
+    static func loadJson(filename: String, completion: @escaping ([DetailCategoryModel]) -> Void) {
+        var detailCategoryList = [DetailCategoryModel]()
+        if let parentList: [NSDictionary] = (APIService.readJSONFromFile(fileName: filename) as? [NSDictionary]) {
+            if let arrayList: [NSDictionary] = parentList[0].value(forKey: "result") as? Array {
+                if !arrayList.isEmpty {
+                    let model = CategoryModel.init(fromDictionary: arrayList[0])
+                    detailCategoryList.append(contentsOf: model.category)
+                }
+                completion(detailCategoryList)
+            }
+        }
+    }
 }

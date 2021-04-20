@@ -20,6 +20,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "DetailsViewModel.loadJson(filename:):DetailsViewModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "arrayAllCategoryList">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "closure #1 in MainCategoryViewModel.fetchHomeCategory():MainCategoryViewModel.swift">
       </ContextState>
       <ContextState

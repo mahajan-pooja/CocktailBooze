@@ -7,32 +7,36 @@
 
 import UIKit
 
-class DetailsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-
-    private var arrayAllCategoryList = [DetailCategoryModel]()
-    var selectedMainCategory: MainCategory?
+class DetailsViewController: UIViewController {
+    
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     @IBOutlet weak var lblDetailsTitle: UILabel!
     @IBOutlet weak var imgDetailView: UIImageView!
     @IBOutlet weak var lblDetailsDesc: UILabel!
 
+    private var detailCategoryList = [DetailCategoryModel]()
+    var selectedMainCategory: MainCategory?
+    let detailsViewModel = DetailsViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchRecipeData()
         navigationController?.setNavigationBarHidden(false, animated: true)
         guard let selectedMainCategory = selectedMainCategory else {
             return
         }
-        lblDetailsTitle.text = selectedMainCategory.categoryName
-        lblDetailsDesc.text = Constants.quote
-        
-        if let url = URL(string: selectedMainCategory.categoryImage) {
-            Common.setImage(imageView: imgDetailView, url: url)
+        configureHeaderView(selectedMainCategory: selectedMainCategory)
+        detailsViewModel.fetchRecipeData(categoryId: selectedMainCategory.categoryId) { result in
+            self.detailCategoryList = result
+            DispatchQueue.main.async {
+                self.categoryCollectionView.reloadData()
+            }
         }
     }
-    
+}
+
+extension DetailsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        arrayAllCategoryList.count
+        detailCategoryList.count
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -42,66 +46,41 @@ class DetailsViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        itemIndex = indexPath.row
         if let recipeViewController = self.storyboard?.instantiateViewController(withIdentifier: "RecipeViewController") as? RecipeViewController {
-            recipeViewController.recipe = arrayAllCategoryList[indexPath.row]
+            recipeViewController.recipe = detailCategoryList[indexPath.row]
             self.navigationController?.pushViewController(recipeViewController, animated: true)
         }
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCollectionViewCell", for: indexPath) as? CategoryCollectionViewCell {
-            if let url: URL = URL(string: arrayAllCategoryList[indexPath.row].image) {
-                Common.setImage(imageView: cell.categoryItemImage, url: url)
-            }
-            cell.categoryItemName.text = arrayAllCategoryList[indexPath.row].categoryName
-            cell.categoryItemType.text = arrayAllCategoryList[indexPath.row].categoryType
+            cell.configureCell(detailCategory: detailCategoryList[indexPath.row])
             Common.setShadow(view: cell.categoryCellView)
             return cell
         }
         return UICollectionViewCell()
     }
+}
 
-    func readJSONFromFile(fileName: String) -> Any? {
-        var json: Any?
-        if let path = Bundle.main.path(forResource: fileName, ofType: "json") {
-            do {
-                let fileUrl = URL(fileURLWithPath: path)
-                // Getting data from JSON file using the file URL
-                let data = try Data(contentsOf: fileUrl, options: .mappedIfSafe)
-                json = try? JSONSerialization.jsonObject(with: data)
-            } catch {
-                // Handle error here
-            }
-        }
-        return json
+private extension DetailsViewController {
+    func configureHeaderView(selectedMainCategory: MainCategory) {
+        lblDetailsTitle.text = selectedMainCategory.categoryName
+        lblDetailsDesc.text = Constants.quote
+        setImage(imageURL: selectedMainCategory.categoryImage)
     }
     
-    func loadJson(filename: String) {
-        if let parentList: [NSDictionary] = (self.readJSONFromFile(fileName: filename) as? [NSDictionary]) {
-            if let arrayList: [NSDictionary] = parentList[0].value(forKey: "result") as? Array {
-                if !arrayList.isEmpty {
-                    let model = CategoryModel.init(fromDictionary: arrayList[0])
-                    arrayAllCategoryList.append(contentsOf: model.category)
+    func setImage(imageURL: String) {
+        APIClient.downloadImage(url: imageURL) { result in
+            switch result {
+            case .success(let image):
+                DispatchQueue.main.async {
+                    self.imgDetailView.image = image
                 }
-                self.categoryCollectionView.reloadData()
+            case .failure:
+                DispatchQueue.main.async {
+                    self.imgDetailView.image = UIImage(named: "cocktail")
+                }
             }
-        }
-    }
-    
-    private func fetchRecipeData() {
-        let recipeId = selectedMainCategory?.categoryId
-        switch recipeId {
-        case "1":
-            loadJson(filename: "valentine")
-        case "2":
-            loadJson(filename: "summer")
-        case "3":
-            loadJson(filename: "spring")
-        case "4":
-            loadJson(filename: "slushy")
-        default:
-            loadJson(filename: "valentine")
         }
     }
 }

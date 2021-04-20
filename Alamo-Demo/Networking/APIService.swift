@@ -10,7 +10,7 @@ enum NetworkError: Error {
 
 final class APIService {    
     static func get(request: URL, completion: @escaping (Result<Data, Error>) -> Void) {
-        URLSession.shared.dataTask(with: request) { (data, response, error) in
+        URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
                 completion(.failure(error))
                 return
@@ -31,5 +31,20 @@ final class APIService {
             }
             completion(.success(data))
         }.resume()
+    }
+    
+    static func readJSONFromFile(fileName: String) -> Any? {
+        var json: Any?
+        if let path = Bundle.main.path(forResource: fileName, ofType: "json") {
+            do {
+                let fileUrl = URL(fileURLWithPath: path)
+                // Getting data from JSON file using the file URL
+                let data = try Data(contentsOf: fileUrl, options: .mappedIfSafe)
+                json = try? JSONSerialization.jsonObject(with: data)
+            } catch {
+                // Handle error here
+            }
+        }
+        return json
     }
 }

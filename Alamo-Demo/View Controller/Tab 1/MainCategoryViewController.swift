@@ -10,15 +10,11 @@ import UIKit
 import Alamofire
 import Kingfisher
 
-var itemIndex = 0
-var arrayAllProductList = [SubCategoryModel]()
-var arrayAllCountryList = [SubCategoryModel]()
+class MainCategoryViewController: UIViewController {
 
-class MainCategoryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-
-    private var objMainCategory: MainCategory!
     @IBOutlet weak var sliderCollectionView: UICollectionView!
     @IBOutlet weak var mainCategoryCollectionView: UICollectionView!
+    
     private var mainCategoryViewModel: MainCategoryViewModel = MainCategoryViewModel()
     private var mainCategory: [MainCategory] = [MainCategory]()
     private var countryCategory: [CountryCategory] = [CountryCategory]()
@@ -34,7 +30,9 @@ class MainCategoryViewController: UIViewController, UICollectionViewDelegate, UI
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
-    
+}
+
+extension MainCategoryViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         collectionView == mainCategoryCollectionView ? mainCategory.count : countryCategory.count
     }
@@ -68,9 +66,7 @@ class MainCategoryViewController: UIViewController, UICollectionViewDelegate, UI
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == mainCategoryCollectionView {
-            itemIndex = indexPath.row
             if let detailsViewController = storyboard?.instantiateViewController(withIdentifier: "DetailsViewController") as? DetailsViewController {
-              //  detailsViewController.recipeID = mainCategory[indexPath.row].categoryId
                 detailsViewController.selectedMainCategory = mainCategory[indexPath.row]
                 self.navigationController?.pushViewController(detailsViewController, animated: true)
             }
@@ -80,7 +76,7 @@ class MainCategoryViewController: UIViewController, UICollectionViewDelegate, UI
 
 extension MainCategoryViewController: MainCategoryViewModelDelegate {
     func loadHomeCategory() {
-        homeCategory = mainCategoryViewModel.homeCategory ?? nil
+        homeCategory = mainCategoryViewModel.homeCategory
         countryCategory = homeCategory?.country ?? []
         mainCategory = homeCategory?.main ?? []
         
