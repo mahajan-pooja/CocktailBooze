@@ -36,7 +36,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "2DB3386B-C1EB-4275-9D9A-DE3DDB44C1C3 - cacdf53a1b571ac9"
+                  uuid = "2DB3386B-C1EB-4275-9D9A-DE3DDB44C1C3 - 2ad40f6792e1cf2e"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -48,10 +48,10 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "193"
                   endingLineNumber = "193"
-                  offsetFromSymbolStart = "7746">
+                  offsetFromSymbolStart = "6784">
                </Location>
                <Location
-                  uuid = "2DB3386B-C1EB-4275-9D9A-DE3DDB44C1C3 - 6b6f1eb7ccd86e15"
+                  uuid = "2DB3386B-C1EB-4275-9D9A-DE3DDB44C1C3 - 8b76e4ea456ebbd3"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -63,7 +63,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "194"
                   endingLineNumber = "194"
-                  offsetFromSymbolStart = "126">
+                  offsetFromSymbolStart = "145">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -132,7 +132,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "D61278DD-59E2-4E9B-A3B5-B20C8D70EF9A - 3988af09d39fd5be"
+                  uuid = "D61278DD-59E2-4E9B-A3B5-B20C8D70EF9A - 2d95e28fcf8713d2"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -147,7 +147,7 @@
                   offsetFromSymbolStart = "59">
                </Location>
                <Location
-                  uuid = "D61278DD-59E2-4E9B-A3B5-B20C8D70EF9A - b586a5d0e2a88a9a"
+                  uuid = "D61278DD-59E2-4E9B-A3B5-B20C8D70EF9A - a19be856feb04cf6"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -178,6 +178,310 @@
             endingLineNumber = "20"
             landmarkName = "filteredVideos"
             landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BCF54F60-E755-4F08-8394-5C8DC2664252"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Alamo-Demo/View Controller/Tab 1/MainCategoryViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "426E4A2D-BF42-4BD2-B26E-71FAD1A2157F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Alamo-Demo/Networking/APIService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "get(request:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "52C349C5-28C8-4691-AE1F-4C05DF27058C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Alamo-Demo/View Controller/Tab 1/MainCategoryViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "32DD932A-0384-4BD1-8ED8-D8B879F6CF18"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Alamo-Demo/Networking/APIClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "getCountryCategory(url:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AF88C9FE-5D02-403E-B43D-61DDEA94E136"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Alamo-Demo/Networking/APIClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "getCountryCategory(url:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E5CAA7B6-8556-4E40-A259-6270330E73B5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Alamo-Demo/Networking/APIClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "getHomeCategory(url:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "49A1DDDE-89A0-4197-8258-C74B71540AF4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Alamo-Demo/View Controller/Tab 1/MainCategoryViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "loadHomeCategory()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "02A0F492-A2C7-4911-AB4B-1255E50FBD19"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Alamo-Demo/ViewModel/MainCategoryViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "fetchHomeCategory()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "02A0F492-A2C7-4911-AB4B-1255E50FBD19 - bafbbba3350e3a7e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Alamo_Demo.HomeCategory, Alamo_Demo.NetworkError&gt;) -&gt; () in Alamo_Demo.MainCategoryViewModel.fetchHomeCategory() -&gt; ()"
+                  moduleName = "Alamo-Demo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/akshay/Documents/MyApp/Alamo-Demo/Alamo-Demo/ViewModel/MainCategoryViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "175">
+               </Location>
+               <Location
+                  uuid = "02A0F492-A2C7-4911-AB4B-1255E50FBD19 - bafbbba3350e3a7e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Alamo_Demo.HomeCategory, Alamo_Demo.NetworkError&gt;) -&gt; () in Alamo_Demo.MainCategoryViewModel.fetchHomeCategory() -&gt; ()"
+                  moduleName = "Alamo-Demo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/akshay/Documents/MyApp/Alamo-Demo/Alamo-Demo/ViewModel/MainCategoryViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "197">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C1A3F98C-325B-4179-A3C9-FF0C93ED0801"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Alamo-Demo/View Controller/Tab 1/MainCategoryViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "479E7377-073C-4655-AFDE-E950DB542C3B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Alamo-Demo/ViewModel/MainCategoryViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "fetchHomeCategory()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "479E7377-073C-4655-AFDE-E950DB542C3B - e6d4e7e36490e945"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Alamo_Demo.MainCategoryViewModel.fetchHomeCategory() -&gt; ()"
+                  moduleName = "Alamo-Demo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/akshay/Documents/MyApp/Alamo-Demo/Alamo-Demo/ViewModel/MainCategoryViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "265">
+               </Location>
+               <Location
+                  uuid = "479E7377-073C-4655-AFDE-E950DB542C3B - bafbbba3350e3a7e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Alamo_Demo.HomeCategory, Alamo_Demo.NetworkError&gt;) -&gt; () in Alamo_Demo.MainCategoryViewModel.fetchHomeCategory() -&gt; ()"
+                  moduleName = "Alamo-Demo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/akshay/Documents/MyApp/Alamo-Demo/Alamo-Demo/ViewModel/MainCategoryViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "175">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E931A03B-67BD-4885-BCFD-8DF5F74B5132"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Alamo-Demo/ViewModel/MainCategoryViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "fetchHomeCategory()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "52213843-5557-4DCC-960F-B01A34B6642E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Alamo-Demo/Networking/APIClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "getHomeCategory(url:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "52213843-5557-4DCC-960F-B01A34B6642E - 5dce7cb518029aad"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static Alamo_Demo.APIClient.getHomeCategory(url: Foundation.URL, completion: (Swift.Result&lt;Alamo_Demo.HomeCategory, Alamo_Demo.NetworkError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Alamo-Demo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/akshay/Documents/MyApp/Alamo-Demo/Alamo-Demo/Networking/APIClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "57">
+               </Location>
+               <Location
+                  uuid = "52213843-5557-4DCC-960F-B01A34B6642E - 2828811c94937afd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Foundation.Data, Swift.Error&gt;) -&gt; () in static Alamo_Demo.APIClient.getHomeCategory(url: Foundation.URL, completion: (Swift.Result&lt;Alamo_Demo.HomeCategory, Alamo_Demo.NetworkError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Alamo-Demo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/akshay/Documents/MyApp/Alamo-Demo/Alamo-Demo/Networking/APIClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "250">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "205D752D-E944-44D2-B947-31A720E9B640"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Alamo-Demo/View Controller/Tab 1/MainCategoryViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "collectionView(_:didSelectItemAt:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

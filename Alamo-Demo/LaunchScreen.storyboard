@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -16,29 +16,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doodle3" translatesAutoresizingMaskIntoConstraints="NO" id="MJy-aO-Tga">
+                            <imageView clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" alpha="0.14999999999999999" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doodle3" translatesAutoresizingMaskIntoConstraints="NO" id="MJy-aO-Tga">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Cocktail Booze  " textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="GJd-Yh-RWb">
-                                <rect key="frame" x="62.5" y="258.5" width="250" height="150"/>
-                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <imageView clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-2" translatesAutoresizingMaskIntoConstraints="NO" id="XTw-nf-ZeP">
+                                <rect key="frame" x="37.5" y="183.5" width="300" height="300"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="cw9-0d-gkt"/>
-                                    <constraint firstAttribute="width" constant="250" id="ghJ-50-3CW"/>
+                                    <constraint firstAttribute="width" secondItem="XTw-nf-ZeP" secondAttribute="height" multiplier="1:1" id="11i-9S-WN8"/>
+                                    <constraint firstAttribute="height" constant="300" id="EmI-iA-RvP"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="70"/>
-                                <color key="textColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="GJd-Yh-RWb" firstAttribute="centerY" secondItem="Bcu-3y-fUS" secondAttribute="centerY" id="EyY-1B-lmV"/>
+                            <constraint firstItem="XTw-nf-ZeP" firstAttribute="centerY" secondItem="MJy-aO-Tga" secondAttribute="centerY" id="9pc-Hb-WjH"/>
                             <constraint firstAttribute="trailing" secondItem="MJy-aO-Tga" secondAttribute="trailing" id="FQe-7D-hqQ"/>
                             <constraint firstItem="MJy-aO-Tga" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="SQ8-ax-iKd"/>
                             <constraint firstAttribute="bottom" secondItem="MJy-aO-Tga" secondAttribute="bottom" id="dg1-Na-Ru7"/>
                             <constraint firstItem="MJy-aO-Tga" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="mog-8U-0YL"/>
-                            <constraint firstItem="GJd-Yh-RWb" firstAttribute="centerX" secondItem="Bcu-3y-fUS" secondAttribute="centerX" id="sju-41-Gye"/>
+                            <constraint firstItem="XTw-nf-ZeP" firstAttribute="centerX" secondItem="MJy-aO-Tga" secondAttribute="centerX" id="rYG-PQ-jia"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
                     </view>
@@ -50,5 +46,6 @@
     </scenes>
     <resources>
         <image name="doodle3" width="1300" height="1300"/>
+        <image name="logo-2" width="200" height="200"/>
     </resources>
 </document>

@@ -10,7 +10,7 @@ import UIKit
 class DetailsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     private var arrayAllCategoryList = [DetailCategoryModel]()
-    var recipeID: String?
+    var selectedMainCategory: MainCategory?
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     @IBOutlet weak var lblDetailsTitle: UILabel!
     @IBOutlet weak var imgDetailView: UIImageView!
@@ -20,10 +20,13 @@ class DetailsViewController: UIViewController, UICollectionViewDelegate, UIColle
         super.viewDidLoad()
         fetchRecipeData()
         navigationController?.setNavigationBarHidden(false, animated: true)
-        lblDetailsTitle.text = arrayAllProductList[itemIndex].productName
+        guard let selectedMainCategory = selectedMainCategory else {
+            return
+        }
+        lblDetailsTitle.text = selectedMainCategory.categoryName
         lblDetailsDesc.text = Constants.quote
         
-        if let url = URL(string: arrayAllProductList[itemIndex].image) {
+        if let url = URL(string: selectedMainCategory.categoryImage) {
             Common.setImage(imageView: imgDetailView, url: url)
         }
     }
@@ -87,7 +90,7 @@ class DetailsViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     private func fetchRecipeData() {
-        let recipeId = recipeID
+        let recipeId = selectedMainCategory?.categoryId
         switch recipeId {
         case "1":
             loadJson(filename: "valentine")

@@ -16,14 +16,18 @@ var arrayAllCountryList = [SubCategoryModel]()
 
 class MainCategoryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
-    private var objMainCategory: MainModelCategory!
+    private var objMainCategory: MainCategory!
     @IBOutlet weak var sliderCollectionView: UICollectionView!
     @IBOutlet weak var mainCategoryCollectionView: UICollectionView!
-
+    private var mainCategoryViewModel: MainCategoryViewModel = MainCategoryViewModel()
+    private var mainCategory: [MainCategory] = [MainCategory]()
+    private var countryCategory: [CountryCategory] = [CountryCategory]()
+    private var homeCategory: HomeCategory?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchMainCategoryData()
-        fetchCountryCategoryData()
+        mainCategoryViewModel.delegate = self
+        mainCategoryViewModel.fetchHomeCategory()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -32,31 +36,19 @@ class MainCategoryViewController: UIViewController, UICollectionViewDelegate, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if collectionView == mainCategoryCollectionView {
-            return arrayAllProductList.count
-        } else {
-            return arrayAllCountryList.count
-        }
+        collectionView == mainCategoryCollectionView ? mainCategory.count : countryCategory.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == mainCategoryCollectionView {
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainCategoryCollectionViewCell", for: indexPath) as? MainCategoryCollectionViewCell {
-                let objectList: SubCategoryModel = arrayAllProductList[indexPath.item]
-                if let image = objectList.image, let url = URL(string: image) {
-                    Common.setImage(imageView: cell.imgCategory, url: url)
-                }
+                cell.configureCell(mainCategory: mainCategory[indexPath.row])
                 Common.setShadow(view: cell.mainCategoryView)
-                cell.lblMainCategoryName.text = objectList.productName
                 return cell
             }
         } else {
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SliderCollectionViewCell", for: indexPath) as? SliderCollectionViewCell {
-                let objectList: SubCategoryModel = arrayAllCountryList[indexPath.item]
-                cell.lblCategoryName.text = objectList.productName
-                if let image = objectList.image, let url = URL(string: image) {
-                    Common.setImage(imageView: cell.imgCocktailIcon, url: url)
-                }
+                cell.configureCell(countryCategory: countryCategory[indexPath.row])
                 Common.setShadow(view: cell.sliderCategoryView)
                 return cell
             }
@@ -78,39 +70,23 @@ class MainCategoryViewController: UIViewController, UICollectionViewDelegate, UI
         if collectionView == mainCategoryCollectionView {
             itemIndex = indexPath.row
             if let detailsViewController = storyboard?.instantiateViewController(withIdentifier: "DetailsViewController") as? DetailsViewController {
-                detailsViewController.recipeID = arrayAllProductList[indexPath.row].productId!
+              //  detailsViewController.recipeID = mainCategory[indexPath.row].categoryId
+                detailsViewController.selectedMainCategory = mainCategory[indexPath.row]
                 self.navigationController?.pushViewController(detailsViewController, animated: true)
             }
         }
     }
-    
-    private func fetchMainCategoryData() {
-        Alamofire.request(Constants.ExternalHyperlinks.mainCategory).responseJSON(completionHandler: { response in
-            if response.result.isSuccess {
-                let model: MainModelCategory = MainModelCategory.init(fromDictionary: (response.result.value as? NSDictionary)!)
-                arrayAllProductList.removeAll()
-                if !model.recipe.isEmpty {
-                    arrayAllProductList.append(contentsOf: model.recipe)
-                }
-                self.mainCategoryCollectionView.reloadData()
-            } else {
-                print("failure error")
-            }
-        })
-    }
-    
-    private func fetchCountryCategoryData() {
-        Alamofire.request(Constants.ExternalHyperlinks.countryCategory).responseJSON(completionHandler: { response in
-            if response.result.isSuccess {
-                let model: MainModelCategory = MainModelCategory.init(fromDictionary: (response.result.value as? NSDictionary)!)
-                arrayAllCountryList.removeAll()
-                if !model.recipe.isEmpty {
-                    arrayAllCountryList.append(contentsOf: model.recipe)
-                }
-                self.sliderCollectionView.reloadData()
-            } else {
-                print("failure error")
-            }
-        })
+}
+
+extension MainCategoryViewController: MainCategoryViewModelDelegate {
+    func loadHomeCategory() {
+        homeCategory = mainCategoryViewModel.homeCategory ?? nil
+        countryCategory = homeCategory?.country ?? []
+        mainCategory = homeCategory?.main ?? []
+        
+        DispatchQueue.main.async {
+            self.mainCategoryCollectionView.reloadData()
+            self.sliderCollectionView.reloadData()
+        }
     }
 }
