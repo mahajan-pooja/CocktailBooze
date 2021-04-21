@@ -53,6 +53,22 @@ class APIClient {
         }
     }
     
+    static func getWineCategory(url: URL, completion: @escaping (Result<WineCategory, NetworkError>) -> Void) {
+        APIService.get(request: url) { result in
+            switch result {
+            case .success(let data):
+                do {
+                    let wineCategory = try JSONDecoder().decode(WineCategory.self, from: data)
+                    completion(.success(wineCategory))
+                } catch {
+                    completion(.failure(.decodingError))
+                }
+            case .failure:
+                completion(.failure(.invalidData))
+            }
+        }
+    }
+    
     static func downloadImage(url: String, completion: @escaping (Result<UIImage?, Error>) -> Void) {
         guard let url = URL(string: url) else {
             return completion(.failure(NetworkError.invalidData))

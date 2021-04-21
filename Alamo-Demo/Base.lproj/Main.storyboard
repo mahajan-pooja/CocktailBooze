@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aG9-80-m71">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aG9-80-m71">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -228,6 +228,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="5Vh-hX-dpS"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="cnD-bR-tWh" secondAttribute="bottom" id="Ebs-iL-13L"/>
@@ -235,7 +236,6 @@
                             <constraint firstItem="cnD-bR-tWh" firstAttribute="top" secondItem="VlL-Rn-MG8" secondAttribute="top" id="nBv-xD-XwU"/>
                             <constraint firstItem="cnD-bR-tWh" firstAttribute="leading" secondItem="VlL-Rn-MG8" secondAttribute="leading" id="zam-YY-LSh"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="5Vh-hX-dpS"/>
                     </view>
                     <size key="freeformSize" width="375" height="1500"/>
                     <connections>
@@ -407,6 +407,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="KEp-Q7-fKU"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="top" secondItem="F3w-48-i3H" secondAttribute="top" id="21y-aw-8XQ"/>
@@ -414,7 +415,6 @@
                             <constraint firstAttribute="trailing" secondItem="F3w-48-i3H" secondAttribute="trailing" id="g5O-xj-YzE"/>
                             <constraint firstAttribute="bottom" secondItem="F3w-48-i3H" secondAttribute="bottom" id="kWf-lS-w4C"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="KEp-Q7-fKU"/>
                     </view>
                     <size key="freeformSize" width="375" height="1500"/>
                     <connections>
@@ -540,6 +540,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="1lf-2f-Cde"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="fXl-xs-8s0" firstAttribute="top" secondItem="Omx-MY-8Q5" secondAttribute="bottom" constant="10" id="57j-B4-BRH"/>
@@ -553,7 +554,6 @@
                             <constraint firstItem="1lf-2f-Cde" firstAttribute="trailing" secondItem="9HN-0u-PLb" secondAttribute="trailing" constant="20" id="Qyc-N6-gVY"/>
                             <constraint firstItem="Omx-MY-8Q5" firstAttribute="leading" secondItem="1lf-2f-Cde" secondAttribute="leading" constant="30" id="hqr-DF-m8M"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="1lf-2f-Cde"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="baseline_play_circle_filled_black_36pt" selectedImage="baseline_play_circle_filled_black_36pt" id="Dge-9h-7DP">
                         <inset key="imageInsets" minX="7" minY="0.0" maxX="-7" maxY="0.0"/>
@@ -879,6 +879,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="zWZ-fX-fpg"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="0lY-xW-SBf" firstAttribute="top" secondItem="oMk-57-28a" secondAttribute="top" id="1Hu-kH-FIr"/>
@@ -886,7 +887,6 @@
                             <constraint firstItem="0lY-xW-SBf" firstAttribute="leading" secondItem="zWZ-fX-fpg" secondAttribute="leading" id="505-4O-69h"/>
                             <constraint firstAttribute="bottom" secondItem="0lY-xW-SBf" secondAttribute="bottom" id="cm3-U4-mqn"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="zWZ-fX-fpg"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="g7D-JO-AtF"/>
                     <size key="freeformSize" width="375" height="1200"/>
@@ -1008,7 +1008,7 @@
                                                         <color key="textColor" red="0.30196078430000001" green="0.0" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H34-Rb-Lwn">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H34-Rb-Lwn">
                                                         <rect key="frame" x="285" y="25" width="30" height="30"/>
                                                         <color key="backgroundColor" red="0.80000000000000004" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <constraints>
@@ -1103,7 +1103,7 @@
                                                         <color key="textColor" red="0.30196078430000001" green="0.0" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rzM-8D-Wzl">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rzM-8D-Wzl">
                                                         <rect key="frame" x="285" y="20" width="30" height="30"/>
                                                         <color key="backgroundColor" red="0.80000000000000004" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <constraints>
@@ -1202,7 +1202,7 @@
                                                             <constraint firstAttribute="height" constant="100" id="2ko-5W-JD6"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E6f-yb-Da6">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E6f-yb-Da6">
                                                         <rect key="frame" x="128.66666666666666" y="190" width="78" height="35"/>
                                                         <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="16"/>
                                                         <state key="normal" title="Add Image">
@@ -1238,7 +1238,7 @@
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isHorizontal" value="NO"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zmb-I0-pAm" customClass="GradientButton" customModule="Alamo_Demo" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zmb-I0-pAm" customClass="GradientButton" customModule="Alamo_Demo" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="920" width="295" height="40"/>
                                                 <color key="backgroundColor" red="0.2784313725" green="0.078431372550000003" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
@@ -1261,7 +1261,7 @@
                                                     <action selector="btnAddRecipeAction:" destination="Ip2-Kq-QHg" eventType="touchUpInside" id="qWy-Gv-vPS"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byy-dP-pXe">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byy-dP-pXe">
                                                 <rect key="frame" x="144" y="970" width="47" height="41"/>
                                                 <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="18"/>
                                                 <state key="normal" title="Cancel">
@@ -1310,6 +1310,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="84S-4P-muS"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="xMd-p8-Zf3" firstAttribute="leading" secondItem="84S-4P-muS" secondAttribute="leading" id="6Ir-Jl-a4M"/>
@@ -1317,7 +1318,6 @@
                             <constraint firstItem="84S-4P-muS" firstAttribute="trailing" secondItem="xMd-p8-Zf3" secondAttribute="trailing" id="bdX-6Z-wlA"/>
                             <constraint firstItem="xMd-p8-Zf3" firstAttribute="top" secondItem="84S-4P-muS" secondAttribute="top" id="yKa-nv-bGK"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="84S-4P-muS"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="baseline_add_box_black_36pt" selectedImage="baseline_add_box_black_36pt" id="ZB4-Vh-jqZ">
                         <inset key="imageInsets" minX="7" minY="0.0" maxX="-7" maxY="0.0"/>
@@ -1403,7 +1403,7 @@
                                                     </textField>
                                                 </subviews>
                                             </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6PE-zC-6Nc" customClass="GradientButton" customModule="Alamo_Demo" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6PE-zC-6Nc" customClass="GradientButton" customModule="Alamo_Demo" customModuleProvider="target">
                                                 <rect key="frame" x="45" y="235.33333333333331" width="210" height="40"/>
                                                 <color key="backgroundColor" red="0.2784313725" green="0.078431372550000003" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
@@ -1425,7 +1425,7 @@
                                                     <action selector="btnSignInAction:" destination="aG9-80-m71" eventType="touchUpInside" id="n3y-5O-86S"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xRe-fD-u7h">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xRe-fD-u7h">
                                                 <rect key="frame" x="87.333333333333343" y="295.33333333333331" width="125" height="35"/>
                                                 <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="16"/>
                                                 <state key="normal" title="Forgot Password?">
@@ -1435,7 +1435,7 @@
                                                     <action selector="btnForgotAction:" destination="aG9-80-m71" eventType="touchUpInside" id="H6O-uM-K9R"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A15-Vn-lmX">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A15-Vn-lmX">
                                                 <rect key="frame" x="121" y="330.33333333333331" width="58" height="41"/>
                                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="18"/>
                                                 <state key="normal" title="Sign Up">
@@ -1506,6 +1506,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="LG7-n2-ITo"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="cBi-ew-vtz" firstAttribute="bottom" secondItem="G4l-oR-Smf" secondAttribute="bottom" id="Nwn-lu-7jp"/>
@@ -1513,7 +1514,6 @@
                             <constraint firstItem="cBi-ew-vtz" firstAttribute="trailing" secondItem="LG7-n2-ITo" secondAttribute="trailing" id="u2e-oL-m9D"/>
                             <constraint firstItem="cBi-ew-vtz" firstAttribute="leading" secondItem="LG7-n2-ITo" secondAttribute="leading" id="xoT-a4-k40"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="LG7-n2-ITo"/>
                     </view>
                     <connections>
                         <outlet property="btnSignIn" destination="6PE-zC-6Nc" id="9oW-9j-N4p"/>
@@ -1619,7 +1619,7 @@
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9t9-Ki-TAP" customClass="GradientButton" customModule="Alamo_Demo" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9t9-Ki-TAP" customClass="GradientButton" customModule="Alamo_Demo" customModuleProvider="target">
                                                 <rect key="frame" x="49.666666666666657" y="389.33333333333337" width="231.99999999999997" height="40"/>
                                                 <color key="backgroundColor" red="0.2784313725" green="0.078431372550000003" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
@@ -1662,7 +1662,7 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isHorizontal" value="NO"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mw6-ck-Ahj">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mw6-ck-Ahj">
                                         <rect key="frame" x="183.66666666666666" y="559.66666666666663" width="47" height="35"/>
                                         <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="16"/>
                                         <state key="normal" title="Cancel">
@@ -1678,7 +1678,7 @@
                                         <color key="textColor" red="0.80000000000000004" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sPe-zV-hCL">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sPe-zV-hCL">
                                         <rect key="frame" x="176" y="681.33333333333337" width="62" height="38"/>
                                         <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="18"/>
                                         <state key="normal" title="Sign In">
@@ -1706,6 +1706,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="Kml-lU-4ia"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="bf7-zV-n2w" firstAttribute="leading" secondItem="Kml-lU-4ia" secondAttribute="leading" id="1f0-LC-COT"/>
@@ -1715,7 +1716,6 @@
                             <constraint firstItem="bf7-zV-n2w" firstAttribute="bottom" secondItem="WM5-54-3kT" secondAttribute="bottom" id="k5o-XW-3VA"/>
                             <constraint firstItem="sPe-zV-hCL" firstAttribute="centerX" secondItem="Kml-lU-4ia" secondAttribute="centerX" id="uxo-Qf-IDs"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Kml-lU-4ia"/>
                     </view>
                     <connections>
                         <outlet property="btnSignIn" destination="sPe-zV-hCL" id="BgA-kg-fu1"/>
@@ -1816,6 +1816,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="eNv-dy-0zu"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="eNv-dy-0zu" firstAttribute="trailing" secondItem="Ot9-Ab-gsO" secondAttribute="trailing" id="6V7-NG-IxO"/>
@@ -1827,7 +1828,6 @@
                             <constraint firstItem="eNv-dy-0zu" firstAttribute="bottom" secondItem="Ot9-Ab-gsO" secondAttribute="bottom" id="iZt-lr-usY"/>
                             <constraint firstItem="lIZ-FU-xGF" firstAttribute="leading" secondItem="eNv-dy-0zu" secondAttribute="leading" id="okd-ov-2gY"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="eNv-dy-0zu"/>
                     </view>
                     <navigationItem key="navigationItem" title="My Favorites" id="Iw3-ZG-bNW"/>
                     <connections>
@@ -1873,7 +1873,7 @@
                                     <constraint firstAttribute="height" constant="150" id="5Rk-g2-o95"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MAt-Pk-BGD" customClass="GradientButton" customModule="Alamo_Demo" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MAt-Pk-BGD" customClass="GradientButton" customModule="Alamo_Demo" customModuleProvider="target">
                                 <rect key="frame" x="57" y="364" width="300" height="50"/>
                                 <color key="backgroundColor" red="0.2784313725" green="0.078431372550000003" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -1897,7 +1897,7 @@
                                     <segue destination="zft-wf-rEg" kind="push" id="beB-vO-yDB"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WJo-NB-gyB" customClass="GradientButton" customModule="Alamo_Demo" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WJo-NB-gyB" customClass="GradientButton" customModule="Alamo_Demo" customModuleProvider="target">
                                 <rect key="frame" x="57" y="434" width="300" height="50"/>
                                 <color key="backgroundColor" red="0.2784313725" green="0.078431372550000003" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -1921,7 +1921,7 @@
                                     <segue destination="5zy-kL-UeK" kind="push" id="JT5-Xh-xma"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YsJ-Xx-A94" customClass="GradientButton" customModule="Alamo_Demo" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YsJ-Xx-A94" customClass="GradientButton" customModule="Alamo_Demo" customModuleProvider="target">
                                 <rect key="frame" x="57" y="504" width="300" height="50"/>
                                 <color key="backgroundColor" red="0.2784313725" green="0.078431372550000003" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -1945,7 +1945,7 @@
                                     <segue destination="cbI-AY-4Oc" kind="push" id="kmc-kx-TPx"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OCU-aC-xgY" customClass="GradientButton" customModule="Alamo_Demo" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OCU-aC-xgY" customClass="GradientButton" customModule="Alamo_Demo" customModuleProvider="target">
                                 <rect key="frame" x="57" y="574" width="300" height="50"/>
                                 <color key="backgroundColor" red="0.2784313725" green="0.078431372550000003" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -1975,6 +1975,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="XbY-Ma-noC"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="MAt-Pk-BGD" firstAttribute="centerX" secondItem="XbY-Ma-noC" secondAttribute="centerX" id="1L6-a5-A2W"/>
@@ -2002,7 +2003,6 @@
                             <constraint firstItem="OCU-aC-xgY" firstAttribute="centerX" secondItem="XbY-Ma-noC" secondAttribute="centerX" id="vyL-sg-Krs"/>
                             <constraint firstItem="XbY-Ma-noC" firstAttribute="trailing" secondItem="LNC-et-BrO" secondAttribute="trailing" constant="20" id="xJY-5d-j3S"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="XbY-Ma-noC"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" id="eYO-UT-if7">
                         <inset key="imageInsets" minX="7" minY="7" maxX="-7" maxY="-7"/>
@@ -2168,6 +2168,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="UUo-tG-O5Q"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="JFL-Ei-V62" firstAttribute="top" secondItem="UUo-tG-O5Q" secondAttribute="top" id="BAb-Cx-wzR"/>
@@ -2181,7 +2182,6 @@
                             <constraint firstItem="JFL-Ei-V62" firstAttribute="leading" secondItem="UUo-tG-O5Q" secondAttribute="leading" constant="20" id="biz-wj-W14"/>
                             <constraint firstItem="EQX-xa-hjJ" firstAttribute="top" secondItem="PjX-jM-gwU" secondAttribute="bottom" constant="10" id="dXc-wA-ssu"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="UUo-tG-O5Q"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" id="jxL-TS-6bG">
                         <inset key="imageInsets" minX="4" minY="-17" maxX="0.0" maxY="-26"/>
@@ -2401,6 +2401,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="08K-2j-khG"/>
                         <color key="backgroundColor" red="0.87077649109999999" green="0.60931417430000001" blue="0.74313644580000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="ftX-1Z-bBc" secondAttribute="trailing" id="1wh-B8-EsO"/>
@@ -2408,7 +2409,6 @@
                             <constraint firstItem="ftX-1Z-bBc" firstAttribute="leading" secondItem="ndu-ii-cD7" secondAttribute="leading" id="iws-dZ-hbz"/>
                             <constraint firstAttribute="top" secondItem="ftX-1Z-bBc" secondAttribute="top" id="zbN-UG-KXS"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="08K-2j-khG"/>
                     </view>
                     <size key="freeformSize" width="375" height="1500"/>
                     <connections>
@@ -2439,7 +2439,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5CJ-dm-GpO">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Napa Valley Cabernet Sauvignon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lss-WR-PQ9">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lss-WR-PQ9">
                                                 <rect key="frame" x="0.0" y="30" width="414" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="Z2n-fa-9IK"/>
@@ -2559,7 +2559,7 @@
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isHorizontal" value="NO"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Italian Amarone" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZjL-jF-Q5o">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZjL-jF-Q5o">
                                                 <rect key="frame" x="0.0" y="405" width="414" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="TTs-lt-gpS"/>
@@ -2679,7 +2679,7 @@
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isHorizontal" value="NO"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sauvignon Blanc" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FSB-fY-Sqb">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FSB-fY-Sqb">
                                                 <rect key="frame" x="0.0" y="780" width="414" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="Vum-ed-ZOI"/>
@@ -2834,6 +2834,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="pwH-oy-taT"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="pwH-oy-taT" firstAttribute="trailing" secondItem="vw2-ax-8D7" secondAttribute="trailing" id="DG5-QG-ld7"/>
@@ -2841,11 +2842,13 @@
                             <constraint firstItem="pwH-oy-taT" firstAttribute="bottom" secondItem="vw2-ax-8D7" secondAttribute="bottom" id="rEt-wV-L7f"/>
                             <constraint firstItem="vw2-ax-8D7" firstAttribute="top" secondItem="pwH-oy-taT" secondAttribute="top" id="sS0-VG-2ZO"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="pwH-oy-taT"/>
                     </view>
                     <navigationItem key="navigationItem" title="Wine Kingdom" id="gDY-vM-LYa"/>
                     <size key="freeformSize" width="414" height="1200"/>
                     <connections>
+                        <outlet property="lblSectionOne" destination="lss-WR-PQ9" id="egj-aP-H9r"/>
+                        <outlet property="lblSectionThree" destination="FSB-fY-Sqb" id="mpK-Jh-iOO"/>
+                        <outlet property="lblSectionTwo" destination="ZjL-jF-Q5o" id="gKU-1B-H9Q"/>
                         <outlet property="wineCollectionOne" destination="Ksi-XI-GdV" id="8Mg-CL-Dhq"/>
                         <outlet property="wineCollectionThree" destination="qgQ-Oa-vCp" id="jKi-U0-tZJ"/>
                         <outlet property="wineCollectionTwo" destination="YFI-Ia-JrK" id="FRU-ns-ukT"/>
@@ -3249,6 +3252,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="2dV-h3-ryP"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="2dV-h3-ryP" firstAttribute="top" secondItem="gvs-Hu-JHU" secondAttribute="top" id="4Wb-NC-Kot"/>
@@ -3256,7 +3260,6 @@
                             <constraint firstItem="2dV-h3-ryP" firstAttribute="trailing" secondItem="gvs-Hu-JHU" secondAttribute="trailing" id="YXM-In-8hC"/>
                             <constraint firstItem="gvs-Hu-JHU" firstAttribute="leading" secondItem="2dV-h3-ryP" secondAttribute="leading" id="cWQ-yM-cyn"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="2dV-h3-ryP"/>
                     </view>
                     <navigationItem key="navigationItem" title="Beer Kingdom" id="Mge-G3-vVH"/>
                     <size key="freeformSize" width="414" height="1200"/>
@@ -3381,6 +3384,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="ghY-7n-reQ"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="c7Y-m4-pWm" firstAttribute="leading" secondItem="ghY-7n-reQ" secondAttribute="leading" id="7ZO-9G-6Go"/>
@@ -3388,7 +3392,6 @@
                             <constraint firstItem="ghY-7n-reQ" firstAttribute="bottom" secondItem="c7Y-m4-pWm" secondAttribute="bottom" id="hCc-bV-7ge"/>
                             <constraint firstItem="ghY-7n-reQ" firstAttribute="trailing" secondItem="c7Y-m4-pWm" secondAttribute="trailing" id="mkB-g0-Xeu"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="ghY-7n-reQ"/>
                     </view>
                     <size key="freeformSize" width="414" height="500"/>
                     <connections>
@@ -3405,6 +3408,29 @@
             <point key="canvasLocation" x="-5268" y="-2349"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="6PE-zC-6Nc">
+            <size key="intrinsicContentSize" width="52" height="41"/>
+        </designable>
+        <designable name="9t9-Ki-TAP">
+            <size key="intrinsicContentSize" width="58" height="41"/>
+        </designable>
+        <designable name="MAt-Pk-BGD">
+            <size key="intrinsicContentSize" width="103" height="38"/>
+        </designable>
+        <designable name="OCU-aC-xgY">
+            <size key="intrinsicContentSize" width="71" height="38"/>
+        </designable>
+        <designable name="WJo-NB-gyB">
+            <size key="intrinsicContentSize" width="114" height="38"/>
+        </designable>
+        <designable name="YsJ-Xx-A94">
+            <size key="intrinsicContentSize" width="111" height="38"/>
+        </designable>
+        <designable name="zmb-I0-pAm">
+            <size key="intrinsicContentSize" width="89" height="41"/>
+        </designable>
+    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="2mL-Ro-9iW"/>
     </inferredMetricsTieBreakers>

@@ -47,6 +47,17 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "WineHubVC.loadWineCategory():WineHubVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "wineCategory">
+            </PersistentString>
+            <PersistentString
+               value = "sectionOne">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "MainCategoryViewController.loadHomeCategory():MainCategoryViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -63,7 +74,20 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "closure #1 in MainCategoryViewModel.fetchMainCategory():MainCategoryViewModel.swift">
+         contextName = "closure #1 in static APIClient.getHomeCategory(url:completion:):APIClient.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "homeCategory">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in closure #1 in MainCategoryViewController.fetchUserData():MainCategoryViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "model.result[0]">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "closure #1 in static APIClient.getMainCategory(url:completion:):APIClient.swift">
@@ -88,20 +112,7 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "closure #1 in closure #1 in MainCategoryViewController.fetchUserData():MainCategoryViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "model.result[0]">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "closure #1 in static APIClient.getHomeCategory(url:completion:):APIClient.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "homeCategory">
-            </PersistentString>
-         </PersistentStrings>
+         contextName = "closure #1 in MainCategoryViewModel.fetchMainCategory():MainCategoryViewModel.swift">
       </ContextState>
       <ContextState
          contextName = "MainCategoryViewModel.fetchMainCategory():MainCategoryViewModel.swift">

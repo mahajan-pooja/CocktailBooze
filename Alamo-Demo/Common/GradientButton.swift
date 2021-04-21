@@ -1,11 +1,3 @@
-//
-//  GradientButton.swift
-//  Alamo-Demo
-//
-//  Created by Pooja on 10/14/19.
-//  Copyright © 2019 Pooja Mahajan. All rights reserved.
-//
-
 import UIKit
 
 @IBDesignable

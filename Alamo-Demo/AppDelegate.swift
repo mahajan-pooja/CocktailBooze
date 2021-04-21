@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  Alamo-Demo
-//
-//  Created by Pooja on 11/14/18.
-//  Copyright © 2018 Pooja Mahajan. All rights reserved.
-//
-
 import UIKit
 import Firebase
 //import FirebaseFirestore
