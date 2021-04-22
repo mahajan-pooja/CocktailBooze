@@ -34,38 +34,6 @@
             endingLineNumber = "185"
             landmarkName = "addRecipe()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "2DB3386B-C1EB-4275-9D9A-DE3DDB44C1C3 - 2ad40f6792e1cf2e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Alamo_Demo.AddRecipeViewController.addRecipe() -&gt; ()"
-                  moduleName = "Alamo-Demo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/akshay/Documents/MyApp/Alamo-Demo/Alamo-Demo/View%20Controller/Tab%203/AddRecipeViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "193"
-                  endingLineNumber = "193"
-                  offsetFromSymbolStart = "6784">
-               </Location>
-               <Location
-                  uuid = "2DB3386B-C1EB-4275-9D9A-DE3DDB44C1C3 - 8b76e4ea456ebbd3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Alamo_Demo.AddRecipeViewController.addRecipe() -&gt; ()"
-                  moduleName = "Alamo-Demo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/akshay/Documents/MyApp/Alamo-Demo/Alamo-Demo/View%20Controller/Tab%203/AddRecipeViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "194"
-                  endingLineNumber = "194"
-                  offsetFromSymbolStart = "145">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -130,38 +98,6 @@
             endingLineNumber = "84"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "D61278DD-59E2-4E9B-A3B5-B20C8D70EF9A - 2d95e28fcf8713d2"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Alamo_Demo.VideoCategoryViewController.searchBar(_: __C.UISearchBar, textDidChange: Swift.String) -&gt; ()"
-                  moduleName = "Alamo-Demo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/akshay/Documents/MyApp/Alamo-Demo/Alamo-Demo/View%20Controller/Tab%202/VideoCategoryViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "92"
-                  endingLineNumber = "92"
-                  offsetFromSymbolStart = "59">
-               </Location>
-               <Location
-                  uuid = "D61278DD-59E2-4E9B-A3B5-B20C8D70EF9A - a19be856feb04cf6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamo_Demo.VideoCategoryModel) -&gt; Swift.Bool in Alamo_Demo.VideoCategoryViewController.searchBar(_: __C.UISearchBar, textDidChange: Swift.String) -&gt; ()"
-                  moduleName = "Alamo-Demo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/akshay/Documents/MyApp/Alamo-Demo/Alamo-Demo/View%20Controller/Tab%202/VideoCategoryViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "92"
-                  endingLineNumber = "92"
-                  offsetFromSymbolStart = "108">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -194,6 +130,214 @@
             endingLineNumber = "18"
             landmarkName = "get(request:completion:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BEE15E72-E83F-46EE-9D2A-79455B11BEB6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Alamo-Demo/Modules/Video/View/VideoCategoryViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "loadVideoList()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C20250E6-B248-42C0-99CD-9EA01E8EC4FD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Alamo-Demo/Networking/APIClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "getVideos(url:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C20250E6-B248-42C0-99CD-9EA01E8EC4FD - c6db99cf02b82a46"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Foundation.Data, Swift.Error&gt;) -&gt; () in static Alamo_Demo.APIClient.getVideos(url: Foundation.URL, completion: (Swift.Result&lt;Swift.Array&lt;Alamo_Demo.Video&gt;, Alamo_Demo.NetworkError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Alamo-Demo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/akshay/Documents/MyApp/Alamo-Demo/Alamo-Demo/Networking/APIClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "75"
+                  endingLineNumber = "75"
+                  offsetFromSymbolStart = "256">
+               </Location>
+               <Location
+                  uuid = "C20250E6-B248-42C0-99CD-9EA01E8EC4FD - c6db99cf02b82a46"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Foundation.Data, Swift.Error&gt;) -&gt; () in static Alamo_Demo.APIClient.getVideos(url: Foundation.URL, completion: (Swift.Result&lt;Swift.Array&lt;Alamo_Demo.Video&gt;, Alamo_Demo.NetworkError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Alamo-Demo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/akshay/Documents/MyApp/Alamo-Demo/Alamo-Demo/Networking/APIClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "75"
+                  endingLineNumber = "75"
+                  offsetFromSymbolStart = "284">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B9EA4180-8A05-422E-90CC-16AA3CE82C7A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Alamo-Demo/Networking/APIClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "getVideos(url:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "92720C7A-F70C-4039-8EE5-8EF9CAB343FB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Alamo-Demo/Modules/Video/ViewModel/VideoViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "fetchVideoList()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "92720C7A-F70C-4039-8EE5-8EF9CAB343FB - 2837856ab44fd158"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Array&lt;Alamo_Demo.Video&gt;, Alamo_Demo.NetworkError&gt;) -&gt; () in Alamo_Demo.VideoViewModel.fetchVideoList() -&gt; ()"
+                  moduleName = "Alamo-Demo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/akshay/Documents/MyApp/Alamo-Demo/Alamo-Demo/Modules/Video/ViewModel/VideoViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "161">
+               </Location>
+               <Location
+                  uuid = "92720C7A-F70C-4039-8EE5-8EF9CAB343FB - 2837856ab44fd158"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Array&lt;Alamo_Demo.Video&gt;, Alamo_Demo.NetworkError&gt;) -&gt; () in Alamo_Demo.VideoViewModel.fetchVideoList() -&gt; ()"
+                  moduleName = "Alamo-Demo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/akshay/Documents/MyApp/Alamo-Demo/Alamo-Demo/Modules/Video/ViewModel/VideoViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "176">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C36F8D90-48EF-4423-9B5A-9E586CA1955D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Alamo-Demo/Modules/Video/ViewModel/VideoViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "fetchVideoList()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DA4D341A-7A6F-4862-A41F-6A0D730711B1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Alamo-Demo/Modules/Video/View/VideoCategoryViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "00333C35-425C-4877-B1A5-E121DAC5DEA8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Alamo-Demo/Modules/Video/ViewModel/VideoViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "fetchVideoList()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "00333C35-425C-4877-B1A5-E121DAC5DEA8 - 2837856ab44fd158"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Array&lt;Alamo_Demo.Video&gt;, Alamo_Demo.NetworkError&gt;) -&gt; () in Alamo_Demo.VideoViewModel.fetchVideoList() -&gt; ()"
+                  moduleName = "Alamo-Demo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/akshay/Documents/MyApp/Alamo-Demo/Alamo-Demo/Modules/Video/ViewModel/VideoViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "161">
+               </Location>
+               <Location
+                  uuid = "00333C35-425C-4877-B1A5-E121DAC5DEA8 - 2837856ab44fd158"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Array&lt;Alamo_Demo.Video&gt;, Alamo_Demo.NetworkError&gt;) -&gt; () in Alamo_Demo.VideoViewModel.fetchVideoList() -&gt; ()"
+                  moduleName = "Alamo-Demo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/akshay/Documents/MyApp/Alamo-Demo/Alamo-Demo/Modules/Video/ViewModel/VideoViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "176">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

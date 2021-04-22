@@ -7,7 +7,7 @@ enum Constants {
     enum ExternalHyperlinks {
         static let recipe = "https://mahajan-pooja.github.io/cocktail-booz-api/greentini.json"
         static let videoCategory = "https://mahajan-pooja.github.io/cocktail-booz-api/video-category.json"
-        static let wineCategory = "https://mahajan-pooja.github.io/cocktail-booz-api/wine-new.json"
+        static let wineCategory = "https://mahajan-pooja.github.io/cocktail-booz-api/wine-category.json"
         static let homeCategory = "https://mahajan-pooja.github.io/cocktail-booz-api/home-category.json"
     }
 }

@@ -69,6 +69,22 @@ class APIClient {
         }
     }
     
+    static func getVideos(url: URL, completion: @escaping (Result<[Video], NetworkError>) -> Void) {
+        APIService.get(request: url) { result in
+            switch result {
+            case .success(let data):
+                do {
+                    let videos = try JSONDecoder().decode([Video].self, from: data)
+                    completion(.success(videos))
+                } catch {
+                    completion(.failure(.decodingError))
+                }
+            case .failure:
+                completion(.failure(.invalidData))
+            }
+        }
+    }
+    
     static func downloadImage(url: String, completion: @escaping (Result<UIImage?, Error>) -> Void) {
         guard let url = URL(string: url) else {
             return completion(.failure(NetworkError.invalidData))

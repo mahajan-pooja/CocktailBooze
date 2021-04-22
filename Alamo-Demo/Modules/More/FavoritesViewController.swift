@@ -8,7 +8,8 @@ class FavoritesViewController: UIViewController, UITableViewDataSource, UITableV
     var favoritesArray: [String] = []
     var ref: DocumentReference!
 
-    @objc func btnRemoveFavoritesAction(sender: UIButton) {
+    @objc
+    func btnRemoveFavoritesAction(sender: UIButton) {
         let data = favoritesArray[sender.tag]
 
         let user = Auth.auth().currentUser

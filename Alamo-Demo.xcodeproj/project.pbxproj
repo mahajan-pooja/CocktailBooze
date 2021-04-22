@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		55E54A81C2C211A094CE6DAE /* libPods-Alamo-Demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F946ECC5905CA3EBCDE2459 /* libPods-Alamo-Demo.a */; };
-		7A04BC052232F21400F2C464 /* VideoCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A04BC042232F21400F2C464 /* VideoCategoryModel.swift */; };
 		7A04BC072232F54000F2C464 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A04BC062232F54000F2C464 /* VideoTableViewCell.swift */; };
 		7A04BC092232F5BF00F2C464 /* VideoCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A04BC082232F5BF00F2C464 /* VideoCategoryViewController.swift */; };
 		7A04BC0B2232F82B00F2C464 /* MainVideoCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A04BC0A2232F82B00F2C464 /* MainVideoCategoryModel.swift */; };
@@ -51,6 +50,8 @@
 		BA02B85E24C63CD000FF6A29 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA02B85D24C63CD000FF6A29 /* Constants.swift */; };
 		BA21385F22152ECD0082FB68 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA21385E22152ECD0082FB68 /* DetailsViewController.swift */; };
 		BA22FA8A2630CE6C00655BF2 /* WineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA22FA892630CE6C00655BF2 /* WineViewModel.swift */; };
+		BA22FB082630F26500655BF2 /* VideoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA22FB072630F26500655BF2 /* VideoViewModel.swift */; };
+		BA22FB2B2630F42C00655BF2 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA22FB2A2630F42C00655BF2 /* Video.swift */; };
 		BA413982221E443000E74B98 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA413981221E443000E74B98 /* CategoryCollectionViewCell.swift */; };
 		BA4BE7A8262E1AD40047AFCC /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4BE7A6262E1AD40047AFCC /* APIClient.swift */; };
 		BA4BE7A9262E1AD40047AFCC /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4BE7A7262E1AD40047AFCC /* APIService.swift */; };
@@ -72,7 +73,6 @@
 /* Begin PBXFileReference section */
 		02E18FA7310AEDE068283A41 /* Pods-Alamo-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alamo-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Alamo-Demo/Pods-Alamo-Demo.release.xcconfig"; sourceTree = "<group>"; };
 		6F946ECC5905CA3EBCDE2459 /* libPods-Alamo-Demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Alamo-Demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7A04BC042232F21400F2C464 /* VideoCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCategoryModel.swift; sourceTree = "<group>"; };
 		7A04BC062232F54000F2C464 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
 		7A04BC082232F5BF00F2C464 /* VideoCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCategoryViewController.swift; sourceTree = "<group>"; };
 		7A04BC0A2232F82B00F2C464 /* MainVideoCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVideoCategoryModel.swift; sourceTree = "<group>"; };
@@ -117,6 +117,8 @@
 		BA02B85D24C63CD000FF6A29 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BA21385E22152ECD0082FB68 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		BA22FA892630CE6C00655BF2 /* WineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineViewModel.swift; sourceTree = "<group>"; };
+		BA22FB072630F26500655BF2 /* VideoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewModel.swift; sourceTree = "<group>"; };
+		BA22FB2A2630F42C00655BF2 /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		BA413981221E443000E74B98 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		BA4BE7A6262E1AD40047AFCC /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		BA4BE7A7262E1AD40047AFCC /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
@@ -289,8 +291,8 @@
 		BA22FA8F2630E91B00655BF2 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				7A04BC062232F54000F2C464 /* VideoTableViewCell.swift */,
 				7A04BC082232F5BF00F2C464 /* VideoCategoryViewController.swift */,
+				7A04BC062232F54000F2C464 /* VideoTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -298,8 +300,8 @@
 		BA22FA912630E92900655BF2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BA22FB2A2630F42C00655BF2 /* Video.swift */,
 				7A04BC0A2232F82B00F2C464 /* MainVideoCategoryModel.swift */,
-				7A04BC042232F21400F2C464 /* VideoCategoryModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -307,6 +309,7 @@
 		BA22FA922630E94600655BF2 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				BA22FB072630F26500655BF2 /* VideoViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -589,7 +592,6 @@
 				BAD93285221295EA008EDFBC /* MainCategoryCollectionViewCell.swift in Sources */,
 				BAD9328722129780008EDFBC /* MainCategoryViewController.swift in Sources */,
 				7ADB8F0722CD2A5F00B11100 /* TabBarController.swift in Sources */,
-				7A04BC052232F21400F2C464 /* VideoCategoryModel.swift in Sources */,
 				7ABC09912304C795002CA237 /* ProcedureTableViewCell.swift in Sources */,
 				7AAC18A5230B3C1A00EC7D48 /* IngredientsCell.swift in Sources */,
 				BA22FA8A2630CE6C00655BF2 /* WineViewModel.swift in Sources */,
@@ -603,12 +605,14 @@
 				BABB7631221F967200E2C0D4 /* IngredientsTableViewCell.swift in Sources */,
 				7ADD4D9323159CE1003B2154 /* FavoritesViewController.swift in Sources */,
 				7A0C9DF5232824E600B9ACB5 /* BeerHubVC.swift in Sources */,
+				BA22FB082630F26500655BF2 /* VideoViewModel.swift in Sources */,
 				BACC83FC227653520012158C /* SignInViewController.swift in Sources */,
 				BA4BE7A9262E1AD40047AFCC /* APIService.swift in Sources */,
 				7AAC18A1230B25E900EC7D48 /* ProcedureTableCell.swift in Sources */,
 				7A0C9DF72328250400B9ACB5 /* BeerHubCell.swift in Sources */,
 				BA4BE7A8262E1AD40047AFCC /* APIClient.swift in Sources */,
 				BA4BE7B3262E22540047AFCC /* MainCategoryViewModel.swift in Sources */,
+				BA22FB2B2630F42C00655BF2 /* Video.swift in Sources */,
 				7A0C9DF923286E3A00B9ACB5 /* WineBeerDetailVC.swift in Sources */,
 				BABB762F221F94C100E2C0D4 /* RecipeViewController.swift in Sources */,
 				7A8297132327167400B7AA7F /* WineHubCell.swift in Sources */,

@@ -3,31 +3,6 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "AddRecipeViewController.addRecipe():AddRecipeViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "ingredientsArray">
-            </PersistentString>
-            <PersistentString
-               value = "imageName">
-            </PersistentString>
-            <PersistentString
-               value = "txtfRecipeName.text">
-            </PersistentString>
-            <PersistentString
-               value = "procedureArray">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DetailsViewModel.loadJson(filename:):DetailsViewModel.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "arrayAllCategoryList">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "closure #1 in MainCategoryViewModel.fetchHomeCategory():MainCategoryViewModel.swift">
       </ContextState>
       <ContextState
@@ -35,68 +10,6 @@
          <PersistentStrings>
             <PersistentString
                value = "recipeObject">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "closure #1 in RecipeBookViewController.tableView(_:cellForRowAt:):RecipeBookViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "image">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "WineHubVC.loadWineCategory():WineHubVC.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "wineCategory">
-            </PersistentString>
-            <PersistentString
-               value = "sectionOne">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "MainCategoryViewController.loadHomeCategory():MainCategoryViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "homeCategory">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DetailsViewController.viewDidLoad():DetailsViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "itemIndex">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "closure #1 in static APIClient.getHomeCategory(url:completion:):APIClient.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "homeCategory">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "closure #1 in closure #1 in MainCategoryViewController.fetchUserData():MainCategoryViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "model.result[0]">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "closure #1 in static APIClient.getMainCategory(url:completion:):APIClient.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "mainCategory">
-            </PersistentString>
-            <PersistentString
-               value = "data">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -115,10 +28,122 @@
          contextName = "closure #1 in MainCategoryViewModel.fetchMainCategory():MainCategoryViewModel.swift">
       </ContextState>
       <ContextState
+         contextName = "closure #1 in static APIClient.getCountryCategory(url:completion:):APIClient.swift">
+      </ContextState>
+      <ContextState
+         contextName = "AddRecipeViewController.addRecipe():AddRecipeViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "ingredientsArray">
+            </PersistentString>
+            <PersistentString
+               value = "imageName">
+            </PersistentString>
+            <PersistentString
+               value = "txtfRecipeName.text">
+            </PersistentString>
+            <PersistentString
+               value = "procedureArray">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in closure #1 in MainCategoryViewController.fetchUserData():MainCategoryViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "model.result[0]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in static APIClient.getWineCategory(url:completion:):APIClient.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in static APIClient.getHomeCategory(url:completion:):APIClient.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "homeCategory">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "MainCategoryViewModel.fetchMainCategory():MainCategoryViewModel.swift">
       </ContextState>
       <ContextState
-         contextName = "closure #1 in static APIClient.getCountryCategory(url:completion:):APIClient.swift">
+         contextName = "DetailsViewModel.loadJson(filename:):DetailsViewModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "arrayAllCategoryList">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "VideoCategoryViewController.loadVideoList():VideoCategoryViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in static APIClient.getVideos(url:completion:):APIClient.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "videos">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MainCategoryViewController.loadHomeCategory():MainCategoryViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "homeCategory">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "VideoCategoryViewController.tableView(_:numberOfRowsInSection:):VideoCategoryViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "filteredVideos.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in static APIClient.getMainCategory(url:completion:):APIClient.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "mainCategory">
+            </PersistentString>
+            <PersistentString
+               value = "data">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in RecipeBookViewController.tableView(_:cellForRowAt:):RecipeBookViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "image">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in WineViewModel.fetchWineCategory():WineViewModel.swift">
+      </ContextState>
+      <ContextState
+         contextName = "WineHubVC.loadWineCategory():WineHubVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "wineCategory">
+            </PersistentString>
+            <PersistentString
+               value = "sectionOne">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DetailsViewController.viewDidLoad():DetailsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "itemIndex">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
    </ContextStates>
 </VariablesViewState>

@@ -3,46 +3,36 @@ import Alamofire
 import Kingfisher
 import AVKit
 
-class VideoCategoryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
+class VideoCategoryViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var videoCategoryTableView: UITableView!
-    private var arrayAllVideosList: [VideoCategoryModel] = [VideoCategoryModel]()
-    private var videos = [VideoCategoryModel]()
-    private var filteredVideos = [VideoCategoryModel]() {
+    
+    private var videoViewModel: VideoViewModel = VideoViewModel()
+    private var arrayAllVideosList: [Video] = [Video]()
+    private var videos = [Video]()
+    private var filteredVideos = [Video]() {
         didSet {
             DispatchQueue.main.async {
                 self.videoCategoryTableView.reloadData()
             }
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchVideoCategoryData()
+        videoViewModel.delegate = self
+        videoViewModel.fetchVideoList()
         searchBar.backgroundImage = UIImage()
-
-//        let textFieldInsideSearchBar = searchBar.value(forKey: "searchField") as? UITextField
-//        textFieldInsideSearchBar?.backgroundColor = UIColor.systemOrange
     }
+}
 
-    private func fetchVideoCategoryData() {
-        DispatchQueue.main.async {
-            Alamofire.request(Constants.ExternalHyperlinks.videoCategory).responseJSON(completionHandler: { response in
-                if response.result.isSuccess {
-                    let model: MainVideoCategoryModel = MainVideoCategoryModel.init(fromDictionary: (response.result.value as? NSDictionary)!)
-                    self.arrayAllVideosList.removeAll()
-                    if !model.result.isEmpty {
-                        self.arrayAllVideosList.append(contentsOf: model.result)
-                        self.videos = self.arrayAllVideosList
-                        self.filteredVideos = self.videos
-                    }
-                  //  self.videoCategoryTableView.reloadData()
-                } else {
-                    print("failure error")
-                }
-            })
-        }
+extension String {
+    var isEmptyOrWhiteSpace: Bool {
+        self.trimmingCharacters(in: .whitespacesAndNewlines) == ""
     }
+}
 
+extension VideoCategoryViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         0
     }
@@ -61,8 +51,8 @@ class VideoCategoryViewController: UIViewController, UITableViewDataSource, UITa
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "VideoTableViewCell", for: indexPath) as? VideoTableViewCell {
-            cell.lblVideo.text = filteredVideos[indexPath.row].productName
-            if let url = URL(string: filteredVideos[indexPath.row].image) {
+            cell.lblVideo.text = filteredVideos[indexPath.row].videoTitle
+            if let url = URL(string: filteredVideos[indexPath.row].videoImage) {
                 Common.setImage(imageView: cell.videoImageView, url: url)
             }
             Common.setShadow(view: cell.cellView)
@@ -72,20 +62,26 @@ class VideoCategoryViewController: UIViewController, UITableViewDataSource, UITa
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let player = AVPlayer(url: URL.init(string: filteredVideos[indexPath.row].url)!)
+        let player = AVPlayer(url: URL.init(string: filteredVideos[indexPath.row].videoUrl)!)
         let playerViewController = AVPlayerViewController()
         playerViewController.player = player
         present(playerViewController, animated: true) {
             player.play()
         }
     }
-    
+}
+
+extension VideoCategoryViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        filteredVideos = searchText.isEmptyOrWhiteSpace ? arrayAllVideosList : arrayAllVideosList.filter { $0.productName.lowercased().contains(searchText.lowercased()) }
+        filteredVideos = searchText.isEmptyOrWhiteSpace ? arrayAllVideosList : arrayAllVideosList.filter { $0.videoTitle.lowercased().contains(searchText.lowercased())
+        }
     }
 }
-extension String {
-    var isEmptyOrWhiteSpace: Bool {
-        return self.trimmingCharacters(in: .whitespacesAndNewlines) == ""
+extension VideoCategoryViewController: VideoViewModelDelegate {
+    func loadVideoList() {
+        arrayAllVideosList = videoViewModel.videos ?? []
+        
+        videos = arrayAllVideosList
+        filteredVideos = videos
     }
 }
