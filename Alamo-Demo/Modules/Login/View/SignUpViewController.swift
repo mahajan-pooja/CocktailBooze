@@ -19,8 +19,12 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func btnSignUpAction(_ sender: Any) {
-        guard let password = txtFieldPassword.text else { return print("Password Empty") }
-        guard let email = txtFieldEmail.text else { return print("Email Empty") }
+        guard let password = txtFieldPassword.text else {
+            return print("Password Empty")
+        }
+        guard let email = txtFieldEmail.text else {
+            return print("Email Empty")
+        }
         let confPass = txtFieldConfPassword.text
         if confPass != password {
             passError.isHidden = false

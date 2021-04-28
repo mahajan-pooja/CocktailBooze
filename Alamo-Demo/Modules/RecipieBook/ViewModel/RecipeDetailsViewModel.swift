@@ -1,11 +1,3 @@
-//
-//  RecipeDetailsViewModel.swift
-//  Alamo-Demo
-//
-//  Created by Akshay on 4/28/21.
-//  Copyright © 2021 Pooja Mahajan. All rights reserved.
-//
-
 import Foundation
 
 protocol RecipeDetailsDelegate: class {

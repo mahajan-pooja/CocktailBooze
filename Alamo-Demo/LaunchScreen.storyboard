@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,27 +17,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" alpha="0.14999999999999999" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doodle3" translatesAutoresizingMaskIntoConstraints="NO" id="MJy-aO-Tga">
+                            <imageView clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" alpha="0.10000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doodle3" translatesAutoresizingMaskIntoConstraints="NO" id="MJy-aO-Tga">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <imageView clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-2" translatesAutoresizingMaskIntoConstraints="NO" id="XTw-nf-ZeP">
-                                <rect key="frame" x="37.5" y="183.5" width="300" height="300"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="XTw-nf-ZeP" secondAttribute="height" multiplier="1:1" id="11i-9S-WN8"/>
-                                    <constraint firstAttribute="height" constant="300" id="EmI-iA-RvP"/>
-                                </constraints>
-                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cocktail Booze" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rR9-zO-JCv">
+                                <rect key="frame" x="30" y="291" width="314" height="85"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="50"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <color key="highlightedColor" systemColor="systemBlueColor"/>
+                                <color key="shadowColor" systemColor="systemYellowColor"/>
+                                <size key="shadowOffset" width="0.0" height="5"/>
+                            </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="XTw-nf-ZeP" firstAttribute="centerY" secondItem="MJy-aO-Tga" secondAttribute="centerY" id="9pc-Hb-WjH"/>
                             <constraint firstAttribute="trailing" secondItem="MJy-aO-Tga" secondAttribute="trailing" id="FQe-7D-hqQ"/>
                             <constraint firstItem="MJy-aO-Tga" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="SQ8-ax-iKd"/>
+                            <constraint firstItem="rR9-zO-JCv" firstAttribute="centerY" secondItem="Bcu-3y-fUS" secondAttribute="centerY" id="Us9-qb-dbh"/>
                             <constraint firstAttribute="bottom" secondItem="MJy-aO-Tga" secondAttribute="bottom" id="dg1-Na-Ru7"/>
                             <constraint firstItem="MJy-aO-Tga" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="mog-8U-0YL"/>
-                            <constraint firstItem="XTw-nf-ZeP" firstAttribute="centerX" secondItem="MJy-aO-Tga" secondAttribute="centerX" id="rYG-PQ-jia"/>
+                            <constraint firstItem="rR9-zO-JCv" firstAttribute="centerX" secondItem="Bcu-3y-fUS" secondAttribute="centerX" id="sCo-5t-gdF"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -46,6 +49,14 @@
     </scenes>
     <resources>
         <image name="doodle3" width="1300" height="1300"/>
-        <image name="logo-2" width="200" height="200"/>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

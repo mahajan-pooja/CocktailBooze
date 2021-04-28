@@ -21,20 +21,18 @@ class GradientButton: UIButton {
     }
 
     override class var layerClass: AnyClass {
-        get {
-            return CAGradientLayer.self
-        }
+        CAGradientLayer.self
     }
 
     func updateView() {
-        let layer = self.layer as! CAGradientLayer
-        layer.colors = [firstColor, secondColor].map {$0.cgColor}
+        let layer = self.layer as? CAGradientLayer
+        layer?.colors = [firstColor, secondColor].map { $0.cgColor }
         if isHorizontal {
-            layer.startPoint = CGPoint(x: 0, y: 0.5)
-            layer.endPoint = CGPoint(x: 1, y: 0.5)
+            layer?.startPoint = CGPoint(x: 0, y: 0.5)
+            layer?.endPoint = CGPoint(x: 1, y: 0.5)
         } else {
-            layer.startPoint = CGPoint(x: 0.5, y: 0)
-            layer.endPoint = CGPoint(x: 0.5, y: 1)
+            layer?.startPoint = CGPoint(x: 0.5, y: 0)
+            layer?.endPoint = CGPoint(x: 0.5, y: 1)
         }
     }
 }

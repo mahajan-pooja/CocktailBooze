@@ -26,7 +26,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         let reason = "Face ID authentication"
         context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { isAuthorized, error in
             guard isAuthorized == true else {
-                return print(error)
+                return print(error!)
             }
             DispatchQueue.main.async {
                 let secondViewController = Constants.storyBoard.instantiateViewController(withIdentifier: "TabBarController")
@@ -51,12 +51,12 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         let alert = UIAlertController(title: "Password Reset", message: "Enter registered Email Id to get password reset link.", preferredStyle: .alert)
         
         // 2. Add the text field. You can configure it however you need.
-        alert.addTextField { (_) in
+        alert.addTextField { _ in
             // textField.text = "Some default text"
         }
         
         // 3. Grab the value from the text field, and print it when the user clicks OK.
-        alert.addAction(UIAlertAction(title: "Send", style: .default, handler: { [weak alert] (_) in
+        alert.addAction(UIAlertAction(title: "Send", style: .default, handler: { [weak alert] _ in
             let textField = alert?.textFields![0] // Force unwrapping because we know it exists.
             let email = textField!.text
             Auth.auth().sendPasswordReset(withEmail: email!) { _ in
@@ -71,8 +71,8 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         let email = txtFieldEmail.text!
         let password = txtFieldPassword.text!
         
-        if email != "" && password != "" {
-            Auth.auth().signIn(withEmail: email, password: password) { [weak self] user, error in
+        if !email.isEmpty && !password.isEmpty {
+            Auth.auth().signIn(withEmail: email, password: password) { [weak self] _, _ in
                 self!.lblError.isHidden = true
                 KeychainWrapper.standard.set(email, forKey: "user-email")
                 UserDefaults.standard.set(email, forKey: "userEmail")

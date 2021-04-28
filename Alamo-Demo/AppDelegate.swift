@@ -12,7 +12,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Thread.sleep(forTimeInterval: 3.0)
         FirebaseApp.configure()
         firebaseStorage = Storage.storage()
-        if(UserDefaults.standard.string(forKey: "userEmail") != nil && UserDefaults.standard.string(forKey: "userEmail") != "") {
+        if UserDefaults.standard.string(forKey: "userEmail") != nil && UserDefaults.standard.string(forKey: "userEmail") != "" {
             print("userEmail \(UserDefaults.standard.string(forKey: "userEmail")!)")
             self.window = UIWindow(frame: UIScreen.main.bounds)
             
