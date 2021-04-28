@@ -57,6 +57,8 @@
 		BA4BE7A9262E1AD40047AFCC /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4BE7A7262E1AD40047AFCC /* APIService.swift */; };
 		BA4BE7B3262E22540047AFCC /* MainCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4BE7B2262E22540047AFCC /* MainCategoryViewModel.swift */; };
 		BA5F1D9E262E92C20099E110 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5F1D9D262E92C20099E110 /* DetailsViewModel.swift */; };
+		BA60C77F2639EB00004B5D22 /* RecipeBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60C77E2639EB00004B5D22 /* RecipeBookViewModel.swift */; };
+		BA60C7A2263A040E004B5D22 /* RecipeDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60C7A1263A040E004B5D22 /* RecipeDetailsViewModel.swift */; };
 		BA801A1E2638E2A3006ADEF4 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA801A1D2638E2A3006ADEF4 /* FavoritesViewModel.swift */; };
 		BA801A212638EBEF006ADEF4 /* FirebaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA801A202638EBEF006ADEF4 /* FirebaseClient.swift */; };
 		BAB0EA7D23FF9FA900527670 /* Wine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB0EA7C23FF9FA900527670 /* Wine.swift */; };
@@ -126,6 +128,8 @@
 		BA4BE7A7262E1AD40047AFCC /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		BA4BE7B2262E22540047AFCC /* MainCategoryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCategoryViewModel.swift; sourceTree = "<group>"; };
 		BA5F1D9D262E92C20099E110 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
+		BA60C77E2639EB00004B5D22 /* RecipeBookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeBookViewModel.swift; sourceTree = "<group>"; };
+		BA60C7A1263A040E004B5D22 /* RecipeDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsViewModel.swift; sourceTree = "<group>"; };
 		BA801A1D2638E2A3006ADEF4 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 		BA801A202638EBEF006ADEF4 /* FirebaseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseClient.swift; sourceTree = "<group>"; };
 		BAB0EA7C23FF9FA900527670 /* Wine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wine.swift; sourceTree = "<group>"; };
@@ -229,6 +233,7 @@
 		7ABC09932304D3CA002CA237 /* RecipieBook */ = {
 			isa = PBXGroup;
 			children = (
+				BA60C77D2639EAD2004B5D22 /* ViewModel */,
 				BA22FAE22630EC5000655BF2 /* Model */,
 				BA22FAE02630EC3A00655BF2 /* View */,
 			);
@@ -409,6 +414,15 @@
 				BA801A202638EBEF006ADEF4 /* FirebaseClient.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		BA60C77D2639EAD2004B5D22 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BA60C77E2639EB00004B5D22 /* RecipeBookViewModel.swift */,
+				BA60C7A1263A040E004B5D22 /* RecipeDetailsViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		BA801A182638E253006ADEF4 /* Favorites */ = {
@@ -653,6 +667,7 @@
 				BACC83FE227653600012158C /* SignUpViewController.swift in Sources */,
 				7AEC60A622D3EE41001511DB /* DetailCategoryModel.swift in Sources */,
 				BA801A1E2638E2A3006ADEF4 /* FavoritesViewModel.swift in Sources */,
+				BA60C77F2639EB00004B5D22 /* RecipeBookViewModel.swift in Sources */,
 				BACAC7EE24DDF96900A24933 /* RecipeModel.swift in Sources */,
 				BA5F1D9E262E92C20099E110 /* DetailsViewModel.swift in Sources */,
 				7ADB8F0922CD496400B11100 /* AccountViewController.swift in Sources */,
@@ -664,6 +679,7 @@
 				7AF6595C22CBDE3E008EDF8A /* AddRecipeViewController.swift in Sources */,
 				BAD9328322128EDD008EDFBC /* SubCategoryModel.swift in Sources */,
 				7AAC189C230B1EAD00EC7D48 /* RecipeDetailModel.swift in Sources */,
+				BA60C7A2263A040E004B5D22 /* RecipeDetailsViewModel.swift in Sources */,
 				7A30B87C230C8AE30043075A /* SliderCollectionViewCell.swift in Sources */,
 				7A929FAC219CEF170001B7D7 /* AppDelegate.swift in Sources */,
 				7A04BC072232F54000F2C464 /* VideoTableViewCell.swift in Sources */,

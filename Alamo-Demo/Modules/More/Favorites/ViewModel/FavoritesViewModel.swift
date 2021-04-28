@@ -12,6 +12,7 @@ class FavoritesViewModel: NSObject {
             delegate?.loadFavorites()
         }
     }
+    
     func getFavorites() {
         FirebaseClient.getFavorites { result in
             switch result {

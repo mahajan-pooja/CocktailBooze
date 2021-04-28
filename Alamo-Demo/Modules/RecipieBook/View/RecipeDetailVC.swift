@@ -2,15 +2,8 @@ import UIKit
 import Firebase
 import SwiftKeychainWrapper
 
-class RecipeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
-    var recipeName: String!
-    var recipeType: String!
-    var recipeImage: String!
-    var obj = [String: Any]()
-    var ingredients = [String]()
-    var procedure = [String]()
-
+class RecipeDetailVC: UIViewController {
+    
     @IBOutlet weak var imgRecipeIcon: UIImageView!
     @IBOutlet weak var lblRecipeType: UILabel!
     @IBOutlet weak var lblRecipeName: UILabel!
@@ -18,60 +11,43 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var tblIngreHeight: NSLayoutConstraint!
     @IBOutlet weak var tblViewProcedure: UITableView!
     @IBOutlet weak var tblViewIngredients: UITableView!
+    
+    var selectedRecipe: RecipeModel!
+    var ingredients = [String]()
+    var procedure = [String]()
+    var recipeDetailsViewModel = RecipeDetailsViewModel()
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let user = Auth.auth().currentUser
-        var email: String!
-
-        if let user = user {
-            email = user.email
-        } else {
-            email = KeychainWrapper.standard.string(forKey: "user-email")
-        }
         
-        Firestore.firestore().collection(email).getDocuments { querySnapshot, err in
-
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                for document in querySnapshot!.documents {
-                    if document.documentID == self.recipeName {
-                        self.obj = document.data()
-                        let model: RecipeDetailModel = RecipeDetailModel.init(fromDictionary: self.obj as NSDictionary)
-
-                        self.ingredients = model.ingredients
-                        self.procedure = model.procedure
-                        self.lblRecipeName.text = self.recipeName
-                        self.lblRecipeType.text = self.recipeType
-
-                        // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
-                        let imageRef = Storage.storage().reference().child("images/\(self.recipeImage!)")
-                        imageRef.getData(maxSize: 50 * 1024 * 1024) { data, error in
-                            if let error = error {
-                                print("error \(error)")
-                            } else {
-                                // Data for "images/island.jpg" is returned
-                                let image = UIImage(data: data!)
-                                self.imgRecipeIcon.image = image
-                            }
-                        }
-
-                        self.tblViewProcedure.reloadData()
-                        self.tblViewIngredients.reloadData()
-
-                        self.tblIngreHeight.constant = CGFloat(self.ingredients.count * 60)
-                        self.tblProcedureHeight.constant = CGFloat(self.procedure.count * 100)
-                    }
-                }
-            }
-        }
+        recipeDetailsViewModel.delegate = self
+        recipeDetailsViewModel.getRecipeDetails(selectedRecipe: selectedRecipe)
+        configureHeaderView()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    func configureHeaderView() {
+        lblRecipeName.text = selectedRecipe.recipeName
+        lblRecipeType.text = selectedRecipe.recipeType
+        
+        // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
+        let imageRef = Storage.storage().reference().child("images/\(self.selectedRecipe.recipeImage!)")
+        imageRef.getData(maxSize: 50 * 1024 * 1024) { data, error in
+            if let error = error {
+                print("error \(error)")
+            } else {
+                // Data for "images/island.jpg" is returned
+                let image = UIImage(data: data!)
+                self.imgRecipeIcon.image = image
+            }
+        }
+    }
+}
 
+extension RecipeDetailVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if tableView == tblViewIngredients {
             return 60
@@ -105,5 +81,19 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
         }
         return UITableViewCell()
+    }
+}
+
+extension RecipeDetailVC: RecipeDetailsDelegate {
+    func loadRecipeDetails() {
+        let model: RecipeDetailModel = RecipeDetailModel.init(fromDictionary: recipeDetailsViewModel.recipeDetails as NSDictionary)
+        ingredients = model.ingredients
+        procedure = model.procedure
+        
+        tblIngreHeight.constant = CGFloat(ingredients.count * 60)
+        tblProcedureHeight.constant = CGFloat(procedure.count * 100)
+        
+        tblViewProcedure.reloadData()
+        tblViewIngredients.reloadData()
     }
 }
